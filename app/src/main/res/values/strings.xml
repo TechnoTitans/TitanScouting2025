@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Titan Scouting</string>
+    <string name="pre_game">Pregame Scouting</string>
+    <string name="logs">Logs</string>
+
+    <string-array name="team_chices">
+        <item>Red 1</item>
+        <item>Red 2</item>
+        <item>Red 3</item>
+        <item>Blue 1</item>
+        <item>Blue 2</item>
+        <item>Blue 3</item>
+    </string-array>
+</resources>
