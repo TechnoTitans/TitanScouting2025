@@ -6,13 +6,19 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 public class PreGame extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    Match match = new Match();
+    Match match;
+
+    ScoutingAppDatabase db;
+
+    MatchDao dao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +40,7 @@ public class PreGame extends AppCompatActivity implements AdapterView.OnItemSele
 
         spinner.setOnItemSelectedListener(this);
 
+
     }
 
     @Override
@@ -48,26 +55,41 @@ public class PreGame extends AppCompatActivity implements AdapterView.OnItemSele
         Log.d("choice", choice);
 
         match.position = choice;
-
-
     }
 
     public void onNothingSelected(AdapterView<?> parent){
 
     }
 
-    @Override
-    public void onStop(){
-        super.onStop();
+    public void onStart(){
+        super.onStart();
 
-        match.matchNum = Integer.parseInt((findViewById(R.id.editMatchNumber)).toString());
-        match.teamNumber = Integer.parseInt((findViewById(R.id.editTeamNumber)).toString());
+         db = Room.databaseBuilder(this, ScoutingAppDatabase.class, "ScoutingAppDatabase")
+                .enableMultiInstanceInvalidation()
+                .build();
+
+         match = new Match();
+
+         dao = db.matchDao();
+
+         Log.d("db", "db has started");
     }
+
 
 
 
     public void homePage(View v){
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
+    }
+
+    public void teleOP(View v){
+
+        match.matchNum = Integer.parseInt(((EditText) (findViewById(R.id.editMatchNumber))).getText().toString());
+        match.teamNumber = Integer.parseInt(((EditText) findViewById(R.id.editTeamNumber)).getText().toString());
+        dao.addPregameInformation(match);
+        Log.d("pas", "las");
+
+
     }
 }

@@ -1,7 +1,11 @@
 plugins {
     id("com.android.application")
 
+    kotlin("kapt") version "1.7.21"
+
 }
+
+
 
 android {
     namespace = "com.scoutingapp.titanscouting"
@@ -49,6 +53,10 @@ dependencies {
     val room_version = "2.6.1"
 
     implementation("androidx.room:room-runtime:$room_version")
+
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+
     annotationProcessor("androidx.room:room-compiler:$room_version")
 
     // optional - Kotlin Extensions and Coroutines support for Room

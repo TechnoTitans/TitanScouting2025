@@ -7,59 +7,64 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Match {
     @PrimaryKey
+    @ColumnInfo(name = "matchNum")
     public int matchNum;
 
     @ColumnInfo(name = "teamNumber", defaultValue = "1683")
     public int teamNumber;
 
-    @ColumnInfo(name = "position")
+    @ColumnInfo(name = "position", defaultValue = "R1")
     public String position;
 
-    @ColumnInfo(name = "autoPoints")
+    @ColumnInfo(name = "autoPoints" , defaultValue = "0")
     public int autoPoints;
 
-    @ColumnInfo(name = "autoEndStage")
+    @ColumnInfo(name = "autoEndStage" , defaultValue = "DNA")
     public String autoEndStage;
 
-    @ColumnInfo(name = "mobility")
+    @ColumnInfo(name = "mobility", defaultValue = "0")
     public boolean mobility;
 
-    @ColumnInfo(name = "teleopPoints")
+    @ColumnInfo(name = "teleopPoints", defaultValue = "0")
     public int teleopPoints;
 
-    @ColumnInfo(name = "disqualified")
+    @ColumnInfo(name = "disqualified", defaultValue = "0")
     public boolean disqualified;
 
-    @ColumnInfo(name = "substationType")
+    @ColumnInfo(name = "substationType", defaultValue = "S")
     public String substationType;
 
-    @ColumnInfo(name = "penaltiesIncured")
+    @ColumnInfo(name = "penaltiesIncured", defaultValue = "0")
     public boolean penaltiesIncured;
 
-    @ColumnInfo(name = "goodCollaboration")
+    @ColumnInfo(name = "goodCollaboration", defaultValue = "0")
     public boolean goodCollaboration;
 
-    @ColumnInfo(name = "driverQualtiy")
+    @ColumnInfo(name = "driverQualtiy", defaultValue = "1")
     public int driverQuality;
 
-    @ColumnInfo(name = "defenseAbility")
+    @ColumnInfo(name = "defenseAbility", defaultValue = "1")
     public int defenseAbility;
 
-    @ColumnInfo(name = "mechanicalReliability")
+    @ColumnInfo(name = "mechanicalReliability", defaultValue = "1")
     public int mechanicalReliability;
 
-    @ColumnInfo(name = "teleopEndgameState")
+    @ColumnInfo(name = "teleopEndgameState", defaultValue = "DNA")
     public String teleopEndgameState;
 
-    @ColumnInfo(name = "isParked")
+    @ColumnInfo(name = "isParked", defaultValue = "0")
     public boolean isParked;
 
-    @ColumnInfo(name = "notes")
+    @ColumnInfo(name = "notes", defaultValue = "")
     public String notes;
 
-    @ColumnInfo(name = "canPickUpTippedCones")
+    @ColumnInfo(name = "canPickUpTippedCones", defaultValue = "0")
     public boolean canPickUpTippedCones;
 
-    @ColumnInfo(name = "dropsPiecesOften")
+    @ColumnInfo(name = "dropsPiecesOften", defaultValue = "0")
     public boolean dropsPiecesOften;
+
+    public int getMatchNum(){
+        return this.matchNum;
+    }
 }
