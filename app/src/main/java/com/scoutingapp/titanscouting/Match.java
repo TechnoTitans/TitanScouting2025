@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "scouting_database")
 public class Match {
     @PrimaryKey
     @ColumnInfo(name = "matchNum")

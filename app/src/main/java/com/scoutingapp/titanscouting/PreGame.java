@@ -10,15 +10,13 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
+import androidx.lifecycle.ViewModelProvider;
 
 public class PreGame extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    MatchViewModel viewModel;
+
     Match match;
-
-    ScoutingAppDatabase db;
-
-    MatchDao dao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +38,10 @@ public class PreGame extends AppCompatActivity implements AdapterView.OnItemSele
 
         spinner.setOnItemSelectedListener(this);
 
+        viewModel = new ViewModelProvider(this).get(MatchViewModel.class);
+
+        match = new Match();
+
 
     }
 
@@ -54,25 +56,12 @@ public class PreGame extends AppCompatActivity implements AdapterView.OnItemSele
         String choice = parent.getItemAtPosition(pos).toString();
         Log.d("choice", choice);
 
+
         match.position = choice;
     }
 
     public void onNothingSelected(AdapterView<?> parent){
 
-    }
-
-    public void onStart(){
-        super.onStart();
-
-         db = Room.databaseBuilder(this, ScoutingAppDatabase.class, "ScoutingAppDatabase")
-                .enableMultiInstanceInvalidation()
-                .build();
-
-         match = new Match();
-
-         dao = db.matchDao();
-
-         Log.d("db", "db has started");
     }
 
 
@@ -87,7 +76,7 @@ public class PreGame extends AppCompatActivity implements AdapterView.OnItemSele
 
         match.matchNum = Integer.parseInt(((EditText) (findViewById(R.id.editMatchNumber))).getText().toString());
         match.teamNumber = Integer.parseInt(((EditText) findViewById(R.id.editTeamNumber)).getText().toString());
-        dao.addPregameInformation(match);
+        viewModel.addPregameInformation(match);
         Log.d("pas", "las");
 
 

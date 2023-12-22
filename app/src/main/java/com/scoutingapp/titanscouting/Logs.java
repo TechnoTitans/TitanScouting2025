@@ -1,6 +1,5 @@
 package com.scoutingapp.titanscouting;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,9 +26,5 @@ public class Logs extends AppCompatActivity {
         matchViewModel.getAllMatches().observe(this, matches -> {
             adapter.submitList(matches);
         });
-    }
-
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
     }
 }
