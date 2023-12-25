@@ -16,7 +16,7 @@ public class MatchViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(int text) {
-        matchItemView.setText(text);
+        matchItemView.setText(text + "");
     }
 
     static MatchViewHolder create(ViewGroup parent) {

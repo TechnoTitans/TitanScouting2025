@@ -12,12 +12,21 @@ public class MainActivity extends AppCompatActivity {
 
     private MatchViewModel matchViewModel;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
+
+        final MatchListAdapter adapter = new MatchListAdapter(new MatchListAdapter.MatchDiff());
+
+        matchViewModel.getAllMatches().observe(this, matches -> {
+            // Update the cached copy of the words in the adapter.
+            adapter.submitList(matches);
+        });
     }
 
     public void pregame(View v) {

@@ -25,5 +25,10 @@ public class Logs extends AppCompatActivity {
         matchViewModel.getAllMatches().observe(this, matches -> {
             adapter.submitList(matches);
         });
+
+
     }
+
+
+
 }

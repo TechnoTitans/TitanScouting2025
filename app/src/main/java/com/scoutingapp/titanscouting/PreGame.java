@@ -1,6 +1,5 @@
 package com.scoutingapp.titanscouting;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -62,14 +61,6 @@ public class PreGame extends AppCompatActivity implements AdapterView.OnItemSele
 
     public void onNothingSelected(AdapterView<?> parent){
 
-    }
-
-
-
-
-    public void homePage(View v){
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
     }
 
     public void teleOP(View v){
