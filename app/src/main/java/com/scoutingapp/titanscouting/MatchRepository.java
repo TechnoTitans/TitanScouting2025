@@ -1,6 +1,7 @@
 package com.scoutingapp.titanscouting;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
@@ -13,11 +14,13 @@ public class MatchRepository {
 
     MatchRepository(Application application) {
         ScoutingAppDatabase db = ScoutingAppDatabase.getDatabase(application);
+        Log.d("database", "database has started");
         dao = db.matchDao();
         allMatches = dao.getMatches();
     }
 
     LiveData<List<Match>> getAllMatches() {
+
         return allMatches;
     }
 

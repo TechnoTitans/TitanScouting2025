@@ -41,6 +41,4 @@ public abstract class ScoutingAppDatabase extends RoomDatabase {
             super.onCreate(db);
         }
     };
-
-
 }

@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 public class Logs extends AppCompatActivity {
 
     private MatchViewModel matchViewModel;
-    public static final int NEW_MATCH_ACTIVITY_REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
