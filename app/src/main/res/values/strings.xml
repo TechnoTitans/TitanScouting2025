@@ -2,8 +2,9 @@
     <string name="app_name">Titan Scouting</string>
     <string name="pre_game">Pregame Scouting</string>
     <string name="logs">Logs</string>
+    <string name="back">Back</string>
 
-    <string-array name="team_chices">
+    <string-array name="team_choices">
         <item>Red 1</item>
         <item>Red 2</item>
         <item>Red 3</item>

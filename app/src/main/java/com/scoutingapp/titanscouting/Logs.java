@@ -1,6 +1,8 @@
 package com.scoutingapp.titanscouting;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -27,6 +29,11 @@ public class Logs extends AppCompatActivity {
         });
 
 
+    }
+
+    public void back(View v) {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 
 
