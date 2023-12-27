@@ -57,7 +57,7 @@ public class PreGame extends AppCompatActivity implements AdapterView.OnItemSele
         Log.d("choice", choice);
 
 
-        match.position = choice;
+        match.setPosition(choice);
     }
 
     public void onNothingSelected(AdapterView<?> parent){
@@ -66,8 +66,8 @@ public class PreGame extends AppCompatActivity implements AdapterView.OnItemSele
 
     public void teleOP(View v){
 
-        match.matchNum = Integer.parseInt(((EditText) (findViewById(R.id.editMatchNumber))).getText().toString());
-        match.teamNumber = Integer.parseInt(((EditText) findViewById(R.id.editTeamNumber)).getText().toString());
+        match.setMatchNum(Integer.parseInt(((EditText) (findViewById(R.id.editMatchNumber))).getText().toString()));
+        match.setTeamNumber(Integer.parseInt(((EditText) findViewById(R.id.editTeamNumber)).getText().toString()));
         viewModel.addPregameInformation(match);
         Log.d("pas", "las");
 

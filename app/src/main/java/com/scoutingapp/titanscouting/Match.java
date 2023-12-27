@@ -8,63 +8,211 @@ import androidx.room.PrimaryKey;
 public class Match {
     @PrimaryKey
     @ColumnInfo(name = "matchNum")
-    public int matchNum;
+    private int matchNum;
 
     @ColumnInfo(name = "teamNumber", defaultValue = "1683")
-    public int teamNumber;
+    private int teamNumber;
 
     @ColumnInfo(name = "position", defaultValue = "R1")
-    public String position;
+    private String position;
 
     @ColumnInfo(name = "autoPoints" , defaultValue = "0")
-    public int autoPoints;
+    private int autoPoints;
 
     @ColumnInfo(name = "autoEndStage" , defaultValue = "DNA")
-    public String autoEndStage;
+    private String autoEndStage;
 
     @ColumnInfo(name = "mobility", defaultValue = "0")
-    public boolean mobility;
+    private boolean mobility;
 
     @ColumnInfo(name = "teleopPoints", defaultValue = "0")
-    public int teleopPoints;
+    private int teleopPoints;
 
     @ColumnInfo(name = "disqualified", defaultValue = "0")
-    public boolean disqualified;
+    private boolean disqualified;
 
     @ColumnInfo(name = "substationType", defaultValue = "S")
-    public String substationType;
+    private String substationType;
 
     @ColumnInfo(name = "penaltiesIncured", defaultValue = "0")
-    public boolean penaltiesIncured;
+    private boolean penaltiesIncured;
 
     @ColumnInfo(name = "goodCollaboration", defaultValue = "0")
-    public boolean goodCollaboration;
+    private boolean goodCollaboration;
 
     @ColumnInfo(name = "driverQualtiy", defaultValue = "1")
-    public int driverQuality;
+    private int driverQuality;
 
     @ColumnInfo(name = "defenseAbility", defaultValue = "1")
-    public int defenseAbility;
+    private int defenseAbility;
 
     @ColumnInfo(name = "mechanicalReliability", defaultValue = "1")
-    public int mechanicalReliability;
+    private int mechanicalReliability;
 
     @ColumnInfo(name = "teleopEndgameState", defaultValue = "DNA")
-    public String teleopEndgameState;
+    private String teleopEndgameState;
 
     @ColumnInfo(name = "isParked", defaultValue = "0")
-    public boolean isParked;
+    private boolean isParked;
 
     @ColumnInfo(name = "notes", defaultValue = "")
-    public String notes;
+    private String notes;
 
     @ColumnInfo(name = "canPickUpTippedCones", defaultValue = "0")
-    public boolean canPickUpTippedCones;
+    private boolean canPickUpTippedCones;
 
     @ColumnInfo(name = "dropsPiecesOften", defaultValue = "0")
-    public boolean dropsPiecesOften;
+    private boolean dropsPiecesOften;
 
     public int getMatchNum(){
         return this.matchNum;
+    }
+
+    public void setMatchNum(int matchNum) {
+        this.matchNum = matchNum;
+    }
+
+    public int getTeamNumber() {
+        return teamNumber;
+    }
+
+    public void setTeamNumber(int teamNumber) {
+        this.teamNumber = teamNumber;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public int getAutoPoints() {
+        return autoPoints;
+    }
+
+    public void setAutoPoints(int autoPoints) {
+        this.autoPoints = autoPoints;
+    }
+
+    public String getAutoEndStage() {
+        return autoEndStage;
+    }
+
+    public void setAutoEndStage(String autoEndStage) {
+        this.autoEndStage = autoEndStage;
+    }
+
+    public boolean isMobility() {
+        return mobility;
+    }
+
+    public void setMobility(boolean mobility) {
+        this.mobility = mobility;
+    }
+
+    public int getTeleopPoints() {
+        return teleopPoints;
+    }
+
+    public void setTeleopPoints(int teleopPoints) {
+        this.teleopPoints = teleopPoints;
+    }
+
+    public boolean isDisqualified() {
+        return disqualified;
+    }
+
+    public void setDisqualified(boolean disqualified) {
+        this.disqualified = disqualified;
+    }
+
+    public String getSubstationType() {
+        return substationType;
+    }
+
+    public void setSubstationType(String substationType) {
+        this.substationType = substationType;
+    }
+
+    public boolean isPenaltiesIncured() {
+        return penaltiesIncured;
+    }
+
+    public void setPenaltiesIncured(boolean penaltiesIncured) {
+        this.penaltiesIncured = penaltiesIncured;
+    }
+
+    public boolean isGoodCollaboration() {
+        return goodCollaboration;
+    }
+
+    public void setGoodCollaboration(boolean goodCollaboration) {
+        this.goodCollaboration = goodCollaboration;
+    }
+
+    public int getDriverQuality() {
+        return driverQuality;
+    }
+
+    public void setDriverQuality(int driverQuality) {
+        this.driverQuality = driverQuality;
+    }
+
+    public int getDefenseAbility() {
+        return defenseAbility;
+    }
+
+    public void setDefenseAbility(int defenseAbility) {
+        this.defenseAbility = defenseAbility;
+    }
+
+    public int getMechanicalReliability() {
+        return mechanicalReliability;
+    }
+
+    public void setMechanicalReliability(int mechanicalReliability) {
+        this.mechanicalReliability = mechanicalReliability;
+    }
+
+    public String getTeleopEndgameState() {
+        return teleopEndgameState;
+    }
+
+    public void setTeleopEndgameState(String teleopEndgameState) {
+        this.teleopEndgameState = teleopEndgameState;
+    }
+
+    public boolean isParked() {
+        return isParked;
+    }
+
+    public void setParked(boolean parked) {
+        isParked = parked;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public boolean isCanPickUpTippedCones() {
+        return canPickUpTippedCones;
+    }
+
+    public void setCanPickUpTippedCones(boolean canPickUpTippedCones) {
+        this.canPickUpTippedCones = canPickUpTippedCones;
+    }
+
+    public boolean isDropsPiecesOften() {
+        return dropsPiecesOften;
+    }
+
+    public void setDropsPiecesOften(boolean dropsPiecesOften) {
+        this.dropsPiecesOften = dropsPiecesOften;
     }
 }
