@@ -1,4 +1,4 @@
-package com.scoutingapp.titanscouting;
+package com.scoutingapp.titanscouting.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

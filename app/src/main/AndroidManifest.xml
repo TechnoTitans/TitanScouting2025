@@ -22,12 +22,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PreGame"
+            android:name=".views.PreGame"
             android:exported="false"
             android:label = "@string/pre_game">
         </activity>
         <activity
-            android:name=".Logs"
+            android:name=".views.Logs"
             android:exported="false"
             android:label="@string/logs"/>
     </application>

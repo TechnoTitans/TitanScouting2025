@@ -1,4 +1,4 @@
-package com.scoutingapp.titanscouting;
+package com.scoutingapp.titanscouting.database;
 
 import android.app.Application;
 import android.util.Log;

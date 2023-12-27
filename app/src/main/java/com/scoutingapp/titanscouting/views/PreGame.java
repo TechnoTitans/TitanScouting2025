@@ -1,4 +1,4 @@
-package com.scoutingapp.titanscouting;
+package com.scoutingapp.titanscouting.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,11 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.scoutingapp.titanscouting.MainActivity;
+import com.scoutingapp.titanscouting.R;
+import com.scoutingapp.titanscouting.database.Match;
+import com.scoutingapp.titanscouting.database.MatchViewModel;
 
 public class PreGame extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 

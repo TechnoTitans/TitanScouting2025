@@ -1,4 +1,4 @@
-package com.scoutingapp.titanscouting;
+package com.scoutingapp.titanscouting.database;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

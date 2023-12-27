@@ -1,4 +1,4 @@
-package com.scoutingapp.titanscouting;
+package com.scoutingapp.titanscouting.database;
 
 import android.app.Application;
 
@@ -18,7 +18,7 @@ public class MatchViewModel extends AndroidViewModel {
         allMatches = matchRepository.getAllMatches();
     }
 
-    LiveData<List<Match>> getAllMatches() {
+    public LiveData<List<Match>> getAllMatches() {
         return allMatches;
     }
 

@@ -1,4 +1,4 @@
-package com.scoutingapp.titanscouting;
+package com.scoutingapp.titanscouting.database;
 
 import android.view.ViewGroup;
 
@@ -22,7 +22,7 @@ public class MatchListAdapter extends ListAdapter<Match, MatchViewHolder> {
         holder.bind(current.getMatchNum());
     }
 
-    static class MatchDiff extends DiffUtil.ItemCallback<Match> {
+    public static class MatchDiff extends DiffUtil.ItemCallback<Match> {
         @Override
         public boolean areItemsTheSame(@NonNull Match oldItem, @NonNull Match newItem) {
             return oldItem == newItem;
