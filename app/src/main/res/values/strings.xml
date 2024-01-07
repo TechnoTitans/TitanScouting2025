@@ -2,6 +2,9 @@
     <string name="app_name">Titan Scouting</string>
     <string name="pre_game">Pregame Scouting</string>
     <string name="logs">Logs</string>
+    <string name="autonomous">Autonomous</string>
+    <string name="teleop">Teleop</string>
+    <string name="endgame">Endgame</string>
     <string name="back">Back</string>
 
     <string-array name="team_choices">

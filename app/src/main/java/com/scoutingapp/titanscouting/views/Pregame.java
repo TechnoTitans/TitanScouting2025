@@ -17,7 +17,7 @@ import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 
-public class PreGame extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class Pregame extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     MatchViewModel viewModel;
 

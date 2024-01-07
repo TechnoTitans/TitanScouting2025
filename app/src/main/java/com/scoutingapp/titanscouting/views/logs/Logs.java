@@ -1,9 +1,8 @@
-package com.scoutingapp.titanscouting.views;
+package com.scoutingapp.titanscouting.views.logs;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -36,16 +35,16 @@ public class Logs extends AppCompatActivity {
 
 
     }
-
     public void back(View v) {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
 
-    public void singleMatchViewTransition(View v){
-        Intent i = new Intent(this, SingleMatchView.class);
-        Button button = (Button) findViewById(R.id.match_button);
-        i.putExtra("matchNum", button.getText().toString());
-        startActivity(i);
-    }
+//    public void singleMatchViewTransition(View v) {
+//        Intent i = new Intent(this, SingleMatchView.class);
+//        Button button = (Button) findViewById(R.id.match_button);
+//        i.putExtra("matchNum", button.getText().toString());
+//        startActivity(i);
+//    }
+
 }

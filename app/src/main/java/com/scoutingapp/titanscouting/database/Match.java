@@ -16,25 +16,13 @@ public class Match {
     @ColumnInfo(name = "position", defaultValue = "R1")
     private String position;
 
-    @ColumnInfo(name = "autoPoints" , defaultValue = "0")
-    private int autoPoints;
-
-    @ColumnInfo(name = "autoEndStage" , defaultValue = "DNA")
-    private String autoEndStage;
-
-    @ColumnInfo(name = "mobility", defaultValue = "0")
-    private boolean mobility;
-
-    @ColumnInfo(name = "teleopPoints", defaultValue = "0")
-    private int teleopPoints;
-
     @ColumnInfo(name = "disqualified", defaultValue = "0")
     private boolean disqualified;
 
-    @ColumnInfo(name = "substationType", defaultValue = "S")
-    private String substationType;
+    @ColumnInfo(name = "scoringType", defaultValue = "N/A")
+    private boolean scoringType;
 
-    @ColumnInfo(name = "penaltiesIncured", defaultValue = "0")
+    @ColumnInfo(name = "penalitiesIncurred", defaultValue = "0")
     private boolean penaltiesIncured;
 
     @ColumnInfo(name = "goodCollaboration", defaultValue = "0")
@@ -49,17 +37,9 @@ public class Match {
     @ColumnInfo(name = "mechanicalReliability", defaultValue = "1")
     private int mechanicalReliability;
 
-    @ColumnInfo(name = "teleopEndgameState", defaultValue = "DNA")
-    private String teleopEndgameState;
-
-    @ColumnInfo(name = "isParked", defaultValue = "0")
-    private boolean isParked;
-
     @ColumnInfo(name = "notes", defaultValue = "")
     private String notes;
 
-    @ColumnInfo(name = "canPickUpTippedCones", defaultValue = "0")
-    private boolean canPickUpTippedCones;
 
     @ColumnInfo(name = "dropsPiecesOften", defaultValue = "0")
     private boolean dropsPiecesOften;
@@ -88,37 +68,11 @@ public class Match {
         this.position = position;
     }
 
-    public int getAutoPoints() {
-        return autoPoints;
+
+    public boolean isScoringType() {
+        return scoringType;
     }
 
-    public void setAutoPoints(int autoPoints) {
-        this.autoPoints = autoPoints;
-    }
-
-    public String getAutoEndStage() {
-        return autoEndStage;
-    }
-
-    public void setAutoEndStage(String autoEndStage) {
-        this.autoEndStage = autoEndStage;
-    }
-
-    public boolean isMobility() {
-        return mobility;
-    }
-
-    public void setMobility(boolean mobility) {
-        this.mobility = mobility;
-    }
-
-    public int getTeleopPoints() {
-        return teleopPoints;
-    }
-
-    public void setTeleopPoints(int teleopPoints) {
-        this.teleopPoints = teleopPoints;
-    }
 
     public boolean isDisqualified() {
         return disqualified;
@@ -126,14 +80,6 @@ public class Match {
 
     public void setDisqualified(boolean disqualified) {
         this.disqualified = disqualified;
-    }
-
-    public String getSubstationType() {
-        return substationType;
-    }
-
-    public void setSubstationType(String substationType) {
-        this.substationType = substationType;
     }
 
     public boolean isPenaltiesIncured() {
@@ -175,37 +121,12 @@ public class Match {
     public void setMechanicalReliability(int mechanicalReliability) {
         this.mechanicalReliability = mechanicalReliability;
     }
-
-    public String getTeleopEndgameState() {
-        return teleopEndgameState;
-    }
-
-    public void setTeleopEndgameState(String teleopEndgameState) {
-        this.teleopEndgameState = teleopEndgameState;
-    }
-
-    public boolean isParked() {
-        return isParked;
-    }
-
-    public void setParked(boolean parked) {
-        isParked = parked;
-    }
-
     public String getNotes() {
         return notes;
     }
 
     public void setNotes(String notes) {
         this.notes = notes;
-    }
-
-    public boolean isCanPickUpTippedCones() {
-        return canPickUpTippedCones;
-    }
-
-    public void setCanPickUpTippedCones(boolean canPickUpTippedCones) {
-        this.canPickUpTippedCones = canPickUpTippedCones;
     }
 
     public boolean isDropsPiecesOften() {
@@ -215,4 +136,9 @@ public class Match {
     public void setDropsPiecesOften(boolean dropsPiecesOften) {
         this.dropsPiecesOften = dropsPiecesOften;
     }
+
+    public void setScoringType(boolean scoringType) {
+        this.scoringType = scoringType;
+    }
+
 }

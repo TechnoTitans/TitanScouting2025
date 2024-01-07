@@ -62,6 +62,7 @@ dependencies {
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$room_version")
 
+
     // optional - RxJava2 support for Room
     implementation("androidx.room:room-rxjava2:$room_version")
 
@@ -76,6 +77,8 @@ dependencies {
 
     // optional - Paging 3 Integration
     implementation("androidx.room:room-paging:$room_version")
+
+    implementation ("com.google.android.material:material:1.11.0")
 
 
 }

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".views.recyclerview_item"
-    android:layout_height="wrap_content">
+    android:id="@+id/matchView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:context=".views.logs.recyclerview_item">
 
     <Button
         android:id="@+id/match_button"
-        android:onClick="singleMatchViewTransition"
         style="@style/word_title"
+        android:text="@string/logs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light" />
+        android:background="@android:color/holo_orange_light"
+        android:onClick="singleMatchViewTransition" />
 </LinearLayout>

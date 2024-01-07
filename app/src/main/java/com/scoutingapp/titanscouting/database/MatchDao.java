@@ -13,5 +13,8 @@ public interface MatchDao {
     void addPregameInformation(Match match);
 
     @Query("SELECT * FROM scouting_database")
-    LiveData <List<Match>> getMatches();
+    LiveData<List<Match>> getMatches();
+
+    @Query("SELECT * FROM scouting_database WHERE matchNum = :matchNumber")
+    LiveData<Match> getMatch(int matchNumber);
 }

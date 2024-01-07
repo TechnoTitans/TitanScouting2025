@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter;
 
 public class MatchListAdapter extends ListAdapter<Match, MatchViewHolder> {
     public MatchListAdapter(@NonNull DiffUtil.ItemCallback<Match> diffCallback) {
-        super (diffCallback);
+        super(diffCallback);
     }
 
     @Override
@@ -20,6 +20,8 @@ public class MatchListAdapter extends ListAdapter<Match, MatchViewHolder> {
     public void onBindViewHolder(MatchViewHolder holder, int position) {
         Match current = getItem(position);
         holder.bind(current.getMatchNum());
+
+
     }
 
     public static class MatchDiff extends DiffUtil.ItemCallback<Match> {

@@ -24,6 +24,10 @@ public class MatchRepository {
         return allMatches;
     }
 
+    LiveData<Match> getMatch(int matchNumber) {
+        return dao.getMatch(matchNumber);
+    }
+
     void addPregameInformation(Match match) {
         ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
             dao.addPregameInformation(match);

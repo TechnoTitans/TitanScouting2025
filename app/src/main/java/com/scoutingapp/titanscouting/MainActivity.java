@@ -10,8 +10,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.scoutingapp.titanscouting.database.MatchListAdapter;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
-import com.scoutingapp.titanscouting.views.Logs;
-import com.scoutingapp.titanscouting.views.PreGame;
+import com.scoutingapp.titanscouting.views.logs.Logs;
+import com.scoutingapp.titanscouting.views.Pregame;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pregame(View v) {
-        Intent i = new Intent(this, PreGame.class);
+        Intent i = new Intent(this, Pregame.class);
         startActivity(i);
         Log.d("Pregame", "PreGame page has been reached");
     }

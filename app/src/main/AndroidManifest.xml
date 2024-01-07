@@ -13,7 +13,16 @@
         android:theme="@style/Theme.TitanScouting"
         tools:targetApi="31">
         <activity
-            android:name=".views.SingleMatchView"
+            android:name=".views.Endgame"
+            android:exported="false" />
+        <activity
+            android:name=".views.Teleop"
+            android:exported="false" />
+        <activity
+            android:name=".views.Autonomous"
+            android:exported="false" />
+        <activity
+            android:name=".views.logs.SingleMatchView"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -25,11 +34,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".views.PreGame"
+            android:name=".views.Pregame"
             android:exported="false"
-            android:label="@string/pre_game"></activity>
+            android:label="@string/pre_game" />
         <activity
-            android:name=".views.Logs"
+            android:name=".views.logs.Logs"
             android:exported="false"
             android:label="@string/logs" />
     </application>
