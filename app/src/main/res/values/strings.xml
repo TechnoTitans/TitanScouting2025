@@ -6,6 +6,11 @@
     <string name="teleop">Teleop</string>
     <string name="endgame">Endgame</string>
     <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="number_of_amps_scored">Number of Amps Scored</string>
+    <string name="number_of_speaker_scored">Number of Speaker Scored</string>
+    <!-- Strings for Autonomous-->
+
 
     <string-array name="team_choices">
         <item>Red 1</item>

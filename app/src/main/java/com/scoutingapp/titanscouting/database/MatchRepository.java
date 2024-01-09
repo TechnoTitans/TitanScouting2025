@@ -33,4 +33,10 @@ public class MatchRepository {
             dao.addPregameInformation(match);
         });
     }
+
+    void addAutonomousInformation(Match match) {
+        ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
+            dao.addAutonomousInformation(match);
+        });
+    }
 }

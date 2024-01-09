@@ -34,9 +34,8 @@ public class SingleMatchView extends AppCompatActivity {
         matchLiveData = matchViewModel.getMatch(Integer.parseInt(matchNum));
 
 
-
         matchLiveData.observe(this, match -> {
-            if (match != null){
+            if (match != null) {
                 Log.d("mas", "paslas");
                 ((TextView) findViewById(R.id.matchNumView)).setText(String.valueOf(match.getMatchNum()));
             }

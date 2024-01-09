@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -11,6 +12,9 @@ import java.util.List;
 public interface MatchDao {
     @Insert
     void addPregameInformation(Match match);
+
+    @Update
+    void addAutonomousInformation(Match match);
 
     @Query("SELECT * FROM scouting_database")
     LiveData<List<Match>> getMatches();

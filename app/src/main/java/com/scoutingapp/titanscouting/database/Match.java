@@ -16,12 +16,29 @@ public class Match {
     @ColumnInfo(name = "position", defaultValue = "R1")
     private String position;
 
+    @ColumnInfo(name = "autoAmpScored", defaultValue = "0")
+    private int autoAmpScored;
+
+    @ColumnInfo(name = "autoSpeakerScored", defaultValue = "0")
+    private int autoSpeakerScored;
+
+    @ColumnInfo(name = "teleopAmpScored")
+    private int teleopAmpScored;
+
+    @ColumnInfo(name = "teleopSpeakerScored")
+    private int teleopSpeakerScored;
+
+    @ColumnInfo(name = "stagePosition", defaultValue = "0")
+    private String stagePosition;
+
+    @ColumnInfo(name = "noteInTrapScored", defaultValue = "0")
+    private boolean noteInTrapScored;
+
+    @ColumnInfo(name = "verdict", defaultValue = "0")
+    private String verdict;
+
     @ColumnInfo(name = "disqualified", defaultValue = "0")
     private boolean disqualified;
-
-    @ColumnInfo(name = "scoringType", defaultValue = "N/A")
-    private boolean scoringType;
-
     @ColumnInfo(name = "penalitiesIncurred", defaultValue = "0")
     private boolean penaltiesIncured;
 
@@ -36,16 +53,20 @@ public class Match {
 
     @ColumnInfo(name = "mechanicalReliability", defaultValue = "1")
     private int mechanicalReliability;
+    @ColumnInfo(name = "dropsPiecesOften", defaultValue = "0")
+    private boolean dropsPiecesOften;
+
+    @ColumnInfo(name = "pickRingsFromGround", defaultValue = "0")
+    private boolean pickRingsFromGround;
+
+    @ColumnInfo(name = "isKitBot", defaultValue = "0")
+    private boolean isKitBot;
 
     @ColumnInfo(name = "notes", defaultValue = "")
     private String notes;
 
-
-    @ColumnInfo(name = "dropsPiecesOften", defaultValue = "0")
-    private boolean dropsPiecesOften;
-
-    public int getMatchNum(){
-        return this.matchNum;
+    public int getMatchNum() {
+        return matchNum;
     }
 
     public void setMatchNum(int matchNum) {
@@ -68,11 +89,61 @@ public class Match {
         this.position = position;
     }
 
-
-    public boolean isScoringType() {
-        return scoringType;
+    public int getAutoAmpScored() {
+        return autoAmpScored;
     }
 
+    public void setAutoAmpScored(int autoAmpScored) {
+        this.autoAmpScored = autoAmpScored;
+    }
+
+    public int getAutoSpeakerScored() {
+        return autoSpeakerScored;
+    }
+
+    public void setAutoSpeakerScored(int autoSpeakerScored) {
+        this.autoSpeakerScored = autoSpeakerScored;
+    }
+
+    public int getTeleopAmpScored() {
+        return teleopAmpScored;
+    }
+
+    public void setTeleopAmpScored(int teleopAmpScored) {
+        this.teleopAmpScored = teleopAmpScored;
+    }
+
+    public int getTeleopSpeakerScored() {
+        return teleopSpeakerScored;
+    }
+
+    public void setTeleopSpeakerScored(int teleopSpeakerScored) {
+        this.teleopSpeakerScored = teleopSpeakerScored;
+    }
+
+    public String getStagePosition() {
+        return stagePosition;
+    }
+
+    public void setStagePosition(String stagePosition) {
+        this.stagePosition = stagePosition;
+    }
+
+    public boolean isNoteInTrapScored() {
+        return noteInTrapScored;
+    }
+
+    public void setNoteInTrapScored(boolean noteInTrapScored) {
+        this.noteInTrapScored = noteInTrapScored;
+    }
+
+    public String getVerdict() {
+        return verdict;
+    }
+
+    public void setVerdict(String verdict) {
+        this.verdict = verdict;
+    }
 
     public boolean isDisqualified() {
         return disqualified;
@@ -121,6 +192,7 @@ public class Match {
     public void setMechanicalReliability(int mechanicalReliability) {
         this.mechanicalReliability = mechanicalReliability;
     }
+
     public String getNotes() {
         return notes;
     }
@@ -137,8 +209,19 @@ public class Match {
         this.dropsPiecesOften = dropsPiecesOften;
     }
 
-    public void setScoringType(boolean scoringType) {
-        this.scoringType = scoringType;
+    public boolean isPickRingsFromGround() {
+        return pickRingsFromGround;
     }
 
+    public void setPickRingsFromGround(boolean pickRingsFromGround) {
+        this.pickRingsFromGround = pickRingsFromGround;
+    }
+
+    public boolean isKitBot() {
+        return isKitBot;
+    }
+
+    public void setKitBot(boolean kitBot) {
+        isKitBot = kitBot;
+    }
 }

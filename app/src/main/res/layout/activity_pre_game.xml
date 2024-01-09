@@ -100,11 +100,11 @@
 
     <Button
         android:id="@+id/preGameNext"
-        android:onClick="teleOP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="56dp"
-        android:text="Button"
+        android:onClick="autonomous"
+        android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
