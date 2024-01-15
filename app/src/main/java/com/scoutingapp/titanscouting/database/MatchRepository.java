@@ -36,7 +36,14 @@ public class MatchRepository {
 
     void addAutonomousInformation(Match match) {
         ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
-            dao.addAutonomousInformation(match);
+            dao.addAutonomousInformation(
+                    match.getMatchNum(),
+                    match.isPerformedLeave(),
+                    match.getStartingPosition(),
+                    match.getAutoAmpScored(),
+                    match.getAutoAmpMissed(),
+                    match.getAutoSpeakerScored(),
+                    match.getAutoSpeakerMissed());
         });
     }
 }

@@ -9,6 +9,8 @@
     <string name="next">Next</string>
     <string name="number_of_amps_scored">Number of Amps Scored</string>
     <string name="number_of_speaker_scored">Number of Speaker Scored</string>
+    <string name="number_of_amp_missed">Number of Amp Missed</string>
+    <string name="number_of_speaker_missed">Number of Speaker Missed</string>
     <!-- Strings for Autonomous-->
 
 

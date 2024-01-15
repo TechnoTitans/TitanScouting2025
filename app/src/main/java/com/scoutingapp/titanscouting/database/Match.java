@@ -16,26 +16,44 @@ public class Match {
     @ColumnInfo(name = "position", defaultValue = "R1")
     private String position;
 
+    @ColumnInfo(name = "scouterName", defaultValue = "0")
+    private String scouterName;
+
+    @ColumnInfo(name = "performedLeave", defaultValue = "0")
+    private boolean performedLeave;
+
+    @ColumnInfo(name = "startingPosition", defaultValue = "0")
+    private String startingPosition;
+
     @ColumnInfo(name = "autoAmpScored", defaultValue = "0")
     private int autoAmpScored;
+
+    @ColumnInfo(name = "autoAmpMissed", defaultValue = "0")
+    private int autoAmpMissed;
 
     @ColumnInfo(name = "autoSpeakerScored", defaultValue = "0")
     private int autoSpeakerScored;
 
-    @ColumnInfo(name = "teleopAmpScored")
+    @ColumnInfo(name = "autoSpeakerMissed", defaultValue = "0")
+    private int autoSpeakerMissed;
+
+    @ColumnInfo(name = "teleopAmpScored", defaultValue = "0")
     private int teleopAmpScored;
 
-    @ColumnInfo(name = "teleopSpeakerScored")
+    @ColumnInfo(name = "teleopAmpMissed", defaultValue = "0")
+    private int teleopAmpMissed;
+
+    @ColumnInfo(name = "teleopSpeakerScored", defaultValue = "0")
     private int teleopSpeakerScored;
+
+    @ColumnInfo(name = "teleopSpeakerMissed", defaultValue = "0")
+    private int teleopSpeakerMissed;
 
     @ColumnInfo(name = "stagePosition", defaultValue = "0")
     private String stagePosition;
 
     @ColumnInfo(name = "noteInTrapScored", defaultValue = "0")
     private boolean noteInTrapScored;
-
-    @ColumnInfo(name = "verdict", defaultValue = "0")
-    private String verdict;
 
     @ColumnInfo(name = "disqualified", defaultValue = "0")
     private boolean disqualified;
@@ -62,7 +80,10 @@ public class Match {
     @ColumnInfo(name = "isKitBot", defaultValue = "0")
     private boolean isKitBot;
 
-    @ColumnInfo(name = "notes", defaultValue = "")
+    @ColumnInfo(name = "isPancake", defaultValue = "0")
+    private boolean isPancake;
+
+    @ColumnInfo(name = "notes", defaultValue = "0")
     private String notes;
 
     public int getMatchNum() {
@@ -89,12 +110,44 @@ public class Match {
         this.position = position;
     }
 
+    public String getScouterName() {
+        return scouterName;
+    }
+
+    public void setScouterName(String scouterName) {
+        this.scouterName = scouterName;
+    }
+
+    public boolean isPerformedLeave() {
+        return performedLeave;
+    }
+
+    public void setPerformedLeave(boolean performedLeave) {
+        this.performedLeave = performedLeave;
+    }
+
+    public String getStartingPosition() {
+        return startingPosition;
+    }
+
+    public void setStartingPosition(String startingPosition) {
+        this.startingPosition = startingPosition;
+    }
+
     public int getAutoAmpScored() {
         return autoAmpScored;
     }
 
     public void setAutoAmpScored(int autoAmpScored) {
         this.autoAmpScored = autoAmpScored;
+    }
+
+    public int getAutoAmpMissed() {
+        return autoAmpMissed;
+    }
+
+    public void setAutoAmpMissed(int autoAmpMissed) {
+        this.autoAmpMissed = autoAmpMissed;
     }
 
     public int getAutoSpeakerScored() {
@@ -105,6 +158,14 @@ public class Match {
         this.autoSpeakerScored = autoSpeakerScored;
     }
 
+    public int getAutoSpeakerMissed() {
+        return autoSpeakerMissed;
+    }
+
+    public void setAutoSpeakerMissed(int autoSpeakerMissed) {
+        this.autoSpeakerMissed = autoSpeakerMissed;
+    }
+
     public int getTeleopAmpScored() {
         return teleopAmpScored;
     }
@@ -113,12 +174,28 @@ public class Match {
         this.teleopAmpScored = teleopAmpScored;
     }
 
+    public int getTeleopAmpMissed() {
+        return teleopAmpMissed;
+    }
+
+    public void setTeleopAmpMissed(int teleopAmpMissed) {
+        this.teleopAmpMissed = teleopAmpMissed;
+    }
+
     public int getTeleopSpeakerScored() {
         return teleopSpeakerScored;
     }
 
     public void setTeleopSpeakerScored(int teleopSpeakerScored) {
         this.teleopSpeakerScored = teleopSpeakerScored;
+    }
+
+    public int getTeleopSpeakerMissed() {
+        return teleopSpeakerMissed;
+    }
+
+    public void setTeleopSpeakerMissed(int teleopSpeakerMissed) {
+        this.teleopSpeakerMissed = teleopSpeakerMissed;
     }
 
     public String getStagePosition() {
@@ -135,14 +212,6 @@ public class Match {
 
     public void setNoteInTrapScored(boolean noteInTrapScored) {
         this.noteInTrapScored = noteInTrapScored;
-    }
-
-    public String getVerdict() {
-        return verdict;
-    }
-
-    public void setVerdict(String verdict) {
-        this.verdict = verdict;
     }
 
     public boolean isDisqualified() {
@@ -193,14 +262,6 @@ public class Match {
         this.mechanicalReliability = mechanicalReliability;
     }
 
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
     public boolean isDropsPiecesOften() {
         return dropsPiecesOften;
     }
@@ -223,5 +284,21 @@ public class Match {
 
     public void setKitBot(boolean kitBot) {
         isKitBot = kitBot;
+    }
+
+    public boolean isPancake() {
+        return isPancake;
+    }
+
+    public void setPancake(boolean pancake) {
+        isPancake = pancake;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 }

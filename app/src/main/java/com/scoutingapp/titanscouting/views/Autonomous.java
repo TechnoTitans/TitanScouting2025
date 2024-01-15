@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.scoutingapp.titanscouting.R;
@@ -19,8 +18,6 @@ public class Autonomous extends AppCompatActivity {
     private Match match;
 
     private int matchNum;
-
-    private LiveData<Match> matchLiveData;
 
     private MatchViewModel matchViewModel;
 
@@ -37,19 +34,9 @@ public class Autonomous extends AppCompatActivity {
         match.setMatchNum(matchNum);
 
         Log.d("stage", String.valueOf(match.getMatchNum()));
-
-        matchLiveData = matchViewModel.getMatch(matchNum);
-
-        matchLiveData.observe(this, currentMatch -> {
-            if (match != null){
-                match.setTeamNumber(currentMatch.getTeamNumber());
-                match.setTeamNumber(currentMatch.getTeamNumber());
-                match.setTeamNumber(currentMatch.getTeamNumber());
-            }
-        });
     }
 
-    public void subtractAmpsScored(View v){
+    public void subtractAmpScored(View v){
         TextView textView = (TextView) findViewById(R.id.numberOfAmpScoredNumberView);
         int ampScored = Integer.parseInt(textView.getText().toString()) - 1;
 
@@ -61,11 +48,33 @@ public class Autonomous extends AppCompatActivity {
 
     }
 
-    public void addAmpsScored(View v){
+
+
+    public void subtractAmpMissed(View v){
+        TextView textView = (TextView) findViewById(R.id.numberOfAmpMissedNumberView);
+        int ampMissed = Integer.parseInt(textView.getText().toString()) - 1;
+
+        if (ampMissed < 0) {
+            textView.setText("0");
+        } else {
+            textView.setText(String.valueOf(ampMissed));
+        }
+
+    }
+
+    public void addAmpScored(View v){
         TextView textView = (TextView) findViewById(R.id.numberOfAmpScoredNumberView);
         int ampScored = Integer.parseInt(textView.getText().toString()) + 1;
         textView.setText(String.valueOf(ampScored));
     }
+
+    public void addAmpMissed(View v){
+        TextView textView = (TextView) findViewById(R.id.numberOfAmpMissedNumberView);
+        int ampMissed = Integer.parseInt(textView.getText().toString()) + 1;
+        textView.setText(String.valueOf(ampMissed));
+    }
+
+
 
     public void subtractSpeakerScored(View v){
         TextView textView = (TextView) findViewById(R.id.numberOfSpeakerScoredNumberView);
@@ -78,25 +87,46 @@ public class Autonomous extends AppCompatActivity {
         }
     }
 
+    public void subtractSpeakerMissed(View v){
+        TextView textView = (TextView) findViewById(R.id.numberOfSpeakerMissedNumberView);
+        int speakerMissed = Integer.parseInt(textView.getText().toString()) - 1;
+
+        if (speakerMissed < 0) {
+            textView.setText("0");
+        } else {
+            textView.setText(String.valueOf(speakerMissed));
+        }
+    }
+
+
+
     public void addSpeakerScored(View v){
         TextView textView = (TextView) findViewById(R.id.numberOfSpeakerScoredNumberView);
         int speakerScored = Integer.parseInt(textView.getText().toString()) + 1;
         textView.setText(String.valueOf(speakerScored));
     }
 
+    public void addSpeakerMissed(View v){
+        TextView textView = (TextView) findViewById(R.id.numberOfSpeakerMissedNumberView);
+        int speakerMissed = Integer.parseInt(textView.getText().toString()) + 1;
+        textView.setText(String.valueOf(speakerMissed));
+    }
+
     public void teleOp(View v){
-        TextView numOfAmpsTextView = (TextView) findViewById(R.id.numberOfAmpScoredNumberView);
-        int ampScored = Integer.parseInt(numOfAmpsTextView.getText().toString());
+        int ampScored = Integer.parseInt(((TextView) findViewById(R.id.numberOfAmpScoredNumberView)).getText().toString());
+        int ampMissed = Integer.parseInt(((TextView) findViewById(R.id.numberOfAmpMissedNumberView)).getText().toString());
 
-
-        TextView numOfSpeakerTextView = (TextView) findViewById(R.id.numberOfSpeakerScoredNumberView);
-        int speakerScored = Integer.parseInt(numOfSpeakerTextView.getText().toString());
-
+        int speakerScored = Integer.parseInt(((TextView) findViewById(R.id.numberOfSpeakerScoredNumberView)).getText().toString());
+        int speakerMissed = Integer.parseInt(((TextView) findViewById(R.id.numberOfSpeakerMissedNumberView)).getText().toString());
 
         match.setAutoAmpScored(ampScored);
+        match.setAutoAmpMissed(ampMissed);
+
         match.setAutoSpeakerScored(speakerScored);
+        match.setAutoSpeakerMissed(speakerMissed);
 
         matchViewModel.addAutonomousInformation(match);
+
         Intent i = new Intent(this, Teleop.class);
         startActivity(i);
     }

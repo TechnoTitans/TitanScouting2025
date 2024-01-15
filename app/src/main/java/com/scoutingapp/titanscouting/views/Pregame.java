@@ -73,6 +73,7 @@ public class Pregame extends AppCompatActivity implements AdapterView.OnItemSele
 
         match.setMatchNum(Integer.parseInt(((EditText) (findViewById(R.id.editMatchNumber))).getText().toString()));
         match.setTeamNumber(Integer.parseInt(((EditText) findViewById(R.id.editTeamNumber)).getText().toString()));
+        match.setScouterName(((EditText) findViewById(R.id.editScouterName)).getText().toString());
         viewModel.addPregameInformation(match);
         Log.d("stage", "Entering Teleop");
         Intent i = new Intent(this, Autonomous.class);

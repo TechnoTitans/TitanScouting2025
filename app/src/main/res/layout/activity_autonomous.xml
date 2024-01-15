@@ -7,8 +7,8 @@
     tools:context=".views.Autonomous">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="1287dp"
-        android:layout_height="836dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
@@ -38,7 +38,7 @@
             android:layout_width="353dp"
             android:layout_height="60dp"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="188dp"
+            android:layout_marginTop="92dp"
             android:text="@string/number_of_amps_scored"
             android:textAlignment="center"
             android:textSize="30sp"
@@ -46,18 +46,44 @@
             app:layout_constraintTop_toBottomOf="@+id/Teleop" />
 
         <TextView
+            android:id="@+id/numberOfAmpMissedLabel"
+            android:layout_width="353dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="124dp"
+            android:text="@string/number_of_amp_missed"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpScoredNumberView" />
+
+        <TextView
             android:id="@+id/numberOfSpeakerScoredLabel"
             android:layout_width="383dp"
             android:layout_height="55dp"
             android:layout_marginStart="140dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="92dp"
             android:text="@string/number_of_speaker_scored"
             android:textAlignment="center"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.847"
+            app:layout_constraintHorizontal_bias="0.843"
             app:layout_constraintStart_toEndOf="@+id/numberOfAmpScoredLabel"
             app:layout_constraintTop_toBottomOf="@+id/Teleop" />
+
+        <TextView
+            android:id="@+id/numberOfSpeakerMissedLabel"
+            android:layout_width="383dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="124dp"
+            android:text="@string/number_of_speaker_missed"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.843"
+            app:layout_constraintStart_toEndOf="@+id/numberOfAmpScoredLabel"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerScoredNumberView" />
 
         <TextView
             android:id="@+id/numberOfAmpScoredNumberView"
@@ -72,6 +98,18 @@
             app:layout_constraintTop_toBottomOf="@+id/numberOfAmpScoredLabel" />
 
         <TextView
+            android:id="@+id/numberOfAmpMissedNumberView"
+            android:layout_width="383dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="28dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpMissedLabel" />
+
+        <TextView
             android:id="@+id/numberOfSpeakerScoredNumberView"
             android:layout_width="383dp"
             android:layout_height="55dp"
@@ -83,16 +121,39 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerScoredLabel" />
 
+        <TextView
+            android:id="@+id/numberOfSpeakerMissedNumberView"
+            android:layout_width="383dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="52dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerMissedLabel" />
+
         <Button
             android:id="@+id/subtactNumOfAmpScoredButton"
             android:layout_width="88dp"
             android:layout_height="50dp"
             android:layout_marginStart="44dp"
             android:layout_marginTop="20dp"
-            android:onClick="subtractAmpsScored"
+            android:onClick="subtractAmpScored"
             android:text="-"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numberOfAmpScoredNumberView" />
+
+        <Button
+            android:id="@+id/subtactNumOfAmpMisseddButton"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:onClick="subtractAmpMissed"
+            android:text="-"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpMissedNumberView" />
 
         <Button
             android:id="@+id/addNumOfAmpScoredButton"
@@ -100,10 +161,21 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="176dp"
             android:layout_marginTop="20dp"
-            android:onClick="addAmpsScored"
+            android:onClick="addAmpScored"
             android:text="+"
             app:layout_constraintStart_toEndOf="@+id/subtactNumOfAmpScoredButton"
             app:layout_constraintTop_toBottomOf="@+id/numberOfAmpScoredNumberView" />
+
+        <Button
+            android:id="@+id/addNumOfAmpMissedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="204dp"
+            android:layout_marginTop="36dp"
+            android:onClick="addAmpMissed"
+            android:text="+"
+            app:layout_constraintStart_toEndOf="@+id/subtactNumOfAmpMisseddButton"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpMissedNumberView" />
 
         <Button
             android:id="@+id/subtractNumOfSpeakerScoredButton"
@@ -117,6 +189,17 @@
             app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerScoredNumberView" />
 
         <Button
+            android:id="@+id/subtractNumOfSpeakerMissedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="184dp"
+            android:onClick="subtractSpeakerMissed"
+            android:text="-"
+            app:layout_constraintEnd_toStartOf="@+id/addNumOfSpeakerMisseddButton"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerMissedNumberView" />
+
+        <Button
             android:id="@+id/addNumOfSpeakerScoredButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -128,11 +211,22 @@
             app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerScoredNumberView" />
 
         <Button
+            android:id="@+id/addNumOfSpeakerMisseddButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="72dp"
+            android:onClick="addSpeakerMissed"
+            android:text="+"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerMissedNumberView" />
+
+        <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="600dp"
-            android:layout_marginBottom="144dp"
+            android:layout_marginEnd="608dp"
+            android:layout_marginBottom="36dp"
             android:onClick="teleOp"
             android:text="@string/next"
             app:layout_constraintBottom_toBottomOf="parent"
