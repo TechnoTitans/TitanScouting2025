@@ -57,13 +57,13 @@ public class Match {
 
     @ColumnInfo(name = "disqualified", defaultValue = "0")
     private boolean disqualified;
-    @ColumnInfo(name = "penalitiesIncurred", defaultValue = "0")
+    @ColumnInfo(name = "penaltiesIncurred", defaultValue = "0")
     private boolean penaltiesIncured;
 
     @ColumnInfo(name = "goodCollaboration", defaultValue = "0")
     private boolean goodCollaboration;
 
-    @ColumnInfo(name = "driverQualtiy", defaultValue = "1")
+    @ColumnInfo(name = "driverQuality", defaultValue = "1")
     private int driverQuality;
 
     @ColumnInfo(name = "defenseAbility", defaultValue = "1")
@@ -74,7 +74,7 @@ public class Match {
     @ColumnInfo(name = "dropsPiecesOften", defaultValue = "0")
     private boolean dropsPiecesOften;
 
-    @ColumnInfo(name = "pickRingsFromGround", defaultValue = "0")
+    @ColumnInfo(name = "canPickRingsFromGround", defaultValue = "0")
     private boolean pickRingsFromGround;
 
     @ColumnInfo(name = "isKitBot", defaultValue = "0")

@@ -128,6 +128,7 @@ public class Autonomous extends AppCompatActivity {
         matchViewModel.addAutonomousInformation(match);
 
         Intent i = new Intent(this, Teleop.class);
+        i.putExtra("matchNumber", match.getMatchNum());
         startActivity(i);
     }
 

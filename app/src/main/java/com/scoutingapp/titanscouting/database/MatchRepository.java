@@ -46,4 +46,36 @@ public class MatchRepository {
                     match.getAutoSpeakerMissed());
         });
     }
+
+    void addTeleopInformation(Match match) {
+        ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
+            dao.addTeleopInformation(
+                    match.getMatchNum(),
+                    match.getTeleopAmpScored(),
+                    match.getTeleopAmpMissed(),
+                    match.getTeleopSpeakerScored(),
+                    match.getTeleopSpeakerMissed());
+        });
+    }
+
+    void addEndgameInformation(Match match) {
+        ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
+            dao.addEnggameInformation(
+                    match.getMatchNum(),
+                    match.isNoteInTrapScored(),
+                    match.isDisqualified(),
+                    match.isPenaltiesIncured(),
+                    match.isGoodCollaboration(),
+                    match.getDriverQuality(),
+                    match.getDefenseAbility(),
+                    match.getMechanicalReliability(),
+                    match.isDropsPiecesOften(),
+                    match.isPickRingsFromGround(),
+                    match.isKitBot(),
+                    match.isPancake(),
+                    match.getNotes()
+            );
+        });
+    }
+
 }
