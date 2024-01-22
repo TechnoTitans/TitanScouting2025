@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     private MatchViewModel matchViewModel;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,5 +43,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
         Log.d("Logs", "Logs screen has been reached");
     }
-
 }

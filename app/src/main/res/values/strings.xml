@@ -22,4 +22,18 @@
         <item>Blue 2</item>
         <item>Blue 3</item>
     </string-array>
+
+    <string name="add_a_match">Add a match</string>
+    <string name="refresh">Refresh</string>
+    <string name="disqualified">Disqualified</string>
+    <string name="pancake">Pancake</string>
+    <string name="single_substation">Single Substation</string>
+    <string name="double_substation">Double Substation</string>
+    <string name="penalties_fouls">Penalties/fouls</string>
+    <string name="to_endgame">To Endgame</string>
+    <string name="parked">Parked\n</string>
+    <string name="none">None</string>
+    <string name="park">Park</string>
+    <string name="onstage">Onstage</string>
+    <string name="in_trap">Onstage+Scored in Trap</string>
 </resources>
