@@ -128,6 +128,7 @@ public class Teleop extends AppCompatActivity {
         matchViewModel.addTeleopInformation(match);
 
         Intent i = new Intent(this, Endgame.class);
+        i.putExtra("matchNumber", matchNum);
         startActivity(i);
     }
 }

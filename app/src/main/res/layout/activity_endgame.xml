@@ -33,6 +33,7 @@
             android:id="@+id/toggleButton"
             android:layout_width="199dp"
             android:layout_height="188dp"
+            android:onClick="scoredInTrap"
             android:text="Scored in Trap"
             tools:layout_editor_absoluteX="39dp"
             tools:layout_editor_absoluteY="225dp" />
@@ -42,6 +43,7 @@
             android:layout_width="199dp"
             android:layout_height="188dp"
             android:text="Onstage"
+            android:onClick="disqualified"
             tools:layout_editor_absoluteX="238dp"
             tools:layout_editor_absoluteY="225dp" />
 
@@ -55,6 +57,7 @@
                 android:layout_width="199dp"
                 android:layout_height="94dp"
                 android:text="Park"
+                android:onClick="penaltiesIncurred"
                 tools:layout_editor_absoluteX="436dp"
                 tools:layout_editor_absoluteY="225dp" />
 
@@ -63,6 +66,7 @@
                 android:layout_width="199dp"
                 android:layout_height="94dp"
                 android:text="Harmony"
+                android:onClick="goodCollaboration"
                 tools:layout_editor_absoluteX="436dp"
                 tools:layout_editor_absoluteY="319dp" />
         </LinearLayout>
@@ -159,6 +163,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="750dp"
@@ -170,40 +175,63 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ToggleButton
+            android:id="@id/dropsPiecesToggle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@color/red"
-            android:text="Drops Pieces?" />
+            android:background="@color/darkblue"
+            android:onClick="dropsPieces"
+            android:text="Drops Pieces?"
+            android:textColor="@color/white" />
+
+        <ToggleButton
+            android:id="@+id/canPickFromGroundToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/darkblue"
+            android:onClick="canPickFromGround"
+            android:text="Can Pick From Ground?"
+            android:textColor="@color/white" />
+
+        <ToggleButton
+            android:id="@+id/kitBot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/darkblue"
+            android:onClick="isKitBot"
+            android:text="KitBot?"
+            android:textColor="@color/white" />
+
+        <ToggleButton
+            android:id="@+id/pancake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/darkblue"
+            android:text="Pancake?"
+            android:textColor="@color/white" />
 
         <ToggleButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@color/red"
-            android:text="Can Pick From Ground?" />
-
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@color/red"
-            android:text="KitBot?" />
-
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@color/red"
-            android:text="Pancake?" />
-
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/red"
-            android:text="Spotlit?" />
+            android:background="@color/darkblue"
+            android:text="Spotlit?"
+            android:textColor="@color/white" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="153dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="192dp"
+        android:text="Submit"
+        android:onClick="summaryPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
