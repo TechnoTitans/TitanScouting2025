@@ -13,6 +13,9 @@ import com.scoutingapp.titanscouting.database.MatchViewModel;
 import com.scoutingapp.titanscouting.views.logs.Logs;
 import com.scoutingapp.titanscouting.views.Pregame;
 
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     private MatchViewModel matchViewModel;
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        
 
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
