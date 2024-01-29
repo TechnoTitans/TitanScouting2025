@@ -10,7 +10,7 @@ public class Match {
     @ColumnInfo(name = "matchNum")
     private int matchNum;
 
-    @ColumnInfo(name = "teamNumber", defaultValue = "1683")
+    @ColumnInfo(name = "teamNumber", defaultValue = "00000")
     private int teamNumber;
 
     @ColumnInfo(name = "position", defaultValue = "R1")
