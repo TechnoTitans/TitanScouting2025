@@ -28,9 +28,9 @@ public class MatchRepository {
         return dao.getMatch(matchNumber);
     }
 
-    void addPregameInformation(Match match) {
+    void addMatchInformation(Match match) {
         ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
-            dao.addPregameInformation(match);
+            dao.addMatchInformation(match);
         });
     }
 

@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        
-
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
         final MatchListAdapter adapter = new MatchListAdapter(new MatchListAdapter.MatchDiff());

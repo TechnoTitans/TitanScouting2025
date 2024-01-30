@@ -4,13 +4,14 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Upsert;
 
 import java.util.List;
 
 @Dao
 public interface MatchDao {
-    @Insert
-    void addPregameInformation(Match match);
+    @Upsert
+    void addMatchInformation(Match match);
 
     @Query("UPDATE scouting_database " +
             "SET performedLeave = :leave, startingPosition = :startingPosition, " +
@@ -58,6 +59,7 @@ public interface MatchDao {
             boolean isPancake,
             String notes
     );
+
     @Query("SELECT * FROM scouting_database")
     LiveData<List<Match>> getMatches();
 

@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="dropsPiecesToggle" type="id" />
+    <item name="back" type="id"/>
+    <item name="autoTitle" type="id" />
+    <item name="next" type="id" />
+    <item name="underline" type="id" />
+    <item name="startsAmpSide" type="id" />
+    <item name="startsSourceSide" type="id" />
+    <item name="startsMiddle" type="id" />
+    <item name="moved" type="id" />
+    <item name="didNotMove" type="id" />
+    <item name="speakerScores" type="id" />
+    <item name="addSpeaker" type="id" />
+    <item name="subtractSpeaker" type="id" />
+    <item name="speakersScored" type="id" />
+    <item name="speakerMisses" type="id" />
+    <item name="addSpeakersMissed" type="id" />
+    <item name="subtractSpeakersMissed" type="id" />
+    <item name="speakersMissed" type="id" />
+    <item name="ampScores" type="id" />
+    <item name="addAmps" type="id" />
+    <item name="subtractAmp" type="id" />
+    <item name="ampsScored" type="id" />
+    <item name="ampMisses" type="id" />
+    <item name="addAmpsMissed" type="id" />
+    <item name="subtractAmpsMissed" type="id" />
+    <item name="ampsMissed" type="id" />
+
+    <item name = "back_to_home" type="id"/>
 </resources>

@@ -30,9 +30,9 @@ public class MatchViewModel extends AndroidViewModel {
         return matchRepository.getMatch(matchNumber);
     }
 
-    public void addPregameInformation(Match match) {
+    public void addMatchInformation(Match match) {
 
-        matchRepository.addPregameInformation(match);
+        matchRepository.addMatchInformation(match);
     }
 
     public void addAutonomousInformation(Match match) {

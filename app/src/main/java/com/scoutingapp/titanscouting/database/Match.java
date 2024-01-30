@@ -19,6 +19,11 @@ public class Match {
     @ColumnInfo(name = "scouterName", defaultValue = "0")
     private String scouterName;
 
+
+
+    @ColumnInfo(name = "noShow", defaultValue = "0")
+    private boolean noShow;
+
     @ColumnInfo(name = "performedLeave", defaultValue = "0")
     private boolean performedLeave;
 
@@ -300,5 +305,13 @@ public class Match {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public boolean isNoShow() {
+        return noShow;
+    }
+
+    public void setNoShow(boolean noShow) {
+        this.noShow = noShow;
     }
 }

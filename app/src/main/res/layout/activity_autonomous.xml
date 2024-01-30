@@ -4,234 +4,319 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/crescendo2"
     tools:context=".views.Autonomous">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:onClick="preGame"
+        android:scaleX="1.25"
+        android:scaleY="1.25"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="@+id/autoTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/autoTitle" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="45dp"
+        android:onClick="teleOp"
+        android:scaleX="1.25"
+        android:scaleY="1.25"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="@+id/autoTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/autoTitle" />
+
+    <TextView
+        android:id="@+id/autoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Autonomous"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/underline"
+        android:layout_width="140dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/autoTitle"
+        app:layout_constraintLeft_toLeftOf="@id/autoTitle"
+        app:layout_constraintRight_toRightOf="@id/autoTitle" />
+
+    <CheckBox
+        android:id="@+id/startsAmpSide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-7dp"
+        android:layout_marginTop="45dp"
+        android:buttonTint="@color/white"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Amp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/startsSourceSide"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.9" />
+
+    <CheckBox
+        android:id="@+id/startsMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/white"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="MIddle"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/startsAmpSide"
+        app:layout_constraintLeft_toLeftOf="@id/startsSourceSide"
+        app:layout_constraintTop_toBottomOf="@id/startsSourceSide" />
+
+    <CheckBox
+        android:id="@+id/startsSourceSide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:buttonTint="@color/white"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Source"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <CheckBox
+        android:id="@+id/moved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/white"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Moved"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/startsSourceSide"
+        app:layout_constraintLeft_toLeftOf="@id/back"
+        app:layout_constraintRight_toRightOf="@id/autoTitle"
+        app:layout_constraintTop_toBottomOf="@id/autoTitle" />
+
+    <TextView
+        android:id="@+id/speakerScores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Speaker"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintLeft_toLeftOf="@id/moved"
+        app:layout_constraintTop_toBottomOf="@id/startsSourceSide" />
+
+    <Button
+        android:id="@+id/addSpeaker"
+        android:layout_width="140dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="15dp"
+        android:alpha="0.6"
+        android:onClick="addSpeakerScored"
+        android:text="@string/plus"
+        android:textSize="120sp"
+        app:layout_constraintLeft_toLeftOf="@id/speakerScores"
+        app:layout_constraintTop_toBottomOf="@id/speakerScores" />
+
+    <Button
+        android:id="@+id/subtractSpeaker"
+        android:layout_width="140dp"
+        android:layout_height="200dp"
+        android:alpha="0.6"
+        android:backgroundTint="@color/red"
+        android:onClick="subtractSpeakerScored"
+        android:text="@string/minus"
+        android:textSize="120sp"
+        app:layout_constraintLeft_toRightOf="@id/addSpeaker"
+        app:layout_constraintTop_toTopOf="@id/addSpeaker" />
+
+    <EditText
+        android:id="@+id/speakersScored"
+        android:layout_width="140dp"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="0"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/speakerScores"
+        app:layout_constraintLeft_toRightOf="@id/speakerScores"
+        app:layout_constraintRight_toRightOf="@id/subtractSpeaker"
+        app:layout_constraintTop_toTopOf="@id/speakerScores" />
+
+    <TextView
+        android:id="@+id/speakerMisses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/missed"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintStart_toEndOf="@+id/speakersScored"
+        app:layout_constraintTop_toBottomOf="@id/startsSourceSide" />
+
+    <Button
+        android:id="@+id/addSpeakersMissed"
+        android:layout_width="140dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="15dp"
+        android:alpha="0.6"
+        android:onClick="subtractSpeakerScored"
+        android:text="@string/plus"
+        android:textSize="120sp"
+        app:layout_constraintLeft_toLeftOf="@id/speakerMisses"
+        app:layout_constraintTop_toBottomOf="@id/speakerScores" />
+
+    <Button
+        android:id="@+id/subtractSpeakersMissed"
+        android:layout_width="140dp"
+        android:layout_height="200dp"
+        android:alpha="0.6"
+        android:backgroundTint="@color/red"
+        android:onClick="subtractSpeakerMissed"
+        android:text="@string/minus"
+        android:textSize="120sp"
+        app:layout_constraintLeft_toRightOf="@id/addSpeakersMissed"
+        app:layout_constraintTop_toTopOf="@id/addSpeaker" />
+
+    <EditText
+        android:id="@+id/speakersMissed"
+        android:layout_width="140dp"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="0"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/speakerScores"
+        app:layout_constraintLeft_toRightOf="@id/speakerMisses"
+        app:layout_constraintRight_toRightOf="@id/subtractSpeakersMissed"
+        app:layout_constraintTop_toTopOf="@id/speakerScores" />
+
+    <TextView
+        android:id="@+id/ampScores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Amp"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintLeft_toLeftOf="@id/speakerScores"
+        app:layout_constraintTop_toBottomOf="@id/addSpeaker" />
+
+    <Button
+        android:id="@+id/addAmps"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="15dp"
+        android:alpha="0.6"
+        android:onClick="addAmpScored"
+        android:text="@string/plus"
+        android:textSize="90sp"
+        app:layout_constraintLeft_toLeftOf="@id/ampScores"
+        app:layout_constraintTop_toBottomOf="@id/ampScores" />
+
+    <Button
+        android:id="@+id/subtractAmp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:alpha="0.6"
+        android:backgroundTint="@color/red"
+        android:onClick="subtractAmpScored"
+        android:text="@string/minus"
+        android:textSize="90sp"
+        app:layout_constraintLeft_toRightOf="@id/addAmps"
+        app:layout_constraintTop_toTopOf="@id/addAmps" />
+
+    <EditText
+        android:id="@+id/ampsScored"
+        android:layout_width="140dp"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="0"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/ampScores"
+        app:layout_constraintLeft_toRightOf="@id/ampScores"
+        app:layout_constraintRight_toRightOf="@id/subtractAmp"
+        app:layout_constraintTop_toTopOf="@id/ampScores" />
+
+    <TextView
+        android:id="@+id/ampMisses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Missed"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintLeft_toLeftOf="@id/speakerMisses"
+        app:layout_constraintTop_toTopOf="@id/ampScores" />
+
+    <Button
+        android:id="@+id/addAmpsMissed"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="15dp"
+        android:alpha="0.6"
+        android:onClick="addAmpMissed"
+        android:text="@string/plus"
+        android:textSize="90sp"
+        app:layout_constraintLeft_toLeftOf="@id/ampMisses"
+        app:layout_constraintTop_toBottomOf="@id/ampMisses" />
+
+    <Button
+        android:id="@+id/subtractAmpsMissed"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:alpha="0.6"
+        android:backgroundTint="@color/red"
+        android:onClick="subtractAmpMissed"
+        android:text="@string/minus"
+        android:textSize="90sp"
+        app:layout_constraintLeft_toRightOf="@id/addAmpsMissed"
+        app:layout_constraintTop_toTopOf="@id/addAmpsMissed" />
+
+    <EditText
+        android:id="@+id/ampsMissed"
+        android:layout_width="140dp"
+        android:layout_height="54dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="0"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/ampScores"
+        app:layout_constraintLeft_toRightOf="@id/ampMisses"
+        app:layout_constraintRight_toRightOf="@id/subtractAmpsMissed"
+        app:layout_constraintTop_toTopOf="@id/ampScores" />
 
 
-        <TextView
-            android:id="@+id/Teleop"
-            android:layout_width="349dp"
-            android:layout_height="99dp"
-            android:layout_marginTop="56dp"
-            android:text="@string/autonomous"
-            android:textAlignment="center"
-            android:textSize="40sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/numberOfAmpScoredLabel"
-            android:layout_width="353dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="92dp"
-            android:text="@string/number_of_amps_scored"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Teleop" />
-
-        <TextView
-            android:id="@+id/numberOfAmpMissedLabel"
-            android:layout_width="353dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="124dp"
-            android:text="@string/number_of_amp_missed"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpScoredNumberView" />
-
-        <TextView
-            android:id="@+id/numberOfSpeakerScoredLabel"
-            android:layout_width="383dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="92dp"
-            android:text="@string/number_of_speaker_scored"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.843"
-            app:layout_constraintStart_toEndOf="@+id/numberOfAmpScoredLabel"
-            app:layout_constraintTop_toBottomOf="@+id/Teleop" />
-
-        <TextView
-            android:id="@+id/numberOfSpeakerMissedLabel"
-            android:layout_width="383dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="124dp"
-            android:text="@string/number_of_speaker_missed"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.843"
-            app:layout_constraintStart_toEndOf="@+id/numberOfAmpScoredLabel"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerScoredNumberView" />
-
-        <TextView
-            android:id="@+id/numberOfAmpScoredNumberView"
-            android:layout_width="383dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="16dp"
-            android:text="0"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpScoredLabel" />
-
-        <TextView
-            android:id="@+id/numberOfAmpMissedNumberView"
-            android:layout_width="383dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="28dp"
-            android:text="0"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpMissedLabel" />
-
-        <TextView
-            android:id="@+id/numberOfSpeakerScoredNumberView"
-            android:layout_width="383dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="56dp"
-            android:text="0"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerScoredLabel" />
-
-        <TextView
-            android:id="@+id/numberOfSpeakerMissedNumberView"
-            android:layout_width="383dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="52dp"
-            android:text="0"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerMissedLabel" />
-
-        <Button
-            android:id="@+id/subtactNumOfAmpScoredButton"
-            android:layout_width="88dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="20dp"
-            android:onClick="subtractAmpScored"
-            android:text="-"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpScoredNumberView" />
-
-        <Button
-            android:id="@+id/subtactNumOfAmpMisseddButton"
-            android:layout_width="88dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="36dp"
-            android:onClick="subtractAmpMissed"
-            android:text="-"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpMissedNumberView" />
-
-        <Button
-            android:id="@+id/addNumOfAmpScoredButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="176dp"
-            android:layout_marginTop="20dp"
-            android:onClick="addAmpScored"
-            android:text="+"
-            app:layout_constraintStart_toEndOf="@+id/subtactNumOfAmpScoredButton"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpScoredNumberView" />
-
-        <Button
-            android:id="@+id/addNumOfAmpMissedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="204dp"
-            android:layout_marginTop="36dp"
-            android:onClick="addAmpMissed"
-            android:text="+"
-            app:layout_constraintStart_toEndOf="@+id/subtactNumOfAmpMisseddButton"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfAmpMissedNumberView" />
-
-        <Button
-            android:id="@+id/subtractNumOfSpeakerScoredButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="188dp"
-            android:onClick="subtractSpeakerScored"
-            android:text="-"
-            app:layout_constraintEnd_toStartOf="@+id/addNumOfSpeakerScoredButton"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerScoredNumberView" />
-
-        <Button
-            android:id="@+id/subtractNumOfSpeakerMissedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="184dp"
-            android:onClick="subtractSpeakerMissed"
-            android:text="-"
-            app:layout_constraintEnd_toStartOf="@+id/addNumOfSpeakerMisseddButton"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerMissedNumberView" />
-
-        <Button
-            android:id="@+id/addNumOfSpeakerScoredButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="72dp"
-            android:onClick="addSpeakerScored"
-            android:text="+"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerScoredNumberView" />
-
-        <Button
-            android:id="@+id/addNumOfSpeakerMisseddButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="72dp"
-            android:onClick="addSpeakerMissed"
-            android:text="+"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberOfSpeakerMissedNumberView" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="608dp"
-            android:layout_marginBottom="36dp"
-            android:onClick="teleOp"
-            android:text="@string/next"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

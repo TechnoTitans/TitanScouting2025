@@ -36,4 +36,14 @@
     <string name="park">Park</string>
     <string name="onstage">Onstage</string>
     <string name="in_trap">Onstage+Scored in Trap</string>
+    <string name="auto" />
+    <string name="amp" />
+    <string name="middle" />
+    <string name="source" />
+    <string name="moved" />
+    <string name="did_not_move" />
+    <string name="speaker" />
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="missed">Missed</string>
 </resources>
