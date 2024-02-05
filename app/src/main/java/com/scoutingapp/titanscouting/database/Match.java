@@ -19,8 +19,6 @@ public class Match {
     @ColumnInfo(name = "scouterName", defaultValue = "0")
     private String scouterName;
 
-
-
     @ColumnInfo(name = "noShow", defaultValue = "0")
     private boolean noShow;
 

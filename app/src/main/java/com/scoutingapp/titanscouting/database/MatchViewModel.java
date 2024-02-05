@@ -34,16 +34,4 @@ public class MatchViewModel extends AndroidViewModel {
 
         matchRepository.addMatchInformation(match);
     }
-
-    public void addAutonomousInformation(Match match) {
-        matchRepository.addAutonomousInformation(match);
-    }
-
-    public void addTeleopInformation(Match match) {
-        matchRepository.addTeleopInformation(match);
-    }
-
-    public void addEndgameInformation(Match match) {
-        matchRepository.addEndgameInformation(match);
-    }
 }

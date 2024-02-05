@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
         final MatchListAdapter adapter = new MatchListAdapter(new MatchListAdapter.MatchDiff());
 
         matchViewModel.getAllMatches().observe(this, matches -> {
-            // Update the cached copy of the words in the adapter.
             adapter.submitList(matches);
         });
+
     }
 
     public void pregame(View v) {

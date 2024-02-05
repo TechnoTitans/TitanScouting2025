@@ -32,12 +32,11 @@ public class Teleop extends AppCompatActivity {
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
         match.setMatchNum(matchNum);
-
-        Log.d("stage", String.valueOf(match.getMatchNum()));
     }
 
+
     public void subtractAmpScored(View v){
-        TextView textView = (TextView) findViewById(R.id.numberOfAmpScoredNumberView);
+        TextView textView = (TextView) findViewById(R.id.ampsScored);
         int ampScored = Integer.parseInt(textView.getText().toString()) - 1;
 
         if (ampScored < 0) {
@@ -46,12 +45,16 @@ public class Teleop extends AppCompatActivity {
             textView.setText(String.valueOf(ampScored));
         }
 
+        match.setTeleopAmpScored(ampScored);
+
+        matchViewModel.addMatchInformation(match);
+
     }
 
 
 
     public void subtractAmpMissed(View v){
-        TextView textView = (TextView) findViewById(R.id.numberOfAmpMissedNumberView);
+        TextView textView = (TextView) findViewById(R.id.ampsMissed);
         int ampMissed = Integer.parseInt(textView.getText().toString()) - 1;
 
         if (ampMissed < 0) {
@@ -60,25 +63,36 @@ public class Teleop extends AppCompatActivity {
             textView.setText(String.valueOf(ampMissed));
         }
 
+        match.setTeleopAmpMissed(ampMissed);
+
+        matchViewModel.addMatchInformation(match);
+
     }
 
     public void addAmpScored(View v){
-        TextView textView = (TextView) findViewById(R.id.numberOfAmpScoredNumberView);
+        TextView textView = (TextView) findViewById(R.id.ampsScored);
         int ampScored = Integer.parseInt(textView.getText().toString()) + 1;
+        match.setTeleopAmpScored(ampScored);
+        matchViewModel.addMatchInformation(match);
         textView.setText(String.valueOf(ampScored));
     }
 
     public void addAmpMissed(View v){
-        TextView textView = (TextView) findViewById(R.id.numberOfAmpMissedNumberView);
+        TextView textView = (TextView) findViewById(R.id.ampsMissed);
         int ampMissed = Integer.parseInt(textView.getText().toString()) + 1;
+        match.setTeleopAmpMissed(ampMissed);
+        matchViewModel.addMatchInformation(match);
         textView.setText(String.valueOf(ampMissed));
     }
 
 
 
     public void subtractSpeakerScored(View v){
-        TextView textView = (TextView) findViewById(R.id.numberOfSpeakerScoredNumberView);
+        TextView textView = (TextView) findViewById(R.id.speakersScored);
         int speakerScored = Integer.parseInt(textView.getText().toString()) - 1;
+
+        match.setTeleopSpeakerScored(speakerScored);
+        matchViewModel.addMatchInformation(match);
 
         if (speakerScored < 0) {
             textView.setText("0");
@@ -88,8 +102,11 @@ public class Teleop extends AppCompatActivity {
     }
 
     public void subtractSpeakerMissed(View v){
-        TextView textView = (TextView) findViewById(R.id.numberOfSpeakerMissedNumberView);
+        TextView textView = (TextView) findViewById(R.id.speakersMissed);
         int speakerMissed = Integer.parseInt(textView.getText().toString()) - 1;
+
+        match.setTeleopSpeakerMissed(speakerMissed);
+        matchViewModel.addMatchInformation(match);
 
         if (speakerMissed < 0) {
             textView.setText("0");
@@ -98,37 +115,31 @@ public class Teleop extends AppCompatActivity {
         }
     }
 
-
-
     public void addSpeakerScored(View v){
-        TextView textView = (TextView) findViewById(R.id.numberOfSpeakerScoredNumberView);
+        TextView textView = (TextView) findViewById(R.id.speakersScored);
         int speakerScored = Integer.parseInt(textView.getText().toString()) + 1;
         textView.setText(String.valueOf(speakerScored));
+        match.setTeleopSpeakerScored(speakerScored);
+        matchViewModel.addMatchInformation(match);
     }
 
     public void addSpeakerMissed(View v){
-        TextView textView = (TextView) findViewById(R.id.numberOfSpeakerMissedNumberView);
+        TextView textView = (TextView) findViewById(R.id.speakersMissed);
         int speakerMissed = Integer.parseInt(textView.getText().toString()) + 1;
         textView.setText(String.valueOf(speakerMissed));
+        match.setTeleopSpeakerMissed(speakerMissed);
+        matchViewModel.addMatchInformation(match);
     }
 
-    public void teleOp(View v){
-        int ampScored = Integer.parseInt(((TextView) findViewById(R.id.numberOfAmpScoredNumberView)).getText().toString());
-        int ampMissed = Integer.parseInt(((TextView) findViewById(R.id.numberOfAmpMissedNumberView)).getText().toString());
+    public void autonomous(View v){
+        Intent i = new Intent(this, Autonomous.class);
+        i.putExtra("matchNumber", match.getMatchNum());
+        startActivity(i);
+    }
 
-        int speakerScored = Integer.parseInt(((TextView) findViewById(R.id.numberOfSpeakerScoredNumberView)).getText().toString());
-        int speakerMissed = Integer.parseInt(((TextView) findViewById(R.id.numberOfSpeakerMissedNumberView)).getText().toString());
-
-        match.setTeleopAmpScored(ampScored);
-        match.setTeleopAmpMissed(ampMissed);
-
-        match.setTeleopSpeakerScored(speakerScored);
-        match.setTeleopSpeakerMissed(speakerMissed);
-
-        matchViewModel.addTeleopInformation(match);
-
+    public void endGame(View v){
         Intent i = new Intent(this, Endgame.class);
-        i.putExtra("matchNumber", matchNum);
+        i.putExtra("matchNumber", match.getMatchNum());
         startActivity(i);
     }
 }

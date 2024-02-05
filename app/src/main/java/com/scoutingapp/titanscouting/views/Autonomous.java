@@ -41,42 +41,30 @@ public class Autonomous extends AppCompatActivity {
         match.setPerformedLeave(false);
         CheckBox movedCheckBox = (CheckBox) (findViewById(R.id.moved));
 
-        movedCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                match.setPerformedLeave(!match.isPerformedLeave());
-                matchViewModel.addMatchInformation(match);
-            }
+        movedCheckBox.setOnClickListener(v -> {
+            match.setPerformedLeave(!match.isPerformedLeave());
+            matchViewModel.addMatchInformation(match);
         });
 
         CheckBox sourceCheckBox = (CheckBox) (findViewById(R.id.startsSourceSide));
 
-        sourceCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                match.setPosition("Source");
-                matchViewModel.addMatchInformation(match);
-            }
+        sourceCheckBox.setOnClickListener(v -> {
+            match.setPosition("Source");
+            matchViewModel.addMatchInformation(match);
         });
 
         CheckBox middleCheckBox = (CheckBox) (findViewById(R.id.startsMiddle));
 
-        sourceCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                match.setPosition("Middle");
-                matchViewModel.addMatchInformation(match);
-            }
+        middleCheckBox.setOnClickListener(v -> {
+            match.setPosition("Middle");
+            matchViewModel.addMatchInformation(match);
         });
 
         CheckBox ampCheckBox = (CheckBox) (findViewById(R.id.startsAmpSide));
 
-        sourceCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                match.setPosition("Amp");
-                matchViewModel.addMatchInformation(match);
-            }
+        middleCheckBox.setOnClickListener(v -> {
+            match.setPosition("Amp");
+            matchViewModel.addMatchInformation(match);
         });
 
     }
@@ -91,6 +79,10 @@ public class Autonomous extends AppCompatActivity {
             textView.setText(String.valueOf(ampScored));
         }
 
+        match.setAutoAmpScored(ampScored);
+
+        matchViewModel.addMatchInformation(match);
+
     }
 
 
@@ -104,6 +96,10 @@ public class Autonomous extends AppCompatActivity {
         } else {
             textView.setText(String.valueOf(ampMissed));
         }
+
+        match.setAutoAmpMissed(ampMissed);
+
+        matchViewModel.addMatchInformation(match);
 
     }
 
@@ -157,12 +153,16 @@ public class Autonomous extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.speakersScored);
         int speakerScored = Integer.parseInt(textView.getText().toString()) + 1;
         textView.setText(String.valueOf(speakerScored));
+        match.setAutoSpeakerScored(speakerScored);
+        matchViewModel.addMatchInformation(match);
     }
 
     public void addSpeakerMissed(View v){
         TextView textView = (TextView) findViewById(R.id.speakersMissed);
         int speakerMissed = Integer.parseInt(textView.getText().toString()) + 1;
         textView.setText(String.valueOf(speakerMissed));
+        match.setAutoSpeakerMissed(speakerMissed);
+        matchViewModel.addMatchInformation(match);
     }
 
     public void teleOp(View v){

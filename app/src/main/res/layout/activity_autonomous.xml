@@ -153,13 +153,14 @@
         app:layout_constraintLeft_toRightOf="@id/addSpeaker"
         app:layout_constraintTop_toTopOf="@id/addSpeaker" />
 
-    <EditText
+    <TextView
         android:id="@+id/speakersScored"
         android:layout_width="140dp"
         android:layout_height="54dp"
         android:ems="10"
         android:gravity="center"
         android:hint="0"
+        android:text="0"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="@id/speakerScores"
         app:layout_constraintLeft_toRightOf="@id/speakerScores"
@@ -204,13 +205,13 @@
         app:layout_constraintLeft_toRightOf="@id/addSpeakersMissed"
         app:layout_constraintTop_toTopOf="@id/addSpeaker" />
 
-    <EditText
+    <TextView
         android:id="@+id/speakersMissed"
         android:layout_width="140dp"
         android:layout_height="54dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="0"
+        android:text="0"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="@id/speakerScores"
         app:layout_constraintLeft_toRightOf="@id/speakerMisses"
@@ -254,13 +255,14 @@
         app:layout_constraintLeft_toRightOf="@id/addAmps"
         app:layout_constraintTop_toTopOf="@id/addAmps" />
 
-    <EditText
+    <TextView
         android:id="@+id/ampsScored"
         android:layout_width="140dp"
         android:layout_height="54dp"
         android:ems="10"
         android:gravity="center"
         android:hint="0"
+        android:text="0"
         android:inputType="numberDecimal"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/ampScores"
@@ -304,13 +306,14 @@
         app:layout_constraintLeft_toRightOf="@id/addAmpsMissed"
         app:layout_constraintTop_toTopOf="@id/addAmpsMissed" />
 
-    <EditText
+    <TextView
         android:id="@+id/ampsMissed"
         android:layout_width="140dp"
         android:layout_height="54dp"
         android:ems="10"
         android:gravity="center"
         android:hint="0"
+        android:text="0"
         android:inputType="numberDecimal"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/ampScores"

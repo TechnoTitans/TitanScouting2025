@@ -140,7 +140,7 @@ public class Endgame extends AppCompatActivity {
 
         match.setDriverQuality(driverQualityPoints);
 
-        matchViewModel.addEndgameInformation(match);
+        matchViewModel.addMatchInformation(match);
 
         Intent i = new Intent(this, Summary.class);
         i.putExtra("matchNumber", matchNum);
