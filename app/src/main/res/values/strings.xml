@@ -46,4 +46,33 @@
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="missed">Missed</string>
+    <string name="summary">Review and Submit</string>
+
+    <string name="pregame">Pregame \n \n \n \n \n \nAutonomous</string>
+
+    <string name="match"> Match number: \nTeam number: \nTeam color: \nTeam position: \n \n \nStarting position: \nMobility: \nAmps scored: \nSpeakers scored: \n \nComments:</string>
+    <string name="teleop">Teleop \n \n \n \nEndgame</string>
+
+    <string name="amp_teleop">Amps scored: \nSpeakers scored: \n \n \nStage interactions: \nNotes in trap: \nCoop Bonus \nKit bot \nCan pick up notes from ground \nDriver ability \nDefense ability \nMechanical reliability</string>
+    <string name="speaker_teleop">Disqualified \nPancake bot</string>
+    <string name="endgame">Endgame</string>
+
+    <string name="park">Parked at stage</string>
+    <string name="onstage">On stage</string>
+    <string name="trap">Notes in trap:</string>
+
+    <string name="questions">Questions</string>
+    <string name="coop">Cooperation bonus</string>
+    <string name="dq">Disqualified</string>
+    <string name="driver">Driver ability (1 to 5)</string>
+    <string name="defense">Defense ability (1 to 5)</string>
+    <string name="mechanical">Mechanical reliability (1 to 5)</string>
+    <string name="ground">Can pick up notes from ground</string>
+    <string name="kit">Kit bot</string>
+    <string name="pancake">Pancake bot</string>
+    <string name="human">Human throw succeed</string>
+    <string name="comments">Comments:</string>
+
+    <string name="back">Back</string>
+    <string name="next">Submit</string>
 </resources>
