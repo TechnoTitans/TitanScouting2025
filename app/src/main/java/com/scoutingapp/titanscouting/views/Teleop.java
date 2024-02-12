@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.scoutingapp.titanscouting.R;
@@ -14,6 +15,8 @@ import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 
 public class Teleop extends AppCompatActivity {
+
+    LiveData<Match> liveDataMatch;
 
     private Match match;
 
@@ -31,7 +34,12 @@ public class Teleop extends AppCompatActivity {
         matchNum = getIntent().getIntExtra("matchNumber", 0);
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
-        match.setMatchNum(matchNum);
+        liveDataMatch = matchViewModel.getMatch(matchNum);
+
+        liveDataMatch.observe(this, match -> {
+            this.match = match;
+        });
+
     }
 
 

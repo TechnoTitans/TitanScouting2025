@@ -13,9 +13,13 @@ public interface MatchDao {
     @Upsert
     void addMatchInformation(Match match);
 
+
+
     @Query("SELECT * FROM scouting_database")
     LiveData<List<Match>> getMatches();
 
     @Query("SELECT * FROM scouting_database WHERE matchNum = :matchNumber")
     LiveData<Match> getMatch(int matchNumber);
+
+
 }

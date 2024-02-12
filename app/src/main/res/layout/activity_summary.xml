@@ -422,7 +422,7 @@
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/telepAmpMissedSummary"
+                        android:id="@+id/teleopAmpMissedSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

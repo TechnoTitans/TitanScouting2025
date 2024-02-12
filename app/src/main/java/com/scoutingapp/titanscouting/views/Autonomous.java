@@ -8,6 +8,8 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.scoutingapp.titanscouting.R;
@@ -18,6 +20,7 @@ import kotlinx.coroutines.internal.CoroutineExceptionHandlerImpl_commonKt;
 
 public class Autonomous extends AppCompatActivity {
 
+    LiveData<Match> liveDataMatch;
     private Match match;
 
     private MatchViewModel matchViewModel;
@@ -32,7 +35,11 @@ public class Autonomous extends AppCompatActivity {
         int matchNum = getIntent().getIntExtra("matchNumber", 0);
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
-        match.setMatchNum(matchNum);
+        liveDataMatch = matchViewModel.getMatch(matchNum);
+
+        liveDataMatch.observe(this, match -> {
+            this.match = match;
+        });
 
         matchViewModel.addMatchInformation(match);
 

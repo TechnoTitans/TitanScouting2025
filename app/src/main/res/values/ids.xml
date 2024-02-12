@@ -29,4 +29,18 @@
 
     <item name = "back_to_home" type="id"/>
     <item name="teamNumberSummary" type="id" />
+    <item name="defense_bar" type="id" />
+    <item name="driver_quality_bar" type="id" />
+    <item name="defense_text" type="id" />
+    <item name="mechanical_reliability_bar" type="id" />
+    <item name="mechanical_reliabilty_text" type="id" />
+    <item name="driver_quality" type="id" />
+    <item name="human_player" type="id" />
+    <item name="collaboration_text" type="id" />
+    <item name="pick_up_from_ground_text" type="id" />
+    <item name="pancake_text" type="id" />
+    <item name="kitbot_text" type="id" />
+    <item name="park" type="id" />
+    <item name="drop_pieces" type="id" />
+    <item name="Back" type="id" />
 </resources>
