@@ -28,4 +28,5 @@
     <item name="ampsMissed" type="id" />
 
     <item name = "back_to_home" type="id"/>
+    <item name="teamNumberSummary" type="id" />
 </resources>

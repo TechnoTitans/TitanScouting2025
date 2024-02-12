@@ -20,8 +20,6 @@ public class Autonomous extends AppCompatActivity {
 
     private Match match;
 
-    private int matchNum;
-
     private MatchViewModel matchViewModel;
 
 
@@ -31,12 +29,12 @@ public class Autonomous extends AppCompatActivity {
         setContentView(R.layout.activity_autonomous);
 
         match = new Match();
-        matchNum = getIntent().getIntExtra("matchNumber", 0);
+        int matchNum = getIntent().getIntExtra("matchNumber", 0);
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
         match.setMatchNum(matchNum);
 
-        Log.d("stage", String.valueOf(match.getMatchNum()));
+        matchViewModel.addMatchInformation(match);
 
         match.setPerformedLeave(false);
         CheckBox movedCheckBox = (CheckBox) (findViewById(R.id.moved));

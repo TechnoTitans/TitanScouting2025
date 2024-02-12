@@ -26,15 +26,12 @@
     <string name="add_a_match">Add a match</string>
     <string name="refresh">Refresh</string>
     <string name="disqualified">Disqualified</string>
-    <string name="pancake">Pancake</string>
     <string name="single_substation">Single Substation</string>
     <string name="double_substation">Double Substation</string>
     <string name="penalties_fouls">Penalties/fouls</string>
     <string name="to_endgame">To Endgame</string>
     <string name="parked">Parked\n</string>
     <string name="none">None</string>
-    <string name="park">Park</string>
-    <string name="onstage">Onstage</string>
     <string name="in_trap">Onstage+Scored in Trap</string>
     <string name="auto" />
     <string name="amp" />
@@ -48,14 +45,10 @@
     <string name="missed">Missed</string>
     <string name="summary">Review and Submit</string>
 
-    <string name="pregame">Pregame \n \n \n \n \n \nAutonomous</string>
 
-    <string name="match"> Match number: \nTeam number: \nTeam color: \nTeam position: \n \n \nStarting position: \nMobility: \nAmps scored: \nSpeakers scored: \n \nComments:</string>
-    <string name="teleop">Teleop \n \n \n \nEndgame</string>
 
-    <string name="amp_teleop">Amps scored: \nSpeakers scored: \n \n \nStage interactions: \nNotes in trap: \nCoop Bonus \nKit bot \nCan pick up notes from ground \nDriver ability \nDefense ability \nMechanical reliability</string>
     <string name="speaker_teleop">Disqualified \nPancake bot</string>
-    <string name="endgame">Endgame</string>
+
 
     <string name="park">Parked at stage</string>
     <string name="onstage">On stage</string>
@@ -73,6 +66,4 @@
     <string name="human">Human throw succeed</string>
     <string name="comments">Comments:</string>
 
-    <string name="back">Back</string>
-    <string name="next">Submit</string>
 </resources>

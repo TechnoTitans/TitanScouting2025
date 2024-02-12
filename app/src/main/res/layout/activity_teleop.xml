@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:onClick="preGame"
+        android:onClick="autonomous"
         android:scaleX="1.25"
         android:scaleY="1.25"
         android:text="@string/back"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="45dp"
-        android:onClick="teleOp"
+        android:onClick="endGame"
         android:scaleX="1.25"
         android:scaleY="1.25"
         android:text="@string/next"
@@ -62,13 +62,15 @@
         android:id="@+id/speakerScores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="172dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="Speaker"
         android:textColor="@color/white"
         android:textSize="38sp"
-        tools:layout_editor_absoluteX="343dp"
-        tools:layout_editor_absoluteY="261dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back" />
 
     <Button
         android:id="@+id/addSpeaker"

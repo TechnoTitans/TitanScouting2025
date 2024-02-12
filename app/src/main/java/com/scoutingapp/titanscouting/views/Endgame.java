@@ -69,16 +69,16 @@ public class Endgame extends AppCompatActivity {
         }
     }
 
-    public void goodCollaboration(View v){
-        ToggleButton button = (ToggleButton) (findViewById(R.id.toggleButton4));
-        String state = button.getText().toString();
-
-        if (state.equals("off")){
-            match.setGoodCollaboration(true);
-        } else if (state.equals("on")){
-            match.setGoodCollaboration(false);
-        }
-    }
+//    public void goodCollaboration(View v){
+//        ToggleButton button = (ToggleButton) (findViewById(R.id.toggleButton4));
+//        String state = button.getText().toString();
+//
+//        if (state.equals("off")){
+//            match.setGoodCollaboration(true);
+//        } else if (state.equals("on")){
+//            match.setGoodCollaboration(false);
+//        }
+//    }
 
     public void dropsPieces(View v){
         ToggleButton button = (ToggleButton) (findViewById(R.id.dropsPiecesToggle));
@@ -102,27 +102,27 @@ public class Endgame extends AppCompatActivity {
         }
     }
 
-    public void isKitBot(View v){
-        ToggleButton button = (ToggleButton) (findViewById(R.id.kitBot));
-        String state = button.getText().toString();
-
-        if (state.equals("off")){
-            match.setKitBot(true);
-        } else if (state.equals("on")){
-            match.setKitBot(false);
-        }
-    }
-
-    public void isPancake(View v){
-        ToggleButton button = (ToggleButton) (findViewById(R.id.pancake));
-        String state = button.getText().toString();
-
-        if (state.equals("off")){
-            match.setPancake(true);
-        } else if (state.equals("on")){
-            match.setPancake(false);
-        }
-    }
+//    public void isKitBot(View v){
+//        ToggleButton button = (ToggleButton) (findViewById(R.id.kitBot));
+//        String state = button.getText().toString();
+//
+//        if (state.equals("off")){
+//            match.setKitBot(true);
+//        } else if (state.equals("on")){
+//            match.setKitBot(false);
+//        }
+//    }
+//
+//    public void isPancake(View v){
+//        ToggleButton button = (ToggleButton) (findViewById(R.id.pancake));
+//        String state = button.getText().toString();
+//
+//        if (state.equals("off")){
+//            match.setPancake(true);
+//        } else if (state.equals("on")){
+//            match.setPancake(false);
+//        }
+//    }
 
     public void summaryPage(View v){
         SeekBar mechanicalBar = (SeekBar) (findViewById(R.id.seekBar1));
