@@ -13,6 +13,8 @@ import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 
+import org.w3c.dom.Text;
+
 public class Autonomous extends AppCompatActivity {
 
     private Match match;
@@ -48,18 +50,15 @@ public class Autonomous extends AppCompatActivity {
 
     }
 
-
-
     public void subtractAmpMissed(View v){
         TextView textView = (TextView) findViewById(R.id.numberOfAmpMissedNumberView);
-        int ampMissed = Integer.parseInt(textView.getText().toString()) - 1;
+        int ampMissed = Integer.parseInt(textView.getText().toString());
 
-        if (ampMissed < 0) {
+        if (ampMissed < 0){
             textView.setText("0");
         } else {
             textView.setText(String.valueOf(ampMissed));
         }
-
     }
 
     public void addAmpScored(View v){

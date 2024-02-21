@@ -21,6 +21,7 @@
         app:layout_constraintVertical_bias="0.036" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="890dp"
         android:layout_height="608dp"
         android:layout_marginStart="8dp"
@@ -50,14 +51,16 @@
             android:layout_width="300dp"
             android:layout_height="00dp"
             android:layout_weight="33"
+            android:onClick="logs"
             android:text="@string/logs"
-            android:textSize="35sp"
-            android:onClick="logs">
+            android:textSize="35sp">
 
         </Button>
 
 
     </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

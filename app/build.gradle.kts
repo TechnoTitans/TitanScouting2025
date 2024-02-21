@@ -5,8 +5,6 @@ plugins {
 
 }
 
-
-
 android {
     namespace = "com.scoutingapp.titanscouting"
     compileSdk = 34
@@ -80,5 +78,6 @@ dependencies {
 
     implementation ("com.google.android.material:material:1.11.0")
 
+    implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
 
 }

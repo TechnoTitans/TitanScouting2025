@@ -1,13 +1,20 @@
 package com.scoutingapp.titanscouting;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.scoutingapp.titanscouting.database.MatchListAdapter;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 import com.scoutingapp.titanscouting.views.logs.Logs;
@@ -30,10 +37,13 @@ public class MainActivity extends AppCompatActivity {
             // Update the cached copy of the words in the adapter.
             adapter.submitList(matches);
         });
+
+
+
     }
 
     public void pregame(View v) {
-        Intent i = new Intent(this, Pregame.class);
+        Intent i = new Intent(this, QRScreen.class);
         startActivity(i);
         Log.d("Pregame", "PreGame page has been reached");
     }
