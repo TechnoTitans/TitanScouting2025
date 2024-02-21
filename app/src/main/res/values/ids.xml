@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="dropsPiecesToggle" type="id" />
-    <item name="qr_code" type="id" />
+    <item name="back" type="id"/>
+    <item name="autoTitle" type="id" />
+    <item name="next" type="id" />
+    <item name="underline" type="id" />
+    <item name="startsAmpSide" type="id" />
+    <item name="startsSourceSide" type="id" />
+    <item name="startsMiddle" type="id" />
+    <item name="moved" type="id" />
+    <item name="didNotMove" type="id" />
+    <item name="speakerScores" type="id" />
+    <item name="addSpeaker" type="id" />
+    <item name="subtractSpeaker" type="id" />
+    <item name="speakersScored" type="id" />
+    <item name="speakerMisses" type="id" />
+    <item name="addSpeakersMissed" type="id" />
+    <item name="subtractSpeakersMissed" type="id" />
+    <item name="speakersMissed" type="id" />
+    <item name="ampScores" type="id" />
+    <item name="addAmps" type="id" />
+    <item name="subtractAmp" type="id" />
+    <item name="ampsScored" type="id" />
+    <item name="ampMisses" type="id" />
+    <item name="addAmpsMissed" type="id" />
+    <item name="subtractAmpsMissed" type="id" />
+    <item name="ampsMissed" type="id" />
+
+    <item name = "back_to_home" type="id"/>
+    <item name="teamNumberSummary" type="id" />
+    <item name="defense_bar" type="id" />
+    <item name="driver_quality_bar" type="id" />
+    <item name="defense_text" type="id" />
+    <item name="mechanical_reliability_bar" type="id" />
+    <item name="mechanical_reliabilty_text" type="id" />
+    <item name="driver_quality" type="id" />
+    <item name="human_player" type="id" />
+    <item name="collaboration_text" type="id" />
+    <item name="pick_up_from_ground_text" type="id" />
+    <item name="pancake_text" type="id" />
+    <item name="kitbot_text" type="id" />
+    <item name="park" type="id" />
+    <item name="drop_pieces" type="id" />
+    <item name="Back" type="id" />
 </resources>

@@ -4,148 +4,218 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".views.Pregame">
 
+    <Button
+        android:id="@+id/Blue2"
+        android:layout_width="145dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="68dp"
+        android:onClick="blue2CLicked"
+        android:text="Blue 2"
+        app:backgroundTint="#0000FF"
+        app:layout_constraintStart_toEndOf="@+id/Blue1"
+        app:layout_constraintTop_toBottomOf="@+id/Red2" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="371dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="492dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/pre_game"
-        android:textAlignment="center"
-        android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="parent"
+    <Button
+        android:id="@+id/Red3"
+        android:layout_width="157dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="120dp"
+        android:onClick="red3CLicked"
+        android:text="Red 3"
+        app:backgroundTint="#e40100"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editMatchNumber"
-        android:layout_width="347dp"
-        android:layout_height="99dp"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="0"
-        android:inputType="number"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/match_num" />
+    <Button
+        android:id="@+id/Red2"
+        android:layout_width="141dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="180dp"
+        android:onClick="red2CLicked"
+        android:text="Red 2"
+        app:backgroundTint="#e40100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Red3"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toEndOf="@+id/Red1" />
 
-    <EditText
-        android:id="@+id/editTeamNumber"
-        android:layout_width="347dp"
-        android:layout_height="99dp"
-        android:layout_marginBottom="128dp"
-        android:ems="10"
-        android:hint="0"
-        android:inputType="number"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/back_to_home_pregame"
+    <Button
+
+        android:id="@+id/Red1"
+        android:layout_width="146dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="180dp"
+        android:onClick="red1CLicked"
+        android:text="Red 1"
+        app:backgroundTint="#e40100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Blue1"
+        android:layout_width="152dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="68dp"
+        android:onClick="blue1CLicked"
+        android:text="Blue 1"
+        app:backgroundTint="#0000FF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Red1" />
+
+    <Button
+        android:id="@+id/Blue3"
+        android:layout_width="156dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="120dp"
+        android:onClick="blue3CLicked"
+        android:text="Blue 3"
+        app:backgroundTint="#0000FF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintTop_toBottomOf="@+id/Red3" />
+
+    <Button
+        android:id="@+id/NextButtonPregame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="724dp"
+        android:text="Next"
+        android:onClick="autonomous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/BackButtonPregame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="788dp"
+        android:layout_marginBottom="724dp"
+        android:text="Back"
+        android:onClick="back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/NextButtonPregame"
+        app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editScouterName"
-        android:layout_width="347dp"
-        android:layout_height="99dp"
-        android:layout_marginBottom="128dp"
+        android:id="@+id/TeamNumberResponsePregame"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="92dp"
+        android:backgroundTint="#000000"
         android:ems="10"
-        android:hint="First and Last Name"
-        android:inputType="text"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/preGameNext"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.809"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="347dp"
-        android:layout_height="111dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/editMatchNumber"
-        app:layout_constraintTop_toBottomOf="@+id/team_side" />
+        android:hint="e.g 1683"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/MatchNumberPregameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/TeamNumberPregameTextView" />
 
     <TextView
-        android:id="@+id/match_num"
-        android:layout_width="737dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="8dp"
-        android:text="MatchNumber"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTeamNumber"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/team_num"
-        android:layout_width="737dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="84dp"
+        android:id="@+id/TeamNumberPregameTextView"
+        android:layout_width="212dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="348dp"
+        android:layout_marginTop="56dp"
         android:text="Team Number"
         android:textAlignment="center"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editMatchNumber" />
-
-    <TextView
-        android:id="@+id/scouterName"
-        android:layout_width="737dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="84dp"
-        android:text="Scouter Name"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-    <TextView
-        android:id="@+id/team_side"
-        android:layout_width="737dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="40dp"
-        android:text="Team Side"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.97"
+        android:textSize="35sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <Button
-        android:id="@+id/preGameNext"
+    <EditText
+        android:id="@+id/MatchNumberPregameResponse"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:onClick="autonomous"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.616"
-        app:layout_constraintStart_toEndOf="@+id/editTeamNumber" />
+        android:layout_height="48dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="96dp"
+        android:backgroundTint="#000000"
+        android:ems="10"
+        android:hint="e.g 17"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/Red1"
+        app:layout_constraintEnd_toStartOf="@+id/TeamNumberResponsePregame" />
 
-    <Button
-        android:id="@+id/back_to_home_pregame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="280dp"
-        android:layout_marginBottom="48dp"
-        android:onClick="back"
-        android:text="@string/back"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/MatchNumberPregameTextView"
+        android:layout_width="248dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="104dp"
+        android:text="Match Number"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/MatchNumberPregameResponse"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/ScouterNamePregameTextView"
+        android:layout_width="224dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="56dp"
+        android:text="Scouter Name"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        app:layout_constraintStart_toEndOf="@+id/No_show_text"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/ScouterNamePregameResponse"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="120dp"
+        android:backgroundTint="#000000"
+        android:ems="10"
+        android:hint="e.g Matthew"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ScouterNamePregameTextView" />
+
+    <TextView
+        android:id="@+id/No_show_text"
+        android:layout_width="232dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="56dp"
+        android:text="No show"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        app:layout_constraintStart_toEndOf="@+id/TeamNumberPregameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="567dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/pre_game"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/noShowCheckBox"
+        android:layout_width="99dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="44dp"
+        android:scaleX="5"
+        android:scaleY="5"
+        app:layout_constraintStart_toEndOf="@+id/TeamNumberResponsePregame"
+        app:layout_constraintTop_toBottomOf="@+id/No_show_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

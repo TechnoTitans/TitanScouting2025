@@ -20,7 +20,6 @@ public class MatchRepository {
     }
 
     LiveData<List<Match>> getAllMatches() {
-
         return allMatches;
     }
 
@@ -28,53 +27,9 @@ public class MatchRepository {
         return dao.getMatch(matchNumber);
     }
 
-    void addPregameInformation(Match match) {
+    void addMatchInformation(Match match) {
         ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
-            dao.addPregameInformation(match);
-        });
-    }
-
-    void addAutonomousInformation(Match match) {
-        ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
-            dao.addAutonomousInformation(
-                    match.getMatchNum(),
-                    match.isPerformedLeave(),
-                    match.getStartingPosition(),
-                    match.getAutoAmpScored(),
-                    match.getAutoAmpMissed(),
-                    match.getAutoSpeakerScored(),
-                    match.getAutoSpeakerMissed());
-        });
-    }
-
-    void addTeleopInformation(Match match) {
-        ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
-            dao.addTeleopInformation(
-                    match.getMatchNum(),
-                    match.getTeleopAmpScored(),
-                    match.getTeleopAmpMissed(),
-                    match.getTeleopSpeakerScored(),
-                    match.getTeleopSpeakerMissed());
-        });
-    }
-
-    void addEndgameInformation(Match match) {
-        ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
-            dao.addEnggameInformation(
-                    match.getMatchNum(),
-                    match.isNoteInTrapScored(),
-                    match.isDisqualified(),
-                    match.isPenaltiesIncured(),
-                    match.isGoodCollaboration(),
-                    match.getDriverQuality(),
-                    match.getDefenseAbility(),
-                    match.getMechanicalReliability(),
-                    match.isDropsPiecesOften(),
-                    match.isPickRingsFromGround(),
-                    match.isKitBot(),
-                    match.isPancake(),
-                    match.getNotes()
-            );
+            dao.addMatchInformation(match);
         });
     }
 

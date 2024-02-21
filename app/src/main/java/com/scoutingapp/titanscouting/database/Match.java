@@ -19,6 +19,9 @@ public class Match {
     @ColumnInfo(name = "scouterName", defaultValue = "0")
     private String scouterName;
 
+    @ColumnInfo(name = "noShow", defaultValue = "0")
+    private boolean noShow;
+
     @ColumnInfo(name = "performedLeave", defaultValue = "0")
     private boolean performedLeave;
 
@@ -60,9 +63,6 @@ public class Match {
     @ColumnInfo(name = "penaltiesIncurred", defaultValue = "0")
     private boolean penaltiesIncured;
 
-    @ColumnInfo(name = "goodCollaboration", defaultValue = "0")
-    private boolean goodCollaboration;
-
     @ColumnInfo(name = "driverQuality", defaultValue = "1")
     private int driverQuality;
 
@@ -76,12 +76,6 @@ public class Match {
 
     @ColumnInfo(name = "canPickRingsFromGround", defaultValue = "0")
     private boolean pickRingsFromGround;
-
-    @ColumnInfo(name = "isKitBot", defaultValue = "0")
-    private boolean isKitBot;
-
-    @ColumnInfo(name = "isPancake", defaultValue = "0")
-    private boolean isPancake;
 
     @ColumnInfo(name = "notes", defaultValue = "0")
     private String notes;
@@ -230,13 +224,6 @@ public class Match {
         this.penaltiesIncured = penaltiesIncured;
     }
 
-    public boolean isGoodCollaboration() {
-        return goodCollaboration;
-    }
-
-    public void setGoodCollaboration(boolean goodCollaboration) {
-        this.goodCollaboration = goodCollaboration;
-    }
 
     public int getDriverQuality() {
         return driverQuality;
@@ -278,27 +265,19 @@ public class Match {
         this.pickRingsFromGround = pickRingsFromGround;
     }
 
-    public boolean isKitBot() {
-        return isKitBot;
-    }
-
-    public void setKitBot(boolean kitBot) {
-        isKitBot = kitBot;
-    }
-
-    public boolean isPancake() {
-        return isPancake;
-    }
-
-    public void setPancake(boolean pancake) {
-        isPancake = pancake;
-    }
-
     public String getNotes() {
         return notes;
     }
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public boolean isNoShow() {
+        return noShow;
+    }
+
+    public void setNoShow(boolean noShow) {
+        this.noShow = noShow;
     }
 }
