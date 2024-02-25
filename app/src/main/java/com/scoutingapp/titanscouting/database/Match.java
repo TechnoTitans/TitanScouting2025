@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+//The schema for our database; each @ColumnInfo is a column in the db
 @Entity(tableName = "scouting_database")
 public class Match {
     @PrimaryKey

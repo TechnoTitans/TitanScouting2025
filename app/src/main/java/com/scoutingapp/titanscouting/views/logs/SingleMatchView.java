@@ -1,7 +1,9 @@
 package com.scoutingapp.titanscouting.views.logs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,35 +13,103 @@ import androidx.lifecycle.ViewModelProvider;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
+import com.scoutingapp.titanscouting.views.Pregame;
 
 public class SingleMatchView extends AppCompatActivity {
 
-    private String matchNum;
+    LiveData<Match> liveDataMatch;
 
-    private LiveData<Match> matchLiveData;
+    Match match;
 
-    private MatchViewModel matchViewModel;
+    MatchViewModel matchViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_match_view);
 
-        matchNum = getIntent().getStringExtra("matchNum");
-        TextView textView = (TextView) findViewById(R.id.matchNumView);
-        textView.setText("Match Number: " + matchNum);
-
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
+        liveDataMatch = matchViewModel.getMatch(Integer.parseInt(getIntent().getStringExtra("matchNumber")));
 
-        matchLiveData = matchViewModel.getMatch(Integer.parseInt(matchNum));
+        liveDataMatch.observe(this, match -> {
+            ((TextView) (findViewById(R.id.matchNumberSummary))).setText(String.valueOf(match.getMatchNum()));
 
+            ((TextView) (findViewById(R.id.teamNumberSummary))).setText(String.valueOf(match.getTeamNumber()));
 
-        matchLiveData.observe(this, match -> {
-            if (match != null) {
-                Log.d("mas", "paslas");
-                ((TextView) findViewById(R.id.matchNumView)).setText(String.valueOf(match.getMatchNum()));
+            ((TextView) (findViewById(R.id.teamPositionSummary))).setText(match.getPosition());
+
+            ((TextView) (findViewById(R.id.scouterNameSummary))).setText(match.getScouterName());
+
+            if (match.isNoShow()){
+                ((TextView) (findViewById(R.id.noShowSummary))).setText("True");
             }
+
+            if (match.isPerformedLeave()){
+                ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("True");
+            }
+
+            ((TextView) (findViewById(R.id.startingPositionSummary))).setText(match.getStartingPosition());
+
+            ((TextView) (findViewById(R.id.autoAmpScoredSummary))).setText(String.valueOf(match.getAutoAmpScored()));
+
+            ((TextView) (findViewById(R.id.autoAmpMissedSummary))).setText(String.valueOf(match.getAutoAmpMissed()));
+
+            ((TextView) (findViewById(R.id.autoSpeakerScoredSummary))).setText(String.valueOf(match.getAutoSpeakerScored()));
+
+            ((TextView) (findViewById(R.id.autoSpeakerMissedSummary))).setText(String.valueOf(match.getAutoSpeakerMissed()));
+
+            ((TextView) (findViewById(R.id.teleopAmpScoredSummary))).setText(String.valueOf(match.getTeleopSpeakerScored()));
+
+            ((TextView) (findViewById(R.id.teleopAmpMissedSummary))).setText(String.valueOf(match.getTeleopAmpMissed()));
+
+            ((TextView) (findViewById(R.id.teleopSpeakerScoredSummary))).setText(String.valueOf(match.getTeleopSpeakerScored()));
+
+            ((TextView) (findViewById(R.id.teleopSpeakerMissedSummary))).setText(String.valueOf(match.getTeleopSpeakerMissed()));
+
+            ((TextView) (findViewById(R.id.stagePositionSummary))).setText(match.getStagePosition());
+
+            if (match.isNoteInTrapScored()){
+                ((TextView) (findViewById(R.id.noteInTrapScoredSummary))).setText("True");
+            }
+
+            if (match.isDisqualified()){
+                ((TextView) (findViewById(R.id.disqualifiedSummary))).setText("True");
+            }
+
+            if (match.isPenaltiesIncured()){
+                ((TextView) (findViewById(R.id.penaltiesIncurredSummary))).setText("True");
+            }
+
+            ((TextView) (findViewById(R.id.driverQualitySummary))).setText(String.valueOf(match.getDriverQuality()));
+
+            ((TextView) (findViewById(R.id.defenseAbilitySummary))).setText(String.valueOf(match.getDefenseAbility()));
+
+            ((TextView) (findViewById(R.id.mechanicalReliabilitySummary))).setText(String.valueOf(match.getMechanicalReliability()));
+
+            if (match.isDropsPiecesOften()){
+                ((TextView) (findViewById(R.id.dropsPiecesOftenSummary))).setText("True");
+            }
+
+            if (match.isPickRingsFromGround()){
+                ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("True");
+            }
+
+            ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
         });
 
+
+
+    }
+
+    public void preGame(View v){
+        Intent i = new Intent(this, Logs.class);
+        startActivity(i);
+    }
+
+    public void qrPage(View v){
+        Intent i = new Intent(this, QRGenerator.class);
+        i.putExtra("matchNumber", match.getMatchNum());
+        startActivity(i);
     }
 }

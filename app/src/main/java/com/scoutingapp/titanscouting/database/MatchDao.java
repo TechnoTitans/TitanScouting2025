@@ -8,6 +8,7 @@ import androidx.room.Upsert;
 
 import java.util.List;
 
+//The layer that interacts with the database itself
 @Dao
 public interface MatchDao {
     @Upsert

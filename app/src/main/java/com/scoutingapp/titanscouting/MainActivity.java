@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.scoutingapp.titanscouting.database.MatchListAdapter;
+import com.scoutingapp.titanscouting.views.logs.MatchListAdapter;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 import com.scoutingapp.titanscouting.views.logs.Logs;
 import com.scoutingapp.titanscouting.views.Pregame;

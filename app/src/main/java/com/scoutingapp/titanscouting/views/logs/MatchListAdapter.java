@@ -1,10 +1,21 @@
-package com.scoutingapp.titanscouting.database;
+package com.scoutingapp.titanscouting.views.logs;
 
+
+import android.app.Activity;
+import android.content.Intent;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
+import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
+
+import com.scoutingapp.titanscouting.database.Match;
+import com.scoutingapp.titanscouting.views.logs.MatchViewHolder;
+
 
 public class MatchListAdapter extends ListAdapter<Match, MatchViewHolder> {
     public MatchListAdapter(@NonNull DiffUtil.ItemCallback<Match> diffCallback) {
@@ -21,8 +32,17 @@ public class MatchListAdapter extends ListAdapter<Match, MatchViewHolder> {
         Match current = getItem(position);
         holder.bind(current.getMatchNum());
 
+        holder.getButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), SingleMatchView.class);
+                i.putExtra("matchNumber", ((Button) (holder.getButton())).getText().toString());
+                v.getContext().startActivity(i);
+            }
+        });
 
     }
+
 
     public static class MatchDiff extends DiffUtil.ItemCallback<Match> {
         @Override
