@@ -4,60 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#15acdc"
+    android:visibility="visible"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/match_button"
-        android:layout_width="764dp"
-        android:layout_height="85dp"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036" />
-
-    <LinearLayout
-        android:layout_width="890dp"
-        android:layout_height="608dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="9dp"
+    <Button
+        android:id="@+id/button"
+        android:layout_width="301dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="44dp"
         android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="preGame"
+        android:text="Start"
+        android:textSize="96sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/match_button"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="135dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/techologo" />
 
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="00dp"
-            android:layout_weight="33"
-            android:onClick="pregame"
-            android:text="@string/pre_game"
-            android:textSize="35sp">
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="279dp"
+        android:layout_height="145dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
+        android:gravity="center"
+        android:onClick="logs"
+        android:text="Logs"
+        android:textSize="96sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        </Button>
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="00dp"
-            android:layout_weight="33"
-            android:text="@string/logs"
-            android:textSize="35sp"
-            android:onClick="logs">
-
-        </Button>
-
-
-    </LinearLayout>
-
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="908dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Techno Titans Scouting App"
+        android:textColor="@color/white"
+        android:textColorHighlight="#0DE116"
+        android:textColorHint="#07DA0F"
+        android:textFontWeight="@integer/material_motion_duration_long_2"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
