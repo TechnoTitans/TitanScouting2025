@@ -9,29 +9,35 @@
 
     <Button
         android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
+        android:layout_width="111dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="16dp"
+        android:backgroundTint="@color/techno_titans"
         android:onClick="autonomous"
         android:scaleX="1.25"
         android:scaleY="1.25"
-        android:text="@string/back"
+        android:text="To Auto"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/autoTitle"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/autoTitle" />
+        app:layout_constraintTop_toTopOf="@+id/autoTitle"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="45dp"
+        android:layout_marginRight="36dp"
+        android:backgroundTint="@color/techno_titans"
         android:onClick="endGame"
         android:scaleX="1.25"
         android:scaleY="1.25"
-        android:text="@string/next"
+        android:text="To Endgame"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/autoTitle"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/autoTitle" />
+        app:layout_constraintTop_toTopOf="@+id/autoTitle"
+        app:layout_constraintVertical_bias="0.368" />
 
     <TextView
         android:id="@+id/autoTitle"
@@ -58,211 +64,257 @@
         app:layout_constraintLeft_toLeftOf="@id/autoTitle"
         app:layout_constraintRight_toRightOf="@id/autoTitle" />
 
+    <View
+        android:id="@+id/autoHighlight"
+        android:layout_width="399dp"
+        android:layout_height="96dp"
+        android:alpha="0.1"
+        android:background="@color/darkblue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <TextView
         android:id="@+id/speakerScores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="Speaker"
         android:textColor="@color/white"
         android:textSize="38sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintLeft_toLeftOf="@id/back"
+        app:layout_constraintRight_toRightOf="@id/autoTitle"
         app:layout_constraintTop_toBottomOf="@+id/back" />
 
     <Button
         android:id="@+id/addSpeaker"
-        android:layout_width="140dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="15dp"
-        android:alpha="0.6"
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="16dp"
+        android:alpha="1"
+        android:backgroundTint="@color/techno_titans"
         android:onClick="addSpeakerScored"
-        android:text="@string/plus"
-        android:textSize="120sp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="60sp"
         app:layout_constraintLeft_toLeftOf="@id/speakerScores"
         app:layout_constraintTop_toBottomOf="@id/speakerScores" />
 
     <Button
         android:id="@+id/subtractSpeaker"
-        android:layout_width="140dp"
-        android:layout_height="200dp"
-        android:alpha="0.6"
+        android:layout_width="90dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="24dp"
+        android:alpha="1"
         android:backgroundTint="@color/red"
         android:onClick="subtractSpeakerScored"
+        android:shadowRadius="0"
         android:text="@string/minus"
-        android:textSize="120sp"
-        app:layout_constraintLeft_toRightOf="@id/addSpeaker"
-        app:layout_constraintTop_toTopOf="@id/addSpeaker" />
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="55sp"
+        app:layout_constraintStart_toEndOf="@+id/addSpeaker"
+        app:layout_constraintTop_toBottomOf="@+id/speakerScored" />
 
     <TextView
-        android:id="@+id/speakersScored"
+        android:id="@+id/ampScored"
         android:layout_width="140dp"
         android:layout_height="54dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="32dp"
+        android:background="@null"
         android:ems="10"
         android:gravity="center"
-        android:hint="0"
         android:text="0"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@id/speakerScores"
-        app:layout_constraintLeft_toRightOf="@id/speakerScores"
-        app:layout_constraintRight_toRightOf="@id/subtractSpeaker"
-        app:layout_constraintTop_toTopOf="@id/speakerScores" />
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintStart_toEndOf="@+id/ampScores"
+        app:layout_constraintTop_toBottomOf="@+id/next" />
 
     <TextView
         android:id="@+id/speakerMisses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/missed"
         android:textColor="@color/white"
         android:textSize="38sp"
-        app:layout_constraintStart_toEndOf="@+id/speakersScored"
-        app:layout_constraintTop_toBottomOf="@+id/underline" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addSpeaker" />
 
     <Button
         android:id="@+id/addSpeakersMissed"
-        android:layout_width="140dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="15dp"
-        android:alpha="0.6"
-        android:onClick="subtractSpeakerScored"
-        android:text="@string/plus"
-        android:textSize="120sp"
-        app:layout_constraintLeft_toLeftOf="@id/speakerMisses"
-        app:layout_constraintTop_toBottomOf="@id/speakerScores" />
+        android:layout_width="106dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="12dp"
+        android:alpha="1"
+        android:backgroundTint="@color/techno_titans"
+        android:onClick="addSpeakerMissed"
+        android:text="+"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speakerMisses" />
 
     <Button
         android:id="@+id/subtractSpeakersMissed"
-        android:layout_width="140dp"
-        android:layout_height="200dp"
-        android:alpha="0.6"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="12dp"
+        android:alpha="1"
         android:backgroundTint="@color/red"
         android:onClick="subtractSpeakerMissed"
         android:text="@string/minus"
-        android:textSize="120sp"
-        app:layout_constraintLeft_toRightOf="@id/addSpeakersMissed"
-        app:layout_constraintTop_toTopOf="@id/addSpeaker" />
+        android:textColor="@color/white"
+        android:textSize="55sp"
+        app:layout_constraintStart_toEndOf="@+id/addSpeakersMissed"
+        app:layout_constraintTop_toBottomOf="@+id/speakerMissed" />
 
     <TextView
-        android:id="@+id/speakersMissed"
+        android:id="@+id/speakerScored"
         android:layout_width="140dp"
         android:layout_height="54dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:background="@null"
         android:ems="10"
         android:gravity="center"
         android:text="0"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@id/speakerScores"
-        app:layout_constraintLeft_toRightOf="@id/speakerMisses"
-        app:layout_constraintRight_toRightOf="@id/subtractSpeakersMissed"
-        app:layout_constraintTop_toTopOf="@id/speakerScores" />
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintStart_toEndOf="@+id/speakerScores"
+        app:layout_constraintTop_toBottomOf="@+id/underline" />
 
     <TextView
         android:id="@+id/ampScores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="Amp"
         android:textColor="@color/white"
         android:textSize="38sp"
-        app:layout_constraintLeft_toLeftOf="@id/speakerScores"
-        app:layout_constraintTop_toBottomOf="@id/addSpeaker" />
+        app:layout_constraintStart_toEndOf="@+id/speakerScored"
+        app:layout_constraintTop_toBottomOf="@+id/underline" />
 
     <Button
         android:id="@+id/addAmps"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="15dp"
-        android:alpha="0.6"
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="12dp"
+        android:alpha="1"
+        android:backgroundTint="@color/techno_titans"
         android:onClick="addAmpScored"
         android:text="@string/plus"
-        android:textSize="90sp"
-        app:layout_constraintLeft_toLeftOf="@id/ampScores"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintStart_toEndOf="@+id/subtractSpeaker"
         app:layout_constraintTop_toBottomOf="@id/ampScores" />
 
     <Button
         android:id="@+id/subtractAmp"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:alpha="0.6"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="28dp"
+        android:alpha="1"
         android:backgroundTint="@color/red"
         android:onClick="subtractAmpScored"
         android:text="@string/minus"
-        android:textSize="90sp"
-        app:layout_constraintLeft_toRightOf="@id/addAmps"
-        app:layout_constraintTop_toTopOf="@id/addAmps" />
+        android:textColor="@color/white"
+        android:textSize="55sp"
+        app:layout_constraintStart_toEndOf="@+id/addAmps"
+        app:layout_constraintTop_toBottomOf="@+id/ampScored" />
 
     <TextView
-        android:id="@+id/ampsScored"
+        android:id="@+id/ampMissed"
         android:layout_width="140dp"
         android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
         android:ems="10"
         android:gravity="center"
-        android:hint="0"
         android:text="0"
-        android:inputType="numberDecimal"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/ampScores"
-        app:layout_constraintLeft_toRightOf="@id/ampScores"
-        app:layout_constraintRight_toRightOf="@id/subtractAmp"
-        app:layout_constraintTop_toTopOf="@id/ampScores" />
+        android:textSize="40sp"
+        app:layout_constraintStart_toEndOf="@+id/ampMisses"
+        app:layout_constraintTop_toBottomOf="@+id/subtractAmp" />
 
     <TextView
         android:id="@+id/ampMisses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
-        android:text="Missed"
+        android:text="@string/missed"
         android:textColor="@color/white"
         android:textSize="38sp"
-        app:layout_constraintLeft_toLeftOf="@id/speakerMisses"
-        app:layout_constraintTop_toTopOf="@id/ampScores" />
+        app:layout_constraintStart_toEndOf="@+id/speakerMissed"
+        app:layout_constraintTop_toBottomOf="@+id/addAmps" />
 
     <Button
         android:id="@+id/addAmpsMissed"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="15dp"
-        android:alpha="0.6"
+        android:layout_width="106dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="8dp"
+        android:alpha="1"
+        android:backgroundTint="@color/techno_titans"
         android:onClick="addAmpMissed"
         android:text="@string/plus"
-        android:textSize="90sp"
-        app:layout_constraintLeft_toLeftOf="@id/ampMisses"
-        app:layout_constraintTop_toBottomOf="@id/ampMisses" />
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintStart_toEndOf="@+id/subtractSpeakersMissed"
+        app:layout_constraintTop_toBottomOf="@+id/ampMisses" />
 
     <Button
         android:id="@+id/subtractAmpsMissed"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:alpha="0.6"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:alpha="1"
         android:backgroundTint="@color/red"
         android:onClick="subtractAmpMissed"
         android:text="@string/minus"
-        android:textSize="90sp"
-        app:layout_constraintLeft_toRightOf="@id/addAmpsMissed"
-        app:layout_constraintTop_toTopOf="@id/addAmpsMissed" />
+        android:textColor="@color/white"
+        android:textSize="55sp"
+        app:layout_constraintStart_toEndOf="@+id/addAmpsMissed"
+        app:layout_constraintTop_toBottomOf="@+id/ampMissed" />
 
     <TextView
-        android:id="@+id/ampsMissed"
+        android:id="@+id/speakerMissed"
         android:layout_width="140dp"
         android:layout_height="54dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="4dp"
+        android:background="@null"
         android:ems="10"
         android:gravity="center"
-        android:hint="0"
         android:text="0"
-        android:inputType="numberDecimal"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/ampScores"
-        app:layout_constraintLeft_toRightOf="@id/ampMisses"
-        app:layout_constraintRight_toRightOf="@id/subtractAmpsMissed"
-        app:layout_constraintTop_toTopOf="@id/ampScores" />
+        android:textSize="40sp"
+        app:layout_constraintStart_toEndOf="@+id/speakerMisses"
+        app:layout_constraintTop_toBottomOf="@+id/subtractSpeaker" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

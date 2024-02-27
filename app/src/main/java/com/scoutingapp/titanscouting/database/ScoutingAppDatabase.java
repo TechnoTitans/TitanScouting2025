@@ -18,6 +18,9 @@ public abstract class ScoutingAppDatabase extends RoomDatabase {
 
     private static volatile ScoutingAppDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
+
+    //allows for async writing from the database since directly writing into the database
+    //causes issues regarding performance -> background threads are used
     static final ExecutorService databaseWriteExectuer =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 

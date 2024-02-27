@@ -5,14 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:layout_margin="5dp"
     tools:context=".views.logs.recyclerview_item">
 
     <Button
         android:id="@+id/match_button"
-        style="@style/word_title"
-        android:text="@string/logs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light"
-        android:onClick="singleMatchViewTransition" />
+        android:layout_height="60dp"
+        android:backgroundTint="@color/techno_titans"
+        android:onClick="singleMatchViewTransition"
+        android:text="@string/logs"
+        android:textAlignment="center"
+        android:textSize="33sp"
+        android:textColor="@color/white" />
 </LinearLayout>

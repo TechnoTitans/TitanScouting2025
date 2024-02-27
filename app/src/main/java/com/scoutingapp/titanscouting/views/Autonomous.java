@@ -41,10 +41,8 @@ public class Autonomous extends AppCompatActivity {
             this.match = match;
         });
 
-        matchViewModel.addMatchInformation(match);
-
         match.setPerformedLeave(false);
-        CheckBox movedCheckBox = (CheckBox) (findViewById(R.id.moved));
+        CheckBox movedCheckBox = (CheckBox) (findViewById(R.id.movedCheckbox));
 
         movedCheckBox.setOnClickListener(v -> {
             match.setPerformedLeave(!match.isPerformedLeave());
@@ -54,28 +52,28 @@ public class Autonomous extends AppCompatActivity {
         CheckBox sourceCheckBox = (CheckBox) (findViewById(R.id.startsSourceSide));
 
         sourceCheckBox.setOnClickListener(v -> {
-            match.setPosition("Source");
+            match.setStartingPosition("Source");
             matchViewModel.addMatchInformation(match);
         });
 
         CheckBox middleCheckBox = (CheckBox) (findViewById(R.id.startsMiddle));
 
         middleCheckBox.setOnClickListener(v -> {
-            match.setPosition("Middle");
+            match.setStartingPosition("Middle");
             matchViewModel.addMatchInformation(match);
         });
 
         CheckBox ampCheckBox = (CheckBox) (findViewById(R.id.startsAmpSide));
 
-        middleCheckBox.setOnClickListener(v -> {
-            match.setPosition("Amp");
+        ampCheckBox.setOnClickListener(v -> {
+            match.setStartingPosition("Amp");
             matchViewModel.addMatchInformation(match);
         });
 
     }
 
     public void subtractAmpScored(View v){
-        TextView textView = (TextView) findViewById(R.id.ampsScored);
+        TextView textView = (TextView) findViewById(R.id.ampScored);
         int ampScored = Integer.parseInt(textView.getText().toString()) - 1;
 
         if (ampScored < 0) {
@@ -93,7 +91,7 @@ public class Autonomous extends AppCompatActivity {
 
 
     public void subtractAmpMissed(View v){
-        TextView textView = (TextView) findViewById(R.id.ampsMissed);
+        TextView textView = (TextView) findViewById(R.id.ampMissed);
         int ampMissed = Integer.parseInt(textView.getText().toString()) - 1;
 
         if (ampMissed < 0) {
@@ -109,7 +107,7 @@ public class Autonomous extends AppCompatActivity {
     }
 
     public void addAmpScored(View v){
-        TextView textView = (TextView) findViewById(R.id.ampsScored);
+        TextView textView = (TextView) findViewById(R.id.ampScored);
         int ampScored = Integer.parseInt(textView.getText().toString()) + 1;
         match.setAutoAmpScored(ampScored);
         matchViewModel.addMatchInformation(match);
@@ -117,7 +115,7 @@ public class Autonomous extends AppCompatActivity {
     }
 
     public void addAmpMissed(View v){
-        TextView textView = (TextView) findViewById(R.id.ampsMissed);
+        TextView textView = (TextView) findViewById(R.id.ampMissed);
         int ampMissed = Integer.parseInt(textView.getText().toString()) + 1;
         match.setAutoAmpMissed(ampMissed);
         matchViewModel.addMatchInformation(match);
@@ -127,7 +125,7 @@ public class Autonomous extends AppCompatActivity {
 
 
     public void subtractSpeakerScored(View v){
-        TextView textView = (TextView) findViewById(R.id.speakersScored);
+        TextView textView = (TextView) findViewById(R.id.speakerScored);
         int speakerScored = Integer.parseInt(textView.getText().toString()) - 1;
 
         match.setAutoSpeakerScored(speakerScored);
@@ -141,7 +139,7 @@ public class Autonomous extends AppCompatActivity {
     }
 
     public void subtractSpeakerMissed(View v){
-        TextView textView = (TextView) findViewById(R.id.speakersMissed);
+        TextView textView = (TextView) findViewById(R.id.speakerMissed);
         int speakerMissed = Integer.parseInt(textView.getText().toString()) - 1;
 
         match.setAutoSpeakerMissed(speakerMissed);
@@ -155,7 +153,7 @@ public class Autonomous extends AppCompatActivity {
     }
 
     public void addSpeakerScored(View v){
-        TextView textView = (TextView) findViewById(R.id.speakersScored);
+        TextView textView = (TextView) findViewById(R.id.speakerScored);
         int speakerScored = Integer.parseInt(textView.getText().toString()) + 1;
         textView.setText(String.valueOf(speakerScored));
         match.setAutoSpeakerScored(speakerScored);
@@ -163,7 +161,7 @@ public class Autonomous extends AppCompatActivity {
     }
 
     public void addSpeakerMissed(View v){
-        TextView textView = (TextView) findViewById(R.id.speakersMissed);
+        TextView textView = (TextView) findViewById(R.id.speakerMissed);
         int speakerMissed = Integer.parseInt(textView.getText().toString()) + 1;
         textView.setText(String.valueOf(speakerMissed));
         match.setAutoSpeakerMissed(speakerMissed);

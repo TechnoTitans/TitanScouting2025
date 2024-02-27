@@ -176,7 +176,7 @@ public class Endgame extends AppCompatActivity {
 ////        }
 ////    }
 //
-//    public void summaryPage(View v){
+    public void summaryPage(View v){
 //        SeekBar mechanicalBar = (SeekBar) (findViewById(R.id.seekBar1));
 //        int mechanicalPoints = mechanicalBar.getProgress();
 //
@@ -193,11 +193,11 @@ public class Endgame extends AppCompatActivity {
 //        match.setDriverQuality(driverQualityPoints);
 //
 //        matchViewModel.addMatchInformation(match);
-//
-//        Intent i = new Intent(this, Summary.class);
-//        i.putExtra("matchNumber", matchNum);
-//        startActivity(i);
-//    }
+
+        Intent i = new Intent(this, Summary.class);
+        i.putExtra("matchNumber", matchNum);
+        startActivity(i);
+    }
 
 
 

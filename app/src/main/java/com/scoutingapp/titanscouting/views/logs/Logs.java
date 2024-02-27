@@ -2,8 +2,10 @@ package com.scoutingapp.titanscouting.views.logs;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.scoutingapp.titanscouting.MainActivity;
 import com.scoutingapp.titanscouting.R;
-import com.scoutingapp.titanscouting.database.MatchListAdapter;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 
 public class Logs extends AppCompatActivity {
@@ -39,12 +40,5 @@ public class Logs extends AppCompatActivity {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
-
-//    public void singleMatchViewTransition(View v) {
-//        Intent i = new Intent(this, SingleMatchView.class);
-//        Button button = (Button) findViewById(R.id.match_button);
-//        i.putExtra("matchNum", button.getText().toString());
-//        startActivity(i);
-//    }
 
 }

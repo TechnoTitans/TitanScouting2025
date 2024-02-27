@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.scoutingapp.titanscouting.R;
 
-public class recyclerview_item extends AppCompatActivity{
+public class recyclerview_item extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,15 @@ public class recyclerview_item extends AppCompatActivity{
         Button button = (Button) findViewById(R.id.match_button);
         Log.d("mas", "paslas2");
         i.putExtra("matchNum", button.getText().toString());
+        startActivity(i);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent i = new Intent(this, SingleMatchView.class);
+        i.putExtra("matchNumber", ((Button)(findViewById(R.id.match_button))).
+                getText().toString());
+
         startActivity(i);
     }
 }
