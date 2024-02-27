@@ -36,7 +36,7 @@ public class MatchListAdapter extends ListAdapter<Match, MatchViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), SingleMatchView.class);
-                i.putExtra("matchNumber", ((Button) (holder.getButton())).getText().toString());
+                i.putExtra("matchNumber", ((Button) (holder.getButton())).getText().toString().split(": ")[1]);
                 v.getContext().startActivity(i);
             }
         });

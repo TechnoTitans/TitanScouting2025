@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
-        android:text="@string/back"
+        android:text="Logs"
         android:textColor="@color/white"
         android:textSize="40sp"
         android:onClick="logs"
@@ -24,10 +24,10 @@
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="908dp"
+        android:layout_marginStart="560dp"
         android:layout_marginTop="28dp"
-        android:text="QR"
         android:onClick="qrPage"
+        android:text="QR"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/back"
@@ -36,23 +36,21 @@
     <TextView
         android:id="@+id/summaryHeader"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-675dp"
-        android:text="Summary"
+        android:layout_height="67dp"
+        android:layout_marginTop="28dp"
+        android:text="Match Review"
         android:textColor="@color/black"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/informationScrollView"
-        android:layout_width="1176dp"
-        android:layout_height="672dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="30dp"
         android:background="@color/white"
         android:fillViewport="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +63,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="150dp"
                 android:layout_weight="1">
 
                 <LinearLayout
@@ -77,9 +75,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Match Number"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -90,6 +89,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -103,9 +103,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Team Number"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -116,6 +117,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -129,9 +131,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Position"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -142,6 +145,7 @@
                         android:layout_weight="1"
                         android:text="R1"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -162,9 +166,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Scouter Name"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -175,6 +180,7 @@
                         android:layout_weight="1"
                         android:text="Max The Goat"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -188,9 +194,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="noShow"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -201,6 +208,7 @@
                         android:layout_weight="1"
                         android:text="False"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -214,9 +222,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Performed Leave"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -227,6 +236,7 @@
                         android:layout_weight="1"
                         android:text="False"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -247,9 +257,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Starting Position"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -260,6 +271,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -273,9 +285,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Auto Amp Scored"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -286,6 +299,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -299,9 +313,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Auto Amp Missed"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -312,6 +327,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -332,9 +348,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Auto Speaker Scored"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -345,6 +362,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -358,9 +376,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Auto Speaker Missed"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -372,6 +391,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -385,9 +405,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Teleop Amp Scored"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -398,6 +419,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -418,9 +440,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Teleop Amp Missed"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -431,6 +454,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -444,9 +468,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Teleop Speaker Scored"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -457,6 +482,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -470,9 +496,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Teleop Speaker Missed"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -483,6 +510,7 @@
                         android:layout_weight="1"
                         android:text="0"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -503,9 +531,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Stage Position"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -516,6 +545,7 @@
                         android:layout_weight="1"
                         android:text="Hanging"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -529,9 +559,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="noteInTrapScored"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -542,6 +573,7 @@
                         android:layout_weight="1"
                         android:text="False"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -555,9 +587,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Disqualified"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -568,6 +601,7 @@
                         android:layout_weight="1"
                         android:text="False"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -588,9 +622,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Penalties Incurred"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -601,6 +636,7 @@
                         android:layout_weight="1"
                         android:text="False"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -614,9 +650,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Driver Quality"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -627,6 +664,7 @@
                         android:layout_weight="1"
                         android:text="3"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -640,9 +678,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Defense Ability"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -653,6 +692,7 @@
                         android:layout_weight="1"
                         android:text="3"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -673,9 +713,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Mechanical Reliability"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -686,6 +727,7 @@
                         android:layout_weight="1"
                         android:text="3"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -699,9 +741,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Drops Pieces Often"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -712,6 +755,7 @@
                         android:layout_weight="1"
                         android:text="False"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -725,9 +769,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Can Pick Rings From Ground"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -738,6 +783,7 @@
                         android:layout_weight="1"
                         android:text="True"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
@@ -758,9 +804,10 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="3"
+                        android:layout_weight="1"
                         android:text="Notes"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
@@ -771,6 +818,7 @@
                         android:layout_weight="1"
                         android:text="Hello There"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>

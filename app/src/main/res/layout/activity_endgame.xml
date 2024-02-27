@@ -152,6 +152,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="28dp"
         android:text="Next"
+        android:onClick="summaryPage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/button_bg"/>

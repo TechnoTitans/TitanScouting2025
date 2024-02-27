@@ -22,7 +22,7 @@ public class MatchViewHolder extends RecyclerView.ViewHolder{
     }
 
     public void bind(int text) {
-        matchNumView.setText(String.valueOf(text));
+        matchNumView.setText("Match: " + String.valueOf(text));
     }
 
 

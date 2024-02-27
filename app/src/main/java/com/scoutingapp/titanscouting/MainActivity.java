@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void pregame(View v) {
+    public void preGame(View v) {
         Intent i = new Intent(this, Pregame.class);
         startActivity(i);
         Log.d("Pregame", "PreGame page has been reached");

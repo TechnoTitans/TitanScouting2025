@@ -99,15 +99,14 @@ public class Summary extends AppCompatActivity {
 
     }
 
-    public void teleOp(View v){
+    public void endgame(View v){
         Intent i = new Intent(this, Teleop.class);
         i.putExtra("matchNumber", match.getMatchNum());
         startActivity(i);
     }
 
-    public void preGame(View v){
+    public void pregame(View v){
         Intent i = new Intent(this, Pregame.class);
-        i.putExtra("matchNumber", match.getMatchNum());
         startActivity(i);
     }
 }

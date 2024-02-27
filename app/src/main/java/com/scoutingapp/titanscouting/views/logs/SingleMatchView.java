@@ -102,7 +102,7 @@ public class SingleMatchView extends AppCompatActivity {
 
     }
 
-    public void preGame(View v){
+    public void logs(View v){
         Intent i = new Intent(this, Logs.class);
         startActivity(i);
     }

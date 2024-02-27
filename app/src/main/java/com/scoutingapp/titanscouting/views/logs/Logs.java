@@ -41,11 +41,4 @@ public class Logs extends AppCompatActivity {
         startActivity(i);
     }
 
-//    public void singleMatchViewTransition(View v) {
-//        Intent i = new Intent(this, SingleMatchView.class);
-//        Button button = (Button) findViewById(R.id.match_button);
-//        i.putExtra("matchNum", button.getText().toString());
-//        startActivity(i);
-//    }
-
 }
