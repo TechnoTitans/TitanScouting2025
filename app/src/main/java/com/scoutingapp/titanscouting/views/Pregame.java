@@ -6,15 +6,10 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.scoutingapp.titanscouting.MainActivity;
@@ -38,9 +33,7 @@ public class Pregame extends AppCompatActivity {
 
         if (getIntent().getStringExtra("transition").equals("fromAuto")){
 
-            viewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, backwardsMatch -> {
-                match = backwardsMatch;
-            });
+            viewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, backwardsMatch -> match = backwardsMatch);
 
             ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(match.getMatchNum());
 
@@ -110,12 +103,9 @@ public class Pregame extends AppCompatActivity {
 
         match.setPerformedLeave(false);
         CheckBox noShowCheckBox = findViewById(R.id.noShowCheckBox);
-        noShowCheckBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                match.setNoShow(!match.isNoShow());
-                viewModel.addMatchInformation(match);
-            }
+        noShowCheckBox.setOnClickListener(v -> {
+            match.setNoShow(!match.isNoShow());
+            viewModel.addMatchInformation(match);
         });
 
     }
