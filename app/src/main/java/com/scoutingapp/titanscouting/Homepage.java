@@ -16,7 +16,7 @@ import com.scoutingapp.titanscouting.views.Pregame;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class Homepage extends AppCompatActivity {
 
     private MatchViewModel matchViewModel;
 

@@ -6,12 +6,11 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/techologo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/techologo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TitanScouting"
-        tools:targetApi="31">
+        android:theme="@style/Theme.TitanScouting">
         <activity
             android:name=".views.logs.QRGenerator"
             android:exported="false" />
@@ -31,7 +30,7 @@
             android:name=".views.logs.SingleMatchView"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Homepage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

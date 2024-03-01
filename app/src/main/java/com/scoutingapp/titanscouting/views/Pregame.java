@@ -12,7 +12,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.scoutingapp.titanscouting.MainActivity;
+import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
@@ -149,7 +149,7 @@ public class Pregame extends AppCompatActivity {
     }
 
     public void back(View v) {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, Homepage.class);
         Log.d("transition", "Homepage transition");
         startActivity(i);
     }
