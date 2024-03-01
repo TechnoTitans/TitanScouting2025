@@ -37,13 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void preGame(View v) {
         Intent i = new Intent(this, Pregame.class);
+        Log.d("transition", "Pregame transition");
+        i.putExtra("transition", "fromHomePage");
         startActivity(i);
-        Log.d("Pregame", "PreGame page has been reached");
     }
 
     public void logs(View v){
         Intent i = new Intent(this, Logs.class);
+        Log.d("transition", "Logs transition");
+        i.putExtra("transition", "fromHomePage");
         startActivity(i);
-        Log.d("Logs", "Logs screen has been reached");
     }
 }

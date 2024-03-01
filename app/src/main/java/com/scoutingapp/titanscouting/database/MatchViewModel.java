@@ -9,7 +9,7 @@ import java.util.List;
 
 //The layer that interacts with the views
 public class MatchViewModel extends AndroidViewModel {
-    private MatchRepository matchRepository;
+    private final MatchRepository matchRepository;
 
     private final LiveData<List<Match>> allMatches;
 

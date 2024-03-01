@@ -14,7 +14,7 @@ public class MatchViewHolder extends RecyclerView.ViewHolder{
     private final Button matchNumView;
     private MatchViewHolder(View itemView) {
         super(itemView);
-        matchNumView = (Button) itemView.findViewById(R.id.match_button);
+        matchNumView = itemView.findViewById(R.id.match_button);
     }
 
     public View getButton(){
@@ -22,7 +22,7 @@ public class MatchViewHolder extends RecyclerView.ViewHolder{
     }
 
     public void bind(int text) {
-        matchNumView.setText("Match: " + String.valueOf(text));
+        matchNumView.setText("Match: " + text);
     }
 
 

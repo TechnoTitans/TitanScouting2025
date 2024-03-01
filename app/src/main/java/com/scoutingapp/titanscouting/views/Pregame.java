@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.scoutingapp.titanscouting.MainActivity;
@@ -35,23 +36,20 @@ public class Pregame extends AppCompatActivity {
 
         match = new Match();
 
+        if (getIntent().getStringExtra("transition").equals("fromAuto")){
 
-        if (getIntent().getIntExtra("matchNumber", 0) != 0){
+            viewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, backwardsMatch -> {
+                match = backwardsMatch;
+            });
 
-            Log.d("monkey", "onkey");
+            ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(match.getMatchNum());
 
-            Match backwardsMatch = viewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).getValue();
+            ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(match.getTeamNumber());
 
-            Log.d("monkey", "onkey");
-            assert backwardsMatch != null;
-            ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setHint(backwardsMatch.getMatchNum());
-
-            ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setHint(backwardsMatch.getTeamNumber());
-
-            ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setHint(backwardsMatch.getScouterName());
+            ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(match.getScouterName());
         }
 
-        EditText matchNumberInput = (EditText) (findViewById(R.id.MatchNumberPregameResponse));
+        EditText matchNumberInput = findViewById(R.id.MatchNumberPregameResponse);
         matchNumberInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -72,7 +70,7 @@ public class Pregame extends AppCompatActivity {
 
 
 
-        EditText teamNumberInput = (EditText) (findViewById(R.id.TeamNumberResponsePregame));
+        EditText teamNumberInput = findViewById(R.id.TeamNumberResponsePregame);
         teamNumberInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -91,7 +89,7 @@ public class Pregame extends AppCompatActivity {
             }
         });
 
-        EditText scouterNameInput = (EditText) (findViewById(R.id.ScouterNamePregameResponse));
+        EditText scouterNameInput = findViewById(R.id.ScouterNamePregameResponse);
         scouterNameInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -111,7 +109,7 @@ public class Pregame extends AppCompatActivity {
         });
 
         match.setPerformedLeave(false);
-        CheckBox noShowCheckBox = (CheckBox) (findViewById(R.id.noShowCheckBox));
+        CheckBox noShowCheckBox = findViewById(R.id.noShowCheckBox);
         noShowCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,14 +152,15 @@ public class Pregame extends AppCompatActivity {
 
 
     public void autonomous(View v){
-        Log.d("stage", "Entering Teleop");
         Intent i = new Intent(this, Autonomous.class);
         i.putExtra("matchNumber", match.getMatchNum());
+        Log.d("transition", "Autonomous transition");
         startActivity(i);
     }
 
     public void back(View v) {
         Intent i = new Intent(this, MainActivity.class);
+        Log.d("transition", "Homepage transition");
         startActivity(i);
     }
 }

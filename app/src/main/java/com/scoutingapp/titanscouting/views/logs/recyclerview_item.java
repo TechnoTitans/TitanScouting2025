@@ -21,7 +21,7 @@ public class recyclerview_item extends AppCompatActivity implements View.OnClick
     public void singleMatchViewTransition(View v){
         Log.d("mas", "paslas1");
         Intent i = new Intent(this, SingleMatchView.class);
-        Button button = (Button) findViewById(R.id.match_button);
+        Button button = findViewById(R.id.match_button);
         Log.d("mas", "paslas2");
         i.putExtra("matchNum", button.getText().toString());
         startActivity(i);
