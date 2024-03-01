@@ -35,13 +35,13 @@ public class Teleop extends AppCompatActivity {
         liveDataMatch.observe(this, match -> {
             this.match = match;
 
-            ((TextView) findViewById(R.id.speakerScored)).setText(String.valueOf(match.getAutoSpeakerScored()));
+            ((TextView) findViewById(R.id.speakerScored)).setText(String.valueOf(match.getTeleopSpeakerScored()));
 
-            ((TextView) findViewById(R.id.speakerMissed)).setText(String.valueOf(match.getAutoSpeakerMissed()));
+            ((TextView) findViewById(R.id.speakerMissed)).setText(String.valueOf(match.getTeleopSpeakerMissed()));
 
-            ((TextView) findViewById(R.id.ampScored)).setText(String.valueOf(match.getAutoAmpScored()));
+            ((TextView) findViewById(R.id.ampScored)).setText(String.valueOf(match.getTeleopAmpScored()));
 
-            ((TextView) findViewById(R.id.ampMissed)).setText(String.valueOf(match.getAutoAmpMissed()));
+            ((TextView) findViewById(R.id.ampMissed)).setText(String.valueOf(match.getTeleopAmpMissed()));
         });
 
     }
