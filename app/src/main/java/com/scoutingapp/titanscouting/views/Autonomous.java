@@ -2,22 +2,16 @@ package com.scoutingapp.titanscouting.views;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
-
-import kotlinx.coroutines.internal.CoroutineExceptionHandlerImpl_commonKt;
-
 public class Autonomous extends AppCompatActivity {
 
     public Match match;
@@ -56,17 +50,21 @@ public class Autonomous extends AppCompatActivity {
 
 
 
-            if (match.isPerformedLeave()){
+            if (match.isPerformedLeave()) {
                 movedCheckBox.setChecked(true);
             }
 
-            if (match.getStagePosition() != null){
-                if (match.getStagePosition().equals("Source")){
-                    sourceCheckBox.setChecked(true);
-                } else if (match.getStagePosition().equals("Amp")) {
-                    ampCheckBox.setChecked(true);
-                } else if (match.getStagePosition().equals("Middle")){
-                    middleCheckBox.setChecked(true);
+            if (match.getStagePosition() != null) {
+                switch (match.getStagePosition()) {
+                    case "Source":
+                        sourceCheckBox.setChecked(true);
+                        break;
+                    case "Amp":
+                        ampCheckBox.setChecked(true);
+                        break;
+                    case "Middle":
+                        middleCheckBox.setChecked(true);
+                        break;
                 }
             }
 
