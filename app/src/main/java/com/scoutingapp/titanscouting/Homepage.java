@@ -15,7 +15,7 @@ import com.scoutingapp.titanscouting.views.logs.Logs;
 import com.scoutingapp.titanscouting.views.QRScreen;
 
 
-public class MainActivity extends AppCompatActivity {
+public class Homepage extends AppCompatActivity {
 
     private MatchViewModel matchViewModel;
 
@@ -39,15 +39,18 @@ public class MainActivity extends AppCompatActivity {
             adapter.submitList(matches);
         });
 
-
-
     }
 
-
+    public void preGame(View v) {
+        Intent i = new Intent(this, Pregame.class);
+        startActivity(i);
+        Log.d("Pregame", "PreGame page has been reached");
+    }
 
     public void logs(View v){
         Intent i = new Intent(this, Logs.class);
+        Log.d("transition", "Logs transition");
+        i.putExtra("transition", "fromHomePage");
         startActivity(i);
-        Log.d("Logs", "Logs screen has been reached");
     }
 }

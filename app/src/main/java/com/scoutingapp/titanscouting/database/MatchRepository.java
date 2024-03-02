@@ -9,8 +9,8 @@ import java.util.List;
 
 public class MatchRepository {
 
-    private MatchDao dao;
-    private LiveData<List<Match>> allMatches;
+    private final MatchDao dao;
+    private final LiveData<List<Match>> allMatches;
 
     MatchRepository(Application application) {
         ScoutingAppDatabase db = ScoutingAppDatabase.getDatabase(application);

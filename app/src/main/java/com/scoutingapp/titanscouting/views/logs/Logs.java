@@ -2,16 +2,14 @@ package com.scoutingapp.titanscouting.views.logs;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.scoutingapp.titanscouting.MainActivity;
+import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 
@@ -37,7 +35,7 @@ public class Logs extends AppCompatActivity {
 
     }
     public void back(View v) {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, Homepage.class);
         startActivity(i);
     }
 
