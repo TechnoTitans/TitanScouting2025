@@ -42,5 +42,7 @@
     <item name="kitbot_text" type="id" />
     <item name="park" type="id" />
     <item name="drop_pieces" type="id" />
-    <item name="Back" type="id" />
+    <item name="to_endgame" type="id" />
+    <item name="back_to_summary" type="id" />
+    <item name="exit_scouting_button" type="id" />
 </resources>

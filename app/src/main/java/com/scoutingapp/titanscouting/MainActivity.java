@@ -8,12 +8,11 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.scoutingapp.titanscouting.views.Pregame;
 import com.scoutingapp.titanscouting.views.logs.MatchListAdapter;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 import com.scoutingapp.titanscouting.views.logs.Logs;
-import com.scoutingapp.titanscouting.views.Pregame;
-
-
+import com.scoutingapp.titanscouting.views.QRScreen;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +24,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        View pregameButton = findViewById(R.id.button);
+        pregameButton.setOnClickListener(v -> {
+            Intent i = new Intent(MainActivity.this, Pregame.class);
+            startActivity(i);
+            Log.d("Pregame", "PreGame page has been reached");
+        });
+
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
         final MatchListAdapter adapter = new MatchListAdapter(new MatchListAdapter.MatchDiff());
@@ -33,13 +39,11 @@ public class MainActivity extends AppCompatActivity {
             adapter.submitList(matches);
         });
 
+
+
     }
 
-    public void preGame(View v) {
-        Intent i = new Intent(this, Pregame.class);
-        startActivity(i);
-        Log.d("Pregame", "PreGame page has been reached");
-    }
+
 
     public void logs(View v){
         Intent i = new Intent(this, Logs.class);

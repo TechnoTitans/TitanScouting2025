@@ -6,65 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".views.Endgame">
 
-    <RatingBar
-        android:id="@+id/defense_bar"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/driver_quality_bar" />
+        android:orientation="vertical"
 
-    <TextView
-        android:id="@+id/defense_text"
-        android:layout_width="158dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="776dp"
-        android:layout_marginBottom="664dp"
-        android:text="defense"
-        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-    <RatingBar
-        android:id="@+id/mechanical_reliability_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/defense_bar" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/mechanical_reliabilty_text"
-        android:layout_width="199dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="768dp"
-        android:layout_marginBottom="552dp"
-        android:text="mechanical reliability"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/defense_text"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:text="defense"
+                android:textSize="24sp" />
 
-    <RatingBar
-        android:id="@+id/driver_quality_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <RatingBar
+                android:id="@+id/defense_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/driver_quality"
-        android:layout_width="158dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="776dp"
-        android:layout_marginBottom="792dp"
-        android:text="driver quality"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mechanical_reliabilty_text"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:text="mechanical reliability"
+                android:textSize="20sp" />
+
+            <RatingBar
+                android:id="@+id/mechanical_reliability_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/driver_quality"
+                android:layout_width="200dp"
+                android:layout_height="38dp"
+                android:text="driver quality"
+                android:textSize="24sp" />
+
+            <RatingBar
+                android:id="@+id/driver_quality_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/human_player"
@@ -88,27 +94,59 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/pancake_text"
-        android:layout_width="159dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="688dp"
-        android:layout_marginBottom="380dp"
-        android:text="pancake?"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
 
-    <TextView
-        android:id="@+id/kitbot_text"
-        android:layout_width="159dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="688dp"
-        android:layout_marginBottom="288dp"
-        android:text="kitbot?"
-        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pancake_text"
+                android:layout_width="159dp"
+                android:layout_height="53dp"
+                android:text="pancake?"
+                android:textSize="34sp" />
+
+            <ToggleButton
+                android:id="@+id/pancake_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="No"
+                android:textOn="Yes" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/kitbot_text"
+                android:layout_width="159dp"
+                android:layout_height="53dp"
+                android:text="kitbot?"
+                android:textSize="34sp" />
+
+            <ToggleButton
+                android:id="@+id/kitbot_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="No"
+                android:textOn="Yes" />
+        </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/park"
@@ -138,11 +176,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="28dp"
+        android:background="@drawable/button_bg"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/button_bg"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
@@ -151,11 +188,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="28dp"
+        android:background="@drawable/button_bg"
         android:text="Next"
-        android:onClick="summaryPage"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/button_bg"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/Endgame_text"
@@ -252,29 +288,6 @@
         app:layout_constraintStart_toEndOf="@+id/drop_pieces"
         app:layout_constraintTop_toBottomOf="@+id/trap" />
 
-    <ToggleButton
-        android:id="@+id/pancake_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="108dp"
-        android:text="ToggleButton"
-        android:textOff="No"
-        android:textOn="Yes"
-        app:layout_constraintStart_toEndOf="@+id/pancake_text"
-        app:layout_constraintTop_toBottomOf="@+id/mechanical_reliability_bar" />
-
-    <ToggleButton
-        android:id="@+id/kitbot_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="44dp"
-        android:text="ToggleButton"
-        android:textOff="No"
-        android:textOn="Yes"
-        app:layout_constraintStart_toEndOf="@+id/kitbot_text"
-        app:layout_constraintTop_toBottomOf="@+id/pancake_button" />
 
     <Button
         android:id="@+id/human_attempt"
@@ -296,16 +309,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/human_attempt" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="1022dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ToggleButton
         android:id="@+id/pick_up_from_ground_button"
         android:layout_width="wrap_content"
@@ -317,5 +320,12 @@
         android:textOn="Yes"
         app:layout_constraintStart_toEndOf="@+id/pick_up_from_ground_text"
         app:layout_constraintTop_toBottomOf="@+id/human_attempt" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="767dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,10 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
-        android:text="Endgame"
+        android:text="To Endgame"
         android:textColor="@color/white"
         android:textSize="40sp"
-        android:onClick="endgame"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +25,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="436dp"
         android:layout_marginTop="28dp"
-        android:onClick="pregame"
         android:text="Submit"
         android:textColor="@color/white"
         android:textSize="40sp"

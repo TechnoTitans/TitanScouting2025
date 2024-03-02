@@ -2,7 +2,6 @@ package com.scoutingapp.titanscouting.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -27,6 +26,10 @@ public class Summary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
 
+        View submit = findViewById(R.id.submit);
+        View toEndgameButton = findViewById(R.id.back);
+
+        match = new Match();
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
         liveDataMatch = matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0));
@@ -97,16 +100,28 @@ public class Summary extends AppCompatActivity {
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
         });
 
+        submit.setOnClickListener(v -> {
+            Intent i = new Intent(Summary.this, QRScreen.class);
+            i.putExtra("matchNumber", match.getMatchNum());
+            startActivity(i);
+        });
+
+        toEndgameButton.setOnClickListener(v -> {
+            Intent i = new Intent(Summary.this, Endgame.class);
+            i.putExtra("matchNumber", match.getMatchNum());
+            startActivity(i);
+        });
     }
 
-    public void endgame(View v){
-        Intent i = new Intent(this, Teleop.class);
-        i.putExtra("matchNumber", match.getMatchNum());
-        startActivity(i);
-    }
-
-    public void pregame(View v){
-        Intent i = new Intent(this, Pregame.class);
-        startActivity(i);
-    }
+//    public void endgame(View v){
+//        Intent i = new Intent(this, QRScreen.class);
+//        i.putExtra("matchNumber", match.getMatchNum());
+//        startActivity(i);
+//    }
+//
+//    public void pregame(View v){
+//        Intent i = new Intent(this, Endgame.class);
+//        i.putExtra("matchNumber", match.getMatchNum());
+//        startActivity(i);
+//    }
 }

@@ -79,5 +79,8 @@ dependencies {
     implementation ("com.google.android.material:material:1.11.0")
 
     implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
+    implementation ("com.google.zxing:core:3.4.1")
+    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.4")
+    implementation ("androidx.multidex:multidex:2.0.1")
 
 }

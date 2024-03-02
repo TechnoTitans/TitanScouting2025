@@ -38,6 +38,21 @@ public class Endgame extends AppCompatActivity {
 
         match.setMatchNum(matchNum);
 
+        View backButton = findViewById(R.id.Back);
+        View nextButton = findViewById(R.id.Next);
+
+        backButton.setOnClickListener(v -> {
+            Intent i = new Intent(Endgame.this, Teleop.class);
+            i.putExtra("matchNumber", match.getMatchNum());
+            startActivity(i);
+        });
+
+        nextButton.setOnClickListener(v -> {
+            Intent i = new Intent(Endgame.this, Summary.class);
+            i.putExtra("matchNumber", match.getMatchNum());
+            startActivity(i);
+        });
+
 //        ((Button) (findViewById(R.id.trap))).setOnClickListener(v -> {
 //            Log.d("trapped", "trapped");
 //        });
