@@ -34,7 +34,7 @@ public class SingleMatchView extends AppCompatActivity {
 
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
-        liveDataMatch = matchViewModel.getMatch(Integer.parseInt(getIntent().getStringExtra("matchNumber")));
+        liveDataMatch = matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0));
 
         liveDataMatch.observe(this, match -> {
             ((TextView) (findViewById(R.id.matchNumberSummary))).setText(String.valueOf(match.getMatchNum()));
@@ -100,8 +100,6 @@ public class SingleMatchView extends AppCompatActivity {
             }
 
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
-        });
-
 
             backButton.setOnClickListener(v -> {
                 Intent i = new Intent(this, Logs.class);

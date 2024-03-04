@@ -92,7 +92,7 @@ public class QRScreen extends AppCompatActivity {
 
         backButton.setOnClickListener(v -> {
             Intent i = new Intent(QRScreen.this, Summary.class);
-            i.putExtra("matchNumber", match.getMatchNum());
+            i.putExtra("matchNumber", matchNum);
             startActivity(i);
         });
 
