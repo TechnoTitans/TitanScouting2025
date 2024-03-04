@@ -11,11 +11,10 @@ import java.util.List;
 //The layer that interacts with the database itself
 @Dao
 public interface MatchDao {
+
+    //the universal method that first creates a match and then updates it
     @Upsert
     void addMatchInformation(Match match);
-
-
-
     @Query("SELECT * FROM scouting_database")
     LiveData<List<Match>> getMatches();
 

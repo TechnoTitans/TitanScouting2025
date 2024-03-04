@@ -4,328 +4,230 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.Endgame">
+    tools:context=".views.Endgame"
+    android:background="@color/white">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/defense_text"
-                android:layout_width="200dp"
-                android:layout_height="38dp"
-                android:text="defense"
-                android:textSize="24sp" />
-
-            <RatingBar
-                android:id="@+id/defense_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/mechanical_reliabilty_text"
-                android:layout_width="200dp"
-                android:layout_height="38dp"
-                android:text="mechanical reliability"
-                android:textSize="20sp" />
-
-            <RatingBar
-                android:id="@+id/mechanical_reliability_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/driver_quality"
-                android:layout_width="200dp"
-                android:layout_height="38dp"
-                android:text="driver quality"
-                android:textSize="24sp" />
-
-            <RatingBar
-                android:id="@+id/driver_quality_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    </LinearLayout>
 
     <TextView
-        android:id="@+id/human_player"
-        android:layout_width="158dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="492dp"
-        android:text="human player"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/pick_up_from_ground_text"
-        android:layout_width="159dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="324dp"
-        android:text="pick up from ground"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/endgameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/pancake_text"
-                android:layout_width="159dp"
-                android:layout_height="53dp"
-                android:text="pancake?"
-                android:textSize="34sp" />
-
-            <ToggleButton
-                android:id="@+id/pancake_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="No"
-                android:textOn="Yes" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/kitbot_text"
-                android:layout_width="159dp"
-                android:layout_height="53dp"
-                android:text="kitbot?"
-                android:textSize="34sp" />
-
-            <ToggleButton
-                android:id="@+id/kitbot_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="No"
-                android:textOn="Yes" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/park"
-        android:layout_width="158dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="832dp"
-        android:text="park?"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/drop_pieces"
-        android:layout_width="158dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="548dp"
-        android:text="drop pieces?"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/Back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/button_bg"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <Button
-        android:id="@+id/Next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/button_bg"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/Endgame_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Endgame"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/attempt_onstage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="40dp"
-        android:text="attempt onstage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/park" />
-
-    <Button
-        android:id="@+id/Onstage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
-        android:text="Onstage"
-        app:layout_constraintStart_toEndOf="@+id/attempt_onstage"
-        app:layout_constraintTop_toBottomOf="@+id/park_button" />
-
-    <Button
-        android:id="@+id/attempt_harmony"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:text="attempt harmony"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/attempt_onstage" />
-
-    <Button
-        android:id="@+id/harmony_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="harmony"
-        app:layout_constraintStart_toEndOf="@+id/attempt_harmony"
-        app:layout_constraintTop_toBottomOf="@+id/Onstage" />
-
-    <Button
-        android:id="@+id/attempt_trap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="12dp"
-        android:text="attempt trap"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/attempt_harmony" />
-
-    <Button
-        android:id="@+id/trap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="8dp"
-        android:text="trap"
-        app:layout_constraintStart_toEndOf="@+id/attempt_trap"
-        app:layout_constraintTop_toBottomOf="@+id/harmony_button" />
-
-    <ToggleButton
-        android:id="@+id/park_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="28dp"
-        android:text="yes"
-        android:textOff="No"
-        android:textOn="Yes"
-        app:layout_constraintStart_toEndOf="@+id/park"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ToggleButton
-        android:id="@+id/drop_pieces_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="ToggleButton"
-        android:textOff="No"
-        android:textOn="Yes"
-        app:layout_constraintStart_toEndOf="@+id/drop_pieces"
-        app:layout_constraintTop_toBottomOf="@+id/trap" />
-
-
-    <Button
-        android:id="@+id/human_attempt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
-        android:text="attempted"
-        app:layout_constraintStart_toEndOf="@+id/human_player"
-        app:layout_constraintTop_toBottomOf="@+id/drop_pieces_button" />
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Endgame"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/human_made"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="484dp"
-        android:text="made"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/human_attempt" />
+    <ScrollView
+        android:layout_width="822dp"
+        android:layout_height="390dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endgameTitle">
 
-    <ToggleButton
-        android:id="@+id/pick_up_from_ground_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="40dp"
-        android:text="ToggleButton"
-        android:textOff="No"
-        android:textOn="Yes"
-        app:layout_constraintStart_toEndOf="@+id/pick_up_from_ground_text"
-        app:layout_constraintTop_toBottomOf="@+id/human_attempt" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/stagePositionText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Stage Position"
+                        android:textAlignment="center"
+                        android:textSize="35sp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="767dp" />
+                    <Spinner
+                        android:id="@+id/stagePositionSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/noteInTrapTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Trap"
+                        android:textAlignment="center"
+                        android:textSize="35sp" />
+
+                    <CheckBox
+                        android:id="@+id/noteInTrapCheckBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="5dp">
+                    <TextView
+                        android:id="@+id/disqualifiedTextview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Disqualified"
+                        android:textAlignment="center"
+                        android:textSize="35sp" />
+
+                    <CheckBox
+                        android:id="@+id/disqualifiedCheckBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/driverQualityTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Driver Quality"
+                        android:textAlignment="center"
+                        android:textSize="35sp" />
+
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:numStars="5"
+                        android:stepSize="1"
+                        android:textAlignment="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/penaltiesIncurredTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Penalties"
+                        android:textAlignment="center"
+                        android:textSize="35sp" />
+
+                    <CheckBox
+                        android:id="@+id/penaltiesIncurredCheckBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/dropsPiecesOftenTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Drops Pieces?"
+                        android:textAlignment="center"
+                        android:textSize="32sp" />
+
+                    <CheckBox
+                        android:id="@+id/dropsPiecesOftenCheckBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="5dp">
+                    <TextView
+                        android:id="@+id/pickRingsFromGroundTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Can Pick Rings?"
+                        android:textAlignment="center"
+                        android:textSize="32sp" />
+
+                    <CheckBox
+                        android:id="@+id/pickRingsFromGroundCheckBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

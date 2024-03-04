@@ -3,6 +3,9 @@ package com.scoutingapp.titanscouting.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 import androidx.annotation.Nullable;
@@ -19,33 +22,53 @@ public class Endgame extends AppCompatActivity {
 
     MatchViewModel matchViewModel;
 
-    int matchNum;
+    private int matchNum;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_endgame);
 
-        match = new Match();
-        matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
-        matchNum = getIntent().getIntExtra("matchNumber", 0);
 
-        match.setMatchNum(matchNum);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//                this,
+//                R.array.stagePostions,
+//                android.R.layout.simple_spinner_item
+//        );
+//
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        ((Spinner) (findViewById(R.id.stagePositionSpinner))).setAdapter(adapter);
+//
+//        matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
+//        matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
+//            this.match = match;
+//            ((Spinner) (findViewById(R.id.stagePositionSpinner))).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                @Override
+//                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                    match.setStagePosition((String) parent.getItemAtPosition(position));
+//                }
+//
+//                @Override
+//                public void onNothingSelected(AdapterView<?> parent) {
+//
+//                }
+//            });
+//        });
 
-        View backButton = findViewById(R.id.Back);
-        View nextButton = findViewById(R.id.Next);
+//        View backButton = findViewById(R.id.Back);
+//        View nextButton = findViewById(R.id.Next);
 
-        backButton.setOnClickListener(v -> {
-            Intent i = new Intent(Endgame.this, Teleop.class);
-            i.putExtra("matchNumber", match.getMatchNum());
-            startActivity(i);
-        });
-
-        nextButton.setOnClickListener(v -> {
-            Intent i = new Intent(Endgame.this, Summary.class);
-            i.putExtra("matchNumber", match.getMatchNum());
-            startActivity(i);
-        });
+//        backButton.setOnClickListener(v -> {
+//            Intent i = new Intent(Endgame.this, Teleop.class);
+//            i.putExtra("matchNumber", match.getMatchNum());
+//            startActivity(i);
+//        });
+//
+//        nextButton.setOnClickListener(v -> {
+//            Intent i = new Intent(Endgame.this, Summary.class);
+//            i.putExtra("matchNumber", match.getMatchNum());
+//            startActivity(i);
+//        });
 
 //        ((Button) (findViewById(R.id.trap))).setOnClickListener(v -> {
 //            Log.d("trapped", "trapped");

@@ -23,6 +23,14 @@
         <item>Blue 3</item>
     </string-array>
 
+    <string-array name = "stagePostions">
+        <item>Park</item>
+        <item>Stage Attempted</item>
+        <item>Stage Completed</item>
+        <item>Harmony</item>
+    </string-array>
+
+
     <string name="add_a_match">Add a match</string>
     <string name="refresh">Refresh</string>
     <string name="disqualified">Disqualified</string>

@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,7 +15,7 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
-import com.scoutingapp.titanscouting.MainActivity;
+import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
@@ -87,7 +86,7 @@ public class QRScreen extends AppCompatActivity {
         });
 
         exitScouting.setOnClickListener(v -> {
-            Intent i = new Intent(QRScreen.this, MainActivity.class);
+            Intent i = new Intent(QRScreen.this, Homepage.class);
             i.putExtra("matchNumber", match.getMatchNum());
             startActivity(i);
         });

@@ -12,11 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TitanScouting">
         <activity
-            android:name=".views.logs.QRGenerator"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            />
-        <activity
             android:name=".views.Summary"
             android:exported="false"
             android:screenOrientation="landscape"
@@ -47,12 +42,9 @@
             android:screenOrientation="landscape"
             />
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:screenOrientation="landscape"
-            >
             android:name=".Homepage"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

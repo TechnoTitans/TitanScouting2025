@@ -14,6 +14,7 @@ import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 import com.scoutingapp.titanscouting.views.Pregame;
+import com.scoutingapp.titanscouting.views.QRScreen;
 
 public class SingleMatchView extends AppCompatActivity {
 
@@ -108,7 +109,7 @@ public class SingleMatchView extends AppCompatActivity {
     }
 
     public void qrPage(View v){
-        Intent i = new Intent(this, QRGenerator.class);
+        Intent i = new Intent(this, QRScreen.class);
         i.putExtra("matchNumber", match.getMatchNum());
         startActivity(i);
     }

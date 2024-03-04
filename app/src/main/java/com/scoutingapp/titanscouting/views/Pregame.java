@@ -17,6 +17,8 @@ import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 
+import java.util.Objects;
+
 public class Pregame extends AppCompatActivity {
 
     MatchViewModel viewModel;
@@ -31,7 +33,7 @@ public class Pregame extends AppCompatActivity {
 
         match = new Match();
 
-        if (getIntent().getStringExtra("transition").equals("fromAuto")){
+        if (Objects.equals(getIntent().getStringExtra("transition"), "fromAuto")){
 
             viewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, backwardsMatch -> match = backwardsMatch);
 
