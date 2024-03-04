@@ -15,7 +15,7 @@ import com.scoutingapp.titanscouting.database.MatchViewModel;
 
 public class Logs extends AppCompatActivity {
 
-    private MatchViewModel matchViewModel;
+    private  MatchViewModel matchViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

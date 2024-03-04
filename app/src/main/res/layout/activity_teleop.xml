@@ -142,21 +142,19 @@
         android:id="@+id/speakerMisses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/missed"
         android:textColor="@color/white"
         android:textSize="38sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/speakerScores"
         app:layout_constraintTop_toBottomOf="@+id/addSpeaker" />
 
     <Button
         android:id="@+id/addSpeakersMissed"
         android:layout_width="106dp"
         android:layout_height="80dp"
-        android:layout_marginStart="116dp"
         android:layout_marginTop="12dp"
         android:alpha="1"
         android:backgroundTint="@color/techno_titans"
@@ -165,7 +163,7 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="60sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/addSpeaker"
         app:layout_constraintTop_toBottomOf="@+id/speakerMisses" />
 
     <Button

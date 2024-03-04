@@ -25,6 +25,7 @@ import com.scoutingapp.titanscouting.views.logs.Logs;
 public class QRScreen extends AppCompatActivity {
 
     LiveData<Match> liveDataMatch;
+
     MatchViewModel matchViewModel;
     MultiFormatWriter multiFormatWriter;
     BitMatrix bitMatrix;
@@ -40,6 +41,7 @@ public class QRScreen extends AppCompatActivity {
         ImageView qrView = findViewById(R.id.qr_code);
         View backButton = findViewById(R.id.back_to_summary);
         View exitScouting = findViewById(R.id.exit_scouting_button);
+
 
         int matchNum = getIntent().getIntExtra("matchNumber", 0);
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
@@ -89,7 +91,8 @@ public class QRScreen extends AppCompatActivity {
         });
 
         backButton.setOnClickListener(v -> {
-            Intent i = new Intent(QRScreen.this, Logs.class);
+            Intent i = new Intent(QRScreen.this, Summary.class);
+            i.putExtra("matchNumber", match.getMatchNum());
             startActivity(i);
         });
 
@@ -97,5 +100,9 @@ public class QRScreen extends AppCompatActivity {
             Intent i = new Intent(QRScreen.this, Homepage.class);
             startActivity(i);
         });
+
+
+
+
     }
 }

@@ -14,7 +14,7 @@ import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 public class Autonomous extends AppCompatActivity {
 
-    public Match match;
+    private Match match;
 
     private MatchViewModel matchViewModel;
 
@@ -99,11 +99,6 @@ public class Autonomous extends AppCompatActivity {
                 matchViewModel.addMatchInformation(match);
             });
         });
-
-        //all elements
-
-
-
 
     }
 
@@ -217,6 +212,7 @@ public class Autonomous extends AppCompatActivity {
 
     public void preGame(View v){
         Intent i = new Intent(this, Pregame.class);
+        i.putExtra("transition", "fromAuto");
         i.putExtra("matchNumber", match.getMatchNum());
         startActivity(i);
     }

@@ -100,6 +100,8 @@ public class SingleMatchView extends AppCompatActivity {
             }
 
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
+        });
+
 
             backButton.setOnClickListener(v -> {
                 Intent i = new Intent(this, Logs.class);
@@ -116,5 +118,4 @@ public class SingleMatchView extends AppCompatActivity {
 
 
     }
-
 }

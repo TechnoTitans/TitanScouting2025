@@ -26,9 +26,9 @@ public class Homepage extends AppCompatActivity {
 
         View pregameButton = findViewById(R.id.button);
         pregameButton.setOnClickListener(v -> {
-            Intent i = new Intent(Homepage.this, Pregame.class);
+            Intent i = new Intent(this, Pregame.class);
             startActivity(i);
-            Log.d("Pregame", "PreGame page has been reached");
+            Log.d("Pregame", "Pregame page has been reached");
         });
 
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
@@ -43,8 +43,9 @@ public class Homepage extends AppCompatActivity {
 
     public void preGame(View v) {
         Intent i = new Intent(this, Pregame.class);
+        i.putExtra("transition", "fromHomepage");
         startActivity(i);
-        Log.d("Pregame", "PreGame page has been reached");
+        Log.d("Pregame", "Pregame page has been reached");
     }
 
     public void logs(View v){
