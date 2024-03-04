@@ -26,7 +26,7 @@ public class Homepage extends AppCompatActivity {
 
         View pregameButton = findViewById(R.id.button);
         pregameButton.setOnClickListener(v -> {
-            Intent i = new Intent(MainActivity.this, Pregame.class);
+            Intent i = new Intent(Homepage.this, Pregame.class);
             startActivity(i);
             Log.d("Pregame", "PreGame page has been reached");
         });

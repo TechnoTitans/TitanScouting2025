@@ -16,16 +16,15 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
-import com.scoutingapp.titanscouting.MainActivity;
+import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
+import com.scoutingapp.titanscouting.views.logs.Logs;
 
 public class QRScreen extends AppCompatActivity {
 
     LiveData<Match> liveDataMatch;
-
-    Match match;
     MatchViewModel matchViewModel;
     MultiFormatWriter multiFormatWriter;
     BitMatrix bitMatrix;
@@ -42,8 +41,6 @@ public class QRScreen extends AppCompatActivity {
         View backButton = findViewById(R.id.back_to_summary);
         View exitScouting = findViewById(R.id.exit_scouting_button);
 
-        match = new Match();
-
         int matchNum = getIntent().getIntExtra("matchNumber", 0);
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
@@ -52,22 +49,33 @@ public class QRScreen extends AppCompatActivity {
         liveDataMatch.observe(this, match -> {
 
             qrString = String.join("\n",
-                    String.valueOf(match.getPosition()),
-                    match.getScouterName(),
+                    String.valueOf(match.getTeamNumber()),
                     String.valueOf(match.getMatchNum()),
-                    String.valueOf(match.getTeamNumber())
-//                String.valueOf(match.isPerformedLeave()),
-//                match.getPosition(),
-//                String.valueOf(match.getAutoAmpScored()),
-//                String.valueOf(match.getAutoAmpMissed()),
-//                String.valueOf(match.getAutoSpeakerScored()),
-//                String.valueOf(match.getAutoSpeakerMissed()),
-//                String.valueOf(match.getTeleopAmpScored()),
-//                String.valueOf(match.getTeleopAmpMissed()),
-//                String.valueOf(match.getTeleopSpeakerScored()),
-//                String.valueOf(match.getTeleopSpeakerMissed())
+                    match.getScouterName(),
+                    String.valueOf(match.getPosition()),
+                    String.valueOf(match.isPerformedLeave()),
+                    match.getStartingPosition(),
+                    String.valueOf(match.getAutoAmpScored()),
+                    String.valueOf(match.getAutoAmpMissed()),
+                    String.valueOf(match.getAutoSpeakerScored()),
+                    String.valueOf(match.getAutoSpeakerMissed()),
+                    String.valueOf(match.getTeleopAmpScored()),
+                    String.valueOf(match.getTeleopAmpMissed()),
+                    String.valueOf(match.getTeleopSpeakerScored()),
+                    String.valueOf(match.getTeleopSpeakerMissed()),
+                    match.getStagePosition(),
+                    String.valueOf(match.isNoteInTrapScored()),
+                    String.valueOf(match.isDisqualified()),
+                    String.valueOf(match.isPenaltiesIncured()),
+                    String.valueOf(match.getDriverQuality()),
+                    String.valueOf(match.getDefenseAbility()),
+                    String.valueOf(match.getMechanicalReliability()),
+                    String.valueOf(match.isDropsPiecesOften()),
+                    String.valueOf(match.isPickRingsFromGround()),
+                    match.getNotes()
+
             );
-            Log.d("POSITION", String.valueOf(match.getPosition()));
+            Log.d("match_num", String.valueOf(match.getMatchNum()));
             multiFormatWriter = new MultiFormatWriter();
 
             try {
@@ -81,19 +89,13 @@ public class QRScreen extends AppCompatActivity {
         });
 
         backButton.setOnClickListener(v -> {
-            Intent i = new Intent(QRScreen.this, Summary.class);
-            i.putExtra("matchNumber", match.getMatchNum());
+            Intent i = new Intent(QRScreen.this, Logs.class);
             startActivity(i);
         });
 
         exitScouting.setOnClickListener(v -> {
-            Intent i = new Intent(QRScreen.this, MainActivity.class);
-            i.putExtra("matchNumber", match.getMatchNum());
+            Intent i = new Intent(QRScreen.this, Homepage.class);
             startActivity(i);
         });
-
-
-
-
     }
 }

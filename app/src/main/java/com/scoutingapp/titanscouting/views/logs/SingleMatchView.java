@@ -14,6 +14,7 @@ import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 import com.scoutingapp.titanscouting.views.Pregame;
+import com.scoutingapp.titanscouting.views.QRScreen;
 
 public class SingleMatchView extends AppCompatActivity {
 
@@ -27,6 +28,9 @@ public class SingleMatchView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_match_view);
+
+        View backButton = findViewById(R.id.back);
+        View qrButton = findViewById(R.id.submit);
 
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
@@ -96,20 +100,21 @@ public class SingleMatchView extends AppCompatActivity {
             }
 
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
+
+            backButton.setOnClickListener(v -> {
+                Intent i = new Intent(this, Logs.class);
+                startActivity(i);
+            });
+
+            qrButton.setOnClickListener(v -> {
+                Intent i = new Intent(this, QRScreen.class);
+                i.putExtra("matchNumber", match.getMatchNum());
+                startActivity(i);
+            });
         });
 
 
 
     }
 
-    public void logs(View v){
-        Intent i = new Intent(this, Logs.class);
-        startActivity(i);
-    }
-
-    public void qrPage(View v){
-        Intent i = new Intent(this, QRGenerator.class);
-        i.putExtra("matchNumber", match.getMatchNum());
-        startActivity(i);
-    }
 }

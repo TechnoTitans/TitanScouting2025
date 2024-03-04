@@ -98,19 +98,21 @@ public class Summary extends AppCompatActivity {
             }
 
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
+
+            submit.setOnClickListener(v -> {
+                Intent i = new Intent(Summary.this, QRScreen.class);
+                i.putExtra("matchNumber", match.getMatchNum());
+                startActivity(i);
+            });
+
+            toEndgameButton.setOnClickListener(v -> {
+                Intent i = new Intent(Summary.this, Endgame.class);
+                i.putExtra("matchNumber", match.getMatchNum());
+                startActivity(i);
+            });
         });
 
-        submit.setOnClickListener(v -> {
-            Intent i = new Intent(Summary.this, QRScreen.class);
-            i.putExtra("matchNumber", match.getMatchNum());
-            startActivity(i);
-        });
 
-        toEndgameButton.setOnClickListener(v -> {
-            Intent i = new Intent(Summary.this, Endgame.class);
-            i.putExtra("matchNumber", match.getMatchNum());
-            startActivity(i);
-        });
     }
 
 //    public void endgame(View v){
