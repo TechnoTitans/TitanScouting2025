@@ -11,7 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Match.class}, version = 3, exportSchema = false)
+@Database(entities = {Match.class}, version = 4, exportSchema = false)
 
 public abstract class ScoutingAppDatabase extends RoomDatabase {
     public abstract MatchDao matchDao();

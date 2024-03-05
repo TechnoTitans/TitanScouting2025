@@ -81,6 +81,17 @@ public class Match {
     @ColumnInfo(name = "notes", defaultValue = "0")
     private String notes;
 
+    public boolean isSubmitted() {
+        return submitted;
+    }
+
+    public void setSubmitted(boolean submitted) {
+        this.submitted = submitted;
+    }
+
+    @ColumnInfo(name = "submitted", defaultValue = "0")
+    private boolean submitted;
+
     public int getMatchNum() {
         return matchNum;
     }
