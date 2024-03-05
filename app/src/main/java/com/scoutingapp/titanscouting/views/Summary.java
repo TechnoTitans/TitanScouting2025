@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
@@ -100,8 +101,7 @@ public class Summary extends AppCompatActivity {
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
 
             submit.setOnClickListener(v -> {
-                Intent i = new Intent(Summary.this, QRScreen.class);
-                i.putExtra("matchNumber", match.getMatchNum());
+                Intent i = new Intent(Summary.this, Homepage.class);
                 startActivity(i);
             });
 

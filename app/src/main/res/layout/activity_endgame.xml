@@ -310,6 +310,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:hint="Comment..."
+                        android:maxLength="50"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="12dp" />
                 </LinearLayout>

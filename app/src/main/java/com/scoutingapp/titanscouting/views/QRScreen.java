@@ -25,7 +25,6 @@ import com.scoutingapp.titanscouting.views.logs.Logs;
 public class QRScreen extends AppCompatActivity {
 
     LiveData<Match> liveDataMatch;
-
     MatchViewModel matchViewModel;
     MultiFormatWriter multiFormatWriter;
     BitMatrix bitMatrix;
@@ -51,6 +50,7 @@ public class QRScreen extends AppCompatActivity {
         liveDataMatch.observe(this, match -> {
 
             qrString = String.join("\n",
+                    "GADAL2024",
                     String.valueOf(match.getTeamNumber()),
                     String.valueOf(match.getMatchNum()),
                     match.getScouterName(),
@@ -91,7 +91,7 @@ public class QRScreen extends AppCompatActivity {
         });
 
         backButton.setOnClickListener(v -> {
-            Intent i = new Intent(QRScreen.this, Summary.class);
+            Intent i = new Intent(QRScreen.this, Logs.class);
             i.putExtra("matchNumber", matchNum);
             startActivity(i);
         });
