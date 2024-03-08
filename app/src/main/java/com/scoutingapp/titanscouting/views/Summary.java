@@ -62,7 +62,7 @@ public class Summary extends AppCompatActivity {
 
             ((TextView) (findViewById(R.id.autoSpeakerMissedSummary))).setText(String.valueOf(match.getAutoSpeakerMissed()));
 
-            ((TextView) (findViewById(R.id.teleopAmpScoredSummary))).setText(String.valueOf(match.getTeleopSpeakerScored()));
+            ((TextView) (findViewById(R.id.teleopAmpScoredSummary))).setText(String.valueOf(match.getTeleopAmpScored()));
 
             ((TextView) (findViewById(R.id.teleopAmpMissedSummary))).setText(String.valueOf(match.getTeleopAmpMissed()));
 
@@ -74,14 +74,20 @@ public class Summary extends AppCompatActivity {
 
             if (match.isNoteInTrapScored()){
                 ((TextView) (findViewById(R.id.noteInTrapScoredSummary))).setText("True");
+            } else {
+                ((TextView) (findViewById(R.id.noteInTrapScoredSummary))).setText("False");
             }
 
             if (match.isDisqualified()){
                 ((TextView) (findViewById(R.id.disqualifiedSummary))).setText("True");
+            } else {
+                ((TextView) (findViewById(R.id.disqualifiedSummary))).setText("False");
             }
 
             if (match.isPenaltiesIncured()){
                 ((TextView) (findViewById(R.id.penaltiesIncurredSummary))).setText("True");
+            } else {
+                ((TextView) (findViewById(R.id.penaltiesIncurredSummary))).setText("False");
             }
 
             ((TextView) (findViewById(R.id.driverQualitySummary))).setText(String.valueOf(match.getDriverQuality()));
@@ -92,10 +98,14 @@ public class Summary extends AppCompatActivity {
 
             if (match.isDropsPiecesOften()){
                 ((TextView) (findViewById(R.id.dropsPiecesOftenSummary))).setText("True");
+            } else {
+                ((TextView) (findViewById(R.id.dropsPiecesOftenSummary))).setText("False");
             }
 
             if (match.isPickRingsFromGround()){
                 ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("True");
+            } else {
+                ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("False");
             }
 
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
