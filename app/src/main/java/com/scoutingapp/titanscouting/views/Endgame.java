@@ -30,7 +30,7 @@ public class Endgame extends AppCompatActivity {
         setContentView(R.layout.activity_endgame);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
-                R.array.stagePostions,
+                R.array.stagePositions,
                 android.R.layout.simple_spinner_item
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

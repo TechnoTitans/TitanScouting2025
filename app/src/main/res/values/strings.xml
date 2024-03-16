@@ -23,12 +23,13 @@
         <item>Blue 3</item>
     </string-array>
 
-    <string-array name = "stagePostions">
+    <string-array name = "stagePositions">
+        <item>None</item>x
         <item>Park</item>
         <item>Stage Attempted</item>
         <item>Stage Completed</item>
         <item>Harmony</item>
-        <item>None</item>
+
     </string-array>
 
 

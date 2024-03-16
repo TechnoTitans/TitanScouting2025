@@ -35,4 +35,9 @@ public class MatchViewModel extends AndroidViewModel {
 
         matchRepository.addMatchInformation(match);
     }
+
+    public void deleteEverything()
+    {
+        matchRepository.deleteEverything();
+    }
 }

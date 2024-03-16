@@ -21,5 +21,8 @@ public interface MatchDao {
     @Query("SELECT * FROM scouting_database WHERE matchNum = :matchNumber")
     LiveData<Match> getMatch(int matchNumber);
 
+    @Query("DELETE FROM scouting_database")
+    void deleteEverything();
+
 
 }
