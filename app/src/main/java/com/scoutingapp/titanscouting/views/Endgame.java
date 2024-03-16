@@ -24,7 +24,6 @@ import com.scoutingapp.titanscouting.database.MatchViewModel;
 public class Endgame extends AppCompatActivity {
     Match match;
     MatchViewModel matchViewModel;
-    private int matchNum;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
