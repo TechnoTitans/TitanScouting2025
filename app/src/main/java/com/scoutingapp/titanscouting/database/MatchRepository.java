@@ -33,4 +33,8 @@ public class MatchRepository {
         });
     }
 
+    void deleteAllMatches() {
+        ScoutingAppDatabase.databaseWriteExectuer.execute(dao::deleteAllMatches);
+    }
+
 }

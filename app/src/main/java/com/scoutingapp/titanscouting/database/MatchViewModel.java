@@ -23,7 +23,6 @@ public class MatchViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Match>> getAllMatches() {
-
         return allMatches;
     }
 
@@ -32,7 +31,10 @@ public class MatchViewModel extends AndroidViewModel {
     }
 
     public void addMatchInformation(Match match) {
-
         matchRepository.addMatchInformation(match);
+    }
+
+    public void deleteAllMatches() {
+        matchRepository.deleteAllMatches();
     }
 }

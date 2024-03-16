@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
@@ -21,6 +22,8 @@ import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 import com.scoutingapp.titanscouting.views.logs.Logs;
+
+import java.util.Locale;
 
 public class QRScreen extends AppCompatActivity {
 
@@ -40,6 +43,7 @@ public class QRScreen extends AppCompatActivity {
         ImageView qrView = findViewById(R.id.qr_code);
         View backButton = findViewById(R.id.back_to_summary);
         View exitScouting = findViewById(R.id.exit_scouting_button);
+        TextView matchText = findViewById(R.id.match_num_text_view);
 
 
         int matchNum = getIntent().getIntExtra("matchNumber", 0);
@@ -48,6 +52,8 @@ public class QRScreen extends AppCompatActivity {
         liveDataMatch = matchViewModel.getMatch(matchNum);
 
         liveDataMatch.observe(this, match -> {
+
+            matchText.setText(String.format(Locale.US, "Match %d", match.getMatchNum()));
 
             qrString = String.join("\n",
                     "GADAL2024",
