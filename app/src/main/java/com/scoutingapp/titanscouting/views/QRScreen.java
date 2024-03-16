@@ -56,7 +56,7 @@ public class QRScreen extends AppCompatActivity {
             matchText.setText(String.format(Locale.US, "Match %d", match.getMatchNum()));
 
             qrString = String.join("\n",
-                    "GADAL2024",
+                    "GAGWI2024",
                     String.valueOf(match.getTeamNumber()),
                     String.valueOf(match.getMatchNum()),
                     match.getScouterName(),
