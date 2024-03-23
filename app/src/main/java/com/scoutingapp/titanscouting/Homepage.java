@@ -41,6 +41,8 @@ public class Homepage extends AppCompatActivity {
             adapter.submitList(matches);
         });
 
+//        matchViewModel.deleteEverything();
+
     }
 
     public void preGame(View v) {
