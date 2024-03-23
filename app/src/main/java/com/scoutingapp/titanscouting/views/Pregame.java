@@ -1,5 +1,7 @@
 package com.scoutingapp.titanscouting.views;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -9,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
@@ -28,6 +31,14 @@ public class Pregame extends AppCompatActivity {
         EditText teamNumberInput = findViewById(R.id.TeamNumberResponsePregame);
         EditText scouterNameInput = findViewById(R.id.ScouterNamePregameResponse);
         CheckBox noShowCheckBox = findViewById(R.id.noShowCheckBox);
+
+        View red1 = findViewById(R.id.Red1);
+        View red2 = findViewById(R.id.Red2);
+        View red3 = findViewById(R.id.Red3);
+        View blue1 = findViewById(R.id.Blue1);
+        View blue2 = findViewById(R.id.Blue2);
+        View blue3 = findViewById(R.id.Blue3);
+
         if (Objects.equals(getIntent().getStringExtra("transition"), "fromAutonomous"))
         {
             matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
@@ -81,27 +92,56 @@ public class Pregame extends AppCompatActivity {
                     match.setNoShow(!match.isNoShow());
                     matchViewModel.addMatchInformation(match);
                 });
-                ((Button) (findViewById(R.id.Red1))).setOnClickListener(v -> {
+
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(
+                        this,
+                        "R1".equals(match.getPosition()) ? R.color.light_red : R.color.red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(
+                        this,
+                        "R2".equals(match.getPosition()) ? R.color.light_red : R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(
+                        this,
+                        "R3".equals(match.getPosition()) ? R.color.light_red : R.color.red));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(
+                        this,
+                        "B1".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(
+                        this,
+                        "B2".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(
+                        this,
+                        "B3".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
+
+
+
+                red1.setOnClickListener(v -> {
                     match.setPosition("R1");
-                            matchViewModel.addMatchInformation(match);
+                    matchViewModel.addMatchInformation(match);
+                    Log.d("background_color", Objects.requireNonNull(v.getBackgroundTintList()).toString());
+                    v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
+                    red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                    red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                    blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                    blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                    blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 });
-                ((Button) (findViewById(R.id.Red2))).setOnClickListener(v -> {
+                red2.setOnClickListener(v -> {
                     match.setPosition("R2");
                     matchViewModel.addMatchInformation(match);
                 });
-                ((Button) (findViewById(R.id.Red3))).setOnClickListener(v -> {
+                red3.setOnClickListener(v -> {
                     match.setPosition("R3");
-                            matchViewModel.addMatchInformation(match);
+                    matchViewModel.addMatchInformation(match);
                 });
-                ((Button) (findViewById(R.id.Blue1))).setOnClickListener(v -> {
+                blue1.setOnClickListener(v -> {
                     match.setPosition("B1");
                     matchViewModel.addMatchInformation(match);
                 });
-                ((Button) (findViewById(R.id.Blue2))).setOnClickListener(v -> {
+                blue2.setOnClickListener(v -> {
                     match.setPosition("B2");
-                            matchViewModel.addMatchInformation(match);
+                    matchViewModel.addMatchInformation(match);
                 });
-                ((Button) (findViewById(R.id.Blue3))).setOnClickListener(v -> {
+                blue3.setOnClickListener(v -> {
                     match.setPosition("B3");
                     matchViewModel.addMatchInformation(match);
                 });
@@ -173,29 +213,87 @@ public class Pregame extends AppCompatActivity {
                 match.setNoShow(!match.isNoShow());
                 matchViewModel.addMatchInformation(match);
             });
+
+            red1.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "R1".equals(match.getPosition()) ? R.color.light_red : R.color.red));
+            red2.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "R2".equals(match.getPosition()) ? R.color.light_red : R.color.red));
+            red3.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "R3".equals(match.getPosition()) ? R.color.light_red : R.color.red));
+            blue1.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "B1".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
+            blue2.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "B2".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
+            blue3.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "B3".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
+
+
             ((Button) (findViewById(R.id.Red1))).setOnClickListener(v -> {
                 match.setPosition("R1");
-                        matchViewModel.addMatchInformation(match);
+                matchViewModel.addMatchInformation(match);
+                Log.d("background_color", Objects.requireNonNull(v.getBackgroundTintList()).toString());
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
             });
             ((Button) (findViewById(R.id.Red2))).setOnClickListener(v -> {
                 match.setPosition("R2");
                 matchViewModel.addMatchInformation(match);
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
             });
             ((Button) (findViewById(R.id.Red3))).setOnClickListener(v -> {
                 match.setPosition("R3");
-                        matchViewModel.addMatchInformation(match);
+                matchViewModel.addMatchInformation(match);
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
             });
             ((Button) (findViewById(R.id.Blue1))).setOnClickListener(v -> {
                 match.setPosition("B1");
                 matchViewModel.addMatchInformation(match);
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.techno_titans));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
             });
             ((Button) (findViewById(R.id.Blue2))).setOnClickListener(v -> {
                 match.setPosition("B2");
-                        matchViewModel.addMatchInformation(match);
+                matchViewModel.addMatchInformation(match);
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.techno_titans));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
             });
             ((Button) (findViewById(R.id.Blue3))).setOnClickListener(v -> {
                 match.setPosition("B3");
                 matchViewModel.addMatchInformation(match);
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.techno_titans));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
             });
             ((Button) (findViewById(R.id.BackButtonPregame))).setOnClickListener(v -> {
                 Intent i = new Intent(Pregame.this, Homepage.class);
