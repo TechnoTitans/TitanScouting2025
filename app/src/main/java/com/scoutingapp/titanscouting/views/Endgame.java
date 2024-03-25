@@ -48,10 +48,12 @@ public class Endgame extends AppCompatActivity {
                 public void onNothingSelected(AdapterView<?> parent) {
                 }
             });
+            ((CheckBox) (findViewById(R.id.noteInTrapCheckBox))).setChecked(match.isNoteInTrapScored());
             ((CheckBox) (findViewById(R.id.noteInTrapCheckBox))).setOnClickListener(v -> {
                 match.setNoteInTrapScored(!match.isNoteInTrapScored());
                 matchViewModel.addMatchInformation(match);
             });
+            ((CheckBox) (findViewById(R.id.disqualifiedCheckBox))).setChecked(match.isDisqualified());
             ((CheckBox) (findViewById(R.id.disqualifiedCheckBox))).setOnClickListener(v -> {
                 match.setDisqualified(!match.isDisqualified());
                 matchViewModel.addMatchInformation(match);
@@ -64,14 +66,17 @@ public class Endgame extends AppCompatActivity {
                     matchViewModel.addMatchInformation(match);
                 }
             });
+            ((CheckBox) (findViewById(R.id.dropsPiecesOftenCheckBox))).setChecked(match.isDropsPiecesOften());
             ((CheckBox) (findViewById(R.id.dropsPiecesOftenCheckBox))).setOnClickListener(v -> {
                 match.setDropsPiecesOften(!match.isDropsPiecesOften());
                 matchViewModel.addMatchInformation(match);
             });
+            ((CheckBox) (findViewById(R.id.pickRingsFromGroundCheckBox))).setChecked(match.isPickRingsFromGround());
             ((CheckBox) (findViewById(R.id.pickRingsFromGroundCheckBox))).setOnClickListener(v -> {
                 match.setPickRingsFromGround(!match.isPickRingsFromGround());
                 matchViewModel.addMatchInformation(match);
             });
+            ((CheckBox) (findViewById(R.id.penaltiesIncurredCheckBox))).setChecked(match.isPenaltiesIncured());
             ((CheckBox) (findViewById(R.id.penaltiesIncurredCheckBox))).setOnClickListener(v -> {
                 match.setPenaltiesIncured(!match.isPenaltiesIncured());
                 matchViewModel.addMatchInformation(match);
