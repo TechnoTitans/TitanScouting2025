@@ -56,6 +56,7 @@ public class Endgame extends AppCompatActivity {
                 match.setDisqualified(!match.isDisqualified());
                 matchViewModel.addMatchInformation(match);
             });
+            ((RatingBar) (findViewById(R.id.driverQualityRatingBar))).setRating(match.getDriverQuality());
             ((RatingBar) (findViewById(R.id.driverQualityRatingBar))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
@@ -75,6 +76,7 @@ public class Endgame extends AppCompatActivity {
                 match.setPenaltiesIncured(!match.isPenaltiesIncured());
                 matchViewModel.addMatchInformation(match);
             });
+            ((RatingBar) (findViewById(R.id.defenseAbilityRatingBar))).setRating(match.getDefenseAbility());
             ((RatingBar) (findViewById(R.id.defenseAbilityRatingBar))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
@@ -82,6 +84,7 @@ public class Endgame extends AppCompatActivity {
                     matchViewModel.addMatchInformation(match);
                 }
             });
+            ((RatingBar) (findViewById(R.id.mechanicalReliabilityRatingBar))).setRating(match.getMechanicalReliability());
             ((RatingBar) (findViewById(R.id.mechanicalReliabilityRatingBar))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
