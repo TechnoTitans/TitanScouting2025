@@ -5,113 +5,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/crescendo2"
-    tools:context=".views.Teleop">
+    tools:context=".views.Autonomous">
 
     <Button
-        android:id="@+id/back"
-        android:layout_width="111dp"
-        android:layout_height="55dp"
-        android:layout_marginLeft="16dp"
+        android:id="@+id/backToAuto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="@color/techno_titans"
         android:onClick="autonomous"
         android:scaleX="1.25"
         android:scaleY="1.25"
         android:text="To Auto"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/autoTitle"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/autoTitle"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/next"
+        android:id="@+id/nextToTeleop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
         android:backgroundTint="@color/techno_titans"
         android:onClick="endgame"
         android:scaleX="1.25"
         android:scaleY="1.25"
         android:text="To Endgame"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/autoTitle"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/autoTitle"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/autoTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="Teleop"
         android:textColor="@color/white"
         android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/underline"
+        app:layout_constraintEnd_toEndOf="@+id/autoHighlight"
+        app:layout_constraintStart_toStartOf="@+id/autoHighlight"
+        app:layout_constraintTop_toTopOf="@+id/autoHighlight" />
 
     <View
         android:id="@+id/underline"
         android:layout_width="140dp"
         android:layout_height="5dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="13dp"
         android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/autoTitle"
-        app:layout_constraintLeft_toLeftOf="@id/autoTitle"
-        app:layout_constraintRight_toRightOf="@id/autoTitle" />
+        app:layout_constraintBottom_toBottomOf="@+id/autoHighlight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <View
         android:id="@+id/autoHighlight"
         android:layout_width="399dp"
         android:layout_height="96dp"
+        android:layout_marginTop="4dp"
         android:alpha="0.1"
-        android:background="@color/darkblue"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/speakerScores"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="sans-serif"
-        android:gravity="center"
-        android:text="Speaker"
-        android:textColor="@color/white"
-        android:textSize="38sp"
-        app:layout_constraintHorizontal_bias="0.245"
-        app:layout_constraintLeft_toLeftOf="@id/back"
-        app:layout_constraintRight_toRightOf="@id/autoTitle"
-        app:layout_constraintTop_toBottomOf="@+id/back" />
-
-    <Button
-        android:id="@+id/addSpeaker"
-        android:layout_width="106dp"
-        android:layout_height="106dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="16dp"
-        android:alpha="1"
-        android:backgroundTint="@color/techno_titans"
-        android:onClick="addSpeakerScored"
-        android:text="+"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="60sp"
-        app:layout_constraintLeft_toLeftOf="@id/speakerScores"
-        app:layout_constraintTop_toBottomOf="@id/speakerScores" />
-
     <Button
         android:id="@+id/subtractSpeaker"
-        android:layout_width="90dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="24dp"
         android:alpha="1"
         android:backgroundTint="@color/red"
         android:onClick="subtractSpeakerScored"
@@ -120,42 +87,77 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="55sp"
+        app:layout_constraintBottom_toTopOf="@+id/speakerMissed"
+        app:layout_constraintEnd_toStartOf="@+id/addAmps"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/addSpeaker"
         app:layout_constraintTop_toBottomOf="@+id/speakerScored" />
 
     <TextView
-        android:id="@+id/ampScored"
-        android:layout_width="140dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="32dp"
+        android:id="@+id/ampMissed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="@null"
         android:ems="10"
         android:gravity="center"
         android:text="0"
         android:textColor="@color/white"
         android:textSize="40sp"
-        app:layout_constraintStart_toEndOf="@+id/ampScores"
-        app:layout_constraintTop_toBottomOf="@+id/next" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ampMisses"
+        app:layout_constraintTop_toTopOf="@id/guideline4" />
+
+    <Button
+        android:id="@+id/subtractAmp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="1"
+        android:backgroundTint="@color/red"
+        android:onClick="subtractAmpScored"
+        android:text="@string/minus"
+        android:textColor="@color/white"
+        android:textSize="55sp"
+        app:layout_constraintBottom_toTopOf="@+id/ampMissed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/addAmps"
+        app:layout_constraintTop_toBottomOf="@+id/ampScored" />
 
     <TextView
         android:id="@+id/speakerMisses"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:fontFamily="sans-serif"
         android:gravity="center"
         android:text="@string/missed"
         android:textColor="@color/white"
         android:textSize="38sp"
-        app:layout_constraintStart_toStartOf="@id/speakerScores"
-        app:layout_constraintTop_toBottomOf="@+id/addSpeaker" />
+        app:layout_constraintBottom_toBottomOf="@+id/speakerMissed"
+        app:layout_constraintEnd_toStartOf="@+id/speakerMissed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/speakerMissed" />
+
+    <TextView
+        android:id="@+id/ampScores"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Amp"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toBottomOf="@+id/speakerScored"
+        app:layout_constraintEnd_toStartOf="@+id/ampScored"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/speakerScored"
+        app:layout_constraintTop_toTopOf="@+id/speakerScored" />
 
     <Button
         android:id="@+id/addSpeakersMissed"
-        android:layout_width="106dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:alpha="1"
         android:backgroundTint="@color/techno_titans"
         android:onClick="addSpeakerMissed"
@@ -163,156 +165,183 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="60sp"
-        app:layout_constraintStart_toStartOf="@id/addSpeaker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/subtractSpeakersMissed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/speakerMisses" />
 
     <Button
-        android:id="@+id/subtractSpeakersMissed"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="12dp"
-        android:alpha="1"
-        android:backgroundTint="@color/red"
-        android:onClick="subtractSpeakerMissed"
-        android:text="@string/minus"
-        android:textColor="@color/white"
-        android:textSize="55sp"
-        app:layout_constraintStart_toEndOf="@+id/addSpeakersMissed"
-        app:layout_constraintTop_toBottomOf="@+id/speakerMissed" />
-
-    <TextView
-        android:id="@+id/speakerScored"
-        android:layout_width="140dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:background="@null"
-        android:ems="10"
-        android:gravity="center"
-        android:text="0"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintStart_toEndOf="@+id/speakerScores"
-        app:layout_constraintTop_toBottomOf="@+id/underline" />
-
-    <TextView
-        android:id="@+id/ampScores"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif"
-        android:gravity="center"
-        android:text="Amp"
-        android:textColor="@color/white"
-        android:textSize="38sp"
-        app:layout_constraintStart_toEndOf="@+id/speakerScored"
-        app:layout_constraintTop_toBottomOf="@+id/underline" />
-
-    <Button
         android:id="@+id/addAmps"
-        android:layout_width="106dp"
-        android:layout_height="106dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:alpha="1"
         android:backgroundTint="@color/techno_titans"
         android:onClick="addAmpScored"
         android:text="@string/plus"
         android:textColor="@color/white"
         android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/ampMisses"
+        app:layout_constraintEnd_toStartOf="@+id/subtractAmp"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/subtractSpeaker"
-        app:layout_constraintTop_toBottomOf="@id/ampScores" />
+        app:layout_constraintTop_toBottomOf="@+id/ampScores" />
 
     <Button
-        android:id="@+id/subtractAmp"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
+        android:id="@+id/addSpeaker"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="1"
+        android:backgroundTint="@color/techno_titans"
+        android:onClick="addSpeakerScored"
+        android:text="+"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/speakerMisses"
+        app:layout_constraintEnd_toStartOf="@+id/subtractSpeaker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speakerScores" />
+
+    <Button
+        android:id="@+id/subtractSpeakersMissed"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:alpha="1"
         android:backgroundTint="@color/red"
-        android:onClick="subtractAmpScored"
+        android:onClick="subtractSpeakerMissed"
         android:text="@string/minus"
         android:textColor="@color/white"
         android:textSize="55sp"
-        app:layout_constraintStart_toEndOf="@+id/addAmps"
-        app:layout_constraintTop_toBottomOf="@+id/ampScored" />
-
-    <TextView
-        android:id="@+id/ampMissed"
-        android:layout_width="140dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:background="@null"
-        android:ems="10"
-        android:gravity="center"
-        android:text="0"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintStart_toEndOf="@+id/ampMisses"
-        app:layout_constraintTop_toBottomOf="@+id/subtractAmp" />
-
-    <TextView
-        android:id="@+id/ampMisses"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif"
-        android:gravity="center"
-        android:text="@string/missed"
-        android:textColor="@color/white"
-        android:textSize="38sp"
-        app:layout_constraintStart_toEndOf="@+id/speakerMissed"
-        app:layout_constraintTop_toBottomOf="@+id/addAmps" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addAmpsMissed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/addSpeakersMissed"
+        app:layout_constraintTop_toBottomOf="@+id/speakerMissed" />
 
     <Button
         android:id="@+id/addAmpsMissed"
-        android:layout_width="106dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:alpha="1"
         android:backgroundTint="@color/techno_titans"
         android:onClick="addAmpMissed"
         android:text="@string/plus"
         android:textColor="@color/white"
         android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/subtractAmpsMissed"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/subtractSpeakersMissed"
         app:layout_constraintTop_toBottomOf="@+id/ampMisses" />
 
     <Button
         android:id="@+id/subtractAmpsMissed"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:alpha="1"
         android:backgroundTint="@color/red"
         android:onClick="subtractAmpMissed"
         android:text="@string/minus"
         android:textColor="@color/white"
         android:textSize="55sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/addAmpsMissed"
         app:layout_constraintTop_toBottomOf="@+id/ampMissed" />
 
     <TextView
         android:id="@+id/speakerMissed"
-        android:layout_width="140dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="@null"
         android:ems="10"
         android:gravity="center"
         android:text="0"
         android:textColor="@color/white"
         android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ampMisses"
+        app:layout_constraintEnd_toStartOf="@+id/ampMisses"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/speakerMisses"
-        app:layout_constraintTop_toBottomOf="@+id/subtractSpeaker" />
+        app:layout_constraintTop_toTopOf="@+id/ampMisses" />
+
+    <TextView
+        android:id="@+id/ampMisses"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/missed"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ampMissed"
+        app:layout_constraintEnd_toStartOf="@+id/ampMissed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/speakerMissed"
+        app:layout_constraintTop_toTopOf="@+id/ampMissed" />
+
+    <TextView
+        android:id="@+id/speakerScores"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="Speaker"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        app:layout_constraintEnd_toStartOf="@+id/speakerScored"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topGuideline" />
+
+    <TextView
+        android:id="@+id/speakerScored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/speakerScores"
+        app:layout_constraintEnd_toStartOf="@+id/ampScores"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/speakerScores"
+        app:layout_constraintTop_toTopOf="@+id/speakerScores" />
+
+    <TextView
+        android:id="@+id/ampScored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ampScores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ampScores"
+        app:layout_constraintTop_toTopOf="@+id/ampScores" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
