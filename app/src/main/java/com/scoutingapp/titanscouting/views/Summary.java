@@ -78,10 +78,10 @@ public class Summary extends AppCompatActivity {
                 ((TextView) (findViewById(R.id.noteInTrapScoredSummary))).setText("False");
             }
 
-            if (match.isDisqualified()){
-                ((TextView) (findViewById(R.id.disqualifiedSummary))).setText("True");
+            if (match.isShootsFromSubwoofer()){
+                ((TextView) (findViewById(R.id.subwooferSummary))).setText("True");
             } else {
-                ((TextView) (findViewById(R.id.disqualifiedSummary))).setText("False");
+                ((TextView) (findViewById(R.id.subwooferSummary))).setText("False");
             }
 
             if (match.isPenaltiesIncured()){

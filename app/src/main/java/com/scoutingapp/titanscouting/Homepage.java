@@ -7,7 +7,10 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
+import com.scoutingapp.titanscouting.database.ScoutingAppDatabase;
 import com.scoutingapp.titanscouting.views.Pregame;
 import com.scoutingapp.titanscouting.views.logs.MatchListAdapter;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
@@ -30,6 +33,9 @@ public class Homepage extends AppCompatActivity {
             startActivity(i);
             Log.d("Pregame", "Pregame page has been reached");
         });
+
+
+
 
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 

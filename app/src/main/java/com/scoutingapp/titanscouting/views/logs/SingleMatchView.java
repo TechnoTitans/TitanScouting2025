@@ -84,10 +84,10 @@ public class SingleMatchView extends AppCompatActivity {
 
             }
 
-            if (match.isDisqualified()){
-                ((TextView) (findViewById(R.id.disqualifiedSummary))).setText("True");
+            if (match.isShootsFromSubwoofer()){
+                ((TextView) (findViewById(R.id.subwooferSummary))).setText("True");
             } else {
-                ((TextView) (findViewById(R.id.disqualifiedSummary))).setText("False");
+                ((TextView) (findViewById(R.id.subwooferSummary))).setText("False");
             }
 
             if (match.isPenaltiesIncured()){

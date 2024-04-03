@@ -53,9 +53,9 @@ public class Endgame extends AppCompatActivity {
                 match.setNoteInTrapScored(!match.isNoteInTrapScored());
                 matchViewModel.addMatchInformation(match);
             });
-            ((CheckBox) (findViewById(R.id.disqualifiedCheckBox))).setChecked(match.isDisqualified());
-            ((CheckBox) (findViewById(R.id.disqualifiedCheckBox))).setOnClickListener(v -> {
-                match.setDisqualified(!match.isDisqualified());
+            ((CheckBox) (findViewById(R.id.subwooferCheckbox))).setChecked(match.isShootsFromSubwoofer());
+            ((CheckBox) (findViewById(R.id.subwooferCheckbox))).setOnClickListener(v -> {
+                match.setShootsFromSubwoofer(!match.isShootsFromSubwoofer());
                 matchViewModel.addMatchInformation(match);
             });
             ((RatingBar) (findViewById(R.id.driverQualityRatingBar))).setRating(match.getDriverQuality());

@@ -586,14 +586,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Disqualified"
+                        android:text="Shoots from subwoofer?"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/disqualifiedSummary"
+                        android:id="@+id/subwooferSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

@@ -56,7 +56,7 @@ public class QRScreen extends AppCompatActivity {
             matchText.setText(String.format(Locale.US, "Match %d", match.getMatchNum()));
 
             qrString = String.join("\n",
-                    "GAGWI2024",
+                    "GACMP2024",
                     String.valueOf(match.getTeamNumber()),
                     String.valueOf(match.getMatchNum()),
                     match.getScouterName(),
@@ -73,7 +73,7 @@ public class QRScreen extends AppCompatActivity {
                     String.valueOf(match.getTeleopSpeakerMissed()),
                     match.getStagePosition(),
                     String.valueOf(match.isNoteInTrapScored()),
-                    String.valueOf(match.isDisqualified()),
+                    String.valueOf(match.isShootsFromSubwoofer()),
                     String.valueOf(match.isPenaltiesIncured()),
                     String.valueOf(match.getDriverQuality()),
                     String.valueOf(match.getDefenseAbility()),

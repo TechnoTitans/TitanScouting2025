@@ -100,18 +100,18 @@
                     android:orientation="vertical"
                     android:layout_marginEnd="5dp">
                     <TextView
-                        android:id="@+id/disqualifiedTextview"
+                        android:id="@+id/shootsFromSubwoofer"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="12dp"
-                        android:text="Disqualified"
+                        android:text="Shoots from Subwoofer?"
                         android:textAlignment="center"
-                        android:textSize="35sp" />
+                        android:textSize="32sp" />
 
                     <CheckBox
-                        android:id="@+id/disqualifiedCheckBox"
+                        android:id="@+id/subwooferCheckbox"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

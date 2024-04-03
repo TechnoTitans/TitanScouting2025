@@ -59,8 +59,8 @@ public class Match {
     @ColumnInfo(name = "noteInTrapScored", defaultValue = "0")
     private boolean noteInTrapScored;
 
-    @ColumnInfo(name = "disqualified", defaultValue = "0")
-    private boolean disqualified;
+    @ColumnInfo(name = "shootsFromSubwoofer", defaultValue = "0")
+    private boolean shootsFromSubwoofer;
     @ColumnInfo(name = "penaltiesIncurred", defaultValue = "0")
     private boolean penaltiesIncured;
 
@@ -220,12 +220,12 @@ public class Match {
         this.noteInTrapScored = noteInTrapScored;
     }
 
-    public boolean isDisqualified() {
-        return disqualified;
+    public boolean isShootsFromSubwoofer() {
+        return shootsFromSubwoofer;
     }
 
-    public void setDisqualified(boolean disqualified) {
-        this.disqualified = disqualified;
+    public void setShootsFromSubwoofer(boolean shootsFromSubwoofer) {
+        this.shootsFromSubwoofer = shootsFromSubwoofer;
     }
 
     public boolean isPenaltiesIncured() {
