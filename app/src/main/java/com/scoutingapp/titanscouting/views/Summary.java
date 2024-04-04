@@ -84,11 +84,7 @@ public class Summary extends AppCompatActivity {
                 ((TextView) (findViewById(R.id.subwooferSummary))).setText("False");
             }
 
-            if (match.isPenaltiesIncured()){
-                ((TextView) (findViewById(R.id.penaltiesIncurredSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.penaltiesIncurredSummary))).setText("False");
-            }
+            ((TextView) (findViewById(R.id.penaltiesIncurredSummary))).setText(String.valueOf(match.getPenaltiesIncurred()));
 
             ((TextView) (findViewById(R.id.driverQualitySummary))).setText(String.valueOf(match.getDriverQuality()));
 

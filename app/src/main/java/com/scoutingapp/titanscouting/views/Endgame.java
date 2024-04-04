@@ -76,10 +76,22 @@ public class Endgame extends AppCompatActivity {
                 match.setPickRingsFromGround(!match.isPickRingsFromGround());
                 matchViewModel.addMatchInformation(match);
             });
-            ((CheckBox) (findViewById(R.id.penaltiesIncurredCheckBox))).setChecked(match.isPenaltiesIncured());
-            ((CheckBox) (findViewById(R.id.penaltiesIncurredCheckBox))).setOnClickListener(v -> {
-                match.setPenaltiesIncured(!match.isPenaltiesIncured());
-                matchViewModel.addMatchInformation(match);
+//            ((CheckBox) (findViewById(R.id.penaltiesIncurredCheckBox))).setChecked(match.isPenaltiesIncured());
+//            ((CheckBox) (findViewById(R.id.penaltiesIncurredCheckBox))).setOnClickListener(v -> {
+//                match.setPenaltiesIncured(!match.isPenaltiesIncured());
+//                matchViewModel.addMatchInformation(match);
+//            });
+            ((SeekBar) (findViewById(R.id.penaltiesSeekBar))).setProgress(match.getPenaltiesIncurred());
+            ((SeekBar) (findViewById(R.id.penaltiesSeekBar))).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    match.setPenaltiesIncurred(progress);
+                    matchViewModel.addMatchInformation(match);
+                }
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {}
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {}
             });
             ((RatingBar) (findViewById(R.id.defenseAbilityRatingBar))).setRating(match.getDefenseAbility());
             ((RatingBar) (findViewById(R.id.defenseAbilityRatingBar))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {

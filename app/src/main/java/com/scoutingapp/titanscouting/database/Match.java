@@ -62,7 +62,7 @@ public class Match {
     @ColumnInfo(name = "shootsFromSubwoofer", defaultValue = "0")
     private boolean shootsFromSubwoofer;
     @ColumnInfo(name = "penaltiesIncurred", defaultValue = "0")
-    private boolean penaltiesIncured;
+    private int penaltiesIncurred;
 
     @ColumnInfo(name = "driverQuality", defaultValue = "1")
     private int driverQuality;
@@ -228,12 +228,12 @@ public class Match {
         this.shootsFromSubwoofer = shootsFromSubwoofer;
     }
 
-    public boolean isPenaltiesIncured() {
-        return penaltiesIncured;
+    public int getPenaltiesIncurred() {
+        return penaltiesIncurred;
     }
 
-    public void setPenaltiesIncured(boolean penaltiesIncured) {
-        this.penaltiesIncured = penaltiesIncured;
+    public void setPenaltiesIncurred(int penaltiesIncurred) {
+        this.penaltiesIncurred = penaltiesIncurred;
     }
 
 

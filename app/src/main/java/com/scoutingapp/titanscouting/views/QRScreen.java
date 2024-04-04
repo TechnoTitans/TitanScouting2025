@@ -74,7 +74,7 @@ public class QRScreen extends AppCompatActivity {
                     match.getStagePosition(),
                     String.valueOf(match.isNoteInTrapScored()),
                     String.valueOf(match.isShootsFromSubwoofer()),
-                    String.valueOf(match.isPenaltiesIncured()),
+                    String.valueOf(match.getPenaltiesIncurred()),
                     String.valueOf(match.getDriverQuality()),
                     String.valueOf(match.getDefenseAbility()),
                     String.valueOf(match.getMechanicalReliability()),

@@ -160,21 +160,22 @@
                     <TextView
                         android:id="@+id/penaltiesIncurredTextView"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="12dp"
-                        android:text="Penalties"
+                        android:text="Penalties (0-3+)"
                         android:textAlignment="center"
-                        android:textSize="35sp" />
+                        android:textSize="32sp" />
 
-                    <CheckBox
-                        android:id="@+id/penaltiesIncurredCheckBox"
+                    <SeekBar
+                        android:id="@+id/penaltiesSeekBar"
+                        style="@style/Widget.AppCompat.SeekBar.Discrete"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="12dp" />
+                        android:max="3"
+                        android:progress="0" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -213,9 +214,9 @@
                         android:layout_weight="1"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="12dp"
-                        android:text="Can Pick Rings?"
+                        android:text="Picks notes from ground? "
                         android:textAlignment="center"
-                        android:textSize="32sp" />
+                        android:textSize="24sp" />
 
                     <CheckBox
                         android:id="@+id/pickRingsFromGroundCheckBox"
