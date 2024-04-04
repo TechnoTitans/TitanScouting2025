@@ -15,7 +15,7 @@ public interface MatchDao {
     //the universal method that first creates a match and then updates it
     @Upsert
     void addMatchInformation(Match match);
-    @Query("SELECT * FROM scouting_database")
+    @Query("SELECT * FROM scouting_database ORDER BY matchNum DESC")
     LiveData<List<Match>> getMatches();
 
     @Query("SELECT * FROM scouting_database WHERE matchNum = :matchNumber")
