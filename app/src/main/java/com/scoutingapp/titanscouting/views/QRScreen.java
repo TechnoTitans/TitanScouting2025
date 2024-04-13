@@ -53,10 +53,13 @@ public class QRScreen extends AppCompatActivity {
 
         liveDataMatch.observe(this, match -> {
 
-            matchText.setText(String.format(Locale.US, "Match %d", match.getMatchNum()));
+            matchText.setText(String.format(Locale.US, "Match %d  - %s (%s)",
+                    match.getMatchNum(),
+                    match.getPosition(),
+                    match.getScouterName()));
 
             qrString = String.join("\n",
-                    "GACMP2024",
+                    "JOHNSON",
                     String.valueOf(match.getTeamNumber()),
                     String.valueOf(match.getMatchNum()),
                     match.getScouterName(),
