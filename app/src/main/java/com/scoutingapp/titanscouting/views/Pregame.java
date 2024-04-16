@@ -54,6 +54,9 @@ public class Pregame extends AppCompatActivity {
                         if (!s.toString().isEmpty()) {
                             match.setMatchNum(Integer.parseInt(s.toString().trim()));
                             matchViewModel.addMatchInformation(match);
+                            matchNumberInput.postDelayed(() -> {
+                                matchNumberInput.setSelection(matchNumberInput.length());
+                            }, 0);
                         }
                     }
                     @Override
@@ -69,6 +72,9 @@ public class Pregame extends AppCompatActivity {
                         if (!s.toString().isEmpty()) {
                             match.setTeamNumber(Integer.parseInt(s.toString().trim()));
                             matchViewModel.addMatchInformation(match);
+                            teamNumberInput.postDelayed(() -> {
+                                teamNumberInput.setSelection(teamNumberInput.length());
+                            }, 0);
                         }
                     }
                     @Override
@@ -83,6 +89,9 @@ public class Pregame extends AppCompatActivity {
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         match.setScouterName(s.toString());
                         matchViewModel.addMatchInformation(match);
+                        teamNumberInput.postDelayed(() -> {
+                            teamNumberInput.setSelection(teamNumberInput.length());
+                        }, 0);
                     }
                     @Override
                     public void afterTextChanged(Editable s) {
@@ -175,6 +184,9 @@ public class Pregame extends AppCompatActivity {
                     if (!s.toString().isEmpty()) {
                         match.setMatchNum(Integer.parseInt(s.toString().trim()));
                         matchViewModel.addMatchInformation(match);
+                        matchNumberInput.postDelayed(() -> {
+                            matchNumberInput.setSelection(matchNumberInput.length());
+                        }, 0);
                     }
                 }
                 @Override
@@ -190,6 +202,9 @@ public class Pregame extends AppCompatActivity {
                     if (!s.toString().isEmpty()) {
                         match.setTeamNumber(Integer.parseInt(s.toString().trim()));
                         matchViewModel.addMatchInformation(match);
+                        teamNumberInput.postDelayed(() -> {
+                            teamNumberInput.setSelection(teamNumberInput.length());
+                        }, 0);
                     }
                 }
                 @Override
@@ -204,6 +219,9 @@ public class Pregame extends AppCompatActivity {
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     match.setScouterName(s.toString());
                     matchViewModel.addMatchInformation(match);
+                    scouterNameInput.postDelayed(() -> {
+                        scouterNameInput.setSelection(scouterNameInput.length());
+                    }, 0);
                 }
                 @Override
                 public void afterTextChanged(Editable s) {

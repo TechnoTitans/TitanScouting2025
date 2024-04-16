@@ -40,7 +40,6 @@ public class Homepage extends AppCompatActivity {
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
 //        matchViewModel.deleteAllMatches();
-
         final MatchListAdapter adapter = new MatchListAdapter(new MatchListAdapter.MatchDiff());
 
         matchViewModel.getAllMatches().observe(this, matches -> {

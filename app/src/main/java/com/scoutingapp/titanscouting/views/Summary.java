@@ -104,7 +104,7 @@ public class Summary extends AppCompatActivity {
                 ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("False");
             }
 
-            ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
+            ((TextView) (findViewById(R.id.notesSummary))).setText("Notes: " + match.getNotes());
 
             submit.setOnClickListener(v -> {
                 Intent i = new Intent(Summary.this, Homepage.class);
@@ -120,16 +120,4 @@ public class Summary extends AppCompatActivity {
 
 
     }
-
-//    public void endgame(View v){
-//        Intent i = new Intent(this, QRScreen.class);
-//        i.putExtra("matchNumber", match.getMatchNum());
-//        startActivity(i);
-//    }
-//
-//    public void pregame(View v){
-//        Intent i = new Intent(this, Endgame.class);
-//        i.putExtra("matchNumber", match.getMatchNum());
-//        startActivity(i);
-//    }
 }
