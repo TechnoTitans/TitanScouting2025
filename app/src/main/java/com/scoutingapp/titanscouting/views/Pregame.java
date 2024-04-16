@@ -53,7 +53,6 @@ public class Pregame extends AppCompatActivity {
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         if (!s.toString().isEmpty()) {
                             match.setMatchNum(Integer.parseInt(s.toString().trim()));
-                            matchViewModel.addMatchInformation(match);
                         }
                     }
                     @Override
@@ -68,7 +67,6 @@ public class Pregame extends AppCompatActivity {
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         if (!s.toString().isEmpty()) {
                             match.setTeamNumber(Integer.parseInt(s.toString().trim()));
-                            matchViewModel.addMatchInformation(match);
                         }
                     }
                     @Override
@@ -82,7 +80,6 @@ public class Pregame extends AppCompatActivity {
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         match.setScouterName(s.toString());
-                        matchViewModel.addMatchInformation(match);
                     }
                     @Override
                     public void afterTextChanged(Editable s) {
@@ -90,7 +87,6 @@ public class Pregame extends AppCompatActivity {
                 });
                 noShowCheckBox.setOnClickListener(v -> {
                     match.setNoShow(!match.isNoShow());
-                    matchViewModel.addMatchInformation(match);
                 });
 
                 red1.setBackgroundTintList(ContextCompat.getColorStateList(
@@ -116,7 +112,6 @@ public class Pregame extends AppCompatActivity {
 
                 red1.setOnClickListener(v -> {
                     match.setPosition("R1");
-                    matchViewModel.addMatchInformation(match);
                     Log.d("background_color", Objects.requireNonNull(v.getBackgroundTintList()).toString());
                     v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
                     red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
@@ -127,23 +122,23 @@ public class Pregame extends AppCompatActivity {
                 });
                 red2.setOnClickListener(v -> {
                     match.setPosition("R2");
-                    matchViewModel.addMatchInformation(match);
+
                 });
                 red3.setOnClickListener(v -> {
                     match.setPosition("R3");
-                    matchViewModel.addMatchInformation(match);
+
                 });
                 blue1.setOnClickListener(v -> {
                     match.setPosition("B1");
-                    matchViewModel.addMatchInformation(match);
+
                 });
                 blue2.setOnClickListener(v -> {
                     match.setPosition("B2");
-                    matchViewModel.addMatchInformation(match);
+
                 });
                 blue3.setOnClickListener(v -> {
                     match.setPosition("B3");
-                    matchViewModel.addMatchInformation(match);
+
                 });
                 ((Button) (findViewById(R.id.BackButtonPregame))).setOnClickListener(v -> {
                     Intent i = new Intent(Pregame.this, Homepage.class);
@@ -174,7 +169,7 @@ public class Pregame extends AppCompatActivity {
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     if (!s.toString().isEmpty()) {
                         match.setMatchNum(Integer.parseInt(s.toString().trim()));
-                        matchViewModel.addMatchInformation(match);
+
                     }
                 }
                 @Override
@@ -189,7 +184,7 @@ public class Pregame extends AppCompatActivity {
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     if (!s.toString().isEmpty()) {
                         match.setTeamNumber(Integer.parseInt(s.toString().trim()));
-                        matchViewModel.addMatchInformation(match);
+
                     }
                 }
                 @Override
@@ -203,7 +198,7 @@ public class Pregame extends AppCompatActivity {
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     match.setScouterName(s.toString());
-                    matchViewModel.addMatchInformation(match);
+
                 }
                 @Override
                 public void afterTextChanged(Editable s) {
@@ -211,7 +206,7 @@ public class Pregame extends AppCompatActivity {
             });
             noShowCheckBox.setOnClickListener(v -> {
                 match.setNoShow(!match.isNoShow());
-                matchViewModel.addMatchInformation(match);
+
             });
 
             red1.setBackgroundTintList(ContextCompat.getColorStateList(
@@ -236,7 +231,7 @@ public class Pregame extends AppCompatActivity {
 
             ((Button) (findViewById(R.id.Red1))).setOnClickListener(v -> {
                 match.setPosition("R1");
-                matchViewModel.addMatchInformation(match);
+
                 Log.d("background_color", Objects.requireNonNull(v.getBackgroundTintList()).toString());
                 v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
                 red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
@@ -247,7 +242,7 @@ public class Pregame extends AppCompatActivity {
             });
             ((Button) (findViewById(R.id.Red2))).setOnClickListener(v -> {
                 match.setPosition("R2");
-                matchViewModel.addMatchInformation(match);
+
                 v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
                 red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
                 red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
@@ -257,7 +252,7 @@ public class Pregame extends AppCompatActivity {
             });
             ((Button) (findViewById(R.id.Red3))).setOnClickListener(v -> {
                 match.setPosition("R3");
-                matchViewModel.addMatchInformation(match);
+
                 v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
                 red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
                 red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
@@ -267,7 +262,7 @@ public class Pregame extends AppCompatActivity {
             });
             ((Button) (findViewById(R.id.Blue1))).setOnClickListener(v -> {
                 match.setPosition("B1");
-                matchViewModel.addMatchInformation(match);
+
                 red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
                 red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
                 red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
@@ -277,7 +272,7 @@ public class Pregame extends AppCompatActivity {
             });
             ((Button) (findViewById(R.id.Blue2))).setOnClickListener(v -> {
                 match.setPosition("B2");
-                matchViewModel.addMatchInformation(match);
+
                 red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
                 red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
                 red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
@@ -287,7 +282,7 @@ public class Pregame extends AppCompatActivity {
             });
             ((Button) (findViewById(R.id.Blue3))).setOnClickListener(v -> {
                 match.setPosition("B3");
-                matchViewModel.addMatchInformation(match);
+
                 red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
                 red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
                 red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
@@ -302,11 +297,13 @@ public class Pregame extends AppCompatActivity {
             });
             ((Button) (findViewById(R.id.NextButtonPregame))).setOnClickListener(v -> {
                 if (match.isNoShow()) {
+                    matchViewModel.addMatchInformation(match);
                     Intent i = new Intent(Pregame.this, Summary.class);
                     i.putExtra("matchNumber", match.getMatchNum());
                     Log.d("transition", "working1");
-                            startActivity(i);
+                    startActivity(i);
                 } else {
+                    matchViewModel.addMatchInformation(match);
                     Intent i = new Intent(Pregame.this, Autonomous.class);
                     i.putExtra("matchNumber", match.getMatchNum());
                     Log.d("transition", "working2");
