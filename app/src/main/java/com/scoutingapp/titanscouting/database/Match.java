@@ -25,8 +25,21 @@ public class Match {
 
     @ColumnInfo(name = "performedLeave", defaultValue = "0")
     private boolean performedLeave;
-    @ColumnInfo(name = "path", defaultValue = "")
-    private String path;
+
+    @ColumnInfo(name = "startingPosition", defaultValue = "0")
+    private String startingPosition;
+
+    @ColumnInfo(name = "autoAmpScored", defaultValue = "0")
+    private int autoAmpScored;
+
+    @ColumnInfo(name = "autoAmpMissed", defaultValue = "0")
+    private int autoAmpMissed;
+
+    @ColumnInfo(name = "autoSpeakerScored", defaultValue = "0")
+    private int autoSpeakerScored;
+
+    @ColumnInfo(name = "autoSpeakerMissed", defaultValue = "0")
+    private int autoSpeakerMissed;
 
     @ColumnInfo(name = "teleopAmpScored", defaultValue = "0")
     private int teleopAmpScored;
@@ -119,15 +132,46 @@ public class Match {
         this.performedLeave = performedLeave;
     }
 
-    public String getPath()
-    {
-        return path;
+    public String getStartingPosition() {
+        return startingPosition;
     }
 
-    public void setPath(String path)
-    {
-        this.path = path;
+    public void setStartingPosition(String startingPosition) {
+        this.startingPosition = startingPosition;
     }
+
+    public int getAutoAmpScored() {
+        return autoAmpScored;
+    }
+
+    public void setAutoAmpScored(int autoAmpScored) {
+        this.autoAmpScored = autoAmpScored;
+    }
+
+    public int getAutoAmpMissed() {
+        return autoAmpMissed;
+    }
+
+    public void setAutoAmpMissed(int autoAmpMissed) {
+        this.autoAmpMissed = autoAmpMissed;
+    }
+
+    public int getAutoSpeakerScored() {
+        return autoSpeakerScored;
+    }
+
+    public void setAutoSpeakerScored(int autoSpeakerScored) {
+        this.autoSpeakerScored = autoSpeakerScored;
+    }
+
+    public int getAutoSpeakerMissed() {
+        return autoSpeakerMissed;
+    }
+
+    public void setAutoSpeakerMissed(int autoSpeakerMissed) {
+        this.autoSpeakerMissed = autoSpeakerMissed;
+    }
+
     public int getTeleopAmpScored() {
         return teleopAmpScored;
     }

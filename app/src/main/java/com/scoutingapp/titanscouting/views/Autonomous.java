@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -23,88 +22,133 @@ public class Autonomous extends AppCompatActivity {
         setContentView(R.layout.activity_autonomous);
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
-        ImageView noteA = (ImageView) (findViewById(R.id.noteA));
-        ImageView noteB = (ImageView) (findViewById(R.id.noteB));
-        ImageView noteC = (ImageView) (findViewById(R.id.noteC));
-        ImageView noteD = (ImageView) (findViewById(R.id.noteD));
-        ImageView noteE = (ImageView) (findViewById(R.id.noteE));
-        ImageView noteF = (ImageView) (findViewById(R.id.noteF));
-        ImageView noteG = (ImageView) (findViewById(R.id.noteG));
-        ImageView noteH = (ImageView) (findViewById(R.id.noteH));
-        Button clearButton = (Button) (findViewById(R.id.clearButton));
+        TextView speakerScoredText = findViewById(R.id.speakerScored);
+        TextView speakerMissedText = findViewById(R.id.speakerMissed);
+        TextView ampScoredText = findViewById(R.id.ampScored);
+        TextView ampMissedText = findViewById(R.id.ampMissed);
 
-        CheckBox movedCheckBox = (CheckBox) (findViewById(R.id.movedCheckbox));
+
+
+        CheckBox movedCheckBox = findViewById(R.id.movedCheckbox);
+        CheckBox sourceCheckBox = findViewById(R.id.startsSourceSide);
+        CheckBox middleCheckBox = findViewById(R.id.startsMiddle);
+        CheckBox ampCheckBox = findViewById(R.id.startsAmpSide);
 
         View back = findViewById(R.id.backToPregame);
         View next = findViewById(R.id.nextToTeleop);
 
         matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
             this.match = match;
+            speakerScoredText.setText(String.valueOf(match.getAutoSpeakerScored()));
+            speakerMissedText.setText(String.valueOf(match.getAutoSpeakerMissed()));
+            ampScoredText.setText(String.valueOf(match.getAutoAmpScored()));
+            ampMissedText.setText(String.valueOf(match.getAutoAmpMissed()));
 
             if (match.isPerformedLeave()) {
                 movedCheckBox.setChecked(true);
             }
-
+            if (match.getStagePosition() != null) {
+                switch (match.getStagePosition()) {
+                    case "Source":
+                        sourceCheckBox.setChecked(true);
+                        break;
+                    case "Amp":
+                        ampCheckBox.setChecked(true);
+                        break;
+                    case "Middle":
+                        middleCheckBox.setChecked(true);
+                        break;
+                }
+            }
             movedCheckBox.setOnClickListener(v -> {
                 match.setPerformedLeave(!match.isPerformedLeave());
                 matchViewModel.addMatchInformation(match);
             });
-
-            noteA.setOnClickListener(v -> {
-                match.setPath(match.getPath() + "A");
-                noteA.setImageResource(R.drawable.fillednote);
+            sourceCheckBox.setOnClickListener(v -> {
+                match.setStartingPosition("Source");
+                ampCheckBox.setChecked(false);
+                middleCheckBox.setChecked(false);
                 matchViewModel.addMatchInformation(match);
             });
-
-            noteB.setOnClickListener(v -> {
-                match.setPath(match.getPath() + "B");
-                noteB.setImageResource(R.drawable.fillednote);
+            middleCheckBox.setOnClickListener(v -> {
+                match.setStartingPosition("Middle");
+                ampCheckBox.setChecked(false);
+                sourceCheckBox.setChecked(false);
                 matchViewModel.addMatchInformation(match);
             });
-
-            noteC.setOnClickListener(v -> {
-                match.setPath(match.getPath() + "C");
-                noteC.setImageResource(R.drawable.fillednote);
+            ampCheckBox.setOnClickListener(v -> {
+                match.setStartingPosition("Amp");
+                sourceCheckBox.setChecked(false);
+                middleCheckBox.setChecked(false);
                 matchViewModel.addMatchInformation(match);
             });
-
-            noteD.setOnClickListener(v -> {
-                match.setPath(match.getPath() + "D");
-                noteD.setImageResource(R.drawable.fillednote);
+            ((Button) (findViewById(R.id.addAmps))).setOnClickListener(v -> {
+                int ampScored = Integer.parseInt(ampScoredText.getText().toString()) + 1;
+                match.setAutoAmpScored(ampScored);
+                matchViewModel.addMatchInformation(match);
+                ampScoredText.setText(String.valueOf(ampScored));
+            });
+            ((Button) (findViewById(R.id.subtractAmp))).setOnClickListener(v -> {
+                int ampScored = Integer.parseInt(ampScoredText.getText().toString()) - 1;
+                if (ampScored < 0) {
+                    ampScoredText.setText("0");
+                            ampScored = 0;
+                } else {
+                    ampScoredText.setText(String.valueOf(ampScored));
+                }
+                match.setAutoAmpScored(ampScored);
                 matchViewModel.addMatchInformation(match);
             });
-
-            noteE.setOnClickListener(v -> {
-                match.setPath(match.getPath() + "E");
-                noteE.setImageResource(R.drawable.fillednote);
+            ((Button) (findViewById(R.id.addAmpsMissed))).setOnClickListener(v -> {
+                int ampMissed = Integer.parseInt(ampMissedText.getText().toString()) + 1;
+                match.setAutoAmpMissed(ampMissed);
+                matchViewModel.addMatchInformation(match);
+                ampMissedText.setText(String.valueOf(ampMissed));
+            });
+            ((Button) (findViewById(R.id.subtractAmpsMissed))).setOnClickListener(v -> {
+                int ampMissed = Integer.parseInt(ampMissedText.getText().toString()) - 1;
+                if (ampMissed < 0) {
+                    ampMissedText.setText("0");
+                    ampMissed = 0;
+                } else {
+                    ampMissedText.setText(String.valueOf(ampMissed));
+                }
+                match.setAutoAmpMissed(ampMissed);
                 matchViewModel.addMatchInformation(match);
             });
-
-            noteF.setOnClickListener(v -> {
-                match.setPath(match.getPath() + "F");
-                noteF.setImageResource(R.drawable.fillednote);
+            ((Button) (findViewById(R.id.addSpeaker))).setOnClickListener(v -> {
+                int speakerScored = Integer.parseInt(speakerScoredText.getText().toString()) + 1;
+                match.setAutoSpeakerScored(speakerScored);
                 matchViewModel.addMatchInformation(match);
             });
-
-            noteG.setOnClickListener(v -> {
-                match.setPath(match.getPath() + "G");
-                noteG.setImageResource(R.drawable.fillednote);
+            ((Button) (findViewById(R.id.subtractSpeaker))).setOnClickListener(v -> {
+                int speakerScored = Integer.parseInt(speakerScoredText.getText().toString()) - 1;
+                if (speakerScored < 0) {
+                    speakerScoredText.setText("0");
+                            speakerScored = 0;
+                } else {
+                    speakerScoredText.setText(String.valueOf(speakerScored));
+                }
+                match.setAutoSpeakerScored(speakerScored);
                 matchViewModel.addMatchInformation(match);
             });
-
-            noteH.setOnClickListener(v -> {
-                match.setPath(match.getPath() + "H");
-                noteH.setImageResource(R.drawable.fillednote);
+            ((Button) (findViewById(R.id.subtractSpeakersMissed))).setOnClickListener(v -> {
+                int speakerMissed = Integer.parseInt(speakerMissedText.getText().toString()) - 1;
+                if (speakerMissed < 0) {
+                    speakerMissedText.setText("0");
+                    speakerMissed = 0;
+                } else {
+                    speakerMissedText.setText(String.valueOf(speakerMissed));
+                }
+                match.setAutoSpeakerMissed(speakerMissed);
                 matchViewModel.addMatchInformation(match);
             });
-
-            clearButton.setOnClickListener(v -> {
-                match.setPath("");
+            ((Button) (findViewById(R.id.addSpeakersMissed))).setOnClickListener(v -> {
+                int speakerMissed = Integer.parseInt(speakerMissedText.getText().toString()) + 1;
+                speakerMissedText.setText(String.valueOf(speakerMissed));
+                match.setAutoSpeakerMissed(speakerMissed);
                 matchViewModel.addMatchInformation(match);
             });
-
-
-
              next.setOnClickListener(v -> {
                 Intent i = new Intent(this, Teleop.class);
                 i.putExtra("matchNumber", match.getMatchNum());
