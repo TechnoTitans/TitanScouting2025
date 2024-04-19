@@ -46,4 +46,5 @@
     <item name="back_to_summary" type="id" />
     <item name="exit_scouting_button" type="id" />
     <item name="leftGuideline" type="id" />
+    <item name="pathTextView" type="id" />
 </resources>

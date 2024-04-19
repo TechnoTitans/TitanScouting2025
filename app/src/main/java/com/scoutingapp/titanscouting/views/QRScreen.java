@@ -65,7 +65,7 @@ public class QRScreen extends AppCompatActivity {
                     match.getScouterName(),
                     String.valueOf(match.getPosition()),
                     String.valueOf(match.isPerformedLeave()),
-//                    match.getStartingPosition(),
+                    match.getStartingPosition(),
 //                    String.valueOf(match.getAutoAmpScored()),
 //                    String.valueOf(match.getAutoAmpMissed()),
 //                    String.valueOf(match.getAutoSpeakerScored()),
@@ -83,7 +83,8 @@ public class QRScreen extends AppCompatActivity {
                     String.valueOf(match.getMechanicalReliability()),
                     String.valueOf(match.isDropsPiecesOften()),
                     String.valueOf(match.isPickRingsFromGround()),
-                    match.getNotes()
+                    match.getNotes(),
+                    match.getPath()
 
             );
             Log.d("match_num", String.valueOf(match.getMatchNum()));

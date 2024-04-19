@@ -284,110 +284,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Auto Amp Scored"
+                        android:text="Path"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/autoAmpScoredSummary"
+                        android:id="@+id/pathSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="0"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Auto Amp Missed"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-                    <TextView
-                        android:id="@+id/autoAmpMissedSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="0"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Auto Speaker Scored"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-                    <TextView
-                        android:id="@+id/autoSpeakerScoredSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="0"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Auto Speaker Missed"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-
-                    <TextView
-                        android:id="@+id/autoSpeakerMissedSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="0"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -423,6 +331,8 @@
                 </LinearLayout>
 
             </LinearLayout>
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"

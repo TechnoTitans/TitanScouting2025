@@ -57,6 +57,8 @@ public class SingleMatchView extends AppCompatActivity {
                 ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("False");
             }
 
+            ((TextView) (findViewById(R.id.pathSummary))).setText(match.getPath());
+
 //            ((TextView) (findViewById(R.id.startingPositionSummary))).setText(match.getStartingPosition());
 //
 //            ((TextView) (findViewById(R.id.autoAmpScoredSummary))).setText(String.valueOf(match.getAutoAmpScored()));

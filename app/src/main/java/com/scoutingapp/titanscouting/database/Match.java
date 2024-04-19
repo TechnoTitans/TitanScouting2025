@@ -25,6 +25,8 @@ public class Match {
 
     @ColumnInfo(name = "performedLeave", defaultValue = "0")
     private boolean performedLeave;
+    @ColumnInfo(name = "startingPosition", defaultValue = "null")
+    private String startingPosition;
     @ColumnInfo(name = "path", defaultValue = "")
     private String path;
 
@@ -117,6 +119,14 @@ public class Match {
 
     public void setPerformedLeave(boolean performedLeave) {
         this.performedLeave = performedLeave;
+    }
+
+    public String getStartingPosition() {
+        return startingPosition;
+    }
+
+    public void setStartingPosition(String startingPosition) {
+        this.startingPosition = startingPosition;
     }
 
     public String getPath()
