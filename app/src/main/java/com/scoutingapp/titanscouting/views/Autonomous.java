@@ -45,6 +45,41 @@ public class Autonomous extends AppCompatActivity {
                 movedCheckBox.setChecked(true);
             }
 
+            if (match.getPath().contains("A"))
+            {
+                noteA.setImageResource(R.drawable.fillednote);
+            }
+
+            if (match.getPath().contains("B"))
+            {
+                noteB.setImageResource(R.drawable.fillednote);
+            }
+
+            if (match.getPath().contains("C"))
+            {
+                noteC.setImageResource(R.drawable.fillednote);
+            }
+
+            if (match.getPath().contains("D"))
+            {
+                noteD.setImageResource(R.drawable.fillednote);
+            }
+
+            if (match.getPath().contains("E"))
+            {
+                noteE.setImageResource(R.drawable.fillednote);
+            }
+
+            if (match.getPath().contains("F"))
+            {
+                noteF.setImageResource(R.drawable.fillednote);
+            }
+
+            if (match.getPath().contains("G"))
+            {
+                noteG.setImageResource(R.drawable.fillednote);
+            }
+
             movedCheckBox.setOnClickListener(v -> {
                 match.setPerformedLeave(!match.isPerformedLeave());
                 matchViewModel.addMatchInformation(match);
@@ -102,8 +137,6 @@ public class Autonomous extends AppCompatActivity {
                 match.setPath("");
                 matchViewModel.addMatchInformation(match);
             });
-
-
 
              next.setOnClickListener(v -> {
                 Intent i = new Intent(this, Teleop.class);
