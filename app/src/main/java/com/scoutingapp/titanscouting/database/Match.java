@@ -53,7 +53,7 @@ public class Match {
     @ColumnInfo(name = "teleopSpeakerMissed", defaultValue = "0")
     private int teleopSpeakerMissed;
 
-    @ColumnInfo(name = "stagePosition", defaultValue = "0")
+    @ColumnInfo(name = "stagePosition", defaultValue = "None")
     private String stagePosition;
 
     @ColumnInfo(name = "noteInTrapScored", defaultValue = "0")

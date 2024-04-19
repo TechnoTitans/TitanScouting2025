@@ -60,7 +60,10 @@ public class Endgame extends AppCompatActivity {
                     matchViewModel.addMatchInformation(match);
                 }
                 @Override
-                public void onNothingSelected(AdapterView<?> parent) {}
+                public void onNothingSelected(AdapterView<?> parent) {
+                    match.setStagePosition((String) parent.getItemAtPosition(0));
+                    matchViewModel.addMatchInformation(match);
+                }
             });
 
             noteInTrapCheckbox.setChecked(match.isNoteInTrapScored());

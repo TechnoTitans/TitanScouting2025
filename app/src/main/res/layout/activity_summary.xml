@@ -558,7 +558,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="noteInTrapScored"
+                        android:text="Trap Scored"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -586,10 +586,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Shoots from subwoofer?"
+                        android:text="Only shoots from subwoofer?"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textSize="35sp"
+                        android:textSize="32sp"
                         tools:ignore="NestedWeights" />
 
                     <TextView
@@ -807,6 +807,7 @@
                         android:text="Notes"
                         android:textColor="@color/black"
                         android:textSize="35sp"
+                        android:textAlignment="center"
                         tools:ignore="NestedWeights" />
 
                 </LinearLayout>

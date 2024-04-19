@@ -106,9 +106,9 @@
                         android:layout_weight="1"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="12dp"
-                        android:text="Shoots from Subwoofer?"
+                        android:text="Only Shoots from Subwoofer?"
                         android:textAlignment="center"
-                        android:textSize="32sp" />
+                        android:textSize="24sp" />
 
                     <CheckBox
                         android:id="@+id/subwooferCheckbox"
@@ -275,7 +275,7 @@
                         android:layout_marginTop="12dp"
                         android:text="Mechanical Reliability"
                         android:textAlignment="center"
-                        android:textSize="35sp" />
+                        android:textSize="32sp" />
 
                     <RatingBar
                         android:id="@+id/mechanicalReliabilityRatingBar"
