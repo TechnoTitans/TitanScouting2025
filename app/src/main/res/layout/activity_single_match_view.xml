@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.Summary"
+    tools:context=".views.logs.SingleMatchView"
     android:background="#FFFFFF">
 
     <Button
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
-        android:text="To Logs"
+        android:text="Logs"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="372dp"
+        android:layout_marginStart="560dp"
         android:layout_marginTop="28dp"
         android:text="QR"
         android:textColor="@color/white"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="67dp"
         android:layout_marginTop="28dp"
-        android:text="Summary"
+        android:text="Match Review"
         android:textColor="@color/black"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -302,137 +302,6 @@
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
 
-
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Auto Amp Scored"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-                    <TextView
-                        android:id="@+id/autoAmpScoredSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="0"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Auto Amp Missed"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-                    <TextView
-                        android:id="@+id/autoAmpMissedSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="0"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Auto Speaker Scored"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-                    <TextView
-                        android:id="@+id/autoSpeakerScoredSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="0"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Auto Speaker Missed"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-                    <TextView
-                        android:id="@+id/autoSpeakerMissedSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="0"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_weight="1">
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -460,6 +329,15 @@
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -618,7 +496,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Shoots from subwoofer?"
+                        android:text="Shoots from Subwoofer?"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -832,11 +710,21 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Notes"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="35sp"
+                        tools:ignore="NestedWeights" />
+
+                    <TextView
                         android:id="@+id/notesSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Notes: "
+                        android:text="Hello There"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"

@@ -25,21 +25,10 @@ public class Match {
 
     @ColumnInfo(name = "performedLeave", defaultValue = "0")
     private boolean performedLeave;
-
-    @ColumnInfo(name = "startingPosition", defaultValue = "0")
+    @ColumnInfo(name = "startingPosition", defaultValue = "null")
     private String startingPosition;
-
-    @ColumnInfo(name = "autoAmpScored", defaultValue = "0")
-    private int autoAmpScored;
-
-    @ColumnInfo(name = "autoAmpMissed", defaultValue = "0")
-    private int autoAmpMissed;
-
-    @ColumnInfo(name = "autoSpeakerScored", defaultValue = "0")
-    private int autoSpeakerScored;
-
-    @ColumnInfo(name = "autoSpeakerMissed", defaultValue = "0")
-    private int autoSpeakerMissed;
+    @ColumnInfo(name = "path", defaultValue = "")
+    private String path;
 
     @ColumnInfo(name = "teleopAmpScored", defaultValue = "0")
     private int teleopAmpScored;
@@ -53,7 +42,7 @@ public class Match {
     @ColumnInfo(name = "teleopSpeakerMissed", defaultValue = "0")
     private int teleopSpeakerMissed;
 
-    @ColumnInfo(name = "stagePosition", defaultValue = "None")
+    @ColumnInfo(name = "stagePosition", defaultValue = "0")
     private String stagePosition;
 
     @ColumnInfo(name = "noteInTrapScored", defaultValue = "0")
@@ -140,38 +129,15 @@ public class Match {
         this.startingPosition = startingPosition;
     }
 
-    public int getAutoAmpScored() {
-        return autoAmpScored;
+    public String getPath()
+    {
+        return path;
     }
 
-    public void setAutoAmpScored(int autoAmpScored) {
-        this.autoAmpScored = autoAmpScored;
+    public void setPath(String path)
+    {
+        this.path = path;
     }
-
-    public int getAutoAmpMissed() {
-        return autoAmpMissed;
-    }
-
-    public void setAutoAmpMissed(int autoAmpMissed) {
-        this.autoAmpMissed = autoAmpMissed;
-    }
-
-    public int getAutoSpeakerScored() {
-        return autoSpeakerScored;
-    }
-
-    public void setAutoSpeakerScored(int autoSpeakerScored) {
-        this.autoSpeakerScored = autoSpeakerScored;
-    }
-
-    public int getAutoSpeakerMissed() {
-        return autoSpeakerMissed;
-    }
-
-    public void setAutoSpeakerMissed(int autoSpeakerMissed) {
-        this.autoSpeakerMissed = autoSpeakerMissed;
-    }
-
     public int getTeleopAmpScored() {
         return teleopAmpScored;
     }
