@@ -27,6 +27,11 @@
             android:screenOrientation="landscape"
             />
         <activity
+            android:name=".views.AutonomousPath"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
+        <activity
             android:name=".views.Autonomous"
             android:exported="false"
             android:screenOrientation="landscape"

@@ -83,7 +83,8 @@ public class QRScreen extends AppCompatActivity {
                     String.valueOf(match.getMechanicalReliability()),
                     String.valueOf(match.isDropsPiecesOften()),
                     String.valueOf(match.isPickRingsFromGround()),
-                    match.getNotes()
+                    match.getNotes(),
+                    match.getPath()
 
             );
             Log.d("match_num", String.valueOf(match.getMatchNum()));
