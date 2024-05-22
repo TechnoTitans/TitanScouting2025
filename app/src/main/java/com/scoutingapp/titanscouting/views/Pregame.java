@@ -152,7 +152,7 @@ public class Pregame extends AppCompatActivity {
                         Log.d("transition", "working1");
                                 startActivity(i);
                     } else {
-                        Intent i = new Intent(Pregame.this, Autonomous.class);
+                        Intent i = new Intent(Pregame.this, AutonomousPath.class);
                         i.putExtra("matchNumber", match.getMatchNum());
                         Log.d("transition", "working2");
                         startActivity(i);
@@ -304,7 +304,7 @@ public class Pregame extends AppCompatActivity {
                     startActivity(i);
                 } else {
                     matchViewModel.addMatchInformation(match);
-                    Intent i = new Intent(Pregame.this, Autonomous.class);
+                    Intent i = new Intent(Pregame.this, AutonomousPath.class);
                     i.putExtra("matchNumber", match.getMatchNum());
                     Log.d("transition", "working2");
                     startActivity(i);

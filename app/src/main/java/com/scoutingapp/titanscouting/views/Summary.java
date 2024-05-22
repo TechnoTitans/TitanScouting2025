@@ -64,6 +64,14 @@ public class Summary extends AppCompatActivity {
 
             ((TextView) (findViewById(R.id.teleopSpeakerMissedSummary))).setText(String.valueOf(match.getTeleopSpeakerMissed()));
 
+            ((TextView) (findViewById(R.id.autoAmpScoredSummary))).setText(String.valueOf(match.getAutoAmpScored()));
+
+            ((TextView) (findViewById(R.id.autoAmpMissedSummary))).setText(String.valueOf(match.getAutoAmpMissed()));
+
+            ((TextView) (findViewById(R.id.autoSpeakerScoredSummary))).setText(String.valueOf(match.getAutoSpeakerScored()));
+
+            ((TextView) (findViewById(R.id.autoSpeakerMissedSummary))).setText(String.valueOf(match.getAutoSpeakerMissed()));
+
             ((TextView) (findViewById(R.id.stagePositionSummary))).setText(match.getStagePosition());
 
             if (match.isNoteInTrapScored()){
@@ -97,8 +105,8 @@ public class Summary extends AppCompatActivity {
             } else {
                 ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("False");
             }
-
-            ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
+            String notes = match.getNotes() == null ? "" : match.getNotes();
+            ((TextView) (findViewById(R.id.notesSummary))).setText("Notes: " + notes);
 
             submit.setOnClickListener(v -> {
                 Intent i = new Intent(Summary.this, Homepage.class);

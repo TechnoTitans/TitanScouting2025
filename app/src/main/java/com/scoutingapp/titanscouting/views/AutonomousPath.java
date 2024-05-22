@@ -21,7 +21,7 @@ public class AutonomousPath extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_autonomous);
+        setContentView(R.layout.activity_autonomous_path);
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
         ImageView noteA = (ImageView) (findViewById(R.id.noteA));
@@ -34,37 +34,14 @@ public class AutonomousPath extends AppCompatActivity {
         ImageView noteH = (ImageView) (findViewById(R.id.noteH));
         Button clearButton = (Button) (findViewById(R.id.clearButton));
         TextView pathTextView = findViewById(R.id.pathTextView);
-
-        CheckBox movedCheckBox = (CheckBox) (findViewById(R.id.movedCheckbox));
-
         View back = findViewById(R.id.backToPregame);
-        View next = findViewById(R.id.nextToTeleop);
-        RadioGroup startingPositionRadioGroup = findViewById(R.id.startingPositionRadioGroup);
-        RadioButton sourceRadio = findViewById(R.id.sourceRadio);
-        RadioButton middleRadio = findViewById(R.id.middleRadio);
-        RadioButton ampRadio = findViewById(R.id.ampRadio);
+        View next = findViewById(R.id.nextToAuto);
+
 
         matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
             this.match = match;
 
             pathTextView.setText(match.getPath());
-
-            startingPositionRadioGroup.setOnCheckedChangeListener((group, checkedId) -> {
-                String selectedPos = "";
-                if (checkedId == R.id.sourceRadio) {
-                    selectedPos = "Source";
-                } else if (checkedId == R.id.middleRadio) {
-                    selectedPos = "Middle";
-                } else if (checkedId == R.id.ampRadio) {
-                    selectedPos = "Amp";
-                }
-                match.setStagePosition(selectedPos);
-                matchViewModel.addMatchInformation(match);
-            });
-
-            if (match.getPath() != null && match.isPerformedLeave()) {
-                movedCheckBox.setChecked(true);
-            }
 
             if (match.getPath() != null && match.getPath().contains("A"))
             {
@@ -123,10 +100,6 @@ public class AutonomousPath extends AppCompatActivity {
                 noteH.setImageResource(R.drawable.note);
             }
 
-            movedCheckBox.setOnClickListener(v -> {
-                match.setPerformedLeave(!match.isPerformedLeave());
-                matchViewModel.addMatchInformation(match);
-            });
 
             noteA.setOnClickListener(v -> {
                 match.setPath(addToEnd(match.getPath(), "A"));
@@ -185,7 +158,7 @@ public class AutonomousPath extends AppCompatActivity {
             });
 
              next.setOnClickListener(v -> {
-                Intent i = new Intent(this, Teleop.class);
+                Intent i = new Intent(this, Autonomous.class);
                 i.putExtra("matchNumber", match.getMatchNum());
                 startActivity(i);
             });

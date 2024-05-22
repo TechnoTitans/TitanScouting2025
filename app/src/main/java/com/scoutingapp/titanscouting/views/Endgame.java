@@ -24,6 +24,7 @@ import com.scoutingapp.titanscouting.database.MatchViewModel;
 public class Endgame extends AppCompatActivity {
     Match match;
     MatchViewModel matchViewModel;
+    private static final String SAVED_CURSOR_POSITION = "saved_cursor_position";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,11 @@ public class Endgame extends AppCompatActivity {
                 R.array.stagePositions,
                 android.R.layout.simple_spinner_item
         );
+        if (savedInstanceState != null) {
+            int cursorPosition = savedInstanceState.getInt(SAVED_CURSOR_POSITION, 0);
+            ((EditText) findViewById(R.id.commentsEditText)).setSelection(cursorPosition);
+        }
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ((Spinner) (findViewById(R.id.stagePositionSpinner))).setAdapter(adapter);
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
@@ -109,6 +115,8 @@ public class Endgame extends AppCompatActivity {
                     matchViewModel.addMatchInformation(match);
                 }
             });
+
+            ((EditText) (findViewById(R.id.commentsEditText))).setText(match.getNotes());
             ((EditText) (findViewById(R.id.commentsEditText))).addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -142,5 +150,12 @@ public class Endgame extends AppCompatActivity {
             i.putExtra("matchNumber", match.getMatchNum());
             startActivity(i);
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        int cursorPosition = ((EditText) findViewById(R.id.commentsEditText)).getSelectionStart();
+        outState.putInt(SAVED_CURSOR_POSITION, cursorPosition);
     }
 }

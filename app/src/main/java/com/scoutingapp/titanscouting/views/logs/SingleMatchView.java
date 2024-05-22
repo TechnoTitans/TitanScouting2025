@@ -112,8 +112,7 @@ public class SingleMatchView extends AppCompatActivity {
                 ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("False");
             }
 
-            ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
-
+            ((TextView) (findViewById(R.id.notesSummary))).setText("Notes: " + (match.getNotes() == null ? "" : match.getNotes()));
             backButton.setOnClickListener(v -> {
                 Intent i = new Intent(this, Logs.class);
                 startActivity(i);
