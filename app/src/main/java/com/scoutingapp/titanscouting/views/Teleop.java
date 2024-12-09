@@ -150,7 +150,7 @@ public class Teleop extends AppCompatActivity {
     }
 
     public void autonomous(View v){
-        Intent i = new Intent(this, Autonomous.class);
+        Intent i = new Intent(this, AutonomousPath.class);
         i.putExtra("matchNumber", match.getMatchNum());
         startActivity(i);
     }

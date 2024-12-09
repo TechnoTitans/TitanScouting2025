@@ -21,7 +21,7 @@ public abstract class ScoutingAppDatabase extends RoomDatabase {
 
     //allows for async writing from the database since directly writing into the database
     //causes issues regarding performance -> background threads are used
-    static final ExecutorService databaseWriteExectuer =
+    static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
     static ScoutingAppDatabase getDatabase(final Context context){

@@ -17,7 +17,7 @@ import com.scoutingapp.titanscouting.database.MatchViewModel;
 import com.scoutingapp.titanscouting.views.logs.Logs;
 import com.scoutingapp.titanscouting.views.QRScreen;
 
-
+// Class holding the homepage of the app.
 public class Homepage extends AppCompatActivity {
 
     private MatchViewModel matchViewModel;
@@ -28,14 +28,16 @@ public class Homepage extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         View pregameButton = findViewById(R.id.button);
+        View logsButton = findViewById(R.id.logs_btn);
+
         pregameButton.setOnClickListener(v -> {
             Intent i = new Intent(this, Pregame.class);
             startActivity(i);
-            Log.d("Pregame", "Pregame page has been reached");
         });
-
-
-
+        logsButton.setOnClickListener(v -> {
+            Intent i = new Intent(this, Logs.class);
+            startActivity(i);
+        });
 
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
@@ -49,17 +51,4 @@ public class Homepage extends AppCompatActivity {
 
     }
 
-    public void preGame(View v) {
-        Intent i = new Intent(this, Pregame.class);
-        i.putExtra("transition", "fromHomepage");
-        startActivity(i);
-        Log.d("Pregame", "Pregame page has been reached");
-    }
-
-    public void logs(View v){
-        Intent i = new Intent(this, Logs.class);
-        Log.d("transition", "Logs transition");
-        i.putExtra("transition", "fromHomePage");
-        startActivity(i);
-    }
 }

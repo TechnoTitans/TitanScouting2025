@@ -22,6 +22,7 @@ public class Logs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logs);
 
+
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         final MatchListAdapter adapter = new MatchListAdapter(new MatchListAdapter.MatchDiff());
         recyclerView.setAdapter(adapter);
@@ -38,5 +39,6 @@ public class Logs extends AppCompatActivity {
         Intent i = new Intent(this, Homepage.class);
         startActivity(i);
     }
+
 
 }

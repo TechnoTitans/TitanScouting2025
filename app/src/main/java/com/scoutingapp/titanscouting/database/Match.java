@@ -10,81 +10,60 @@ public class Match {
     @PrimaryKey
     @ColumnInfo(name = "matchNum")
     private int matchNum;
-
     @ColumnInfo(name = "teamNumber", defaultValue = "00000")
     private int teamNumber;
-
     @ColumnInfo(name = "position", defaultValue = "R1")
     private String position;
-
     @ColumnInfo(name = "scouterName", defaultValue = "0")
     private String scouterName;
-
     @ColumnInfo(name = "noShow", defaultValue = "0")
     private boolean noShow;
-
     @ColumnInfo(name = "performedLeave", defaultValue = "0")
     private boolean performedLeave;
     @ColumnInfo(name = "startingPosition", defaultValue = "null")
     private String startingPosition;
     @ColumnInfo(name = "path", defaultValue = "")
     private String path;
-
     @ColumnInfo(name = "teleopAmpScored", defaultValue = "0")
     private int teleopAmpScored;
-
     @ColumnInfo(name = "teleopAmpMissed", defaultValue = "0")
     private int teleopAmpMissed;
-
     @ColumnInfo(name = "teleopSpeakerScored", defaultValue = "0")
     private int teleopSpeakerScored;
-
     @ColumnInfo(name = "teleopSpeakerMissed", defaultValue = "0")
     private int teleopSpeakerMissed;
-
     @ColumnInfo(name = "stagePosition", defaultValue = "0")
     private String stagePosition;
-
     @ColumnInfo(name = "noteInTrapScored", defaultValue = "0")
     private boolean noteInTrapScored;
-
     @ColumnInfo(name = "shootsFromSubwoofer", defaultValue = "0")
     private boolean shootsFromSubwoofer;
     @ColumnInfo(name = "penaltiesIncurred", defaultValue = "0")
     private int penaltiesIncurred;
-
     @ColumnInfo(name = "driverQuality", defaultValue = "1")
     private int driverQuality;
-
     @ColumnInfo(name = "defenseAbility", defaultValue = "1")
     private int defenseAbility;
-
     @ColumnInfo(name = "mechanicalReliability", defaultValue = "1")
     private int mechanicalReliability;
     @ColumnInfo(name = "dropsPiecesOften", defaultValue = "0")
     private boolean dropsPiecesOften;
-
     @ColumnInfo(name = "canPickRingsFromGround", defaultValue = "0")
     private boolean pickRingsFromGround;
-
     @ColumnInfo(name = "notes", defaultValue = "0")
     private String notes;
+    @ColumnInfo(name = "submitted", defaultValue = "0")
+    private boolean submitted;
 
     public boolean isSubmitted() {
         return submitted;
     }
-
     public void setSubmitted(boolean submitted) {
         this.submitted = submitted;
     }
-
-    @ColumnInfo(name = "submitted", defaultValue = "0")
-    private boolean submitted;
-
     public int getMatchNum() {
         return matchNum;
     }
-
     public void setMatchNum(int matchNum) {
         this.matchNum = matchNum;
     }

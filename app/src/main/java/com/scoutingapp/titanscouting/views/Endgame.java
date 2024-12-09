@@ -21,6 +21,10 @@ import androidx.lifecycle.ViewModelProvider;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Endgame extends AppCompatActivity {
     Match match;
     MatchViewModel matchViewModel;
@@ -28,6 +32,17 @@ public class Endgame extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_endgame);
+
+        EditText e = findViewById(R.id.commentsEditText);
+        Spinner s = findViewById(R.id.stagePositionSpinner);
+
+        final ArrayList<String> stagePositions = new ArrayList<>(Arrays.asList(
+                "None",
+                "Park",
+                "Stage Attempted",
+                "Stage Completed",
+                "Harmony"));
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.stagePositions,
@@ -35,46 +50,45 @@ public class Endgame extends AppCompatActivity {
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ((Spinner) (findViewById(R.id.stagePositionSpinner))).setAdapter(adapter);
+
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
         matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
             this.match = match;
+
+            s.setSelection(stagePositions.indexOf(match.getStagePosition()));
             ((Spinner) (findViewById(R.id.stagePositionSpinner))).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     match.setStagePosition((String) parent.getItemAtPosition(position));
-                    matchViewModel.addMatchInformation(match);
                 }
                 @Override
                 public void onNothingSelected(AdapterView<?> parent) {
+                    match.setStagePosition(match.getStagePosition());
+                    parent.setSelection(stagePositions.indexOf(match.getStagePosition()));
                 }
             });
             ((CheckBox) (findViewById(R.id.noteInTrapCheckBox))).setChecked(match.isNoteInTrapScored());
             ((CheckBox) (findViewById(R.id.noteInTrapCheckBox))).setOnClickListener(v -> {
                 match.setNoteInTrapScored(!match.isNoteInTrapScored());
-                matchViewModel.addMatchInformation(match);
             });
             ((CheckBox) (findViewById(R.id.subwooferCheckbox))).setChecked(match.isShootsFromSubwoofer());
             ((CheckBox) (findViewById(R.id.subwooferCheckbox))).setOnClickListener(v -> {
                 match.setShootsFromSubwoofer(!match.isShootsFromSubwoofer());
-                matchViewModel.addMatchInformation(match);
             });
             ((RatingBar) (findViewById(R.id.driverQualityRatingBar))).setRating(match.getDriverQuality());
             ((RatingBar) (findViewById(R.id.driverQualityRatingBar))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                     match.setDriverQuality((int) (rating));
-                    matchViewModel.addMatchInformation(match);
                 }
             });
             ((CheckBox) (findViewById(R.id.dropsPiecesOftenCheckBox))).setChecked(match.isDropsPiecesOften());
             ((CheckBox) (findViewById(R.id.dropsPiecesOftenCheckBox))).setOnClickListener(v -> {
                 match.setDropsPiecesOften(!match.isDropsPiecesOften());
-                matchViewModel.addMatchInformation(match);
             });
             ((CheckBox) (findViewById(R.id.pickRingsFromGroundCheckBox))).setChecked(match.isPickRingsFromGround());
             ((CheckBox) (findViewById(R.id.pickRingsFromGroundCheckBox))).setOnClickListener(v -> {
                 match.setPickRingsFromGround(!match.isPickRingsFromGround());
-                matchViewModel.addMatchInformation(match);
             });
 //            ((CheckBox) (findViewById(R.id.penaltiesIncurredCheckBox))).setChecked(match.isPenaltiesIncured());
 //            ((CheckBox) (findViewById(R.id.penaltiesIncurredCheckBox))).setOnClickListener(v -> {
@@ -86,7 +100,6 @@ public class Endgame extends AppCompatActivity {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                     match.setPenaltiesIncurred(progress);
-                    matchViewModel.addMatchInformation(match);
                 }
                 @Override
                 public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -98,7 +111,6 @@ public class Endgame extends AppCompatActivity {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                     match.setDefenseAbility((int) (rating));
-                    matchViewModel.addMatchInformation(match);
                 }
             });
             ((RatingBar) (findViewById(R.id.mechanicalReliabilityRatingBar))).setRating(match.getMechanicalReliability());
@@ -106,17 +118,18 @@ public class Endgame extends AppCompatActivity {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                     match.setMechanicalReliability((int) (rating));
-                    matchViewModel.addMatchInformation(match);
                 }
             });
+            e.setText(match.getNotes());
+
             ((EditText) (findViewById(R.id.commentsEditText))).addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
                 }
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     match.setNotes(s.toString());
-                    matchViewModel.addMatchInformation(match);
                 }
                 @Override
                 public void afterTextChanged(Editable s) {
@@ -126,7 +139,6 @@ public class Endgame extends AppCompatActivity {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                     match.setDriverQuality((int) (rating));
-                    matchViewModel.addMatchInformation(match);
                 }
             });
         });
@@ -135,11 +147,13 @@ public class Endgame extends AppCompatActivity {
         backButton.setOnClickListener(v -> {
             Intent i = new Intent(Endgame.this, Teleop.class);
             i.putExtra("matchNumber", match.getMatchNum());
+            matchViewModel.addMatchInformation(match);
             startActivity(i);
         });
         nextButton.setOnClickListener(v -> {
             Intent i = new Intent(Endgame.this, Summary.class);
             i.putExtra("matchNumber", match.getMatchNum());
+            matchViewModel.addMatchInformation(match);
             startActivity(i);
         });
     }

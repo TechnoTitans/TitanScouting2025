@@ -59,17 +59,13 @@ public class QRScreen extends AppCompatActivity {
                     match.getScouterName()));
 
             qrString = String.join("\n",
-                    "JOHNSON",
+                    "GRITS",
                     String.valueOf(match.getTeamNumber()),
                     String.valueOf(match.getMatchNum()),
                     match.getScouterName(),
                     String.valueOf(match.getPosition()),
                     String.valueOf(match.isPerformedLeave()),
                     match.getStartingPosition(),
-//                    String.valueOf(match.getAutoAmpScored()),
-//                    String.valueOf(match.getAutoAmpMissed()),
-//                    String.valueOf(match.getAutoSpeakerScored()),
-//                    String.valueOf(match.getAutoSpeakerMissed()),
                     String.valueOf(match.getTeleopAmpScored()),
                     String.valueOf(match.getTeleopAmpMissed()),
                     String.valueOf(match.getTeleopSpeakerScored()),

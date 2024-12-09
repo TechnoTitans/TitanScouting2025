@@ -8,16 +8,35 @@
     android:visibility="visible"
     tools:context=".Homepage">
 
+    <TextView
+        android:id="@+id/homepage_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/titan_scouting"
+        android:textAllCaps="true"
+        android:fontFamily="@font/vanfonting"
+        android:textColor="@color/white"
+        android:textColorHighlight="#0DE116"
+        android:textColorHint="#07DA0F"
+        android:textFontWeight="@integer/material_motion_duration_long_2"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/button"
         android:layout_width="361dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="start"
+        android:text="@string/start"
         android:textSize="150sp"
         android:fontFamily="@font/vanfonting"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/logs_btn"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -33,12 +52,11 @@
         app:srcCompat="@drawable/techologo" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/logs_btn"
         android:layout_width="361dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:onClick="logs"
-        android:text="logs"
+        android:text="@string/logs"
         android:textSize="150sp"
         android:fontFamily="@font/vanfonting"
         app:layout_constraintBottom_toBottomOf="@+id/button"
@@ -46,24 +64,5 @@
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toTopOf="@+id/button" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="718dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Titan Scouting"
-        android:textAllCaps="true"
-        android:fontFamily="@font/vanfonting"
-        android:textColor="@color/white"
-        android:textColorHighlight="#0DE116"
-        android:textColorHint="#07DA0F"
-        android:textFontWeight="@integer/material_motion_duration_long_2"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

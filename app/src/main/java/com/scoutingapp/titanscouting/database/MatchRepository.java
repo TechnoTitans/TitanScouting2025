@@ -28,13 +28,13 @@ public class MatchRepository {
     }
 
     void addMatchInformation(Match match) {
-        ScoutingAppDatabase.databaseWriteExectuer.execute(() -> {
+        ScoutingAppDatabase.databaseWriteExecutor.execute(() -> {
             dao.addMatchInformation(match);
         });
     }
 
     void deleteAllMatches() {
-        ScoutingAppDatabase.databaseWriteExectuer.execute(dao::deleteAllMatches);
+        ScoutingAppDatabase.databaseWriteExecutor.execute(dao::deleteAllMatches);
     }
 
 }
