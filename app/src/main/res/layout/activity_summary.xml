@@ -11,11 +11,12 @@
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:text="To Endgame"
         android:textColor="@color/white"
         android:textSize="40sp"
+        app:layout_constraintEnd_toStartOf="@+id/summaryHeader"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,12 +24,13 @@
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="372dp"
         android:layout_marginTop="28dp"
         android:text="Submit"
         android:textColor="@color/white"
         android:textSize="40sp"
-        app:layout_constraintStart_toEndOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toEndOf="@+id/summaryHeader"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
