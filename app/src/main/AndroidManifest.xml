@@ -42,7 +42,7 @@
             android:screenOrientation="landscape"
             />
         <activity
-            android:name=".Homepage"
+            android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="landscape">
             <intent-filter>
