@@ -22,6 +22,11 @@
             android:screenOrientation="landscape"
             />
         <activity
+            android:name=".views.Endgame2"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
+        <activity
             android:name=".views.Teleop"
             android:exported="false"
             android:screenOrientation="landscape"

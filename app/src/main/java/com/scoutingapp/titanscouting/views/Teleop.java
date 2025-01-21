@@ -156,8 +156,8 @@ public class Teleop extends AppCompatActivity {
     }
 
     public void endgame(View v){
-        Intent i = new Intent(this, Endgame.class);
-        i.putExtra("matchNumber", match.getMatchNum());
+        Intent i = new Intent(this, Endgame2.class);
+        // i.putExtra("matchNumber", match.getMatchNum());
         startActivity(i);
     }
 }
