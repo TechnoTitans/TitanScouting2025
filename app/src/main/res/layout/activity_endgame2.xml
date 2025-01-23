@@ -17,7 +17,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.021" />
@@ -30,10 +30,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTitle"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <TextView
         android:id="@+id/subTitle2"
@@ -68,31 +68,65 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="start|top"/>
 
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="35dp"
-        android:layout_height="36dp"
-        android:scaleX="1.7"
-        android:scaleY="1.7"
+    <RadioGroup
+        android:id="@+id/parkPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subTitle1"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0">
 
-    <TextView
-        android:id="@+id/park"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="Park"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toEndOf="@+id/checkBox1"
-        app:layout_constraintTop_toBottomOf="@+id/subTitle1"
-        app:layout_constraintVertical_bias="0.035" />
+        <RadioButton
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Park"
+            android:textSize="18sp"
+            />
+
+        <RadioButton
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deep Cage"
+            android:textSize="18sp"
+            />
+
+        <RadioButton
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attempted Deep Cage"
+            android:textSize="18sp"
+            />
+
+        <RadioButton
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shallow Cage"
+            android:textSize="18sp"
+            />
+
+        <RadioButton
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attempted Shallow Cage"
+            android:textSize="18sp"
+            />
+
+        <RadioButton
+            android:id="@+id/checkBox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="None"
+            android:textSize="18sp"
+            />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/mechReliability"
@@ -102,32 +136,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toEndOf="@+id/checkBox1"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintTop_toBottomOf="@+id/subTitle2"
         app:layout_constraintVertical_bias="0.035" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="35dp"
-        android:layout_height="36dp"
-        android:scaleX="1.7"
-        android:scaleY="1.7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
-
-    <TextView
-        android:id="@+id/deepCage"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="Deep Cage"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toEndOf="@+id/checkBox2"
-        app:layout_constraintTop_toBottomOf="@+id/park" />
 
     <TextView
         android:id="@+id/defense"
@@ -136,32 +148,10 @@
         android:text="Defense:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/checkBox2"
+        app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintStart_toStartOf="@+id/mechReliability"
         app:layout_constraintTop_toBottomOf="@+id/mechReliability"
         app:layout_constraintVertical_bias="0" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="35dp"
-        android:layout_height="36dp"
-        android:scaleX="1.7"
-        android:scaleY="1.7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
-
-    <TextView
-        android:id="@+id/attemptedDeepCage"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="Attempted Deep Cage"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
-        app:layout_constraintTop_toBottomOf="@+id/deepCage" />
 
     <TextView
         android:id="@+id/driverAbility"
@@ -170,32 +160,11 @@
         android:text="Driver Ability:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
+        app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintStart_toStartOf="@+id/defense"
         app:layout_constraintTop_toBottomOf="@+id/defense"
         app:layout_constraintVertical_bias="0" />
 
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="35dp"
-        android:layout_height="36dp"
-        android:scaleX="1.7"
-        android:scaleY="1.7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
-
-    <TextView
-        android:id="@+id/shallowCage"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="Shallow Cage"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toEndOf="@+id/checkBox4"
-        app:layout_constraintTop_toBottomOf="@+id/attemptedDeepCage" />
 
     <TextView
         android:id="@+id/efficiency"
@@ -204,54 +173,10 @@
         android:text="Efficiency:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
+        app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintStart_toStartOf="@+id/driverAbility"
         app:layout_constraintTop_toBottomOf="@+id/driverAbility"
         app:layout_constraintVertical_bias="0" />
-
-    <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="35dp"
-        android:layout_height="36dp"
-        android:scaleX="1.7"
-        android:scaleY="1.7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
-
-    <TextView
-        android:id="@+id/attemptedShallowCage"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="Attempted Shallow Cage"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toEndOf="@+id/checkBox5"
-        app:layout_constraintTop_toBottomOf="@+id/shallowCage" />
-
-    <CheckBox
-        android:id="@+id/checkBox6"
-        android:layout_width="35dp"
-        android:layout_height="36dp"
-        android:scaleX="1.7"
-        android:scaleY="1.7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
-
-    <TextView
-        android:id="@+id/none"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="None"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toEndOf="@+id/checkBox6"
-        app:layout_constraintTop_toBottomOf="@+id/attemptedShallowCage" />
 
 
     <RatingBar
@@ -274,7 +199,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/deepCage"
+        app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintTop_toTopOf="@+id/ratingBar1"
         app:layout_constraintVertical_bias="0.11" />
 
@@ -287,7 +212,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/attemptedDeepCage"
+        app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintTop_toTopOf="@+id/ratingBar1"
         app:layout_constraintVertical_bias="0.22" />
 
@@ -300,7 +225,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/shallowCage"
+        app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintTop_toTopOf="@+id/ratingBar1"
         app:layout_constraintVertical_bias="0.33" />
 
