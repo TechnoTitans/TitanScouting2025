@@ -18,52 +18,35 @@ public class Match {
     private String scouterName;
     @ColumnInfo(name = "noShow", defaultValue = "0")
     private boolean noShow;
-    @ColumnInfo(name = "performedLeave", defaultValue = "0")
-    private boolean performedLeave;
-    @ColumnInfo(name = "startingPosition", defaultValue = "null")
-    private String startingPosition;
-    @ColumnInfo(name = "path", defaultValue = "")
-    private String path;
-    @ColumnInfo(name = "teleopAmpScored", defaultValue = "0")
-    private int teleopAmpScored;
-    @ColumnInfo(name = "teleopAmpMissed", defaultValue = "0")
-    private int teleopAmpMissed;
-    @ColumnInfo(name = "teleopSpeakerScored", defaultValue = "0")
-    private int teleopSpeakerScored;
-    @ColumnInfo(name = "teleopSpeakerMissed", defaultValue = "0")
-    private int teleopSpeakerMissed;
-    @ColumnInfo(name = "stagePosition", defaultValue = "0")
-    private String stagePosition;
-    @ColumnInfo(name = "noteInTrapScored", defaultValue = "0")
-    private boolean noteInTrapScored;
-    @ColumnInfo(name = "shootsFromSubwoofer", defaultValue = "0")
-    private boolean shootsFromSubwoofer;
-    @ColumnInfo(name = "penaltiesIncurred", defaultValue = "0")
-    private int penaltiesIncurred;
+    @ColumnInfo(name = "l1Count", defaultValue = "0")
+    private int l1Count;
+    @ColumnInfo(name = "l2Count", defaultValue = "0")
+    private int l2Count;
+    @ColumnInfo(name = "l3Count", defaultValue = "0")
+    private int l3Count;
+    @ColumnInfo(name = "l4Count", defaultValue = "0")
+    private int l4Count;
+    @ColumnInfo(name = "processorCount", defaultValue = "0")
+    private int processorCount;
+    @ColumnInfo(name = "netCount", defaultValue = "0")
+    private int netCount;
+    @ColumnInfo(name = "endgamePos", defaultValue = "None")
+    private String endgamePos;
     @ColumnInfo(name = "driverQuality", defaultValue = "1")
     private int driverQuality;
     @ColumnInfo(name = "defenseAbility", defaultValue = "1")
     private int defenseAbility;
     @ColumnInfo(name = "mechanicalReliability", defaultValue = "1")
     private int mechanicalReliability;
-    @ColumnInfo(name = "dropsPiecesOften", defaultValue = "0")
-    private boolean dropsPiecesOften;
-    @ColumnInfo(name = "canPickRingsFromGround", defaultValue = "0")
-    private boolean pickRingsFromGround;
+    @ColumnInfo(name = "efficiency", defaultValue = "1")
+    private int efficiency;
     @ColumnInfo(name = "notes", defaultValue = "0")
     private String notes;
-    @ColumnInfo(name = "submitted", defaultValue = "0")
-    private boolean submitted;
 
-    public boolean isSubmitted() {
-        return submitted;
-    }
-    public void setSubmitted(boolean submitted) {
-        this.submitted = submitted;
-    }
     public int getMatchNum() {
         return matchNum;
     }
+
     public void setMatchNum(int matchNum) {
         this.matchNum = matchNum;
     }
@@ -92,95 +75,69 @@ public class Match {
         this.scouterName = scouterName;
     }
 
-    public boolean isPerformedLeave() {
-        return performedLeave;
+    public boolean isNoShow() {
+        return noShow;
     }
 
-    public void setPerformedLeave(boolean performedLeave) {
-        this.performedLeave = performedLeave;
+    public void setNoShow(boolean noShow) {
+        this.noShow = noShow;
     }
 
-    public String getStartingPosition() {
-        return startingPosition;
+    public int getL1Count() {
+        return l1Count;
     }
 
-    public void setStartingPosition(String startingPosition) {
-        this.startingPosition = startingPosition;
+    public void setL1Count(int l1Count) {
+        this.l1Count = l1Count;
     }
 
-    public String getPath()
-    {
-        return path;
+    public int getL2Count() {
+        return l2Count;
     }
 
-    public void setPath(String path)
-    {
-        this.path = path;
-    }
-    public int getTeleopAmpScored() {
-        return teleopAmpScored;
+    public void setL2Count(int l2Count) {
+        this.l2Count = l2Count;
     }
 
-    public void setTeleopAmpScored(int teleopAmpScored) {
-        this.teleopAmpScored = teleopAmpScored;
+    public int getL3Count() {
+        return l3Count;
     }
 
-    public int getTeleopAmpMissed() {
-        return teleopAmpMissed;
+    public void setL3Count(int l3Count) {
+        this.l3Count = l3Count;
     }
 
-    public void setTeleopAmpMissed(int teleopAmpMissed) {
-        this.teleopAmpMissed = teleopAmpMissed;
+    public int getL4Count() {
+        return l4Count;
     }
 
-    public int getTeleopSpeakerScored() {
-        return teleopSpeakerScored;
+    public void setL4Count(int l4Count) {
+        this.l4Count = l4Count;
     }
 
-    public void setTeleopSpeakerScored(int teleopSpeakerScored) {
-        this.teleopSpeakerScored = teleopSpeakerScored;
+    public int getProcessorCount() {
+        return processorCount;
     }
 
-    public int getTeleopSpeakerMissed() {
-        return teleopSpeakerMissed;
+    public void setProcessorCount(int processorCount) {
+        this.processorCount = processorCount;
     }
 
-    public void setTeleopSpeakerMissed(int teleopSpeakerMissed) {
-        this.teleopSpeakerMissed = teleopSpeakerMissed;
+    public int getNetCount() {
+        return netCount;
     }
 
-    public String getStagePosition() {
-        return stagePosition;
+    public void setNetCount(int netCount) {
+        this.netCount = netCount;
     }
 
-    public void setStagePosition(String stagePosition) {
-        this.stagePosition = stagePosition;
+    public String getEndgamePos() {
+        return endgamePos;
     }
 
-    public boolean isNoteInTrapScored() {
-        return noteInTrapScored;
+    public void setEndgamePos(String endgamePos) {
+        this.endgamePos = endgamePos;
     }
-
-    public void setNoteInTrapScored(boolean noteInTrapScored) {
-        this.noteInTrapScored = noteInTrapScored;
-    }
-
-    public boolean isShootsFromSubwoofer() {
-        return shootsFromSubwoofer;
-    }
-
-    public void setShootsFromSubwoofer(boolean shootsFromSubwoofer) {
-        this.shootsFromSubwoofer = shootsFromSubwoofer;
-    }
-
-    public int getPenaltiesIncurred() {
-        return penaltiesIncurred;
-    }
-
-    public void setPenaltiesIncurred(int penaltiesIncurred) {
-        this.penaltiesIncurred = penaltiesIncurred;
-    }
-
 
     public int getDriverQuality() {
         return driverQuality;
@@ -206,20 +163,12 @@ public class Match {
         this.mechanicalReliability = mechanicalReliability;
     }
 
-    public boolean isDropsPiecesOften() {
-        return dropsPiecesOften;
+    public int getEfficiency() {
+        return efficiency;
     }
 
-    public void setDropsPiecesOften(boolean dropsPiecesOften) {
-        this.dropsPiecesOften = dropsPiecesOften;
-    }
-
-    public boolean isPickRingsFromGround() {
-        return pickRingsFromGround;
-    }
-
-    public void setPickRingsFromGround(boolean pickRingsFromGround) {
-        this.pickRingsFromGround = pickRingsFromGround;
+    public void setEfficiency(int efficiency) {
+        this.efficiency = efficiency;
     }
 
     public String getNotes() {
@@ -230,11 +179,5 @@ public class Match {
         this.notes = notes;
     }
 
-    public boolean isNoShow() {
-        return noShow;
-    }
 
-    public void setNoShow(boolean noShow) {
-        this.noShow = noShow;
-    }
 }

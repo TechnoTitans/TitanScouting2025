@@ -64,30 +64,24 @@ public class QRScreen extends AppCompatActivity {
                     String.valueOf(match.getMatchNum()),
                     match.getScouterName(),
                     String.valueOf(match.getPosition()),
-                    String.valueOf(match.isPerformedLeave()),
-                    match.getStartingPosition(),
-                    String.valueOf(match.getTeleopAmpScored()),
-                    String.valueOf(match.getTeleopAmpMissed()),
-                    String.valueOf(match.getTeleopSpeakerScored()),
-                    String.valueOf(match.getTeleopSpeakerMissed()),
-                    match.getStagePosition(),
-                    String.valueOf(match.isNoteInTrapScored()),
-                    String.valueOf(match.isShootsFromSubwoofer()),
-                    String.valueOf(match.getPenaltiesIncurred()),
+                    String.valueOf(match.getL1Count()),
+                    String.valueOf(match.getL2Count()),
+                    String.valueOf(match.getL3Count()),
+                    String.valueOf(match.getL4Count()),
+                    String.valueOf(match.getProcessorCount()),
+                    String.valueOf(match.getNetCount()),
+                    match.getEndgamePos(),
                     String.valueOf(match.getDriverQuality()),
                     String.valueOf(match.getDefenseAbility()),
                     String.valueOf(match.getMechanicalReliability()),
-                    String.valueOf(match.isDropsPiecesOften()),
-                    String.valueOf(match.isPickRingsFromGround()),
-                    match.getNotes(),
-                    match.getPath()
-
+                    String.valueOf(match.getEfficiency()),
+                    match.getNotes()
             );
             Log.d("match_num", String.valueOf(match.getMatchNum()));
             multiFormatWriter = new MultiFormatWriter();
 
             try {
-                bitMatrix = multiFormatWriter.encode(qrString, BarcodeFormat.QR_CODE, 300, 300);
+                bitMatrix = multiFormatWriter.encode(qrString, BarcodeFormat.QR_CODE, 500, 500);
                 barcodeEncoder = new BarcodeEncoder();
 
                 qrView.setImageBitmap(barcodeEncoder.createBitmap(bitMatrix));
