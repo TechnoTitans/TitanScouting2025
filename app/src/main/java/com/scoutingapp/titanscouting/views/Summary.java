@@ -106,7 +106,7 @@ public class Summary extends AppCompatActivity {
             });
 
             toEndgameButton.setOnClickListener(v -> {
-                Intent i = new Intent(Summary.this, Endgame.class);
+                Intent i = new Intent(Summary.this, Endgame2.class);
                 i.putExtra("matchNumber", match.getMatchNum());
                 startActivity(i);
             });
