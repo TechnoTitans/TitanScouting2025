@@ -71,6 +71,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/matchNum"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -99,6 +100,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/teamNumber"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -127,6 +129,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/position"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -162,6 +165,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/scouterName"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -190,6 +194,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/noShow"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -218,10 +223,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/l1Count"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Performed Leave"
+                        android:text="L1 Count"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -253,10 +259,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/l2Count"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Starting Position"
+                        android:text="L2 Count"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -281,10 +288,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/l3Count"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Path"
+                        android:text="L3 Count"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -309,10 +317,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/l4Count"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Teleop Amp Scored"
+                        android:text="L4 Count"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -346,10 +355,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/processorCount"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Teleop Amp Missed"
+                        android:text="Processor Count"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -374,10 +384,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/netCount"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Teleop Speaker Scored"
+                        android:text="Net Count"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -402,10 +413,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/endgamePos"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Teleop Speaker Missed"
+                        android:text="Endgame Position"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -437,10 +449,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/driverQuality"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Stage Position"
+                        android:text="Driver Quality"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -465,10 +478,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/defenseAbility"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="noteInTrapScored"
+                        android:text="Defense Ability"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -493,10 +507,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/mechanicalReliability"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Shoots from Subwoofer?"
+                        android:text="Mechanical Reliability"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -528,10 +543,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/efficiency"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Penalties Incurred"
+                        android:text="Efficiency"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -556,10 +572,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/notes"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Driver Quality"
+                        android:text="Notes"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -618,26 +635,9 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Mechanical Reliability"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
 
-                    <TextView
-                        android:id="@+id/mechanicalReliabilitySummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="3"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
+
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -646,15 +646,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Drops Pieces Often"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
+
 
                     <TextView
                         android:id="@+id/dropsPiecesOftenSummary"
@@ -674,15 +666,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Can Pick Rings From Ground"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
+
 
                     <TextView
                         android:id="@+id/canPickFromGroundSummary"

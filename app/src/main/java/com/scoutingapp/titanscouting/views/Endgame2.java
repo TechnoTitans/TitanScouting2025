@@ -17,6 +17,7 @@ import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 
+
 public class Endgame2 extends AppCompatActivity {
     Match match;
     MatchViewModel matchViewModel;

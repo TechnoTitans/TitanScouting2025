@@ -51,8 +51,7 @@ public class SingleMatchView extends AppCompatActivity {
                 ((TextView) (findViewById(R.id.noShowSummary))).setText("False");
             }
 
-            if (match.
-                    isPerformedLeave()){
+            if (match.isPerformedLeave()){
                 ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("True");
             } else {
                 ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("False");
