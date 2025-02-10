@@ -87,7 +87,7 @@ public class Match {
 
     public boolean isPerformedLeave() { return performedLeave; }
 
-    public boolean setPerformedLeave(boolean performedLeave) { this.performedLeave = performedLeave; }
+    public void setPerformedLeave(boolean performedLeave) { this.performedLeave = performedLeave; }
 
     public int getL1Count() {
         return l1Count;
