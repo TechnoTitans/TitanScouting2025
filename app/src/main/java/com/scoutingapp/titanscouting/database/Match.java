@@ -18,6 +18,8 @@ public class Match {
     private String scouterName;
     @ColumnInfo(name = "noShow", defaultValue = "0")
     private boolean noShow;
+    @ColumnInfo(name="performedLeave", defaultValue = "0")
+    private boolean performedLeave;
     @ColumnInfo(name = "l1Count", defaultValue = "0")
     private int l1Count;
     @ColumnInfo(name = "l2Count", defaultValue = "0")
@@ -82,6 +84,10 @@ public class Match {
     public void setNoShow(boolean noShow) {
         this.noShow = noShow;
     }
+
+    public boolean isPerformedLeave() { return performedLeave; }
+
+    public boolean setPerformedLeave(boolean performedLeave) { this.performedLeave = performedLeave; }
 
     public int getL1Count() {
         return l1Count;
@@ -178,6 +184,4 @@ public class Match {
     public void setNotes(String notes) {
         this.notes = notes;
     }
-
-
 }
