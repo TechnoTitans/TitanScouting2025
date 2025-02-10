@@ -19,6 +19,7 @@ import com.scoutingapp.titanscouting.views.QRScreen;
 
 
 //Homepage class represents the main screen of the app.
+
 public class Homepage extends AppCompatActivity {
 
     private MatchViewModel matchViewModel;
