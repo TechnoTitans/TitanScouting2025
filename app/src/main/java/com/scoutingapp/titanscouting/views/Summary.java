@@ -48,56 +48,11 @@ public class Summary extends AppCompatActivity {
                 ((TextView) (findViewById(R.id.noShowSummary))).setText("True");
             }
 
-            if (match.isPerformedLeave()){
-                ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("True");
-            }
-
-            ((TextView) (findViewById(R.id.startingPositionSummary))).setText(match.getStartingPosition());
-
-            ((TextView) (findViewById(R.id.pathSummary))).setText(match.getPath());
-
-            ((TextView) (findViewById(R.id.teleopAmpScoredSummary))).setText(String.valueOf(match.getTeleopAmpScored()));
-
-            ((TextView) (findViewById(R.id.teleopAmpMissedSummary))).setText(String.valueOf(match.getTeleopAmpMissed()));
-
-            ((TextView) (findViewById(R.id.teleopSpeakerScoredSummary))).setText(String.valueOf(match.getTeleopSpeakerScored()));
-
-            ((TextView) (findViewById(R.id.teleopSpeakerMissedSummary))).setText(String.valueOf(match.getTeleopSpeakerMissed()));
-
-            ((TextView) (findViewById(R.id.stagePositionSummary))).setText(match.getStagePosition());
-
-            if (match.isNoteInTrapScored()){
-                ((TextView) (findViewById(R.id.noteInTrapScoredSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.noteInTrapScoredSummary))).setText("False");
-            }
-
-            if (match.isShootsFromSubwoofer()){
-                ((TextView) (findViewById(R.id.subwooferSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.subwooferSummary))).setText("False");
-            }
-
-            ((TextView) (findViewById(R.id.penaltiesIncurredSummary))).setText(String.valueOf(match.getPenaltiesIncurred()));
-
             ((TextView) (findViewById(R.id.driverQualitySummary))).setText(String.valueOf(match.getDriverQuality()));
 
             ((TextView) (findViewById(R.id.defenseAbilitySummary))).setText(String.valueOf(match.getDefenseAbility()));
 
             ((TextView) (findViewById(R.id.mechanicalReliabilitySummary))).setText(String.valueOf(match.getMechanicalReliability()));
-
-            if (match.isDropsPiecesOften()){
-                ((TextView) (findViewById(R.id.dropsPiecesOftenSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.dropsPiecesOftenSummary))).setText("False");
-            }
-
-            if (match.isPickRingsFromGround()){
-                ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("False");
-            }
-
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
 
             submit.setOnClickListener(v -> {
