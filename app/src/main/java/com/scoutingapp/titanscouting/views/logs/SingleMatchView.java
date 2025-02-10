@@ -2,7 +2,6 @@ package com.scoutingapp.titanscouting.views.logs;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
-import com.scoutingapp.titanscouting.views.Pregame;
 import com.scoutingapp.titanscouting.views.QRScreen;
 
 public class SingleMatchView extends AppCompatActivity {
@@ -51,16 +49,44 @@ public class SingleMatchView extends AppCompatActivity {
                 ((TextView) (findViewById(R.id.noShowSummary))).setText("False");
             }
 
+            if (match.isPerformedLeave()){
+                ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("True");
+            } else {
+                ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("False");
+            }
 
+            ((TextView) (findViewById(R.id.l1Summary))).setText(match.getL1Count());
+
+//            ((TextView) (findViewById(R.id.startingPositionSummary))).setText(match.getStartingPosition());
 //
+//            ((TextView) (findViewById(R.id.autoAmpScoredSummary))).setText(String.valueOf(match.getAutoAmpScored()));
+//
+//            ((TextView) (findViewById(R.id.autoAmpMissedSummary))).setText(String.valueOf(match.getAutoAmpMissed()));
+//
+//            ((TextView) (findViewById(R.id.autoSpeakerScoredSummary))).setText(String.valueOf(match.getAutoSpeakerScored()));
+//
+//            ((TextView) (findViewById(R.id.autoSpeakerMissedSummary))).setText(String.valueOf(match.getAutoSpeakerMissed()));
 
-            ((TextView) (findViewById(R.id.driverQualitySummary))).setText(String.valueOf(match.getDriverQuality()));
+            ((TextView) (findViewById(R.id.l2Summary))).setText(String.valueOf(match.getL2Count()));
+
+            ((TextView) (findViewById(R.id.l3Summary))).setText(String.valueOf(match.getL3Count()));
+
+            ((TextView) (findViewById(R.id.l4Summary))).setText(String.valueOf(match.getL4Count()));
+
+            ((TextView) (findViewById(R.id.processorCountSummary))).setText(String.valueOf(match.getProcessorCount()));
+
+            ((TextView) (findViewById(R.id.netCountSummary))).setText(match.getNetCount());
+            
+            ((TextView) (findViewById(R.id.endgamePosSummary))).setText(match.getEndgamePos());
+            
+            ((TextView) (findViewById(R.id.driverQualitySummary))).setText(match.getDriverQuality());
 
             ((TextView) (findViewById(R.id.defenseAbilitySummary))).setText(String.valueOf(match.getDefenseAbility()));
-
+            
             ((TextView) (findViewById(R.id.mechanicalReliabilitySummary))).setText(String.valueOf(match.getMechanicalReliability()));
 
-
+            ((TextView) (findViewById(R.id.efficiencySummary))).setText(match.getNetCount());
+            
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
 
             backButton.setOnClickListener(v -> {

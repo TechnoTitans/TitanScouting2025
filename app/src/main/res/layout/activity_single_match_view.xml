@@ -223,7 +223,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/l1Count"
+                        android:id="@+id/l1Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -259,7 +259,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/l2Count"
+                        android:id="@+id/l2Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -288,7 +288,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/l3Count"
+                        android:id="@+id/l3Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -317,7 +317,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/l4Count"
+                        android:id="@+id/l4Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -355,7 +355,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/processorCount"
+                        android:id="@+id/processorCountSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -384,7 +384,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/netCount"
+                        android:id="@+id/netCountSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -413,7 +413,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/endgamePos"
+                        android:id="@+id/endgamePosSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -543,7 +543,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/efficiency"
+                        android:id="@+id/efficiencySummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
