@@ -3,11 +3,13 @@ package com.scoutingapp.titanscouting.views.logs;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.app.AlertDialog;
 
 import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
@@ -33,8 +35,28 @@ public class Logs extends AppCompatActivity {
             adapter.submitList(matches);
         });
 
+        Button b = findViewById(R.id.delete_button);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(Logs.this);
+                builder.setMessage("Are you sure you want to delete all?");
+                builder.setTitle("Confirm Deletion");
+                builder.setCancelable(false);
+                builder.setPositiveButton("Yes", (dialog, which) -> {
+                    matchViewModel.deleteAllMatches();
+                    dialog.dismiss();
+                });
+                builder.setNegativeButton("No", (dialog, which) -> {
+                    dialog.cancel();
+                });
+                builder.show();
+            }
+        });
+
 
     }
+
     public void back(View v) {
         Intent i = new Intent(this, Homepage.class);
         startActivity(i);
