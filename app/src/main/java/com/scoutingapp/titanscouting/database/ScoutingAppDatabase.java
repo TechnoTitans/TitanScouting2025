@@ -14,9 +14,11 @@ import java.util.concurrent.Executors;
 @Database(entities = {Match.class}, version = 5, exportSchema = false)
 
 public abstract class ScoutingAppDatabase extends RoomDatabase {
+    // Abstract method to get MatchDao
     public abstract MatchDao matchDao();
-
+    // Singleton instance of ScoutingAppDatabase
     private static volatile ScoutingAppDatabase INSTANCE;
+    // Number of threads for the executor service
     private static final int NUMBER_OF_THREADS = 4;
 
     //allows for async writing from the database since directly writing into the database
@@ -28,6 +30,7 @@ public abstract class ScoutingAppDatabase extends RoomDatabase {
         if (INSTANCE == null) {
             synchronized (ScoutingAppDatabase.class) {
                 if (INSTANCE == null) {
+                    // Create the database instance with a callback
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             ScoutingAppDatabase.class, "scouting_database")
                             .addCallback(sRoomDatabaseCallback)
@@ -37,7 +40,7 @@ public abstract class ScoutingAppDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
-
+    // Callback for database creation
     private static final RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {

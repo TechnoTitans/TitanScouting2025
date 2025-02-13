@@ -127,7 +127,7 @@
             android:textSize="18sp"
             />
     </RadioGroup>
-
+    //the radio group is basically where you many radio buttons to click.
     <TextView
         android:id="@+id/mechReliability"
         android:layout_width="wrap_content"

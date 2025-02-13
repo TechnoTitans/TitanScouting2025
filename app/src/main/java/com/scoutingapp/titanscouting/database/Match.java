@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 //The schema for our database; each @ColumnInfo is a column in the db
 @Entity(tableName = "scouting_database")
 public class Match {
+    // Where all varibles are made
     @PrimaryKey
     @ColumnInfo(name = "matchNum")
     private int matchNum;
@@ -42,6 +43,7 @@ public class Match {
     private int efficiency;
     @ColumnInfo(name = "notes", defaultValue = "0")
     private String notes;
+    //All the get methods
 
     public int getMatchNum() {
         return matchNum;
