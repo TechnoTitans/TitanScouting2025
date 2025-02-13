@@ -17,22 +17,7 @@
             android:screenOrientation="landscape"
             />
         <activity
-            android:name=".views.Endgame"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            />
-        <activity
             android:name=".views.Endgame2"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            />
-        <activity
-            android:name=".views.Teleop"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            />
-        <activity
-            android:name=".views.AutonomousPath"
             android:exported="false"
             android:screenOrientation="landscape"
             />
@@ -47,10 +32,14 @@
             android:screenOrientation="landscape"
             />
         <activity
-            android:name=".Homepage"
+            android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".views.Pregame"

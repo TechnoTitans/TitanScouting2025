@@ -390,6 +390,12 @@ public class Pregame extends AppCompatActivity {
                         Intent i = new Intent(Pregame.this, Summary.class);
                         i.putExtra("matchNumber", match.getMatchNum());
                         Log.d("transition", "working1");
+                                startActivity(i);
+                    } else {
+                        Intent i = new Intent(Pregame.this, Endgame2.class);
+                        i.putExtra("matchNumber", match.getMatchNum());
+                        Log.d("transition", "working2");
+
                         startActivity(i);
                     }
 //                else {
@@ -401,6 +407,172 @@ public class Pregame extends AppCompatActivity {
 //                }
                 });
             });
-        };
-    };
-};
+        } else {
+            match = new Match();
+            matchNumberInput.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if (!s.toString().isEmpty()) {
+                        match.setMatchNum(Integer.parseInt(s.toString().trim()));
+                        matchViewModel.addMatchInformation(match);
+                        matchNumberInput.postDelayed(() -> {
+                            matchNumberInput.setSelection(matchNumberInput.length());
+                        }, 0);
+                    }
+                }
+                @Override
+                public void afterTextChanged(Editable s) {
+                }
+            });
+            teamNumberInput.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if (!s.toString().isEmpty()) {
+                        match.setTeamNumber(Integer.parseInt(s.toString().trim()));
+                        matchViewModel.addMatchInformation(match);
+                        teamNumberInput.postDelayed(() -> {
+                            teamNumberInput.setSelection(teamNumberInput.length());
+                        }, 0);
+                    }
+                }
+                @Override
+                public void afterTextChanged(Editable s) {
+                }
+            });
+            scouterNameInput.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    match.setScouterName(s.toString());
+                    matchViewModel.addMatchInformation(match);
+                    scouterNameInput.postDelayed(() -> {
+                        scouterNameInput.setSelection(scouterNameInput.length());
+                    }, 0);
+                }
+                @Override
+                public void afterTextChanged(Editable s) {
+                }
+            });
+            noShowCheckBox.setOnClickListener(v -> {
+                match.setNoShow(!match.isNoShow());
+
+            });
+
+            red1.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "R1".equals(match.getPosition()) ? R.color.light_red : R.color.red));
+            red2.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "R2".equals(match.getPosition()) ? R.color.light_red : R.color.red));
+            red3.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "R3".equals(match.getPosition()) ? R.color.light_red : R.color.red));
+            blue1.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "B1".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
+            blue2.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "B2".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
+            blue3.setBackgroundTintList(ContextCompat.getColorStateList(
+                    this,
+                    "B3".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
+
+
+            ((Button) (findViewById(R.id.Red1))).setOnClickListener(v -> {
+                match.setPosition("R1");
+
+                Log.d("background_color", Objects.requireNonNull(v.getBackgroundTintList()).toString());
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+            });
+            ((Button) (findViewById(R.id.Red2))).setOnClickListener(v -> {
+                match.setPosition("R2");
+
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+            });
+            ((Button) (findViewById(R.id.Red3))).setOnClickListener(v -> {
+                match.setPosition("R3");
+
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+            });
+            ((Button) (findViewById(R.id.Blue1))).setOnClickListener(v -> {
+                match.setPosition("B1");
+
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.techno_titans));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+            });
+            ((Button) (findViewById(R.id.Blue2))).setOnClickListener(v -> {
+                match.setPosition("B2");
+
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.techno_titans));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+            });
+            ((Button) (findViewById(R.id.Blue3))).setOnClickListener(v -> {
+                match.setPosition("B3");
+
+                red1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
+                v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.techno_titans));
+                blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+                blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+            });
+            ((Button) (findViewById(R.id.BackButtonPregame))).setOnClickListener(v -> {
+                Intent i = new Intent(Pregame.this, Homepage.class);
+                Log.d("transition", "working3");
+                startActivity(i);
+            });
+            ((Button) (findViewById(R.id.NextButtonPregame))).setOnClickListener(v -> {
+                if (match.isNoShow()) {
+                    matchViewModel.addMatchInformation(match);
+                    Intent i = new Intent(Pregame.this, Summary.class);
+                    i.putExtra("matchNumber", match.getMatchNum());
+                    Log.d("transition", "working1");
+                    startActivity(i);
+                } else {
+                    matchViewModel.addMatchInformation(match);
+
+                    Intent i = new Intent(Pregame.this, Endgame2.class);
+                    i.putExtra("matchNumber", match.getMatchNum());
+                    Log.d("transition", "working2");
+                    startActivity(i);
+                }
+            });
+
+
+        }
+
+
+    }
+
+}

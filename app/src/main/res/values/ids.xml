@@ -51,4 +51,13 @@
     <item name="pathTextView" type="id" />
     <item name="delete_logs_btn" type="id" />
     <item name="logs_btn" type="id" />
+    <item name="endgameText" type="id" />
+    <item name="parkBox" type="id" />
+    <item name="checkBox3" type="id" />
+    <item name="deepCageBox" type="id" />
+    <item name="attemptedDeepBox" type="id" />
+    <item name="shallowCageBox" type="id" />
+    <item name="attemptedShallowBox" type="id" />
+    <item name="noneBox" type="id" />
+    <item name="ratingBar" type="id" />
 </resources>

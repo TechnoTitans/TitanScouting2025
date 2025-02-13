@@ -115,6 +115,7 @@ public class Summary extends AppCompatActivity {
             }
 
             // Sets notes summary
+
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
 
             // Sets click listener for submit button to navigate to Homepage

@@ -2,7 +2,6 @@ package com.scoutingapp.titanscouting.views.logs;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
-import com.scoutingapp.titanscouting.views.Pregame;
 import com.scoutingapp.titanscouting.views.QRScreen;
 
 public class SingleMatchView extends AppCompatActivity {
@@ -57,7 +55,7 @@ public class SingleMatchView extends AppCompatActivity {
                 ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("False");
             }
 
-            ((TextView) (findViewById(R.id.pathSummary))).setText(match.getPath());
+            ((TextView) (findViewById(R.id.l1Summary))).setText(match.getL1Count());
 
 //            ((TextView) (findViewById(R.id.startingPositionSummary))).setText(match.getStartingPosition());
 //
@@ -69,49 +67,26 @@ public class SingleMatchView extends AppCompatActivity {
 //
 //            ((TextView) (findViewById(R.id.autoSpeakerMissedSummary))).setText(String.valueOf(match.getAutoSpeakerMissed()));
 
-            ((TextView) (findViewById(R.id.teleopAmpScoredSummary))).setText(String.valueOf(match.getTeleopAmpScored()));
+            ((TextView) (findViewById(R.id.l2Summary))).setText(String.valueOf(match.getL2Count()));
 
-            ((TextView) (findViewById(R.id.teleopAmpMissedSummary))).setText(String.valueOf(match.getTeleopAmpMissed()));
+            ((TextView) (findViewById(R.id.l3Summary))).setText(String.valueOf(match.getL3Count()));
 
-            ((TextView) (findViewById(R.id.teleopSpeakerScoredSummary))).setText(String.valueOf(match.getTeleopSpeakerScored()));
+            ((TextView) (findViewById(R.id.l4Summary))).setText(String.valueOf(match.getL4Count()));
 
-            ((TextView) (findViewById(R.id.teleopSpeakerMissedSummary))).setText(String.valueOf(match.getTeleopSpeakerMissed()));
+            ((TextView) (findViewById(R.id.processorCountSummary))).setText(String.valueOf(match.getProcessorCount()));
 
-            ((TextView) (findViewById(R.id.stagePositionSummary))).setText(match.getStagePosition());
-
-            if (match.isNoteInTrapScored()){
-                ((TextView) (findViewById(R.id.noteInTrapScoredSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.noteInTrapScoredSummary))).setText("False");
-
-            }
-
-            if (match.isShootsFromSubwoofer()){
-                ((TextView) (findViewById(R.id.subwooferSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.subwooferSummary))).setText("False");
-            }
-
-            ((TextView) (findViewById(R.id.penaltiesIncurredSummary))).setText(String.valueOf(match.getPenaltiesIncurred()));
-
-            ((TextView) (findViewById(R.id.driverQualitySummary))).setText(String.valueOf(match.getDriverQuality()));
+            ((TextView) (findViewById(R.id.netCountSummary))).setText(match.getNetCount());
+            
+            ((TextView) (findViewById(R.id.endgamePosSummary))).setText(match.getEndgamePos());
+            
+            ((TextView) (findViewById(R.id.driverQualitySummary))).setText(match.getDriverQuality());
 
             ((TextView) (findViewById(R.id.defenseAbilitySummary))).setText(String.valueOf(match.getDefenseAbility()));
-
+            
             ((TextView) (findViewById(R.id.mechanicalReliabilitySummary))).setText(String.valueOf(match.getMechanicalReliability()));
 
-            if (match.isDropsPiecesOften()){
-                ((TextView) (findViewById(R.id.dropsPiecesOftenSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.dropsPiecesOftenSummary))).setText("False");
-            }
-
-            if (match.isPickRingsFromGround()){
-                ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("False");
-            }
-
+            ((TextView) (findViewById(R.id.efficiencySummary))).setText(match.getNetCount());
+            
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
 
             backButton.setOnClickListener(v -> {
