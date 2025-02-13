@@ -80,7 +80,7 @@ public class Endgame2 extends AppCompatActivity {
                 }
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) { /*set constructor for notes*/
-                    match.setNotes(s.toString()); /* set match notes to string*/
+                    match.setNotes(s.toString()); /*set match notes to string*/
                 }
                 @Override
                 public void afterTextChanged(Editable s) { /*allow text to be edited*/
