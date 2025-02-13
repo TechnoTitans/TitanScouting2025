@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
+import com.scoutingapp.titanscouting.views.logs.Teleop2;
 
 
 public class Endgame2 extends AppCompatActivity {
@@ -49,20 +50,20 @@ public class Endgame2 extends AppCompatActivity {
                     match.setMechanicalReliability((int) (rating));
                 }
             });
-            ((RatingBar) (findViewById(R.id.ratingBar2))).setRating(match.getDefenseAbility());
+            ((RatingBar) (findViewById(R.id.ratingBar2))).setRating(match.getDefenseAbility()); /* fetch ID for defesne ability rating bar*/
             ((RatingBar) (findViewById(R.id.ratingBar2))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) { /*set constructor for defense reliabilty*/
                     match.setDefenseAbility((int) (rating));
                 }
-            }); /*set constructor for mechanical reliabilty*/
+            }); /*fetch ID for driver quality rating bar*/
             ((RatingBar) (findViewById(R.id.ratingBar3))).setRating(match.getDriverQuality());
             ((RatingBar) (findViewById(R.id.ratingBar3))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
-                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) { /*set constructur for driver quality*/
                     match.setDriverQuality((int) (rating));
                 }
-            });
+            }); /*fetch ID for efficiency rating bar*/
             ((RatingBar) (findViewById(R.id.ratingBar4))).setRating(match.getEfficiency());
             ((RatingBar) (findViewById(R.id.ratingBar4))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 /* set ID for each rating bar */
@@ -76,11 +77,11 @@ public class Endgame2 extends AppCompatActivity {
 
             ((EditText) (findViewById(R.id.comments))).addTextChangedListener(new TextWatcher() {
                 @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) { /*set constructor for notes*/
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) { /*set constructor for notes before changes*/
 
                 }
                 @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) { /*set constructor for notes*/
+                public void onTextChanged(CharSequence s, int start, int before, int count) { /*set constructor for notes when text changes*/
                     match.setNotes(s.toString()); /*set match notes to string*/
                 }
                 @Override
@@ -92,7 +93,10 @@ public class Endgame2 extends AppCompatActivity {
         View backButton = findViewById(R.id.backButton);
         View nextButton = findViewById(R.id.nextButton);
         backButton.setOnClickListener(v -> {
+
+            
             Intent i = new Intent(Endgame2.this, Pregame.class);
+
             i.putExtra("matchNumber", match.getMatchNum());
             matchViewModel.addMatchInformation(match);
             startActivity(i);
