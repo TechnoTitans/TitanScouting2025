@@ -62,57 +62,10 @@ public class Summary extends AppCompatActivity {
             if (match.isPerformedLeave()){
                 ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("True");
             }
-
-            // Sets starting position summary
-            ((TextView) (findViewById(R.id.startingPositionSummary))).setText(match.getStartingPosition());
-
-            // Sets path summary
-            ((TextView) (findViewById(R.id.pathSummary))).setText(match.getPath());
-
-            // Sets teleop scores and misses
-            ((TextView) (findViewById(R.id.teleopAmpScoredSummary))).setText(String.valueOf(match.getTeleopAmpScored()));
-            ((TextView) (findViewById(R.id.teleopAmpMissedSummary))).setText(String.valueOf(match.getTeleopAmpMissed()));
-            ((TextView) (findViewById(R.id.teleopSpeakerScoredSummary))).setText(String.valueOf(match.getTeleopSpeakerScored()));
-            ((TextView) (findViewById(R.id.teleopSpeakerMissedSummary))).setText(String.valueOf(match.getTeleopSpeakerMissed()));
-
-            // Sets stage position summary
-            ((TextView) (findViewById(R.id.stagePositionSummary))).setText(match.getStagePosition());
-
-            // Checks if a note was scored in trap
-            if (match.isNoteInTrapScored()){
-                ((TextView) (findViewById(R.id.noteInTrapScoredSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.noteInTrapScoredSummary))).setText("False");
-            }
-
-            // Checks if shots were made from subwoofer
-            if (match.isShootsFromSubwoofer()){
-                ((TextView) (findViewById(R.id.subwooferSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.subwooferSummary))).setText("False");
-            }
-
-            // Sets penalties incurred summary
-            ((TextView) (findViewById(R.id.penaltiesIncurredSummary))).setText(String.valueOf(match.getPenaltiesIncurred()));
-
             // Sets driver quality, defense ability, and mechanical reliability
             ((TextView) (findViewById(R.id.driverQualitySummary))).setText(String.valueOf(match.getDriverQuality()));
             ((TextView) (findViewById(R.id.defenseAbilitySummary))).setText(String.valueOf(match.getDefenseAbility()));
             ((TextView) (findViewById(R.id.mechanicalReliabilitySummary))).setText(String.valueOf(match.getMechanicalReliability()));
-
-            // Checks if the team drops pieces often
-            if (match.isDropsPiecesOften()){
-                ((TextView) (findViewById(R.id.dropsPiecesOftenSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.dropsPiecesOftenSummary))).setText("False");
-            }
-
-            // Checks if the team can pick rings from the ground
-            if (match.isPickRingsFromGround()){
-                ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.canPickFromGroundSummary))).setText("False");
-            }
 
             // Sets notes summary
 
@@ -151,7 +104,7 @@ public class Summary extends AppCompatActivity {
     // Method to navigate to Endgame activity for pregame
     public void pregame(View v){
         // Creates an Intent to start the Endgame activity
-        Intent i = new Intent(this, Endgame.class);
+        Intent i = new Intent(this, Endgame2.class);
 
         // Passes the match number to the Endgame activity
         i.putExtra("matchNumber", match.getMatchNum());

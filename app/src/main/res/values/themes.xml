@@ -17,7 +17,7 @@
         <item name="android:textAppearance">@android:style/TextAppearance.Large</item>
     </style>
 
-<!--    <style name="Theme.TitanScoutingApp" parent="Theme.MaterialComponents.Light">-->
-<!--        &lt;!&ndash; ... &ndash;&gt;-->
-<!--    </style>-->
+    <!--    <style name="Theme.TitanScoutingApp" parent="Theme.MaterialComponents.Light">-->
+    <!--        &lt;!&ndash; ... &ndash;&gt;-->
+    <!--    </style>-->
 </resources>

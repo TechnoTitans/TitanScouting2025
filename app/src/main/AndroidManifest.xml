@@ -12,25 +12,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TitanScouting">
         <activity
+            android:name=".views.Teleop"
+            android:exported="false" />
+        <activity
+            android:name=".views.Autonomous"
+            android:exported="false"
+            android:label="@string/title_activity_autonomous"
+            android:theme="@style/Theme.TitanScouting" />
+        <activity
             android:name=".views.Summary"
             android:exported="false"
-            android:screenOrientation="landscape"
-            />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".views.Endgame2"
             android:exported="false"
-            android:screenOrientation="landscape"
-            />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".views.QRScreen"
             android:exported="false"
-            android:screenOrientation="landscape"
-            />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".views.logs.SingleMatchView"
             android:exported="false"
-            android:screenOrientation="landscape"
-            />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -45,14 +49,12 @@
             android:name=".views.Pregame"
             android:exported="false"
             android:label="@string/pre_game"
-            android:screenOrientation="landscape"
-            />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".views.logs.Logs"
             android:exported="false"
             android:label="@string/logs"
-            android:screenOrientation="landscape"
-            />
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
