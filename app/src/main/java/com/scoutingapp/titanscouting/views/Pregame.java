@@ -326,6 +326,7 @@ public class Pregame extends AppCompatActivity {
                     startActivity(i);
                 } else {
                     matchViewModel.addMatchInformation(match);
+
                     Intent i = new Intent(Pregame.this, Endgame2.class);
                     i.putExtra("matchNumber", match.getMatchNum());
                     Log.d("transition", "working2");
