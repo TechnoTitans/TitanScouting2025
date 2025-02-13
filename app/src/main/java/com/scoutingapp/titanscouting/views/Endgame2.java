@@ -83,7 +83,7 @@ public class Endgame2 extends AppCompatActivity {
                     match.setNotes(s.toString()); /* set match notes to string*/
                 }
                 @Override
-                public void afterTextChanged(Editable s) { /* allow text to be edited*/
+                public void afterTextChanged(Editable s) { /*allow text to be edited*/
                 }
             });
             /* move to previous activity when pressing back/next button*/
