@@ -23,10 +23,10 @@ public class Endgame2 extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_endgame2);
+        setContentView(R.layout.activity_endgame2); /* connects xml to the class file */
 
-        EditText e = findViewById(R.id.comments);
-        RadioGroup r = findViewById(R.id.parkPosition);
+        EditText e = findViewById(R.id.comments); /*assigns variable e to what is typed in the comments (id)*/
+        RadioGroup r = findViewById(R.id.parkPosition); /*assigns variable r to which park position is chosen (id)*/
 
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
         matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
@@ -37,24 +37,24 @@ public class Endgame2 extends AppCompatActivity {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
                     RadioButton b = findViewById(checkedId);
-                    match.setEndgamePos(b.getText().toString());
+                    match.setEndgamePos(b.getText().toString()); /* set match game to a string */
                 }
             });
 
             ((RatingBar) (findViewById(R.id.ratingBar1))).setRating(match.getMechanicalReliability());
             ((RatingBar) (findViewById(R.id.ratingBar1))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
-                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) { /*set constructor for mechanical reliabilty*/
                     match.setMechanicalReliability((int) (rating));
                 }
             });
             ((RatingBar) (findViewById(R.id.ratingBar2))).setRating(match.getDefenseAbility());
             ((RatingBar) (findViewById(R.id.ratingBar2))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
-                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) { /*set constructor for defense reliabilty*/
                     match.setDefenseAbility((int) (rating));
                 }
-            });
+            }); /*set constructor for mechanical reliabilty*/
             ((RatingBar) (findViewById(R.id.ratingBar3))).setRating(match.getDriverQuality());
             ((RatingBar) (findViewById(R.id.ratingBar3))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
@@ -64,9 +64,10 @@ public class Endgame2 extends AppCompatActivity {
             });
             ((RatingBar) (findViewById(R.id.ratingBar4))).setRating(match.getEfficiency());
             ((RatingBar) (findViewById(R.id.ratingBar4))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+                /* set ID for each rating bar*/
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                    match.setEfficiency((int) (rating));
+                    match.setEfficiency((int) (rating)); /*set constructor for effeciency */
                 }
             });
 
@@ -74,17 +75,18 @@ public class Endgame2 extends AppCompatActivity {
 
             ((EditText) (findViewById(R.id.comments))).addTextChangedListener(new TextWatcher() {
                 @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) { /*set constructor for notes*/
 
                 }
                 @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    match.setNotes(s.toString());
+                public void onTextChanged(CharSequence s, int start, int before, int count) { /*set constructor for notes*/
+                    match.setNotes(s.toString()); /* set match notes to string*/
                 }
                 @Override
-                public void afterTextChanged(Editable s) {
+                public void afterTextChanged(Editable s) { /* allow text to be edited*/
                 }
             });
+            /* move to previous activity when pressing back/next button*/
         });
         View backButton = findViewById(R.id.backButton);
         View nextButton = findViewById(R.id.nextButton);
