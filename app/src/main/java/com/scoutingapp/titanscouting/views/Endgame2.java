@@ -64,7 +64,7 @@ public class Endgame2 extends AppCompatActivity {
             });
             ((RatingBar) (findViewById(R.id.ratingBar4))).setRating(match.getEfficiency());
             ((RatingBar) (findViewById(R.id.ratingBar4))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-                /* set ID for each rating bar*/
+                /* set ID for each rating bar */
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                     match.setEfficiency((int) (rating)); /*set constructor for effeciency */
