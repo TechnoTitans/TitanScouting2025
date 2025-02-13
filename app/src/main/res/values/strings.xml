@@ -23,7 +23,7 @@
         <item>Blue 3</item>
     </string-array>
 
-    <string-array name = "stagePositions">
+    <string-array name="stagePositions">
         <item>None</item>
         <item>Park</item>
         <item>Stage Attempted</item>
