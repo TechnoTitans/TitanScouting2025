@@ -1,7 +1,10 @@
 package com.scoutingapp.titanscouting.views.logs;
 import com.scoutingapp.titanscouting.R;
+import com.scoutingapp.titanscouting.views.Endgame2;
+
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -223,4 +226,12 @@ public class Teleop2 extends AppCompatActivity {
             return value;
         }
     }
+
+    public void launchEndgame2(View v) {
+        Intent i = new Intent(this, Endgame2.class);
+        startActivity(i);
+    }
+
+
+
 }
