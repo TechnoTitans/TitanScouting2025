@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
+import com.scoutingapp.titanscouting.views.logs.Teleop2;
 
 
 public class Endgame2 extends AppCompatActivity {
@@ -101,5 +102,13 @@ public class Endgame2 extends AppCompatActivity {
             matchViewModel.addMatchInformation(match);
             startActivity(i);
         });
+    }
+
+    public void backTeleop(View v) {
+
+        Intent i = new Intent (this, Teleop2.class);
+        i.putExtra("matchNumber", match.getMatchNum());
+        matchViewModel.addMatchInformation(match);
+        startActivity(i);
     }
 }
