@@ -42,10 +42,10 @@ public class Teleop2 extends AppCompatActivity {
         inc6 = findViewById(R.id.inc_6);
         dec6 = findViewById(R.id.dec_6);
 
-        L1_score = findViewById(R.id.L1_score);
-        L2_score = findViewById(R.id.L2_score);
-        L3_score = findViewById(R.id.L3_score);
-        L4_score = findViewById(R.id.L4_score);
+        L1_score = findViewById(R.id.l1Score);
+        L2_score = findViewById(R.id.l2Score);
+        L3_score = findViewById(R.id.l3Score);
+        L4_score = findViewById(R.id.l4Score);
         Net_score = findViewById(R.id.Net_score);
         Processor_score = findViewById(R.id.Processor_score);
 
