@@ -18,7 +18,9 @@
             android:name=".views.Autonomous"
             android:exported="false"
             android:label="@string/title_activity_autonomous"
-            android:theme="@style/Theme.TitanScouting" />
+            android:theme="@style/Theme.TitanScouting">
+
+        </activity>
         <activity
             android:name=".views.Summary"
             android:exported="false"

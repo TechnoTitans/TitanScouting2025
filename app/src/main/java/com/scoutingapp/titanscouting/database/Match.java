@@ -18,8 +18,10 @@ public class Match {
     private String scouterName;
     @ColumnInfo(name = "noShow", defaultValue = "0")
     private boolean noShow;
-    @ColumnInfo(name="performedLeave", defaultValue = "0")
-    private boolean performedLeave;
+    @ColumnInfo(name="startPosition", defaultValue = "")
+    private String startingPosition;
+    @ColumnInfo(name="autoPath", defaultValue = "0")
+    private String autoPath;
     @ColumnInfo(name = "l1Count", defaultValue = "0")
     private int l1Count;
     @ColumnInfo(name = "l2Count", defaultValue = "0")
@@ -85,9 +87,13 @@ public class Match {
         this.noShow = noShow;
     }
 
-    public boolean isPerformedLeave() { return performedLeave; }
+    public String getStartingPosition() { return startingPosition; }
 
-    public void setPerformedLeave(boolean performedLeave) { this.performedLeave = performedLeave; }
+    public void setStartingPosition(String startingPosition) { this.startingPosition = startingPosition; }
+
+    public String getAutoPath() { return autoPath; }
+
+    public void setAutoPath(String autoPath) { this.autoPath = autoPath; }
 
     public int getL1Count() {
         return l1Count;

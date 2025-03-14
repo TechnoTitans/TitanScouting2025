@@ -11,4 +11,10 @@
     <color name="red">#E40100</color>
     <color name="techno_titans_complimentary">#C32424</color>
     <color name="light_red">#BEF38181</color>
+    <color name="teal">#2DD7AF</color>
+    <color name="light_teal">#ABF4E3</color>
+    <color name="magenta">#E91E63</color>
+    <color name="light_magenta">#FA8BB1</color>
+    <color name="orange">#FF9800</color>
+    <color name="light_orange">#E4B165</color>
 </resources>

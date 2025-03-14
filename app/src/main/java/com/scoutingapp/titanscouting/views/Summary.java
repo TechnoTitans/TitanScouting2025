@@ -41,33 +41,53 @@ public class Summary extends AppCompatActivity {
 
 // Observes the match LiveData and updates the UI when data changes
         liveDataMatch.observe(this, match -> {
-            // Sets match number summary
+            this.match = match;
             ((TextView) (findViewById(R.id.matchNumberSummary))).setText(String.valueOf(match.getMatchNum()));
 
-            // Sets team number summary
             ((TextView) (findViewById(R.id.teamNumberSummary))).setText(String.valueOf(match.getTeamNumber()));
 
-            // Sets team position summary
             ((TextView) (findViewById(R.id.teamPositionSummary))).setText(match.getPosition());
 
-            // Sets scouter name summary
             ((TextView) (findViewById(R.id.scouterNameSummary))).setText(match.getScouterName());
 
-            // Checks if the team was a no-show
             if (match.isNoShow()){
                 ((TextView) (findViewById(R.id.noShowSummary))).setText("True");
+            } else {
+                ((TextView) (findViewById(R.id.noShowSummary))).setText("False");
             }
 
-            // Checks if the team performed leave
-            if (match.isPerformedLeave()){
-                ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("True");
-            }
-            // Sets driver quality, defense ability, and mechanical reliability
+
+            ((TextView) (findViewById(R.id.l1Summary))).setText(String.valueOf(match.getL1Count()));
+
+//            ((TextView) (findViewById(R.id.startingPositionSummary))).setText(match.getStartingPosition());
+//
+//            ((TextView) (findViewById(R.id.autoAmpScoredSummary))).setText(String.valueOf(match.getAutoAmpScored()));
+//
+//            ((TextView) (findViewById(R.id.autoAmpMissedSummary))).setText(String.valueOf(match.getAutoAmpMissed()));
+//
+//            ((TextView) (findViewById(R.id.autoSpeakerScoredSummary))).setText(String.valueOf(match.getAutoSpeakerScored()));
+//
+//            ((TextView) (findViewById(R.id.autoSpeakerMissedSummary))).setText(String.valueOf(match.getAutoSpeakerMissed()));
+
+            ((TextView) (findViewById(R.id.l2Summary))).setText(String.valueOf(match.getL2Count()));
+
+            ((TextView) (findViewById(R.id.l3Summary))).setText(String.valueOf(match.getL3Count()));
+
+            ((TextView) (findViewById(R.id.l4Summary))).setText(String.valueOf(match.getL4Count()));
+
+            ((TextView) (findViewById(R.id.processorCountSummary))).setText(String.valueOf(match.getProcessorCount()));
+
+            ((TextView) (findViewById(R.id.netCountSummary))).setText(String.valueOf(match.getNetCount()));
+
+            ((TextView) (findViewById(R.id.endgamePosSummary))).setText(match.getEndgamePos());
+
             ((TextView) (findViewById(R.id.driverQualitySummary))).setText(String.valueOf(match.getDriverQuality()));
+
             ((TextView) (findViewById(R.id.defenseAbilitySummary))).setText(String.valueOf(match.getDefenseAbility()));
+
             ((TextView) (findViewById(R.id.mechanicalReliabilitySummary))).setText(String.valueOf(match.getMechanicalReliability()));
 
-            // Sets notes summary
+            ((TextView) (findViewById(R.id.efficiencySummary))).setText(String.valueOf(match.getEfficiency()));
 
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
 
@@ -85,32 +105,6 @@ public class Summary extends AppCompatActivity {
             });
         });
 
-
-
-    }
-
-    // Method to navigate to QRScreen activity for endgame
-    public void endgame(View v){
-        // Creates an Intent to start the QRScreen activity
-        Intent i = new Intent(this, QRScreen.class);
-
-        // Passes the match number to the QRScreen activity
-        i.putExtra("matchNumber", match.getMatchNum());
-
-        // Starts the QRScreen activity
-        startActivity(i);
-    }
-
-    // Method to navigate to Endgame activity for pregame
-    public void pregame(View v){
-        // Creates an Intent to start the Endgame activity
-        Intent i = new Intent(this, Endgame2.class);
-
-        // Passes the match number to the Endgame activity
-        i.putExtra("matchNumber", match.getMatchNum());
-
-        // Starts the Endgame activity
-        startActivity(i);
     }
 
 }

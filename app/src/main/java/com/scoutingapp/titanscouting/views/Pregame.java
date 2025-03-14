@@ -165,8 +165,10 @@ public class Pregame extends AppCompatActivity {
                         Log.d("transition", "working1");
                         startActivity(i);
                     } else {
-                        Intent i = new Intent(Pregame.this, Endgame2.class);
+                        Intent i = new Intent(Pregame.this, Autonomous.class);
                         i.putExtra("matchNumber", match.getMatchNum());
+                        i.putExtra("color", match.getPosition().substring(0, 1));
+                        Log.d("color", match.getPosition().substring(0, 1));
                         Log.d("transition", "working2");
                         startActivity(i);
                     }
@@ -322,12 +324,16 @@ public class Pregame extends AppCompatActivity {
                     matchViewModel.addMatchInformation(match);
                     Intent i = new Intent(Pregame.this, Summary.class);
                     i.putExtra("matchNumber", match.getMatchNum());
+                    i.putExtra("color", match.getPosition().substring(0, 1));
                     Log.d("transition", "working1");
                     startActivity(i);
                 } else {
                     matchViewModel.addMatchInformation(match);
-                    Intent i = new Intent(Pregame.this, Endgame2.class);
+                    Intent i = new Intent(Pregame.this, Autonomous.class);
                     i.putExtra("matchNumber", match.getMatchNum());
+                    i.putExtra("color", match.getPosition().substring(0, 1));
+                    Log.d("color", match.getPosition().substring(0, 1));
+
                     Log.d("transition", "working2");
                     startActivity(i);
                 }

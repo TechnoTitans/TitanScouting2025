@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/qr_code"
-        android:layout_width="500dp"
-        android:layout_height="500dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:contentDescription="@string/qrContentDescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

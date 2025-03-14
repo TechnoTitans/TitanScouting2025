@@ -35,73 +35,51 @@ public class SingleMatchView extends AppCompatActivity {
         liveDataMatch = matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0));
 
         liveDataMatch.observe(this, match -> {
-            ((TextView) (findViewById(R.id.matchNumberSummary))).setText(String.valueOf(match.getMatchNum()));
+            if (match != null) {
+                // Handling TextViews for match properties
+                ((TextView) findViewById(R.id.matchNumberSummary)).setText(String.valueOf(match.getMatchNum()));
+                ((TextView) findViewById(R.id.teamNumberSummary)).setText(String.valueOf(match.getTeamNumber()));
 
-            ((TextView) (findViewById(R.id.teamNumberSummary))).setText(String.valueOf(match.getTeamNumber()));
+                // Handling position and scouterName (String values)
+                ((TextView) findViewById(R.id.teamPositionSummary)).setText(match.getPosition() != null ? match.getPosition() : "N/A");
+                ((TextView) findViewById(R.id.scouterNameSummary)).setText(match.getScouterName() != null ? match.getScouterName() : "N/A");
 
-            ((TextView) (findViewById(R.id.teamPositionSummary))).setText(match.getPosition());
+                if (match.isNoShow()) {
+                    ((TextView) findViewById(R.id.noShowSummary)).setText("True");
+                } else {
+                    ((TextView) findViewById(R.id.noShowSummary)).setText("False");
+                }
 
-            ((TextView) (findViewById(R.id.scouterNameSummary))).setText(match.getScouterName());
+                // Handling int values (assuming they're not null)
+                ((TextView) findViewById(R.id.l1Summary)).setText(String.valueOf(match.getL1Count()));  // int field
+                ((TextView) findViewById(R.id.l2Summary)).setText(String.valueOf(match.getL2Count()));  // int field
+                ((TextView) findViewById(R.id.l3Summary)).setText(String.valueOf(match.getL3Count()));  // int field
+                ((TextView) findViewById(R.id.l4Summary)).setText(String.valueOf(match.getL4Count()));  // int field
+                ((TextView) findViewById(R.id.processorCountSummary)).setText(String.valueOf(match.getProcessorCount())); // int field
+                ((TextView) findViewById(R.id.netCountSummary)).setText(String.valueOf(match.getNetCount()));  // int field
 
-            if (match.isNoShow()){
-                ((TextView) (findViewById(R.id.noShowSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.noShowSummary))).setText("False");
+                // Handling string fields with potential null values
+                ((TextView) findViewById(R.id.endgamePosSummary)).setText(match.getEndgamePos() != null ? match.getEndgamePos() : "N/A");
+                ((TextView) findViewById(R.id.driverQualitySummary)).setText(String.valueOf(match.getDriverQuality()));
+                ((TextView) findViewById(R.id.defenseAbilitySummary)).setText(String.valueOf(match.getDefenseAbility())); // Assuming this is an int or float
+                ((TextView) findViewById(R.id.mechanicalReliabilitySummary)).setText(String.valueOf(match.getMechanicalReliability())); // Assuming this is an int or float
+                ((TextView) findViewById(R.id.efficiencySummary)).setText(String.valueOf(match.getEfficiency())); // Assuming this is an int or float
+
+                // Handling the notes field (String value)
+                ((TextView) findViewById(R.id.notesSummary)).setText(match.getNotes() != null ? match.getNotes() : "N/A");
+
+                // Setting up button actions
+                backButton.setOnClickListener(v -> {
+                    Intent i = new Intent(this, Logs.class);
+                    startActivity(i);
+                });
+
+                qrButton.setOnClickListener(v -> {
+                    Intent i = new Intent(this, QRScreen.class);
+                    i.putExtra("matchNumber", match.getMatchNum());
+                    startActivity(i);
+                });
             }
-
-            if (match.isPerformedLeave()){
-                ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("True");
-            } else {
-                ((TextView) (findViewById(R.id.performedLeaveSummary))).setText("False");
-            }
-
-            ((TextView) (findViewById(R.id.l1Summary))).setText(match.getL1Count());
-
-//            ((TextView) (findViewById(R.id.startingPositionSummary))).setText(match.getStartingPosition());
-//
-//            ((TextView) (findViewById(R.id.autoAmpScoredSummary))).setText(String.valueOf(match.getAutoAmpScored()));
-//
-//            ((TextView) (findViewById(R.id.autoAmpMissedSummary))).setText(String.valueOf(match.getAutoAmpMissed()));
-//
-//            ((TextView) (findViewById(R.id.autoSpeakerScoredSummary))).setText(String.valueOf(match.getAutoSpeakerScored()));
-//
-//            ((TextView) (findViewById(R.id.autoSpeakerMissedSummary))).setText(String.valueOf(match.getAutoSpeakerMissed()));
-
-            ((TextView) (findViewById(R.id.l2Summary))).setText(String.valueOf(match.getL2Count()));
-
-            ((TextView) (findViewById(R.id.l3Summary))).setText(String.valueOf(match.getL3Count()));
-
-            ((TextView) (findViewById(R.id.l4Summary))).setText(String.valueOf(match.getL4Count()));
-
-            ((TextView) (findViewById(R.id.processorCountSummary))).setText(String.valueOf(match.getProcessorCount()));
-
-            ((TextView) (findViewById(R.id.netCountSummary))).setText(match.getNetCount());
-            
-            ((TextView) (findViewById(R.id.endgamePosSummary))).setText(match.getEndgamePos());
-            
-            ((TextView) (findViewById(R.id.driverQualitySummary))).setText(match.getDriverQuality());
-
-            ((TextView) (findViewById(R.id.defenseAbilitySummary))).setText(String.valueOf(match.getDefenseAbility()));
-            
-            ((TextView) (findViewById(R.id.mechanicalReliabilitySummary))).setText(String.valueOf(match.getMechanicalReliability()));
-
-            ((TextView) (findViewById(R.id.efficiencySummary))).setText(match.getNetCount());
-            
-            ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
-
-            backButton.setOnClickListener(v -> {
-                Intent i = new Intent(this, Logs.class);
-                startActivity(i);
-            });
-
-            qrButton.setOnClickListener(v -> {
-                Intent i = new Intent(this, QRScreen.class);
-                i.putExtra("matchNumber", match.getMatchNum());
-                startActivity(i);
-            });
         });
-
-
-
     }
 }

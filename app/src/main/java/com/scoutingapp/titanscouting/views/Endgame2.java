@@ -3,7 +3,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -11,12 +10,10 @@ import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
-import com.scoutingapp.titanscouting.views.logs.Teleop2;
 
 
 public class Endgame2 extends AppCompatActivity {
@@ -30,10 +27,42 @@ public class Endgame2 extends AppCompatActivity {
         EditText e = findViewById(R.id.comments); /*assigns variable e to what is typed in the comments (id)*/
         RadioGroup r = findViewById(R.id.parkPosition); /*assigns variable r to which park position is chosen (id)*/
 
+        RadioButton parkRadio = findViewById(R.id.parkRadio);
+        RadioButton deepCageRadio = findViewById(R.id.deepCageRadio);
+        RadioButton attemptedDeepRadio = findViewById(R.id.attemptedDeepRadio);
+        RadioButton shallowCageRadio = findViewById(R.id.shallowCageRadio);
+        RadioButton attemptedShallowRadio = findViewById(R.id.attemptedShallowRadio);
+        RadioButton noneRadio = findViewById(R.id.noneRadio);
+
+
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
         matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
             this.match = match;
 
+            if (match.getEndgamePos()!=null) {
+                switch (match.getEndgamePos()) {
+                    case "Park":
+                        r.check(R.id.parkRadio);
+                        break;
+                    case "Deep Cage":
+                        r.check(R.id.deepCageRadio);
+                        break;
+                    case "Attempted Deep Cage":
+                        r.check(R.id.attemptedDeepRadio);
+                        break;
+                    case "Shallow Cage":
+                        r.check(R.id.shallowCageRadio);
+                        break;
+                    case "Attempted Shallow Cage":
+                        r.check(R.id.attemptedShallowRadio);
+                        break;
+                    case "None":
+                        r.check(R.id.noneRadio);
+                        break;
+                    default:
+                        r.check(R.id.noneRadio);
+                }
+            }
             // r.setSelection(stagePositions.indexOf(match.getEndgamePos()));
             r.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
@@ -90,13 +119,11 @@ public class Endgame2 extends AppCompatActivity {
             });
             /* move to previous activity when pressing back/next button*/
         });
-        View backButton = findViewById(R.id.backButton);
-        View nextButton = findViewById(R.id.nextButton);
+        View backButton = findViewById(R.id.back_to_teleop);
+        View nextButton = findViewById(R.id.to_summary);
+
         backButton.setOnClickListener(v -> {
-
-            
-            Intent i = new Intent(Endgame2.this, Pregame.class);
-
+            Intent i = new Intent(Endgame2.this, Teleop.class);
             i.putExtra("matchNumber", match.getMatchNum());
             matchViewModel.addMatchInformation(match);
             startActivity(i);

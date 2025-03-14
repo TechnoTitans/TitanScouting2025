@@ -223,7 +223,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/l1Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -234,7 +233,7 @@
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/performedLeaveSummary"
+                        android:id="@+id/l1Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -259,7 +258,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/l2Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -270,7 +268,7 @@
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/startingPositionSummary"
+                        android:id="@+id/l2Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -288,7 +286,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/l3Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -299,11 +296,11 @@
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/pathSummary"
+                        android:id="@+id/l3Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text=""
+                        android:text="0"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -317,7 +314,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/l4Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -328,7 +324,7 @@
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/teleopAmpScoredSummary"
+                        android:id="@+id/l4Summary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -355,7 +351,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/processorCountSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -366,7 +361,7 @@
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/teleopAmpMissedSummary"
+                        android:id="@+id/processorCountSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -384,7 +379,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/netCountSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -395,7 +389,7 @@
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/teleopSpeakerScoredSummary"
+                        android:id="@+id/netCountSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -413,7 +407,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/endgamePosSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -424,7 +417,7 @@
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/teleopSpeakerMissedSummary"
+                        android:id="@+id/endgamePosSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -449,7 +442,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/driverQuality"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -460,134 +452,11 @@
                         tools:ignore="NestedWeights" />
 
                     <TextView
-                        android:id="@+id/stagePositionSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Hanging"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/defenseAbility"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Defense Ability"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-                    <TextView
-                        android:id="@+id/noteInTrapScoredSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="False"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/mechanicalReliability"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Mechanical Reliability"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-                    <TextView
-                        android:id="@+id/subwooferSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="False"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/efficiencySummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Efficiency"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-                    <TextView
-                        android:id="@+id/penaltiesIncurredSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="0"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/notes"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Notes"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-
-                    <TextView
                         android:id="@+id/driverQualitySummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="3"
+                        android:text="0"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -615,44 +484,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="3"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="35sp"
-                        tools:ignore="NestedWeights" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-
-
-                    <TextView
-                        android:id="@+id/dropsPiecesOftenSummary"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:text="False"
                         android:textAlignment="center"
                         android:textColor="@color/black"
@@ -666,14 +497,22 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-
-
                     <TextView
-                        android:id="@+id/canPickFromGroundSummary"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="True"
+                        android:text="Mechanical Reliability"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="35sp"
+                        tools:ignore="NestedWeights" />
+
+                    <TextView
+                        android:id="@+id/mechanicalReliabilitySummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="False"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
@@ -686,6 +525,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Efficiency"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="35sp"
+                        tools:ignore="NestedWeights" />
+
+                    <TextView
+                        android:id="@+id/efficiencySummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="35sp"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -708,12 +575,49 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="Hello There"
+                        android:text=""
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="35sp"
                         tools:ignore="NestedWeights" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="35sp"
+                        tools:ignore="NestedWeights" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="35sp"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_weight="1">
+
 
             </LinearLayout>
 
