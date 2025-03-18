@@ -18,8 +18,6 @@ public class Match {
     private String scouterName;
     @ColumnInfo(name = "noShow", defaultValue = "0")
     private boolean noShow;
-    @ColumnInfo(name="startPosition", defaultValue = "")
-    private String startingPosition;
     @ColumnInfo(name="autoPath", defaultValue = "0")
     private String autoPath;
     @ColumnInfo(name = "l1Count", defaultValue = "0")
@@ -86,10 +84,6 @@ public class Match {
     public void setNoShow(boolean noShow) {
         this.noShow = noShow;
     }
-
-    public String getStartingPosition() { return startingPosition; }
-
-    public void setStartingPosition(String startingPosition) { this.startingPosition = startingPosition; }
 
     public String getAutoPath() { return autoPath; }
 

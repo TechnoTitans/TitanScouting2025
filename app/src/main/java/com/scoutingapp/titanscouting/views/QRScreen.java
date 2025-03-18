@@ -59,12 +59,12 @@ public class QRScreen extends AppCompatActivity {
                     match.getScouterName()));
 
             qrString = String.join("\n",
-                    "GAGWI",
+                    "GACMP",
                     String.valueOf(match.getTeamNumber()),
                     String.valueOf(match.getMatchNum()),
                     match.getScouterName(),
                     String.valueOf(match.getPosition()),
-                    match.getAutoPath(),
+                    match.getAutoPath() == null || match.getAutoPath().isEmpty() ? "null" : match.getAutoPath(),
                     String.valueOf(match.getL4Count()),
                     String.valueOf(match.getL3Count()),
                     String.valueOf(match.getL2Count()),

@@ -61,12 +61,13 @@
         android:id="@+id/comments"
         android:layout_width="470dp"
         android:layout_height="175dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="56dp"
         android:layout_marginBottom="4dp"
         android:background="@android:drawable/editbox_background_normal"
+        android:gravity="start|top"
+        android:maxLength="100"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="start|top"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <RadioGroup
         android:id="@+id/parkPosition"
