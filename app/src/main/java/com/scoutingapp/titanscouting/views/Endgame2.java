@@ -138,7 +138,7 @@ public class Endgame2 extends AppCompatActivity {
 
     public void backTeleop(View v) {
 
-        Intent i = new Intent (this, Teleop2.class);
+        Intent i = new Intent (this, Teleop.class);
         i.putExtra("matchNumber", match.getMatchNum());
         matchViewModel.addMatchInformation(match);
         startActivity(i);
