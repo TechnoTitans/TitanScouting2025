@@ -57,62 +57,62 @@ public class Teleop extends AppCompatActivity {
 
             l4inc.setOnClickListener(v -> {
                 match.setL4Count(match.getL4Count() + 1);
-                l4.setText("" + match.getL4Count());
+                l4.setText(String.valueOf(match.getL4Count()));
                 matchViewModel.addMatchInformation(match);
             });
             l4dec.setOnClickListener(v -> {
                 match.setL4Count(match.getL4Count() == 0 ? 0 : match.getL4Count() - 1);
+                l4.setText(String.valueOf(match.getL4Count()));
                 matchViewModel.addMatchInformation(match);
-                l4.setText("" + match.getL4Count());
             });
             l3inc.setOnClickListener(v -> {
                 match.setL3Count(match.getL3Count() + 1);
-                l3.setText("" + match.getL3Count());
+                l3.setText(String.valueOf(match.getL3Count()));
                 matchViewModel.addMatchInformation(match);
             });
             l3dec.setOnClickListener(v -> {
                 match.setL3Count(match.getL3Count() == 0 ? 0 : match.getL3Count() - 1);
-                l3.setText("" + match.getL3Count());
+                l3.setText(String.valueOf(match.getL3Count()));
                 matchViewModel.addMatchInformation(match);
             });
             l2inc.setOnClickListener(v -> {
                 match.setL2Count(match.getL2Count() + 1);
-                l2.setText("" + match.getL2Count());
+                l2.setText(String.valueOf(match.getL2Count()));
                 matchViewModel.addMatchInformation(match);
             });
             l2dec.setOnClickListener(v -> {
                 match.setL2Count(match.getL2Count() == 0 ? 0 : match.getL2Count() - 1);
-                l2.setText("" + match.getL2Count());
+                l2.setText(String.valueOf(match.getL2Count()));
                 matchViewModel.addMatchInformation(match);
             });
             l1inc.setOnClickListener(v -> {
                 match.setL1Count(match.getL1Count() + 1);
-                l1.setText("" + match.getL1Count());
+                l1.setText(Integer.toString(match.getL1Count()));
                 matchViewModel.addMatchInformation(match);
             });
             l1dec.setOnClickListener(v -> {
                 match.setL1Count(match.getL1Count() == 0 ? 0 : match.getL1Count() - 1);
-                l1.setText("" + match.getL1Count());
+                l1.setText(Integer.toString(match.getL1Count()));
                 matchViewModel.addMatchInformation(match);
             });
             procInc.setOnClickListener(v -> {
                 match.setProcessorCount(match.getProcessorCount() + 1);
-                proc.setText("" + match.getProcessorCount());
+                proc.setText(Integer.toString(match.getProcessorCount()));
                 matchViewModel.addMatchInformation(match);
             });
             procDec.setOnClickListener(v -> {
                 match.setProcessorCount(match.getProcessorCount() == 0 ? 0 : match.getProcessorCount() - 1);
-                proc.setText("" + match.getProcessorCount());
+                proc.setText(Integer.toString(match.getProcessorCount()));
                 matchViewModel.addMatchInformation(match);
             });
             netInc.setOnClickListener(v -> {
                 match.setNetCount(match.getNetCount() + 1);
-                net.setText("" + match.getNetCount());
+                net.setText(Integer.toString(match.getNetCount()));
                 matchViewModel.addMatchInformation(match);
             });
             netDec.setOnClickListener(v -> {
                 match.setNetCount(match.getNetCount() == 0 ? 0 : match.getNetCount() - 1);
-                net.setText("" + match.getNetCount());
+                net.setText(Integer.toString(match.getNetCount()));
                 matchViewModel.addMatchInformation(match);
             });
 
