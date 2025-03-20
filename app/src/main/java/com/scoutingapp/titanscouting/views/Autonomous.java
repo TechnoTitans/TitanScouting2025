@@ -31,6 +31,7 @@ public class Autonomous extends AppCompatActivity {
     Match match;
     MatchViewModel matchViewModel;
     @Override
+    //Just determine what layout to choose based off what color was choosen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (Objects.equals(getIntent().getStringExtra("color"), "B")) {
@@ -38,7 +39,8 @@ public class Autonomous extends AppCompatActivity {
         }  else {
             setContentView(R.layout.activity_autonomous_red); /* connects xml to the class file */
         }
-
+        //All below of this is just setting up UI elements (Buttons, TextViews, CheckBoxes)
+        //This block is just for the coral buttons.
         Button a = findViewById(R.id.branch_a);
         Button b = findViewById(R.id.branch_b);
         Button c = findViewById(R.id.branch_c);
@@ -52,7 +54,7 @@ public class Autonomous extends AppCompatActivity {
         Button k = findViewById(R.id.branch_k);
         Button l = findViewById(R.id.branch_l);
 
-
+        // Buttons to handle (NET,Processer, and cs1,cs2)
         Button lollipopNet = findViewById(R.id.lollipop1);
         Button lollipopMiddle = findViewById(R.id.lollipop2);
         Button lollipopProcessor = findViewById(R.id.lollipop3);
@@ -62,24 +64,24 @@ public class Autonomous extends AppCompatActivity {
         Button cs1 = findViewById(R.id.cs1_button);
         Button cs2 = findViewById(R.id.cs2_button);
 
-        Button resetButton = findViewById(R.id.reset_button);
+        Button resetButton = findViewById(R.id.reset_button); //button
 
-        TextView autoText = findViewById(R.id.autoDisplay);
+        TextView autoText = findViewById(R.id.autoDisplay); // Displays the current auto path
 
-        CheckBox leave = findViewById(R.id.leaveCheckbox);
+        CheckBox leave = findViewById(R.id.leaveCheckbox); // Indicates if the robot left the starting area
 
-        Button toPregame = findViewById(R.id.back_to_pregame);
-        Button toTeleop = findViewById(R.id.to_teleop);
-
+        Button toPregame = findViewById(R.id.back_to_pregame); // Button to go back to pregame activity
+        Button toTeleop = findViewById(R.id.to_teleop); // Button to go to teleop activity
+        // Initialize ViewModel to access match data.
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
         matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
             this.match = match;
-
+            // Reset button functionality and just clears the auto path or keeps leave nothing changed
             resetButton.setOnClickListener(v -> {
                 match.setAutoPath(match.getAutoPath().startsWith("LEAVE ") ? "LEAVE " : "");
                 autoText.setText(match.getAutoPath());
             });
-
+            // Setting the checkbox state based on the current auto path
             if (match.getAutoPath() == null) {
                 leave.setChecked(false);
             } else if (match.getAutoPath().startsWith("LEAVE ")) {
@@ -87,9 +89,9 @@ public class Autonomous extends AppCompatActivity {
             } else {
                 leave.setChecked(false);
             }
-
+            // Display the current auto path in the TextView
             autoText.setText(match.getAutoPath());
-
+            // Click listeners for the action buttons (Net, Processor, Lollipop, CS1, CS2)
             a.setOnClickListener(v -> {
                 branchPopup(a, "A", result -> {
                     match.setAutoPath((match.getAutoPath() == null ? "" : match.getAutoPath()) + result);
@@ -163,20 +165,21 @@ public class Autonomous extends AppCompatActivity {
                 });
             });
 
+            // Navigation to Pregame Activity
             toPregame.setOnClickListener(v -> {
                 Intent intent = new Intent(Autonomous.this, Pregame.class);
                 intent.putExtra("matchNumber", match.getMatchNum());
                 matchViewModel.addMatchInformation(match);
                 startActivity(intent);
             });
-
+            // Navigation to Telop Activity
             toTeleop.setOnClickListener(v -> {
                 Intent intent = new Intent(Autonomous.this,Teleop.class);
                 intent.putExtra("matchNumber", match.getMatchNum());
                 matchViewModel.addMatchInformation(match);
                 startActivity(intent);
             });
-
+            // Click listeners for other action buttons (Net, Processor, Lollipop, CS1, CS2)
             net.setOnClickListener(v -> {
                 match.setAutoPath((match.getAutoPath() == null ? "" : match.getAutoPath()) + "N");
                 autoText.setText(match.getAutoPath());
@@ -209,7 +212,7 @@ public class Autonomous extends AppCompatActivity {
                 match.setAutoPath((match.getAutoPath() == null ? "" : match.getAutoPath()) + "CS2");
                 autoText.setText(match.getAutoPath());
             });
-
+            // Checkbox listener to handle "LEAVE" functionality.
             leave.setOnClickListener(v -> {
                 if (leave.isChecked()) {
                     match.setAutoPath("LEAVE " + (match.getAutoPath() == null ? "" : match.getAutoPath()));
