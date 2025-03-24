@@ -32,6 +32,8 @@ public class Pregame extends AppCompatActivity {
         EditText scouterNameInput = findViewById(R.id.ScouterNamePregameResponse);
         CheckBox noShowCheckBox = findViewById(R.id.noShowCheckBox);
 
+        View toAuto = findViewById(R.id.NextButtonPregame);
+
         View red1 = findViewById(R.id.Red1);
         View red2 = findViewById(R.id.Red2);
         View red3 = findViewById(R.id.Red3);
@@ -42,9 +44,9 @@ public class Pregame extends AppCompatActivity {
         if (Objects.equals(getIntent().getStringExtra("transition"), "fromAutonomous"))
         {
             matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
-                ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(match.getMatchNum()));
-                ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(String.valueOf(match.getTeamNumber()));
-                ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(String.valueOf(match.getScouterName()));
+                ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(match.getMatchNum() == 0 ? "" : match.getMatchNum()));
+                ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(String.valueOf(match.getTeamNumber() == 0 ? "" : match.getTeamNumber()));
+                ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(match.getScouterName() == null ? "" : match.getScouterName());
                 matchNumberInput.addTextChangedListener(new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -121,7 +123,10 @@ public class Pregame extends AppCompatActivity {
                         this,
                         "B3".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
 
-
+                toAuto.setEnabled(!matchNumberInput.getText().toString().isEmpty()
+                        && !teamNumberInput.getText().toString().isEmpty()
+                        && !scouterNameInput.getText().toString().isEmpty()
+                        && !match.getPosition().isEmpty());
 
                 red1.setOnClickListener(v -> {
                     match.setPosition("R1");
@@ -159,23 +164,33 @@ public class Pregame extends AppCompatActivity {
                     startActivity(i);
                 });
                 ((Button) (findViewById(R.id.NextButtonPregame))).setOnClickListener(v -> {
-                    if (match.isNoShow()) {
-                        Intent i = new Intent(Pregame.this, Summary.class);
-                        i.putExtra("matchNumber", match.getMatchNum());
-                        Log.d("transition", "working1");
-                        startActivity(i);
-                    } else {
-                        Intent i = new Intent(Pregame.this, Autonomous.class);
-                        i.putExtra("matchNumber", match.getMatchNum());
-                        i.putExtra("color", match.getPosition().substring(0, 1));
-                        Log.d("color", match.getPosition().substring(0, 1));
-                        Log.d("transition", "working2");
-                        startActivity(i);
+                    if (!matchNumberInput.getText().toString().isEmpty()
+                            && !teamNumberInput.getText().toString().isEmpty()
+                            && !scouterNameInput.getText().toString().isEmpty()
+                            && match.getPosition() != null) {
+                        if (match.isNoShow()) {
+                            Intent i = new Intent(Pregame.this, Summary.class);
+                            i.putExtra("matchNumber", match.getMatchNum());
+                            Log.d("transition", "working1");
+                            startActivity(i);
+                        } else {
+                            Intent i = new Intent(Pregame.this, Autonomous.class);
+                            i.putExtra("matchNumber", match.getMatchNum());
+                            i.putExtra("color", match.getPosition().substring(0, 1));
+                            Log.d("color", match.getPosition().substring(0, 1));
+                            Log.d("transition", "working2");
+                            startActivity(i);
+                        }
                     }
                 });
             });
         } else {
             match = new Match();
+
+            ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(match.getMatchNum() == 0 ? "" : match.getMatchNum()));
+            ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(String.valueOf(match.getTeamNumber() == 0 ? "" : match.getTeamNumber()));
+            ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(match.getScouterName() == null ? "" : match.getScouterName());
+
             matchNumberInput.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -320,22 +335,27 @@ public class Pregame extends AppCompatActivity {
                 startActivity(i);
             });
             ((Button) (findViewById(R.id.NextButtonPregame))).setOnClickListener(v -> {
-                if (match.isNoShow()) {
-                    matchViewModel.addMatchInformation(match);
-                    Intent i = new Intent(Pregame.this, Summary.class);
-                    i.putExtra("matchNumber", match.getMatchNum());
-                    i.putExtra("color", match.getPosition().substring(0, 1));
-                    Log.d("transition", "working1");
-                    startActivity(i);
-                } else {
-                    matchViewModel.addMatchInformation(match);
-                    Intent i = new Intent(Pregame.this, Autonomous.class);
-                    i.putExtra("matchNumber", match.getMatchNum());
-                    i.putExtra("color", match.getPosition().substring(0, 1));
-                    Log.d("color", match.getPosition().substring(0, 1));
+                if (!matchNumberInput.getText().toString().isEmpty()
+                        && !teamNumberInput.getText().toString().isEmpty()
+                        && !scouterNameInput.getText().toString().isEmpty()
+                        && match.getPosition() != null) {
+                    if (match.isNoShow()) {
+                        matchViewModel.addMatchInformation(match);
+                        Intent i = new Intent(Pregame.this, Summary.class);
+                        i.putExtra("matchNumber", match.getMatchNum());
+                        i.putExtra("color", match.getPosition().substring(0, 1));
+                        Log.d("transition", "working1");
+                        startActivity(i);
+                    } else {
+                        matchViewModel.addMatchInformation(match);
+                        Intent i = new Intent(Pregame.this, Autonomous.class);
+                        i.putExtra("matchNumber", match.getMatchNum());
+                        i.putExtra("color", match.getPosition().substring(0, 1));
+                        Log.d("color", match.getPosition().substring(0, 1));
 
-                    Log.d("transition", "working2");
-                    startActivity(i);
+                        Log.d("transition", "working2");
+                        startActivity(i);
+                    }
                 }
             });
         }
