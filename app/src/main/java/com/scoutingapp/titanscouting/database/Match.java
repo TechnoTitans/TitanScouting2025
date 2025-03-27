@@ -32,6 +32,18 @@ public class Match {
     private int processorCount;
     @ColumnInfo(name = "netCount", defaultValue = "0")
     private int netCount;
+    @ColumnInfo(name = "l1MissedCount", defaultValue = "0")
+    private int l1MissedCount;
+    @ColumnInfo(name = "l2MissedCount", defaultValue = "0")
+    private int l2MissedCount;
+    @ColumnInfo(name = "l3MissedCount", defaultValue = "0")
+    private int l3MissedCount;
+    @ColumnInfo(name = "l4MissedCount", defaultValue = "0")
+    private int l4MissedCount;
+    @ColumnInfo(name = "processorMissedCount", defaultValue = "0")
+    private int processorMissedCount;
+    @ColumnInfo(name = "netMissedCount", defaultValue = "0")
+    private int netMissedCount;
     @ColumnInfo(name = "endgamePos", defaultValue = "None")
     private String endgamePos;
     @ColumnInfo(name = "driverQuality", defaultValue = "1")
@@ -135,6 +147,54 @@ public class Match {
 
     public void setNetCount(int netCount) {
         this.netCount = netCount;
+    }
+
+    public int getL1MissedCount() {
+        return l1MissedCount;
+    }
+
+    public void setL1MissedCount(int l1MissedCount) {
+        this.l1MissedCount = l1MissedCount;
+    }
+
+    public int getL2MissedCount() {
+        return l2MissedCount;
+    }
+
+    public void setL2MissedCount(int l2MissedCount) {
+        this.l2MissedCount = l2MissedCount;
+    }
+
+    public int getL3MissedCount() {
+        return l3MissedCount;
+    }
+
+    public void setL3MissedCount(int l3MissedCount) {
+        this.l3MissedCount = l3MissedCount;
+    }
+
+    public int getL4MissedCount() {
+        return l4MissedCount;
+    }
+
+    public void setL4MissedCount(int l4MissedCount) {
+        this.l4MissedCount = l4MissedCount;
+    }
+
+    public int getProcessorMissedCount() {
+        return processorMissedCount;
+    }
+
+    public void setProcessorMissedCount(int processorMissedCount) {
+        this.processorMissedCount = processorMissedCount;
+    }
+
+    public int getNetMissedCount() {
+        return netMissedCount;
+    }
+
+    public void setNetMissedCount(int netMissedCount) {
+        this.netMissedCount = netMissedCount;
     }
 
     public String getEndgamePos() {

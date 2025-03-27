@@ -60,4 +60,7 @@
     <item name="attemptedShallowBox" type="id" />
     <item name="noneBox" type="id" />
     <item name="ratingBar" type="id" />
+    <item name="dec_l2_missed" type="id" />
+    <item name="inc_l2_missed" type="id" />
+    <item name="l2_missed_score" type="id" />
 </resources>

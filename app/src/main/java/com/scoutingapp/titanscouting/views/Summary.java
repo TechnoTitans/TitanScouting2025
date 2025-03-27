@@ -57,27 +57,17 @@ public class Summary extends AppCompatActivity {
             }
 
 
-            ((TextView) (findViewById(R.id.l1Summary))).setText(String.valueOf(match.getL1Count()));
+            ((TextView) (findViewById(R.id.l1Summary))).setText(String.format("%d/%d", match.getL1Count(), match.getL1MissedCount()));
 
-//            ((TextView) (findViewById(R.id.startingPositionSummary))).setText(match.getStartingPosition());
-//
-//            ((TextView) (findViewById(R.id.autoAmpScoredSummary))).setText(String.valueOf(match.getAutoAmpScored()));
-//
-//            ((TextView) (findViewById(R.id.autoAmpMissedSummary))).setText(String.valueOf(match.getAutoAmpMissed()));
-//
-//            ((TextView) (findViewById(R.id.autoSpeakerScoredSummary))).setText(String.valueOf(match.getAutoSpeakerScored()));
-//
-//            ((TextView) (findViewById(R.id.autoSpeakerMissedSummary))).setText(String.valueOf(match.getAutoSpeakerMissed()));
+            ((TextView) (findViewById(R.id.l2Summary))).setText(String.format("%d/%d", match.getL2Count(), match.getL2MissedCount()));
 
-            ((TextView) (findViewById(R.id.l2Summary))).setText(String.valueOf(match.getL2Count()));
+            ((TextView) (findViewById(R.id.l3Summary))).setText(String.format("%d/%d", match.getL3Count(), match.getL3MissedCount()));
 
-            ((TextView) (findViewById(R.id.l3Summary))).setText(String.valueOf(match.getL3Count()));
+            ((TextView) (findViewById(R.id.l4Summary))).setText(String.format("%d/%d", match.getL4Count(), match.getL4MissedCount()));
 
-            ((TextView) (findViewById(R.id.l4Summary))).setText(String.valueOf(match.getL4Count()));
+            ((TextView) (findViewById(R.id.processorCountSummary))).setText(String.format("%d/%d", match.getProcessorCount(), match.getProcessorMissedCount()));
 
-            ((TextView) (findViewById(R.id.processorCountSummary))).setText(String.valueOf(match.getProcessorCount()));
-
-            ((TextView) (findViewById(R.id.netCountSummary))).setText(String.valueOf(match.getNetCount()));
+            ((TextView) (findViewById(R.id.netCountSummary))).setText(String.format("%d/%d", match.getNetCount(), match.getNetMissedCount()));
 
             ((TextView) (findViewById(R.id.endgamePosSummary))).setText(match.getEndgamePos());
 

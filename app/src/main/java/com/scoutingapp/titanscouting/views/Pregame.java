@@ -44,7 +44,7 @@ public class Pregame extends AppCompatActivity {
         if (Objects.equals(getIntent().getStringExtra("transition"), "fromAutonomous"))
         {
             matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
-                ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(match.getMatchNum() == 0 ? "" : match.getMatchNum()));
+                ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(getIntent().getIntExtra("matchNumber", 0)));
                 ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(String.valueOf(match.getTeamNumber() == 0 ? "" : match.getTeamNumber()));
                 ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(match.getScouterName() == null ? "" : match.getScouterName());
                 matchNumberInput.addTextChangedListener(new TextWatcher() {
@@ -187,7 +187,7 @@ public class Pregame extends AppCompatActivity {
         } else {
             match = new Match();
 
-            ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(match.getMatchNum() == 0 ? "" : match.getMatchNum()));
+            ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(getIntent().getIntExtra("matchNumber", 0)));
             ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(String.valueOf(match.getTeamNumber() == 0 ? "" : match.getTeamNumber()));
             ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(match.getScouterName() == null ? "" : match.getScouterName());
 
@@ -364,3 +364,4 @@ public class Pregame extends AppCompatActivity {
     }
 
 }
+
