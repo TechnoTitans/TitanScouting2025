@@ -46,14 +46,18 @@ public class Match {
     private int netMissedCount;
     @ColumnInfo(name = "endgamePos", defaultValue = "None")
     private String endgamePos;
+    @ColumnInfo(name = "groundCoral", defaultValue = "0")
+    private boolean groundCoral;
+    @ColumnInfo(name = "groundAlgae", defaultValue = "0")
+    private boolean groundAlgae;
     @ColumnInfo(name = "driverQuality", defaultValue = "1")
     private int driverQuality;
-    @ColumnInfo(name = "defenseAbility", defaultValue = "1")
+    @ColumnInfo(name = "defenseAbility", defaultValue = "0")
     private int defenseAbility;
     @ColumnInfo(name = "mechanicalReliability", defaultValue = "1")
     private int mechanicalReliability;
-    @ColumnInfo(name = "efficiency", defaultValue = "1")
-    private int efficiency;
+    @ColumnInfo(name = "algaeDescoredRating", defaultValue = "0")
+    private int algaeDescoredRating;
     @ColumnInfo(name = "notes", defaultValue = "0")
     private String notes;
 
@@ -205,6 +209,22 @@ public class Match {
         this.endgamePos = endgamePos;
     }
 
+    public boolean isGroundCoral() {
+        return groundCoral;
+    }
+
+    public void setGroundCoral(boolean groundCoral) {
+        this.groundCoral = groundCoral;
+    }
+
+    public boolean isGroundAlgae() {
+        return groundAlgae;
+    }
+
+    public void setGroundAlgae(boolean groundAlgae) {
+        this.groundAlgae = groundAlgae;
+    }
+
     public int getDriverQuality() {
         return driverQuality;
     }
@@ -228,15 +248,13 @@ public class Match {
     public void setMechanicalReliability(int mechanicalReliability) {
         this.mechanicalReliability = mechanicalReliability;
     }
-
-    public int getEfficiency() {
-        return efficiency;
+    public int getAlgaeDescoredRating() {
+        return algaeDescoredRating;
     }
 
-    public void setEfficiency(int efficiency) {
-        this.efficiency = efficiency;
+    public void setAlgaeDescoredRating(int algaeDescoredRating) {
+        this.algaeDescoredRating = algaeDescoredRating;
     }
-
     public String getNotes() {
         return notes;
     }

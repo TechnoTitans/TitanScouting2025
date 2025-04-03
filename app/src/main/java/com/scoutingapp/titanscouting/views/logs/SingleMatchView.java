@@ -63,7 +63,7 @@ public class SingleMatchView extends AppCompatActivity {
                 ((TextView) findViewById(R.id.driverQualitySummary)).setText(String.valueOf(match.getDriverQuality()));
                 ((TextView) findViewById(R.id.defenseAbilitySummary)).setText(String.valueOf(match.getDefenseAbility())); // Assuming this is an int or float
                 ((TextView) findViewById(R.id.mechanicalReliabilitySummary)).setText(String.valueOf(match.getMechanicalReliability())); // Assuming this is an int or float
-                ((TextView) findViewById(R.id.efficiencySummary)).setText(String.valueOf(match.getEfficiency())); // Assuming this is an int or float
+                ((TextView) findViewById(R.id.efficiencySummary)).setText(String.valueOf(match.getAlgaeDescoredRating())); // Assuming this is an int or float
 
                 // Handling the notes field (String value)
                 ((TextView) findViewById(R.id.notesSummary)).setText(match.getNotes() != null ? match.getNotes() : "N/A");

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -33,6 +34,9 @@ public class Endgame2 extends AppCompatActivity {
         RadioButton shallowCageRadio = findViewById(R.id.shallowCageRadio);
         RadioButton attemptedShallowRadio = findViewById(R.id.attemptedShallowRadio);
         RadioButton noneRadio = findViewById(R.id.noneRadio);
+
+        CheckBox groundCoral = findViewById(R.id.groundCoralCheckbox);
+        CheckBox groundAlgae = findViewById(R.id.groundAlgaeCheckbox);
 
 
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
@@ -72,6 +76,16 @@ public class Endgame2 extends AppCompatActivity {
                 }
             });
 
+            groundCoral.setChecked(match.isGroundCoral());
+            groundAlgae.setChecked(match.isGroundAlgae());
+
+            groundCoral.setOnClickListener(v -> {
+                match.setGroundCoral(!match.isGroundCoral());
+            });
+            groundAlgae.setOnClickListener(v -> {
+                match.setGroundAlgae(!match.isGroundAlgae());
+            });
+
             ((RatingBar) (findViewById(R.id.ratingBar1))).setRating(match.getMechanicalReliability());
             ((RatingBar) (findViewById(R.id.ratingBar1))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
@@ -93,12 +107,12 @@ public class Endgame2 extends AppCompatActivity {
                     match.setDriverQuality((int) (rating));
                 }
             }); /*fetch ID for efficiency rating bar*/
-            ((RatingBar) (findViewById(R.id.ratingBar4))).setRating(match.getEfficiency());
+            ((RatingBar) (findViewById(R.id.ratingBar4))).setRating(match.getAlgaeDescoredRating());
             ((RatingBar) (findViewById(R.id.ratingBar4))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 /* set ID for each rating bar */
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                    match.setEfficiency((int) (rating)); /*set constructor for effeciency */
+                    match.setAlgaeDescoredRating((int) (rating)); /*set constructor for effeciency */
                 }
             });
 
@@ -134,13 +148,5 @@ public class Endgame2 extends AppCompatActivity {
             matchViewModel.addMatchInformation(match);
             startActivity(i);
         });
-    }
-
-    public void backTeleop(View v) {
-
-        Intent i = new Intent (this, Teleop.class);
-        i.putExtra("matchNumber", match.getMatchNum());
-        matchViewModel.addMatchInformation(match);
-        startActivity(i);
     }
 }

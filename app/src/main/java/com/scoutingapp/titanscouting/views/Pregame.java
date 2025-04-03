@@ -130,13 +130,6 @@ public class Pregame extends AppCompatActivity {
 
                 red1.setOnClickListener(v -> {
                     match.setPosition("R1");
-                    Log.d("background_color", Objects.requireNonNull(v.getBackgroundTintList()).toString());
-                    v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.light_red));
-                    red2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
-                    red3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.red));
-                    blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
-                    blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
-                    blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 });
                 red2.setOnClickListener(v -> {
                     match.setPosition("R2");

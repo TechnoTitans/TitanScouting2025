@@ -168,7 +168,7 @@ public class Teleop extends AppCompatActivity {
                 matchViewModel.addMatchInformation(match);
             });
             l2decMissed.setOnClickListener(v -> {
-                match.setL2Count(match.getL2MissedCount() == 0 ? 0 : match.getL2MissedCount() - 1);
+                match.setL2MissedCount(match.getL2MissedCount() == 0 ? 0 : match.getL2MissedCount() - 1);
                 l2Missed.setText(String.valueOf(match.getL2MissedCount()));
                 matchViewModel.addMatchInformation(match);
             });
@@ -188,7 +188,7 @@ public class Teleop extends AppCompatActivity {
                 matchViewModel.addMatchInformation(match);
             });
             procDecMissed.setOnClickListener(v -> {
-                match.setProcessorCount(match.getProcessorMissedCount() == 0 ? 0 : match.getProcessorMissedCount() - 1);
+                match.setProcessorMissedCount(match.getProcessorMissedCount() == 0 ? 0 : match.getProcessorMissedCount() - 1);
                 procMissed.setText(String.valueOf(match.getProcessorMissedCount()));
                 matchViewModel.addMatchInformation(match);
             });

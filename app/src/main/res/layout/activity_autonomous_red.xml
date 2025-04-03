@@ -276,8 +276,10 @@
         android:id="@+id/leaveCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="44dp"
         android:layout_marginBottom="124dp"
+        android:scaleX="2"
+        android:scaleY="2"
         android:text="Leave?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

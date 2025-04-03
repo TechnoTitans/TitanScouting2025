@@ -58,23 +58,31 @@ public class QRScreen extends AppCompatActivity {
                     match.getScouterName()));
 
             qrString = String.join("\n",
-                    "GACMP",
+                    "GACMP\n",
                     String.valueOf(match.getTeamNumber()),
                     String.valueOf(match.getMatchNum()),
                     match.getScouterName(),
                     String.valueOf(match.getPosition()),
                     match.getAutoPath() == null || match.getAutoPath().isEmpty() ? "null" : match.getAutoPath(),
                     String.valueOf(match.getL4Count()),
+                    String.valueOf(match.getL4MissedCount()),
                     String.valueOf(match.getL3Count()),
+                    String.valueOf(match.getL3MissedCount()),
                     String.valueOf(match.getL2Count()),
+                    String.valueOf(match.getL2MissedCount()),
                     String.valueOf(match.getL1Count()),
+                    String.valueOf(match.getL1MissedCount()),
                     String.valueOf(match.getProcessorCount()),
+                    String.valueOf(match.getProcessorMissedCount()),
                     String.valueOf(match.getNetCount()),
+                    String.valueOf(match.getNetMissedCount()),
                     match.getEndgamePos(),
+                    String.valueOf(match.isGroundCoral()),
+                    String.valueOf(match.isGroundAlgae()),
                     String.valueOf(match.getDriverQuality()),
                     String.valueOf(match.getDefenseAbility()),
                     String.valueOf(match.getMechanicalReliability()),
-                    String.valueOf(match.getEfficiency()),
+                    String.valueOf(match.getAlgaeDescoredRating()),
                     match.getNotes()
             );
             Log.d("match_num", String.valueOf(match.getMatchNum()));

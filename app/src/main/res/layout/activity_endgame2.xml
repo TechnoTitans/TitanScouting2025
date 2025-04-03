@@ -65,8 +65,8 @@
         android:layout_marginBottom="4dp"
         android:background="@android:drawable/editbox_background_normal"
         android:gravity="start|top"
-        android:maxLength="100"
         android:inputType="textShortMessage"
+        android:maxLength="100"
         android:maxLines="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -77,9 +77,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subTitle1"
-        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintVertical_bias="0.05">
 
         <RadioButton
@@ -87,48 +87,42 @@
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Park"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/deepCageRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Deep Cage"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/attemptedDeepRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Attempted Deep Cage"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/shallowCageRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Shallow Cage"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/attemptedShallowRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Attempted Shallow Cage"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/noneRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="None"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
     </RadioGroup>
 
     <TextView
@@ -170,10 +164,10 @@
 
 
     <TextView
-        android:id="@+id/efficiency"
+        android:id="@+id/algaeDescore"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:text="Efficiency:"
+        android:text="Algae Descorability:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
@@ -241,14 +235,14 @@
         android:id="@+id/back_to_teleop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Teleop"
         android:onClick="backTeleop"
+        android:text="Teleop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        app:layout_constraintHorizontal_bias="0.05"/>
+        app:layout_constraintVertical_bias="0.03" />
 
     <Button
         android:id="@+id/to_summary"
@@ -257,10 +251,32 @@
         android:text="Summary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        app:layout_constraintHorizontal_bias="0.95"/>
+        app:layout_constraintVertical_bias="0.03" />
+
+    <CheckBox
+        android:id="@+id/groundCoralCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Ground Coral?"
+        app:layout_constraintBottom_toTopOf="@+id/groundAlgaeCheckbox"
+        app:layout_constraintStart_toStartOf="@+id/parkPosition"
+        app:layout_constraintTop_toBottomOf="@+id/parkPosition" />
+
+    <CheckBox
+        android:id="@+id/groundAlgaeCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Ground Algae?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/groundCoralCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/groundCoralCheckbox" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
