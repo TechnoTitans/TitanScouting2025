@@ -168,7 +168,7 @@ public class Teleop extends AppCompatActivity {
                 matchViewModel.addMatchInformation(match);
             });
             l2decMissed.setOnClickListener(v -> {
-                match.setL2Count(match.getL2MissedCount() == 0 ? 0 : match.getL2MissedCount() - 1);
+                match.setL2MissedCount(match.getL2MissedCount() == 0 ? 0 : match.getL2MissedCount() - 1);
                 l2Missed.setText(String.valueOf(match.getL2MissedCount()));
                 matchViewModel.addMatchInformation(match);
             });
@@ -207,6 +207,7 @@ public class Teleop extends AppCompatActivity {
             backToAuto.setOnClickListener(v -> {
                 Intent i = new Intent(Teleop.this, Autonomous.class);
                 i.putExtra("matchNumber", match.getMatchNum());
+                i.putExtra("color", match.getPosition().substring(0, 1));
                 matchViewModel.addMatchInformation(match);
                 startActivity(i);
             });

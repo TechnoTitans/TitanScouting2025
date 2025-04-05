@@ -43,10 +43,11 @@ public class Pregame extends AppCompatActivity {
 
         if (Objects.equals(getIntent().getStringExtra("transition"), "fromAutonomous"))
         {
+            System.out.println("if running");
             matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
                 ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(getIntent().getIntExtra("matchNumber", 0)));
-                ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(String.valueOf(match.getTeamNumber() == 0 ? "" : match.getTeamNumber()));
-                ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(match.getScouterName() == null ? "" : match.getScouterName());
+                ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(String.valueOf(getIntent().getIntExtra("teamNumber", 0)));
+                ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(String.valueOf(getIntent().getStringExtra("scouterName")));
                 matchNumberInput.addTextChangedListener(new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -185,12 +186,11 @@ public class Pregame extends AppCompatActivity {
                 });
             });
         } else {
+            System.out.println("if not run");
             match = new Match();
-
             ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(getIntent().getIntExtra("matchNumber", 0)));
             ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(String.valueOf(match.getTeamNumber() == 0 ? "" : match.getTeamNumber()));
             ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(match.getScouterName() == null ? "" : match.getScouterName());
-
             matchNumberInput.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
