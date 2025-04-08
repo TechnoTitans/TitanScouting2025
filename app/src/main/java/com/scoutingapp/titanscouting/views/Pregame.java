@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
@@ -17,6 +19,8 @@ import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
+import com.scoutingapp.titanscouting.database.TeamNumberFinder;
+
 import java.util.Objects;
 public class Pregame extends AppCompatActivity {
     MatchViewModel matchViewModel;
@@ -28,8 +32,8 @@ public class Pregame extends AppCompatActivity {
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
         //all elements
         EditText matchNumberInput = findViewById(R.id.MatchNumberPregameResponse);
-        EditText teamNumberInput = findViewById(R.id.TeamNumberResponsePregame);
         EditText scouterNameInput = findViewById(R.id.ScouterNamePregameResponse);
+        TextView teamNumber = findViewById(R.id.TeamNumber);
         CheckBox noShowCheckBox = findViewById(R.id.noShowCheckBox);
 
         View toAuto = findViewById(R.id.NextButtonPregame);
@@ -43,10 +47,8 @@ public class Pregame extends AppCompatActivity {
 
         if (Objects.equals(getIntent().getStringExtra("transition"), "fromAutonomous"))
         {
-            System.out.println("if running");
             matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
                 ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(getIntent().getIntExtra("matchNumber", 0)));
-                ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(String.valueOf(getIntent().getIntExtra("teamNumber", 0)));
                 ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(String.valueOf(getIntent().getStringExtra("scouterName")));
                 matchNumberInput.addTextChangedListener(new TextWatcher() {
                     @Override
@@ -61,24 +63,9 @@ public class Pregame extends AppCompatActivity {
                                 matchNumberInput.setSelection(matchNumberInput.length());
                             }, 0);
                         }
-                    }
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                    }
-                });
-                teamNumberInput.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    }
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        if (!s.toString().isEmpty()) {
-                            match.setTeamNumber(Integer.parseInt(s.toString().trim()));
-                            matchViewModel.addMatchInformation(match);
-                            teamNumberInput.postDelayed(() -> {
-                                teamNumberInput.setSelection(teamNumberInput.length());
-                            }, 0);
-                        }
+
+                        TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                        teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
                     }
                     @Override
                     public void afterTextChanged(Editable s) {
@@ -92,8 +79,8 @@ public class Pregame extends AppCompatActivity {
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         match.setScouterName(s.toString());
                         matchViewModel.addMatchInformation(match);
-                        teamNumberInput.postDelayed(() -> {
-                            teamNumberInput.setSelection(teamNumberInput.length());
+                        scouterNameInput.postDelayed(() -> {
+                            scouterNameInput.setSelection(scouterNameInput.length());
                         }, 0);
                     }
                     @Override
@@ -125,7 +112,6 @@ public class Pregame extends AppCompatActivity {
                         "B3".equals(match.getPosition()) ? R.color.techno_titans : R.color.darkblue));
 
                 toAuto.setEnabled(!matchNumberInput.getText().toString().isEmpty()
-                        && !teamNumberInput.getText().toString().isEmpty()
                         && !scouterNameInput.getText().toString().isEmpty()
                         && !match.getPosition().isEmpty());
 
@@ -142,22 +128,32 @@ public class Pregame extends AppCompatActivity {
                 red2.setOnClickListener(v -> {
                     match.setPosition("R2");
 
+                    TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                    teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
                 });
                 red3.setOnClickListener(v -> {
                     match.setPosition("R3");
 
+                    TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                    teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
                 });
                 blue1.setOnClickListener(v -> {
                     match.setPosition("B1");
 
+                    TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                    teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
                 });
                 blue2.setOnClickListener(v -> {
                     match.setPosition("B2");
 
+                    TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                    teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
                 });
                 blue3.setOnClickListener(v -> {
                     match.setPosition("B3");
 
+                    TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                    teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
                 });
                 ((Button) (findViewById(R.id.BackButtonPregame))).setOnClickListener(v -> {
                     Intent i = new Intent(Pregame.this, Homepage.class);
@@ -166,7 +162,6 @@ public class Pregame extends AppCompatActivity {
                 });
                 ((Button) (findViewById(R.id.NextButtonPregame))).setOnClickListener(v -> {
                     if (!matchNumberInput.getText().toString().isEmpty()
-                            && !teamNumberInput.getText().toString().isEmpty()
                             && !scouterNameInput.getText().toString().isEmpty()
                             && match.getPosition() != null) {
                         if (match.isNoShow()) {
@@ -186,10 +181,8 @@ public class Pregame extends AppCompatActivity {
                 });
             });
         } else {
-            System.out.println("if not run");
             match = new Match();
             ((EditText) (findViewById(R.id.MatchNumberPregameResponse))).setText(String.valueOf(getIntent().getIntExtra("matchNumber", 0)));
-            ((EditText) (findViewById(R.id.TeamNumberResponsePregame))).setText(String.valueOf(match.getTeamNumber() == 0 ? "" : match.getTeamNumber()));
             ((EditText) (findViewById(R.id.ScouterNamePregameResponse))).setText(match.getScouterName() == null ? "" : match.getScouterName());
             matchNumberInput.addTextChangedListener(new TextWatcher() {
                 @Override
@@ -204,24 +197,9 @@ public class Pregame extends AppCompatActivity {
                             matchNumberInput.setSelection(matchNumberInput.length());
                         }, 0);
                     }
-                }
-                @Override
-                public void afterTextChanged(Editable s) {
-                }
-            });
-            teamNumberInput.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                }
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    if (!s.toString().isEmpty()) {
-                        match.setTeamNumber(Integer.parseInt(s.toString().trim()));
-                        matchViewModel.addMatchInformation(match);
-                        teamNumberInput.postDelayed(() -> {
-                            teamNumberInput.setSelection(teamNumberInput.length());
-                        }, 0);
-                    }
+
+                    TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                    teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
                 }
                 @Override
                 public void afterTextChanged(Editable s) {
@@ -278,6 +256,9 @@ public class Pregame extends AppCompatActivity {
                 blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+
+                TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
             });
             ((Button) (findViewById(R.id.Red2))).setOnClickListener(v -> {
                 match.setPosition("R2");
@@ -288,6 +269,9 @@ public class Pregame extends AppCompatActivity {
                 blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+
+                TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
             });
             ((Button) (findViewById(R.id.Red3))).setOnClickListener(v -> {
                 match.setPosition("R3");
@@ -298,6 +282,9 @@ public class Pregame extends AppCompatActivity {
                 blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+
+                TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
             });
             ((Button) (findViewById(R.id.Blue1))).setOnClickListener(v -> {
                 match.setPosition("B1");
@@ -308,6 +295,9 @@ public class Pregame extends AppCompatActivity {
                 v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.techno_titans));
                 blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+
+                TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
             });
             ((Button) (findViewById(R.id.Blue2))).setOnClickListener(v -> {
                 match.setPosition("B2");
@@ -318,6 +308,9 @@ public class Pregame extends AppCompatActivity {
                 v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.techno_titans));
                 blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 blue3.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+
+                TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
             });
             ((Button) (findViewById(R.id.Blue3))).setOnClickListener(v -> {
                 match.setPosition("B3");
@@ -328,6 +321,9 @@ public class Pregame extends AppCompatActivity {
                 v.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.techno_titans));
                 blue1.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
                 blue2.setBackgroundTintList(ContextCompat.getColorStateList(Pregame.this, R.color.darkblue));
+
+                TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+                teamNumber.setText(String.valueOf(teamNumberFinder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition())));
             });
             ((Button) (findViewById(R.id.BackButtonPregame))).setOnClickListener(v -> {
                 Intent i = new Intent(Pregame.this, Homepage.class);
@@ -336,7 +332,6 @@ public class Pregame extends AppCompatActivity {
             });
             ((Button) (findViewById(R.id.NextButtonPregame))).setOnClickListener(v -> {
                 if (!matchNumberInput.getText().toString().isEmpty()
-                        && !teamNumberInput.getText().toString().isEmpty()
                         && !scouterNameInput.getText().toString().isEmpty()
                         && match.getPosition() != null) {
                     if (match.isNoShow()) {
