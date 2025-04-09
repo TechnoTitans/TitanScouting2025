@@ -169,7 +169,6 @@ public class Autonomous extends AppCompatActivity {
             toPregame.setOnClickListener(v -> {
                 Intent intent = new Intent(Autonomous.this, Pregame.class);
                 intent.putExtra("transition", "fromAutonomous");
-                intent.putExtra("teamNumber", match.getTeamNumber());
                 intent.putExtra("scouterName", match.getScouterName());
                 intent.putExtra("position", match.getPosition());
                 intent.putExtra("matchNumber", match.getMatchNum());

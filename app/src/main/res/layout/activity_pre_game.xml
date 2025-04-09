@@ -113,7 +113,7 @@
         android:textColor="@color/black"
         android:maxLength="3"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/TeamNumberResponsePregame"
+        app:layout_constraintEnd_toStartOf="@+id/TeamNumber"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         android:nextFocusDown="@+id/TeamNumberResponsePregame"/>
@@ -146,14 +146,14 @@
         app:layout_constraintStart_toEndOf="@+id/MatchNumberPregameTextView"
         app:layout_constraintTop_toTopOf="@+id/MatchNumberPregameTextView" />
 
-    <EditText
-        android:id="@+id/TeamNumberResponsePregame"
+    <TextView
+        android:id="@+id/TeamNumber"
+        android:text="-1"
+
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:backgroundTint="#000000"
         android:ems="10"
-        android:hint="e.g 1683"
-        android:inputType="number"
         android:textColor="@color/black"
         android:maxLength="5"
         app:layout_constraintBottom_toBottomOf="@+id/MatchNumberPregameResponse"
@@ -221,11 +221,11 @@
         android:layout_height="53dp"
         android:scaleX="1"
         android:scaleY="1"
-        app:layout_constraintBottom_toBottomOf="@+id/TeamNumberResponsePregame"
+        app:layout_constraintBottom_toBottomOf="@+id/TeamNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/TeamNumberResponsePregame"
-        app:layout_constraintTop_toTopOf="@+id/TeamNumberResponsePregame" />
+        app:layout_constraintStart_toEndOf="@+id/TeamNumber"
+        app:layout_constraintTop_toTopOf="@+id/TeamNumber" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
