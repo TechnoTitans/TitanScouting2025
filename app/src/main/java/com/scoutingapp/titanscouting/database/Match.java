@@ -67,12 +67,17 @@ public class Match {
 
     public void setMatchNum(int matchNum) {
         this.matchNum = matchNum;
+        updateTeamNumber();
     }
 
     public int getTeamNumber() {
         return teamNumber;
     }
 
+    public void updateTeamNumber(){
+        final TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+        teamNumber = teamNumberFinder.getTeamNumberFromTable(getMatchNum(), getPosition());
+    }
     public void setTeamNumber(int teamNumber) {
         this.teamNumber = teamNumber;
     }
@@ -83,6 +88,7 @@ public class Match {
 
     public void setPosition(String position) {
         this.position = position;
+        updateTeamNumber();
     }
 
     public String getScouterName() {

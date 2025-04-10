@@ -207,6 +207,7 @@ public class Teleop extends AppCompatActivity {
             backToAuto.setOnClickListener(v -> {
                 Intent i = new Intent(Teleop.this, Autonomous.class);
                 i.putExtra("matchNumber", match.getMatchNum());
+                i.putExtra("color", match.getPosition().substring(0, 1));
                 matchViewModel.addMatchInformation(match);
                 startActivity(i);
             });
