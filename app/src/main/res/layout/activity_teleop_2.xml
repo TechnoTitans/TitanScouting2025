@@ -42,14 +42,14 @@
         android:textSize="15pt"
         app:backgroundTint="#2DD7AF"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/l4_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="35dp"
+        android:layout_height="58dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"
@@ -146,8 +146,8 @@
 
     <TextView
         android:id="@+id/l4_missed_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="33dp"
+        android:layout_height="56dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"
@@ -161,8 +161,8 @@
 
     <TextView
         android:id="@+id/l3_missed_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="32dp"
+        android:layout_height="62dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"
@@ -175,8 +175,8 @@
 
     <TextView
         android:id="@+id/l2_missed_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="32dp"
+        android:layout_height="64dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"
@@ -189,8 +189,8 @@
 
     <TextView
         android:id="@+id/l1_missed_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="33dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"
@@ -203,8 +203,8 @@
 
     <TextView
         android:id="@+id/net_missed_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="31dp"
+        android:layout_height="56dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"
@@ -217,8 +217,8 @@
 
     <TextView
         android:id="@+id/proc_missed_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="32dp"
+        android:layout_height="59dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"
@@ -239,7 +239,7 @@
         android:textSize="15pt"
         app:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -253,7 +253,7 @@
         android:textSize="15pt"
         app:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -267,7 +267,7 @@
         android:textSize="15pt"
         app:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -281,7 +281,7 @@
         android:textSize="15pt"
         app:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -337,13 +337,13 @@
         android:textSize="15pt"
         app:backgroundTint="#2DD7AF"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/l3_score"
-        android:layout_width="27dp"
+        android:layout_width="33dp"
         android:layout_height="57dp"
         android:gravity="center"
         android:text="0"
@@ -371,8 +371,8 @@
 
     <TextView
         android:id="@+id/l2_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="33dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"
@@ -393,7 +393,7 @@
         android:textSize="15pt"
         app:backgroundTint="#2DD7AF"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -413,8 +413,8 @@
 
     <TextView
         android:id="@+id/l1_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="33dp"
+        android:layout_height="61dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"
@@ -435,7 +435,7 @@
         android:textSize="15pt"
         app:backgroundTint="#2DD7AF"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="0.577"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -469,8 +469,8 @@
 
     <TextView
         android:id="@+id/net_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="30dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"
@@ -497,8 +497,8 @@
 
     <TextView
         android:id="@+id/proc_score"
-        android:layout_width="27dp"
-        android:layout_height="57dp"
+        android:layout_width="35dp"
+        android:layout_height="59dp"
         android:gravity="center"
         android:text="0"
         android:textSize="15pt"

@@ -190,7 +190,7 @@ public class Teleop extends AppCompatActivity {
                 matchViewModel.addMatchInformation(match);
             });
             procDecMissed.setOnClickListener(v -> {
-                match.setProcessorCount(match.getProcessorMissedCount() == 0 ? 0 : match.getProcessorMissedCount() - 1);
+                match.setProcessorMissedCount(match.getProcessorMissedCount() == 0 ? 0 : match.getProcessorMissedCount() - 1);
                 procMissed.setText(String.valueOf(match.getProcessorMissedCount()));
                 matchViewModel.addMatchInformation(match);
             });

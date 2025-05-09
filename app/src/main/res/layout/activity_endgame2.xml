@@ -81,30 +81,35 @@
             android:layout_height="36dp"
             android:text="Park"
             android:textSize="18sp" />
+
         <RadioButton
             android:id="@+id/deepCageRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Deep Cage"
             android:textSize="18sp" />
+
         <RadioButton
             android:id="@+id/attemptedDeepRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Attempted Deep Cage"
             android:textSize="18sp" />
+
         <RadioButton
             android:id="@+id/shallowCageRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Shallow Cage"
             android:textSize="18sp" />
+
         <RadioButton
             android:id="@+id/attemptedShallowRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Attempted Shallow Cage"
             android:textSize="18sp" />
+
         <RadioButton
             android:id="@+id/noneRadio"
             android:layout_width="wrap_content"
@@ -219,6 +224,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.03" />
+
     <Button
         android:id="@+id/to_summary"
         android:layout_width="wrap_content"
@@ -230,6 +236,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.03" />
+
     <CheckBox
         android:id="@+id/groundCoralCheckbox"
         android:layout_width="wrap_content"
@@ -240,6 +247,7 @@
         app:layout_constraintBottom_toTopOf="@+id/groundAlgaeCheckbox"
         app:layout_constraintStart_toStartOf="@+id/parkPosition"
         app:layout_constraintTop_toBottomOf="@+id/parkPosition" />
+
     <CheckBox
         android:id="@+id/groundAlgaeCheckbox"
         android:layout_width="wrap_content"
@@ -250,4 +258,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/groundCoralCheckbox"
         app:layout_constraintTop_toBottomOf="@+id/groundCoralCheckbox" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
