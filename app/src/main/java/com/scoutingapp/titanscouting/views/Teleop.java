@@ -66,6 +66,8 @@ public class Teleop extends AppCompatActivity {
         matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
             this.match = match;
 
+            //(TextView) ;
+
             l4.setText(String.valueOf(match.getL4Count()));
             l3.setText(String.valueOf(match.getL3Count()));
             l2.setText(String.valueOf(match.getL2Count()));

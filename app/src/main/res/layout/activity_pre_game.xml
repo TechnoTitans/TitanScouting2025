@@ -146,10 +146,12 @@
         app:layout_constraintStart_toEndOf="@+id/MatchNumberPregameTextView"
         app:layout_constraintTop_toTopOf="@+id/MatchNumberPregameTextView" />
 
-    <TextView
-        android:id="@+id/TeamNumber"
+    <EditText
+        android:id="@+id/TeamNumberInput"
+        android:autofillHints=""
         android:text="-1"
-
+        android:inputType="number"
+        android:hint="e.g 1683"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:backgroundTint="#000000"
@@ -221,11 +223,11 @@
         android:layout_height="53dp"
         android:scaleX="1"
         android:scaleY="1"
-        app:layout_constraintBottom_toBottomOf="@+id/TeamNumber"
+        app:layout_constraintBottom_toBottomOf="@+id/TeamNumberInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/TeamNumber"
-        app:layout_constraintTop_toTopOf="@+id/TeamNumber" />
+        app:layout_constraintStart_toEndOf="@+id/TeamNumberInput"
+        app:layout_constraintTop_toTopOf="@+id/TeamNumberInput" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
