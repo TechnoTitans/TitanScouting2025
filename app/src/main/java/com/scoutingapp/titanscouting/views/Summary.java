@@ -77,7 +77,7 @@ public class Summary extends AppCompatActivity {
 
             ((TextView) (findViewById(R.id.mechanicalReliabilitySummary))).setText(String.valueOf(match.getMechanicalReliability()));
 
-            ((TextView) (findViewById(R.id.efficiencySummary))).setText(String.valueOf(match.getEfficiency()));
+            //((TextView) (findViewById(R.id.efficiencySummary))).setText(String.valueOf(match.getEfficiency()));
 
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
 

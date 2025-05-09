@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".views.Endgame2">
-
     <TextView
         android:id="@+id/mainTitle"
         android:layout_width="wrap_content"
@@ -21,7 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.15" />
-
     <TextView
         android:id="@+id/subTitle1"
         android:layout_width="wrap_content"
@@ -34,7 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTitle"
         app:layout_constraintVertical_bias="0.039" />
-
     <TextView
         android:id="@+id/subTitle2"
         android:layout_width="wrap_content"
@@ -47,7 +44,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTitle"
         app:layout_constraintVertical_bias="0.04" />
-
     <TextView
         android:id="@+id/subTitle3"
         android:layout_width="wrap_content"
@@ -56,7 +52,6 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/comments"
         app:layout_constraintStart_toStartOf="@+id/comments" />
-
     <EditText
         android:id="@+id/comments"
         android:layout_width="470dp"
@@ -65,72 +60,58 @@
         android:layout_marginBottom="4dp"
         android:background="@android:drawable/editbox_background_normal"
         android:gravity="start|top"
-        android:maxLength="100"
         android:inputType="textShortMessage"
+        android:maxLength="100"
         android:maxLines="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
     <RadioGroup
         android:id="@+id/parkPosition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subTitle1"
-        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintVertical_bias="0.05">
-
         <RadioButton
             android:id="@+id/parkRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Park"
-            android:textSize="18sp"
-            />
-
+            android:textSize="18sp" />
         <RadioButton
             android:id="@+id/deepCageRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Deep Cage"
-            android:textSize="18sp"
-            />
-
+            android:textSize="18sp" />
         <RadioButton
             android:id="@+id/attemptedDeepRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Attempted Deep Cage"
-            android:textSize="18sp"
-            />
-
+            android:textSize="18sp" />
         <RadioButton
             android:id="@+id/shallowCageRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Shallow Cage"
-            android:textSize="18sp"
-            />
-
+            android:textSize="18sp" />
         <RadioButton
             android:id="@+id/attemptedShallowRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="Attempted Shallow Cage"
-            android:textSize="18sp"
-            />
-
+            android:textSize="18sp" />
         <RadioButton
             android:id="@+id/noneRadio"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
             android:text="None"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
     </RadioGroup>
-
     <TextView
         android:id="@+id/mechReliability"
         android:layout_width="wrap_content"
@@ -143,7 +124,6 @@
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintTop_toBottomOf="@+id/subTitle2"
         app:layout_constraintVertical_bias="0.035" />
-
     <TextView
         android:id="@+id/defense"
         android:layout_width="wrap_content"
@@ -155,7 +135,6 @@
         app:layout_constraintStart_toStartOf="@+id/mechReliability"
         app:layout_constraintTop_toBottomOf="@+id/mechReliability"
         app:layout_constraintVertical_bias="0" />
-
     <TextView
         android:id="@+id/driverAbility"
         android:layout_width="wrap_content"
@@ -167,21 +146,17 @@
         app:layout_constraintStart_toStartOf="@+id/defense"
         app:layout_constraintTop_toBottomOf="@+id/defense"
         app:layout_constraintVertical_bias="0" />
-
-
     <TextView
-        android:id="@+id/efficiency"
+        android:id="@+id/algaeDescore"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:text="Efficiency:"
+        android:text="Algae Descorability:"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintStart_toStartOf="@+id/driverAbility"
         app:layout_constraintTop_toBottomOf="@+id/driverAbility"
         app:layout_constraintVertical_bias="0" />
-
-
     <RatingBar
         android:id="@+id/ratingBar1"
         android:layout_width="wrap_content"
@@ -193,7 +168,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/mechReliability"
         app:layout_constraintTop_toBottomOf="@+id/subTitle2" />
-
     <RatingBar
         android:id="@+id/ratingBar2"
         android:layout_width="wrap_content"
@@ -207,7 +181,6 @@
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintTop_toTopOf="@+id/ratingBar1"
         app:layout_constraintVertical_bias="0.11" />
-
     <RatingBar
         android:id="@+id/ratingBar3"
         android:layout_width="wrap_content"
@@ -221,7 +194,6 @@
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintTop_toTopOf="@+id/ratingBar1"
         app:layout_constraintVertical_bias="0.22" />
-
     <RatingBar
         android:id="@+id/ratingBar4"
         android:layout_width="wrap_content"
@@ -235,21 +207,18 @@
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
         app:layout_constraintTop_toTopOf="@+id/ratingBar1"
         app:layout_constraintVertical_bias="0.33" />
-
-
     <Button
         android:id="@+id/back_to_teleop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Teleop"
         android:onClick="backTeleop"
+        android:text="Teleop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        app:layout_constraintHorizontal_bias="0.05"/>
-
+        app:layout_constraintVertical_bias="0.03" />
     <Button
         android:id="@+id/to_summary"
         android:layout_width="wrap_content"
@@ -257,10 +226,28 @@
         android:text="Summary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        app:layout_constraintHorizontal_bias="0.95"/>
-
-
+        app:layout_constraintVertical_bias="0.03" />
+    <CheckBox
+        android:id="@+id/groundCoralCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Ground Coral?"
+        app:layout_constraintBottom_toTopOf="@+id/groundAlgaeCheckbox"
+        app:layout_constraintStart_toStartOf="@+id/parkPosition"
+        app:layout_constraintTop_toBottomOf="@+id/parkPosition" />
+    <CheckBox
+        android:id="@+id/groundAlgaeCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Ground Algae?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/groundCoralCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/groundCoralCheckbox" />
 </androidx.constraintlayout.widget.ConstraintLayout>

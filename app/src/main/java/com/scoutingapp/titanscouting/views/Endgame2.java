@@ -3,18 +3,33 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
+import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
+import com.scoutingapp.titanscouting.views.logs.Logs;
 
+import java.util.Locale;
 
 public class Endgame2 extends AppCompatActivity {
     Match match;
@@ -23,22 +38,19 @@ public class Endgame2 extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_endgame2); /* connects xml to the class file */
-
         EditText e = findViewById(R.id.comments); /*assigns variable e to what is typed in the comments (id)*/
         RadioGroup r = findViewById(R.id.parkPosition); /*assigns variable r to which park position is chosen (id)*/
-
         RadioButton parkRadio = findViewById(R.id.parkRadio);
         RadioButton deepCageRadio = findViewById(R.id.deepCageRadio);
         RadioButton attemptedDeepRadio = findViewById(R.id.attemptedDeepRadio);
         RadioButton shallowCageRadio = findViewById(R.id.shallowCageRadio);
         RadioButton attemptedShallowRadio = findViewById(R.id.attemptedShallowRadio);
         RadioButton noneRadio = findViewById(R.id.noneRadio);
-
-
+        CheckBox groundCoral = findViewById(R.id.groundCoralCheckbox);
+        CheckBox groundAlgae = findViewById(R.id.groundAlgaeCheckbox);
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
         matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
             this.match = match;
-
             if (match.getEndgamePos()!=null) {
                 switch (match.getEndgamePos()) {
                     case "Park":
@@ -71,7 +83,14 @@ public class Endgame2 extends AppCompatActivity {
                     match.setEndgamePos(b.getText().toString()); /* set match game to a string */
                 }
             });
-
+            groundCoral.setChecked(match.isGroundCoral());
+            groundAlgae.setChecked(match.isGroundAlgae());
+            groundCoral.setOnClickListener(v -> {
+                match.setGroundCoral(!match.isGroundCoral());
+            });
+            groundAlgae.setOnClickListener(v -> {
+                match.setGroundAlgae(!match.isGroundAlgae());
+            });
             ((RatingBar) (findViewById(R.id.ratingBar1))).setRating(match.getMechanicalReliability());
             ((RatingBar) (findViewById(R.id.ratingBar1))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
@@ -93,21 +112,18 @@ public class Endgame2 extends AppCompatActivity {
                     match.setDriverQuality((int) (rating));
                 }
             }); /*fetch ID for efficiency rating bar*/
-            ((RatingBar) (findViewById(R.id.ratingBar4))).setRating(match.getEfficiency());
+            ((RatingBar) (findViewById(R.id.ratingBar4))).setRating(match.getAlgaeDescoredRating());
             ((RatingBar) (findViewById(R.id.ratingBar4))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 /* set ID for each rating bar */
                 @Override
                 public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                    match.setEfficiency((int) (rating)); /*set constructor for effeciency */
+                    match.setAlgaeDescoredRating((int) (rating)); /*set constructor for effeciency */
                 }
             });
-
             e.setText(match.getNotes());
-
             ((EditText) (findViewById(R.id.comments))).addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) { /*set constructor for notes before changes*/
-
                 }
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) { /*set constructor for notes when text changes*/
@@ -121,7 +137,6 @@ public class Endgame2 extends AppCompatActivity {
         });
         View backButton = findViewById(R.id.back_to_teleop);
         View nextButton = findViewById(R.id.to_summary);
-
         backButton.setOnClickListener(v -> {
             Intent i = new Intent(Endgame2.this, Teleop.class);
             i.putExtra("matchNumber", match.getMatchNum());
@@ -134,13 +149,5 @@ public class Endgame2 extends AppCompatActivity {
             matchViewModel.addMatchInformation(match);
             startActivity(i);
         });
-    }
-
-    public void backTeleop(View v) {
-
-        Intent i = new Intent (this, Teleop.class);
-        i.putExtra("matchNumber", match.getMatchNum());
-        matchViewModel.addMatchInformation(match);
-        startActivity(i);
     }
 }
