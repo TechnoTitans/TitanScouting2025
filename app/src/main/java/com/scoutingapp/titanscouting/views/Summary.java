@@ -83,9 +83,10 @@ public class Summary extends AppCompatActivity {
 
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
 
-            // Sets click listener for submit button to navigate to Homepage
+            // Sets click listener for submit button to navigate to QR
             submit.setOnClickListener(v -> {
-                Intent i = new Intent(Summary.this, Homepage.class);
+                Intent i = new Intent(Summary.this, QRScreen.class);
+                i.putExtra("matchNumber", match.getMatchNum());
                 startActivity(i);
             });
 

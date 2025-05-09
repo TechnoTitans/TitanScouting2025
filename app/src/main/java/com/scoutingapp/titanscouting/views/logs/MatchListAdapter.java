@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
 import com.scoutingapp.titanscouting.database.Match;
+import com.scoutingapp.titanscouting.views.Summary;
 import com.scoutingapp.titanscouting.views.logs.MatchViewHolder;
 
 
@@ -35,7 +36,7 @@ public class MatchListAdapter extends ListAdapter<Match, MatchViewHolder> {
         holder.getButton().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), SingleMatchView.class);
+                Intent i = new Intent(v.getContext(), Summary.class);
                 i.putExtra("matchNumber", Integer.parseInt(((Button) (holder.getButton())).getText().toString().split(": ")[1]));
                 v.getContext().startActivity(i);
             }

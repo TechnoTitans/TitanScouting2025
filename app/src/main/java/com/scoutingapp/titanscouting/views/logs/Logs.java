@@ -54,7 +54,7 @@ public class Logs extends AppCompatActivity {
                 builder.setCancelable(false)
                         .setPositiveButton("Yes", (dialog, which) -> {
                             String enteredPassword = passwordInput.getText().toString();
-                            String correctPassword = "1683FRC!";
+                            String correctPassword = "1683FRC!"; // .-.
 
                             if (enteredPassword.equals(correctPassword)) {
                                 matchViewModel.deleteAllMatches();
