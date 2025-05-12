@@ -1,5 +1,7 @@
 package com.scoutingapp.titanscouting.database;
 
+import static com.scoutingapp.titanscouting.database.ScoutingAppDatabase.databaseWriteExecutor;
+
 import android.app.Application;
 import android.util.Log;
 
@@ -28,13 +30,16 @@ public class MatchRepository {
     }
 
     void addMatchInformation(Match match) {
-        ScoutingAppDatabase.databaseWriteExecutor.execute(() -> {
-            dao.addMatchInformation(match);
-        });
+        databaseWriteExecutor.execute(() -> dao.addMatchInformation(match));
     }
 
     void deleteAllMatches() {
-        ScoutingAppDatabase.databaseWriteExecutor.execute(dao::deleteAllMatches);
+        databaseWriteExecutor.execute(dao::deleteAllMatches);
     }
 
+    void deleteMatch(int matchNum) {
+        databaseWriteExecutor.execute(() -> {
+            dao.deleteMatch(matchNum);
+        });
+    }
 }

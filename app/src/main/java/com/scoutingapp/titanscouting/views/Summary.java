@@ -13,6 +13,7 @@ import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
+import com.scoutingapp.titanscouting.views.logs.Logs;
 
 public class Summary extends AppCompatActivity {
 
@@ -31,6 +32,7 @@ public class Summary extends AppCompatActivity {
 // Finds views by their ID
         View submit = findViewById(R.id.submit);
         View toEndgameButton = findViewById(R.id.back);
+        View delete = findViewById(R.id.delete);
 
 // Initializes match object and ViewModel
         match = new Match();
@@ -88,6 +90,12 @@ public class Summary extends AppCompatActivity {
                 Intent i = new Intent(Summary.this, QRScreen.class);
                 i.putExtra("matchNumber", match.getMatchNum());
                 startActivity(i);
+            });
+
+            delete.setOnClickListener(v -> {
+                Intent i = new Intent(Summary.this, Logs.class);
+                startActivity(i);
+                matchViewModel.deleteMatch(match.getMatchNum());
             });
 
             // Sets click listener for back button to navigate to Endgame2 with match number
