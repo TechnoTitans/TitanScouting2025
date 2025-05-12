@@ -24,4 +24,7 @@ public interface MatchDao {
 
     @Query("DELETE FROM scouting_database")
     void deleteAllMatches();
+
+    @Query("DELETE FROM scouting_database where matchNum = :matchNumber")
+    void deleteMatch(int matchNumber);
 }
