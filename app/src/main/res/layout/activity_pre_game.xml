@@ -113,7 +113,7 @@
         android:textColor="@color/black"
         android:maxLength="3"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/TeamNumber"
+        app:layout_constraintEnd_toStartOf="@+id/TeamNumberInput"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         android:nextFocusDown="@+id/TeamNumberResponsePregame"/>
