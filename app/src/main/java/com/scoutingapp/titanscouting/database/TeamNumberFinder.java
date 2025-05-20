@@ -79,7 +79,7 @@ public class TeamNumberFinder {
     public int getTeamNumberFromTable(int matchNumber, String position) {
         // Ensure matchNumber is within bounds
         if (matchNumber < 0 || matchNumber > numMatches) {
-            return -1;
+            return 0;
         }
 
         // Check position and return the corresponding team number
@@ -101,7 +101,7 @@ public class TeamNumberFinder {
             }
         } else {
             System.out.println("Position is null!");
-            return -1;  // Return -1 for null position
+            return 0;  // Return 0 for null position
         }
     }
 }
