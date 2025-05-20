@@ -31,6 +31,7 @@ public class Pregame extends AppCompatActivity {
 
     private boolean isFromAuto;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +76,7 @@ public class Pregame extends AppCompatActivity {
 
         matchNumberInput.setText(String.valueOf(match.getMatchNum()));
         scouterNameInput.setText(match.getScouterName());
+        teamNumberInput.setText(String.valueOf(match.getTeamNumber()));
 
         setupListeners();
         updatePositionColors();
@@ -95,6 +97,7 @@ public class Pregame extends AppCompatActivity {
         teamNumberInput.addTextChangedListener(createTextWatcher(() -> {
             if (!teamNumberInput.getText().toString().isEmpty()) {
                 match.setTeamNumber(Integer.parseInt(teamNumberInput.getText().toString().trim()));
+                System.out.println("changed");
             }
         }));
 
@@ -131,11 +134,10 @@ public class Pregame extends AppCompatActivity {
     }
 
     private void updateTeamNumber() {
-        if (match.getPosition() != null) {
+        if (match.getPosition() != null && match.getMatchNum() != 0) {
             TeamNumberFinder finder = new TeamNumberFinder();
-            int team = finder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition());
-            match.setTeamNumber(team);
-            teamNumberInput.setText(String.valueOf(team));
+            match.setTeamNumber(finder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition()));
+            teamNumberInput.setText(String.valueOf(match.getTeamNumber()));
         }
     }
 

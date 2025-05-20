@@ -63,7 +63,7 @@ public class Match {
     }
     public void setMatchNum(int matchNum) {
         this.matchNum = matchNum;
-        updateTeamNumber();
+        //updateTeamNumber();
     }
     public int getTeamNumber() {
         return teamNumber;
@@ -80,7 +80,7 @@ public class Match {
     }
     public void setPosition(String position) {
         this.position = position;
-        updateTeamNumber();
+        //updateTeamNumber();
     }
     public String getScouterName() {
         return scouterName;
