@@ -11,15 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="ENDGAME"
-        android:textSize="30sp"
+        android:text="@string/endgame"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.05" />
     <TextView
         android:id="@+id/subTitle1"
         android:layout_width="wrap_content"
@@ -28,7 +27,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTitle"
         app:layout_constraintVertical_bias="0.039" />
@@ -52,10 +51,11 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/comments"
         app:layout_constraintStart_toStartOf="@+id/comments" />
+
     <EditText
         android:id="@+id/comments"
-        android:layout_width="470dp"
-        android:layout_height="175dp"
+        android:layout_width="322dp"
+        android:layout_height="143dp"
         android:layout_marginEnd="56dp"
         android:layout_marginBottom="4dp"
         android:background="@android:drawable/editbox_background_normal"
@@ -63,6 +63,8 @@
         android:inputType="textShortMessage"
         android:maxLength="100"
         android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@id/mainTitle"
+        app:layout_constraintStart_toEndOf="@id/mainTitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
     <RadioGroup
@@ -214,35 +216,34 @@
         app:layout_constraintVertical_bias="0.33" />
     <Button
         android:id="@+id/back_to_teleop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="backTeleop"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="11sp"
         android:text="Teleop"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/mainTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintTop_toTopOf="@id/mainTitle" />
 
     <Button
         android:id="@+id/to_summary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="11sp"
         android:text="Summary"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/back_to_teleop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintTop_toTopOf="@id/back_to_teleop" />
 
     <CheckBox
         android:id="@+id/groundCoralCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleX="2"
-        android:scaleY="2"
+        android:scaleX="1"
+        android:scaleY="1"
         android:text="Ground Coral?"
         app:layout_constraintBottom_toTopOf="@+id/groundAlgaeCheckbox"
         app:layout_constraintStart_toStartOf="@+id/parkPosition"
@@ -252,8 +253,8 @@
         android:id="@+id/groundAlgaeCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleX="2"
-        android:scaleY="2"
+        android:scaleX="1"
+        android:scaleY="1"
         android:text="Ground Algae?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/groundCoralCheckbox"

@@ -10,141 +10,146 @@
     <Button
         android:id="@+id/Blue2"
         android:layout_width="145dp"
-        android:layout_height="83dp"
+        android:layout_height="190dp"
         android:text="Blue 2"
         android:textColor="@color/white"
         app:backgroundTint="#0000FF"
-        app:layout_constraintBottom_toBottomOf="@+id/Blue3"
-        app:layout_constraintEnd_toStartOf="@+id/Blue3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Blue1"
-        app:layout_constraintTop_toTopOf="@+id/Blue3" />
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Blue1"
+        app:layout_constraintEnd_toEndOf="@+id/Red2"
+        app:layout_constraintStart_toStartOf="@+id/Red2"
+        app:layout_constraintTop_toTopOf="@+id/Blue1" />
 
     <Button
         android:id="@+id/Red3"
-        android:layout_width="157dp"
-        android:layout_height="87dp"
+        android:layout_width="145dp"
+        android:layout_height="190dp"
         android:text="Red 3"
         android:textColor="@color/white"
         app:backgroundTint="#E40100"
-        app:layout_constraintBottom_toBottomOf="@+id/Red2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Red2"
-        app:layout_constraintTop_toTopOf="@+id/Red2" />
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Red1"
+        app:layout_constraintEnd_toEndOf="@id/NextButtonPregame"
+        app:layout_constraintTop_toTopOf="@+id/Red1" />
 
     <Button
         android:id="@+id/Red2"
-        android:layout_width="141dp"
-        android:layout_height="80dp"
+        android:layout_width="145dp"
+        android:layout_height="190dp"
         android:text="Red 2"
         android:textColor="@color/white"
         app:backgroundTint="#E40100"
+        app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/Red1"
-        app:layout_constraintEnd_toStartOf="@+id/Red3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Red1"
+        app:layout_constraintStart_toStartOf="@id/Red1"
+        app:layout_constraintEnd_toEndOf="@id/Red3"
         app:layout_constraintTop_toTopOf="@+id/Red1" />
 
     <Button
         android:id="@+id/Red1"
-        android:layout_width="146dp"
-        android:layout_height="81dp"
+        android:layout_width="145dp"
+        android:layout_height="190dp"
         android:text="Red 1"
         android:textColor="@color/white"
         app:backgroundTint="@color/red"
-        app:layout_constraintBottom_toTopOf="@+id/Blue1"
-        app:layout_constraintEnd_toStartOf="@+id/Red2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:cornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="@id/pregameTitle"
+        app:layout_constraintTop_toBottomOf="@id/pregameTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.1"/>
 
     <Button
         android:id="@+id/Blue1"
-        android:layout_width="152dp"
-        android:layout_height="85dp"
+        android:layout_width="145dp"
+        android:layout_height="190dp"
         android:text="Blue 1"
         android:textColor="@color/white"
         app:backgroundTint="#0000FF"
-        app:layout_constraintBottom_toBottomOf="@+id/Blue2"
-        app:layout_constraintEnd_toStartOf="@+id/Blue2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Blue2" />
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/Red1"
+        app:layout_constraintEnd_toEndOf="@id/Red1"
+        app:layout_constraintTop_toBottomOf="@id/Red1" />
 
     <Button
         android:id="@+id/Blue3"
-        android:layout_width="156dp"
-        android:layout_height="81dp"
+        android:layout_width="145dp"
+        android:layout_height="190dp"
         android:text="Blue 3"
         android:textColor="@color/white"
         app:backgroundTint="#0000FF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Blue2" />
+        app:cornerRadius="30dp"
+        app:layout_constraintTop_toTopOf="@id/Blue1"
+        app:layout_constraintBottom_toBottomOf="@id/Blue1"
+        app:layout_constraintStart_toStartOf="@id/Red3"
+        app:layout_constraintEnd_toEndOf="@+id/Red3" />
 
     <Button
         android:id="@+id/NextButtonPregame"
         android:layout_width="100dp"
-        android:layout_height="62dp"
+        android:layout_height="50dp"
+        android:textSize="11sp"
         android:text="Next"
         android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintTop_toTopOf="@id/pregameTitle"
+        app:layout_constraintBottom_toBottomOf="@id/pregameTitle"/>
 
     <Button
         android:id="@+id/BackButtonPregame"
-        android:layout_width="98dp"
-        android:layout_height="52dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="11sp"
         android:text="Back"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintTop_toTopOf="@id/pregameTitle"
+        app:layout_constraintBottom_toBottomOf="@id/pregameTitle"/>
 
     <EditText
         android:id="@+id/MatchNumberPregameResponse"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
         android:backgroundTint="#000000"
         android:ems="10"
         android:hint="e.g 17"
         android:inputType="number"
         android:textColor="@color/black"
         android:maxLength="3"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/TeamNumberInput"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/MatchNumberPregameTextView"
+        app:layout_constraintStart_toStartOf="@+id/MatchNumberPregameTextView"
+        app:layout_constraintEnd_toEndOf="@id/MatchNumberPregameTextView"
         android:nextFocusDown="@+id/TeamNumberResponsePregame"/>
 
     <TextView
         android:id="@+id/MatchNumberPregameTextView"
-        android:layout_width="0dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:text="Match Number"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toTopOf="@+id/MatchNumberPregameResponse"
-        app:layout_constraintEnd_toStartOf="@+id/TeamNumberPregameTextView"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/Red1"
+        app:layout_constraintTop_toTopOf="@id/Red1" />
 
     <TextView
         android:id="@+id/TeamNumberPregameTextView"
-        android:layout_width="0dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:text="Team Number"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="@+id/MatchNumberPregameTextView"
-        app:layout_constraintEnd_toStartOf="@+id/No_show_text"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/MatchNumberPregameTextView"
-        app:layout_constraintTop_toTopOf="@+id/MatchNumberPregameTextView" />
+        android:textSize="22sp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/MatchNumberPregameResponse"
+        app:layout_constraintStart_toStartOf="@+id/MatchNumberPregameTextView"
+        app:layout_constraintEnd_toEndOf="@id/MatchNumberPregameTextView" />
 
     <EditText
         android:id="@+id/TeamNumberInput"
@@ -152,94 +157,83 @@
         android:text="0"
         android:inputType="number"
         android:hint="e.g 1683"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
         android:backgroundTint="#000000"
         android:ems="10"
         android:textColor="@color/black"
         android:maxLength="5"
-        app:layout_constraintBottom_toBottomOf="@+id/MatchNumberPregameResponse"
-        app:layout_constraintEnd_toStartOf="@+id/noShowCheckBox"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/MatchNumberPregameResponse"
-        app:layout_constraintTop_toTopOf="@+id/MatchNumberPregameResponse"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/TeamNumberPregameTextView"
+        app:layout_constraintStart_toStartOf="@+id/MatchNumberPregameTextView"
+        app:layout_constraintEnd_toEndOf="@id/MatchNumberPregameTextView"
         android:nextFocusDown="@+id/ScouterNamePregameResponse"/>
 
     <TextView
         android:id="@+id/ScouterNamePregameTextView"
-        android:layout_width="224dp"
-        android:layout_height="61dp"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
         android:text="Scouter Name"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toTopOf="@+id/ScouterNamePregameResponse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        android:textSize="22sp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/TeamNumberInput"
+        app:layout_constraintStart_toStartOf="@+id/MatchNumberPregameTextView"
+        app:layout_constraintEnd_toEndOf="@id/MatchNumberPregameTextView" />
 
     <EditText
         android:id="@+id/ScouterNamePregameResponse"
-        android:layout_width="216dp"
-        android:layout_height="68dp"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
         android:backgroundTint="#000000"
         android:ems="10"
-        android:hint="e.g Matthew"
+        android:hint="e.g Akarsh"
         android:inputType="text"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline" />
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/ScouterNamePregameTextView"
+        app:layout_constraintStart_toStartOf="@+id/MatchNumberPregameTextView"
+        app:layout_constraintEnd_toEndOf="@id/MatchNumberPregameTextView" />
 
     <TextView
         android:id="@+id/No_show_text"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No show"
+        android:text="No Show"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="@+id/TeamNumberPregameTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/TeamNumberPregameTextView"
-        app:layout_constraintTop_toTopOf="@+id/TeamNumberPregameTextView" />
+        android:textSize="22sp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintStart_toStartOf="@id/ScouterNamePregameTextView"
+        app:layout_constraintTop_toTopOf="@id/noShowCheckBox"
+        app:layout_constraintBottom_toBottomOf="@id/noShowCheckBox"
+        app:layout_constraintEnd_toStartOf="@id/noShowCheckBox"/>
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="568dp"
-        android:layout_height="78dp"
-        android:text="Pregame"
+        android:id="@+id/pregameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="@string/pregame"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textStyle="bold"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.05"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/noShowCheckBox"
-        android:layout_width="0dp"
-        android:layout_height="53dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scaleX="1"
         android:scaleY="1"
-        app:layout_constraintBottom_toBottomOf="@+id/TeamNumberInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/TeamNumberInput"
-        app:layout_constraintTop_toTopOf="@+id/TeamNumberInput" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.73" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.57625" />
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/ScouterNamePregameResponse"
+        app:layout_constraintEnd_toEndOf="@id/ScouterNamePregameResponse"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

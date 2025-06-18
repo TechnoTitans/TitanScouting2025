@@ -4,7 +4,7 @@
     <string name="logs">Logs</string>
     <string name="autonomous">Autonomous</string>
     <string name="teleop">Teleop</string>
-    <string name="endgame">Endgame</string>
+    <string name="endgame"><u>Endgame</u></string>
     <string name="back">Back</string>
     <string name="next">Next</string>
     <string name="number_of_amps_scored">Number of Amps Scored</string>
@@ -118,4 +118,5 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="pregame"><u>Pregame</u></string>
 </resources>
