@@ -35,10 +35,6 @@
             android:exported="false"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".views.logs.SingleMatchView"
-            android:exported="false"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".Homepage"
             android:exported="true"
             android:screenOrientation="landscape">

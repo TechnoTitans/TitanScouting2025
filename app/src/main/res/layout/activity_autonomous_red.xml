@@ -251,16 +251,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/autoDisplay"
+        android:autofillHints=""
+        android:inputType="text"
+        android:hint=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/reset_button"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toEndOf="@+id/back_to_pregame" />
+        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintStart_toEndOf="@+id/back_to_pregame"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"

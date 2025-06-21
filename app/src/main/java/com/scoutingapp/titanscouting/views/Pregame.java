@@ -13,11 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.scoutingapp.titanscouting.Autofill;
 import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
-import com.scoutingapp.titanscouting.database.TeamNumberFinder;
 
 import java.util.Objects;
 
@@ -45,6 +45,7 @@ public class Pregame extends AppCompatActivity {
 
         if (isFromAuto) {
             matchViewModel.getMatch(matchNumber).observe(this, this::setupUIWithMatch);
+            this.match = matchViewModel.getMatch(matchNumber).getValue();
         } else {
             match = new Match();
             match.setMatchNum(matchNumber);
@@ -135,7 +136,7 @@ public class Pregame extends AppCompatActivity {
 
     private void updateTeamNumber() {
         if (match.getPosition() != null && match.getMatchNum() != 0) {
-            TeamNumberFinder finder = new TeamNumberFinder();
+            Autofill finder = new Autofill();
             match.setTeamNumber(finder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition()));
             teamNumberInput.setText(String.valueOf(match.getTeamNumber()));
         }

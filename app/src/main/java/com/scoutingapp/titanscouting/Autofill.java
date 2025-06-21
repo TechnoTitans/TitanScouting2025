@@ -1,6 +1,6 @@
-package com.scoutingapp.titanscouting.database;
+package com.scoutingapp.titanscouting;
 
-public class TeamNumberFinder {
+public class Autofill {
 
     //use first/tba api later
 
@@ -10,37 +10,37 @@ public class TeamNumberFinder {
     // Copy entire table for qualification matches
     private final String matchSchedule =
             "Quals 1\n" +
-            "5940\t254\t1318\t1942\t5614\t3414\t174\t120\n" +
-            "Quals 2\n" +
-            "4152\t910\t6002\t2337\t3006\t4122\t182\t88\n" +
-            "Quals 3\n" +
-            "5895\t118\t324\t3015\t3674\t3310\t200\t137\n" +
-            "Quals 4\n" +
-            "2137\t7407\t8592\t1683\t503\t3604\t125\t204\n" +
-            "Quals 5\n" +
-            "1942\t5614\t3414\t3006\t2337\t4122\t97\t155\n" +
-            "Quals 6\n" +
-            "3674\t3015\t3310\t503\t1683\t3604\t140\t166\n" +
-            "Quals 7\n" +
-            "5940\t254\t1318\t910\t4152\t6002\t133\t172\n" +
-            "Quals 8\n" +
-            "118\t5895\t324\t7407\t2137\t8592\t206\t237\n" +
-            "Quals 9\n" +
-            "254\t5940\t1318\t503\t1683\t3604\t136\t202\n" +
-            "Quals 10\n" +
-            "7407\t2137\t8592\t3006\t2337\t4122\t216\t192\n" +
-            "Quals 11\n" +
-            "254\t7056\t10337\t5572\t9029\t7153\t203\t105\n" +
-            "Quals 12\n" +
-            "8020\t1318\t4152\t2337\t118\t5089\t185\t240\n" +
-            "Quals 13\n" +
-            "9024\t957\t2881\t876\t3006\t9105\t138\t156\n" +
-            "Quals 14\n" +
-            "5895\t1086\t10021\t217\t5800\t4122\t223\t125\n" +
-            "Quals 15\n" +
-            "8393\t5614\t1816\t456\t2720\t2145\t146\t171\n" +
-            "Quals 16\n" +
-            "910\t1477\t6002\t587\t5665\t4069\t213\t182\n";
+                    "5940\t254\t1318\t1942\t5614\t3414\t174\t120\n" +
+                    "Quals 2\n" +
+                    "4152\t910\t6002\t2337\t3006\t4122\t182\t88\n" +
+                    "Quals 3\n" +
+                    "5895\t118\t324\t3015\t3674\t3310\t200\t137\n" +
+                    "Quals 4\n" +
+                    "2137\t7407\t8592\t1683\t503\t3604\t125\t204\n" +
+                    "Quals 5\n" +
+                    "1942\t5614\t3414\t3006\t2337\t4122\t97\t155\n" +
+                    "Quals 6\n" +
+                    "3674\t3015\t3310\t503\t1683\t3604\t140\t166\n" +
+                    "Quals 7\n" +
+                    "5940\t254\t1318\t910\t4152\t6002\t133\t172\n" +
+                    "Quals 8\n" +
+                    "118\t5895\t324\t7407\t2137\t8592\t206\t237\n" +
+                    "Quals 9\n" +
+                    "254\t5940\t1318\t503\t1683\t3604\t136\t202\n" +
+                    "Quals 10\n" +
+                    "7407\t2137\t8592\t3006\t2337\t4122\t216\t192\n" +
+                    "Quals 11\n" +
+                    "254\t7056\t10337\t5572\t9029\t7153\t203\t105\n" +
+                    "Quals 12\n" +
+                    "8020\t1318\t4152\t2337\t118\t5089\t185\t240\n" +
+                    "Quals 13\n" +
+                    "9024\t957\t2881\t876\t3006\t9105\t138\t156\n" +
+                    "Quals 14\n" +
+                    "5895\t1086\t10021\t217\t5800\t4122\t223\t125\n" +
+                    "Quals 15\n" +
+                    "8393\t5614\t1816\t456\t2720\t2145\t146\t171\n" +
+                    "Quals 16\n" +
+                    "910\t1477\t6002\t587\t5665\t4069\t213\t182\n";
 
     private final int[] red1 = new int[numMatches];
     private final int[] red2 = new int[numMatches];
@@ -49,7 +49,7 @@ public class TeamNumberFinder {
     private final int[] blue2 = new int[numMatches];
     private final int[] blue3 = new int[numMatches];
 
-    public TeamNumberFinder() {
+    public Autofill() {
         String[] lines = matchSchedule.split("\n");
 
         int matchIndex = 1;

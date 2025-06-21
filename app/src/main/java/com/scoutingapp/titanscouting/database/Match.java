@@ -2,6 +2,9 @@ package com.scoutingapp.titanscouting.database;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+import com.scoutingapp.titanscouting.Autofill;
+
 //The schema for our database; each @ColumnInfo is a column in the db
 @Entity(tableName = "scouting_database")
 public class Match {
@@ -69,7 +72,7 @@ public class Match {
         return teamNumber;
     }
     public void updateTeamNumber(){
-        final TeamNumberFinder teamNumberFinder = new TeamNumberFinder();
+        final Autofill teamNumberFinder = new Autofill();
         setTeamNumber(teamNumberFinder.getTeamNumberFromTable(getMatchNum(), getPosition()));
     }
     public void setTeamNumber(int teamNumber) {
