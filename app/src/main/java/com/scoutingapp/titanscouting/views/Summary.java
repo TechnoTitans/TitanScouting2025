@@ -1,13 +1,18 @@
 package com.scoutingapp.titanscouting.views;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.scoutingapp.titanscouting.Homepage;
 import com.scoutingapp.titanscouting.R;
@@ -31,11 +36,10 @@ public class Summary extends AppCompatActivity {
 
 // Finds views by their ID
         View submit = findViewById(R.id.submit);
-        View toEndgameButton = findViewById(R.id.back);
+        View back = findViewById(R.id.back);
         View delete = findViewById(R.id.delete);
 
 // Initializes match object and ViewModel
-        match = new Match();
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
 // Retrieves match data based on match number passed in the intent
@@ -93,14 +97,46 @@ public class Summary extends AppCompatActivity {
             });
 
             delete.setOnClickListener(v -> {
-                Intent i = new Intent(Summary.this, Logs.class);
-                startActivity(i);
-                matchViewModel.deleteMatch(match.getMatchNum());
+                AlertDialog.Builder builder = new AlertDialog.Builder(Summary.this);
+                builder.setMessage("Are you sure you want to delete? ONLY CONTINUE IF YOU KNOW WHAT YOU'RE DOING!");
+                builder.setTitle("Confirm Deletion");
+
+                EditText passwordInput = new EditText(Summary.this);
+                passwordInput.setHint("Enter password");
+                passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                builder.setView(passwordInput);
+
+                builder.setCancelable(false)
+                        .setPositiveButton("Yes", (dialog, which) -> {
+                            String enteredPassword = passwordInput.getText().toString();
+                            String correctPassword = "l"; // .-.
+
+                            if (enteredPassword.equals(correctPassword)) {
+                                Intent i = new Intent(Summary.this, Logs.class);
+                                startActivity(i);
+                                System.out.println("running");
+                                matchViewModel.deleteMatch(match.getMatchNum());
+                                Toast.makeText(Summary.this, "Match deleted!", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            } else {
+                                Toast.makeText(Summary.this, "Incorrect password!", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setNegativeButton("No", (dialog, which) -> dialog.cancel())
+                        .show();
+                System.out.println("ran");
             });
 
             // Sets click listener for back button to navigate to Endgame2 with match number
-            toEndgameButton.setOnClickListener(v -> {
-                Intent i = new Intent(Summary.this, Endgame2.class);
+            back.setOnClickListener(v -> {
+                Intent i;
+                if(match.isNoShow()) {
+                    i = new Intent(Summary.this, Pregame.class);
+                    i.putExtra("transition", "true");
+                }
+                else{
+                    i = new Intent(Summary.this, Endgame2.class);
+                }
                 i.putExtra("matchNumber", match.getMatchNum());
                 startActivity(i);
             });

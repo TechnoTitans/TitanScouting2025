@@ -123,7 +123,7 @@ public class Autonomous extends AppCompatActivity {
             toPregame.setOnClickListener(v -> {
                 matchViewModel.addMatchInformation(match);
                 Intent intent = new Intent(Autonomous.this, Pregame.class);
-                intent.putExtra("transition", "fromAutonomous");
+                intent.putExtra("transition", "true");
                 intent.putExtra("matchNumber", match.getMatchNum());
                 startActivity(intent);
             });

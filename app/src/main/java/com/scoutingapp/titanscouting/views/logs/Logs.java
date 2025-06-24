@@ -34,9 +34,7 @@ public class Logs extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
 
-        matchViewModel.getAllMatches().observe(this, matches -> {
-            adapter.submitList(matches);
-        });
+        matchViewModel.getAllMatches().observe(this, adapter::submitList);
 
         Button b = findViewById(R.id.delete_button);
         b.setOnClickListener(new View.OnClickListener() {

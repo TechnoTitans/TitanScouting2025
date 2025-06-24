@@ -40,7 +40,7 @@ public class Pregame extends AppCompatActivity {
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
         initViews();
 
-        isFromAuto = Objects.equals(getIntent().getStringExtra("transition"), "fromAutonomous");
+        isFromAuto = Objects.equals(getIntent().getStringExtra("transition"), "true");
         int matchNumber = getIntent().getIntExtra("matchNumber", 0);
 
         if (isFromAuto) {
@@ -78,6 +78,7 @@ public class Pregame extends AppCompatActivity {
         matchNumberInput.setText(String.valueOf(match.getMatchNum()));
         scouterNameInput.setText(match.getScouterName());
         teamNumberInput.setText(String.valueOf(match.getTeamNumber()));
+        noShowCheckBox.setChecked(match.isNoShow());
 
         setupListeners();
         updatePositionColors();
