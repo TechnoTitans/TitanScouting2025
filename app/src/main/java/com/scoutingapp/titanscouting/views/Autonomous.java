@@ -61,6 +61,10 @@ public class Autonomous extends AppCompatActivity {
         int matchNum = getIntent().getIntExtra("matchNumber", 0);
 
         matchViewModel.getMatch(matchNum).observe(this, match -> {
+            if(match == null) {
+                finish();
+                return;
+            }
             this.match = match;
 
             autoText.setText(match.getAutoPath());
@@ -126,6 +130,7 @@ public class Autonomous extends AppCompatActivity {
                 intent.putExtra("transition", "true");
                 intent.putExtra("matchNumber", match.getMatchNum());
                 startActivity(intent);
+                finish();
             });
 
             toTeleop.setOnClickListener(v -> {
@@ -133,6 +138,7 @@ public class Autonomous extends AppCompatActivity {
                 Intent intent = new Intent(Autonomous.this, Teleop.class);
                 intent.putExtra("matchNumber", match.getMatchNum());
                 startActivity(intent);
+                finish();
             });
         });
     }

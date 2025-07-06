@@ -45,6 +45,10 @@ public class Pregame extends AppCompatActivity {
 
         if (isFromAuto) {
             matchViewModel.getMatch(matchNumber).observe(this, this::setupUIWithMatch);
+            if(match == null) {
+                finish();
+                return;
+            }
             this.match = matchViewModel.getMatch(matchNumber).getValue();
         } else {
             match = new Match();
@@ -69,7 +73,10 @@ public class Pregame extends AppCompatActivity {
         blue3 = findViewById(R.id.Blue3);
 
         Button backButton = findViewById(R.id.BackButtonPregame);
-        backButton.setOnClickListener(v -> startActivity(new Intent(this, Homepage.class)));
+        backButton.setOnClickListener(v -> {
+            startActivity(new Intent(this, Homepage.class));
+            finish();
+        });
     }
 
     private void setupUIWithMatch(Match m) {
@@ -123,6 +130,7 @@ public class Pregame extends AppCompatActivity {
                 i.putExtra("matchNumber", match.getMatchNum());
                 i.putExtra("color", match.getPosition().substring(0, 1));
                 startActivity(i);
+                finish();
             }
         });
     }

@@ -37,34 +37,31 @@ public class Logs extends AppCompatActivity {
         matchViewModel.getAllMatches().observe(this, adapter::submitList);
 
         Button b = findViewById(R.id.delete_button);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(Logs.this);
-                builder.setMessage("Are you sure you want to delete? ONLY CONTINUE IF YOU KNOW WHAT YOU'RE DOING!");
-                builder.setTitle("Confirm Deletion");
+        b.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(Logs.this);
+            builder.setMessage("Are you sure you want to delete? ONLY CONTINUE IF YOU KNOW WHAT YOU'RE DOING!");
+            builder.setTitle("Confirm Deletion");
 
-                EditText passwordInput = new EditText(Logs.this);
-                passwordInput.setHint("Enter password");
-                passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                builder.setView(passwordInput);
+            EditText passwordInput = new EditText(Logs.this);
+            passwordInput.setHint("Enter password");
+            passwordInput.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            builder.setView(passwordInput);
 
-                builder.setCancelable(false)
-                        .setPositiveButton("Yes", (dialog, which) -> {
-                            String enteredPassword = passwordInput.getText().toString();
-                            String correctPassword = "1683FRC!"; // .-.
+            builder.setCancelable(false)
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        String enteredPassword = passwordInput.getText().toString();
+                        String correctPassword = "1683FRC!"; // .-.
 
-                            if (enteredPassword.equals(correctPassword)) {
-                                matchViewModel.deleteAllMatches();
-                                Toast.makeText(Logs.this, "All logs deleted!", Toast.LENGTH_SHORT).show();
-                                dialog.dismiss();
-                            } else {
-                                Toast.makeText(Logs.this, "Incorrect password!", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .setNegativeButton("No", (dialog, which) -> dialog.cancel())
-                        .show();
-            }
+                        if (enteredPassword.equals(correctPassword)) {
+                            matchViewModel.deleteAllMatches();
+                            Toast.makeText(Logs.this, "All logs deleted!", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        } else {
+                            Toast.makeText(Logs.this, "Incorrect password!", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .setNegativeButton("No", (dialog, which) -> dialog.cancel())
+                    .show();
         });
 
 
@@ -73,6 +70,7 @@ public class Logs extends AppCompatActivity {
     public void back(View v) {
         Intent i = new Intent(this, Homepage.class);
         startActivity(i);
+        finish();
     }
 
 

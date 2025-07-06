@@ -50,6 +50,10 @@ public class Endgame2 extends AppCompatActivity {
         CheckBox groundAlgae = findViewById(R.id.groundAlgaeCheckbox);
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
         matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
+            if(match == null) {
+                finish();
+                return;
+            }
             this.match = match;
             if (match.getEndgamePos()!=null) {
                 switch (match.getEndgamePos()) {
@@ -142,12 +146,14 @@ public class Endgame2 extends AppCompatActivity {
             i.putExtra("matchNumber", match.getMatchNum());
             matchViewModel.addMatchInformation(match);
             startActivity(i);
+            finish();
         });
         nextButton.setOnClickListener(v -> {
             Intent i = new Intent(Endgame2.this, Summary.class);
             i.putExtra("matchNumber", match.getMatchNum());
             matchViewModel.addMatchInformation(match);
             startActivity(i);
+            finish();
         });
     }
 }

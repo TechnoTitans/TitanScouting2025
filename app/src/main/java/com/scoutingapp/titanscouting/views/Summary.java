@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
@@ -47,6 +49,10 @@ public class Summary extends AppCompatActivity {
 
 // Observes the match LiveData and updates the UI when data changes
         liveDataMatch.observe(this, match -> {
+            if(match == null) {
+                finish();
+                return;
+            }
             this.match = match;
             ((TextView) (findViewById(R.id.matchNumberSummary))).setText(String.valueOf(match.getMatchNum()));
 
@@ -94,6 +100,7 @@ public class Summary extends AppCompatActivity {
                 Intent i = new Intent(Summary.this, QRScreen.class);
                 i.putExtra("matchNumber", match.getMatchNum());
                 startActivity(i);
+                finish();
             });
 
             delete.setOnClickListener(v -> {
@@ -112,11 +119,13 @@ public class Summary extends AppCompatActivity {
                             String correctPassword = "l"; // .-.
 
                             if (enteredPassword.equals(correctPassword)) {
-                                Intent i = new Intent(Summary.this, Logs.class);
-                                startActivity(i);
-                                System.out.println("running");
-                                matchViewModel.deleteMatch(match.getMatchNum());
                                 Toast.makeText(Summary.this, "Match deleted!", Toast.LENGTH_SHORT).show();
+                                matchViewModel.deleteMatch(match.getMatchNum());
+
+                                Intent intent = new Intent(Summary.this, Logs.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+
                                 dialog.dismiss();
                             } else {
                                 Toast.makeText(Summary.this, "Incorrect password!", Toast.LENGTH_SHORT).show();
@@ -139,9 +148,9 @@ public class Summary extends AppCompatActivity {
                 }
                 i.putExtra("matchNumber", match.getMatchNum());
                 startActivity(i);
+                finish();
             });
         });
 
     }
-
 }

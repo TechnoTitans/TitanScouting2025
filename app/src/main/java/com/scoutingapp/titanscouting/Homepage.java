@@ -38,26 +38,15 @@ public class Homepage extends AppCompatActivity {
         pregameButton.setOnClickListener(v -> {
             Intent i = new Intent(this, Pregame.class);
             startActivity(i);
+            finish();
         });
 
         // Set onClickListener method for the logsButton to navigate to Logs activity
         logsButton.setOnClickListener(v -> {
             Intent i = new Intent(this, Logs.class);
             startActivity(i);
+            finish();
         });
 
-        // Initialize matchViewModel to manage match data
-        matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
-
-        // Uncomment the bottom line to delete all matches
-        // matchViewModel.deleteAllMatches();
-
-        // Create an adapter to handle displaying match data
-        final MatchListAdapter adapter = new MatchListAdapter(new MatchListAdapter.MatchDiff());
-
-        // Observe the match data in MatchViewModel class and submit the adapter when data changes
-        matchViewModel.getAllMatches().observe(this, matches -> {
-            adapter.submitList(matches);
-        });
     }
 }

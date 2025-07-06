@@ -87,10 +87,12 @@ public class QRScreen extends AppCompatActivity {
             Intent i = new Intent(QRScreen.this, Logs.class);
             i.putExtra("matchNumber", matchNum);
             startActivity(i);
+            finish();
         });
         exitScouting.setOnClickListener(v -> {
             Intent i = new Intent(QRScreen.this, Homepage.class);
             startActivity(i);
+            finish();
         });
     }
 }

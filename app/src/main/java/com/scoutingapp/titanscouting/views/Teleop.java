@@ -64,6 +64,10 @@ public class Teleop extends AppCompatActivity {
 
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);
         matchViewModel.getMatch(getIntent().getIntExtra("matchNumber", 0)).observe(this, match -> {
+            if(match == null) {
+                finish();
+                return;
+            }
             this.match = match;
 
             //(TextView) ;
@@ -212,6 +216,7 @@ public class Teleop extends AppCompatActivity {
                 i.putExtra("color", match.getPosition().substring(0, 1));
                 matchViewModel.addMatchInformation(match);
                 startActivity(i);
+                finish();
             });
 
             toEndgame.setOnClickListener(v -> {
@@ -219,6 +224,7 @@ public class Teleop extends AppCompatActivity {
                 i.putExtra("matchNumber", match.getMatchNum());
                 matchViewModel.addMatchInformation(match);
                 startActivity(i);
+                finish();
             });
 
 
