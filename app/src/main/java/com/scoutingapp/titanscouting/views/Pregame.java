@@ -31,6 +31,8 @@ public class Pregame extends AppCompatActivity {
 
     private boolean isFromAuto;
 
+    private Autofill finder = new Autofill();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +46,15 @@ public class Pregame extends AppCompatActivity {
         int matchNumber = getIntent().getIntExtra("matchNumber", 0);
 
         if (isFromAuto) {
-            matchViewModel.getMatch(matchNumber).observe(this, this::setupUIWithMatch);
-            if(match == null) {
-                finish();
-                return;
-            }
-            this.match = matchViewModel.getMatch(matchNumber).getValue();
+            matchViewModel.getMatch(matchNumber).observe(this, match -> {
+                if (match == null) {
+                    System.out.println("finished");
+                    System.out.println(matchNumber);
+                    finish();
+                    return;
+                }
+                setupUIWithMatch(match);
+            });
         } else {
             match = new Match();
             match.setMatchNum(matchNumber);
@@ -144,8 +149,10 @@ public class Pregame extends AppCompatActivity {
     }
 
     private void updateTeamNumber() {
+        if (isFinishing()) {
+            return;
+        }
         if (match.getPosition() != null && match.getMatchNum() != 0) {
-            Autofill finder = new Autofill();
             match.setTeamNumber(finder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition()));
             teamNumberInput.setText(String.valueOf(match.getTeamNumber()));
         }
