@@ -69,8 +69,7 @@ public class QRScreen extends AppCompatActivity {
                     String.valueOf(match.getDefenseAbility()),
                     String.valueOf(match.getMechanicalReliability()),
                     String.valueOf(match.getAlgaeDescoredRating()),
-                    match.getNotes(),
-                    "TRUE\n"
+                    match.getNotes()
             );
             Log.d("match_num", String.valueOf(match.getMatchNum()));
             multiFormatWriter = new MultiFormatWriter();
