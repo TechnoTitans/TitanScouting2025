@@ -1,6 +1,8 @@
 package com.scoutingapp.titanscouting.views;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -33,7 +35,6 @@ public class Pregame extends AppCompatActivity {
 
     private Autofill finder = new Autofill();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +61,22 @@ public class Pregame extends AppCompatActivity {
             match.setMatchNum(matchNumber);
             scouterNameInput.setText("");
             setupListeners();
+        }
+
+        SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
+        int matchCount = sharedPref.getInt("matchCount", 0);
+
+        if (matchCount < 5) {
+            String savedName = sharedPref.getString("scouterName", "");
+            int savedMatch = sharedPref.getInt("matchNumber", 1);
+            String savedPosition = sharedPref.getString("position", "");
+
+            scouterNameInput.setText(savedName);
+            matchNumberInput.setText(String.valueOf(savedMatch));
+            match.setScouterName(savedName);
+            match.setMatchNum(savedMatch);
+            match.setPosition(savedPosition);
+            updatePositionColors();
         }
     }
 
@@ -111,7 +128,6 @@ public class Pregame extends AppCompatActivity {
         teamNumberInput.addTextChangedListener(createTextWatcher(() -> {
             if (!teamNumberInput.getText().toString().isEmpty()) {
                 match.setTeamNumber(Integer.parseInt(teamNumberInput.getText().toString().trim()));
-                System.out.println("changed");
             }
         }));
 
@@ -130,7 +146,26 @@ public class Pregame extends AppCompatActivity {
             if (!matchNumberInput.getText().toString().isEmpty()
                     && !scouterNameInput.getText().toString().isEmpty()
                     && match.getPosition() != null) {
+
                 matchViewModel.addMatchInformation(match);
+
+                SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                int matchCount = sharedPref.getInt("matchCount", 0);
+
+                if (matchCount < 4) {
+                    editor.putString("scouterName", scouterNameInput.getText().toString());
+                    editor.putInt("matchNumber", match.getMatchNum() + 1);
+                    editor.putString("position", match.getPosition());
+                    editor.putInt("matchCount", matchCount + 1);
+                } else {
+                    editor.remove("scouterName");
+                    editor.remove("matchNumber");
+                    editor.remove("position");
+                    editor.remove("matchCount");
+                }
+                editor.apply();
+
                 Intent i = new Intent(this, match.isNoShow() ? Summary.class : Autonomous.class);
                 i.putExtra("matchNumber", match.getMatchNum());
                 i.putExtra("color", match.getPosition().substring(0, 1));
@@ -180,5 +215,3 @@ public class Pregame extends AppCompatActivity {
         view.setBackgroundTintList(ContextCompat.getColorStateList(this, color));
     }
 }
-
-
