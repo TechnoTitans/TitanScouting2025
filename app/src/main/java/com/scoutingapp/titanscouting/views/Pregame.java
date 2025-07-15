@@ -153,6 +153,7 @@ public class Pregame extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPref.edit();
                 int matchCount = sharedPref.getInt("matchCount", 0);
 
+                // autofill scouter name, position, and match number
                 if (matchCount < 4) {
                     editor.putString("scouterName", scouterNameInput.getText().toString());
                     editor.putInt("matchNumber", match.getMatchNum() + 1);
