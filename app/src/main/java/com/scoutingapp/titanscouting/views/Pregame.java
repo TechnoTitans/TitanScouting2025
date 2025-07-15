@@ -65,19 +65,16 @@ public class Pregame extends AppCompatActivity {
 
         SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
         int matchCount = sharedPref.getInt("matchCount", 0);
+        String savedName = sharedPref.getString("scouterName", "");
+        int savedMatch = sharedPref.getInt("matchNumber", 1);
+        String savedPosition = sharedPref.getString("position", "");
 
-        if (matchCount < 5) {
-            String savedName = sharedPref.getString("scouterName", "");
-            int savedMatch = sharedPref.getInt("matchNumber", 1);
-            String savedPosition = sharedPref.getString("position", "");
-
-            scouterNameInput.setText(savedName);
-            matchNumberInput.setText(String.valueOf(savedMatch));
-            match.setScouterName(savedName);
-            match.setMatchNum(savedMatch);
-            match.setPosition(savedPosition);
-            updatePositionColors();
-        }
+        scouterNameInput.setText(savedName);
+        matchNumberInput.setText(String.valueOf(savedMatch));
+        match.setScouterName(savedName);
+        match.setMatchNum(savedMatch);
+        match.setPosition(savedPosition);
+        updatePositionColors();
     }
 
     private void initViews() {
@@ -145,26 +142,17 @@ public class Pregame extends AppCompatActivity {
         toAuto.setOnClickListener(v -> {
             if (!matchNumberInput.getText().toString().isEmpty()
                     && !scouterNameInput.getText().toString().isEmpty()
-                    && match.getPosition() != null) {
+                    && match.getPosition() != null
+                    && match.getTeamNumber() != 0) {
 
                 matchViewModel.addMatchInformation(match);
 
                 SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                int matchCount = sharedPref.getInt("matchCount", 0);
-
-                // autofill scouter name, position, and match number
-                if (matchCount < 4) {
-                    editor.putString("scouterName", scouterNameInput.getText().toString());
-                    editor.putInt("matchNumber", match.getMatchNum() + 1);
-                    editor.putString("position", match.getPosition());
-                    editor.putInt("matchCount", matchCount + 1);
-                } else {
-                    editor.remove("scouterName");
-                    editor.remove("matchNumber");
-                    editor.remove("position");
-                    editor.remove("matchCount");
-                }
+                editor.putString("scouterName", scouterNameInput.getText().toString());
+                editor.putInt("matchNumber", match.getMatchNum() + 1);
+                editor.putString("position", match.getPosition());
+                editor.putInt("matchCount", matchCount + 1);
                 editor.apply();
 
                 Intent i = new Intent(this, match.isNoShow() ? Summary.class : Autonomous.class);
