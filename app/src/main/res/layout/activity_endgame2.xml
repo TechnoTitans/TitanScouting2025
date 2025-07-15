@@ -165,7 +165,7 @@
         app:layout_constraintTop_toBottomOf="@+id/driverAbility"
         app:layout_constraintVertical_bias="0" />
     <RatingBar
-        android:id="@+id/ratingBar1"
+        android:id="@+id/mechanicalReliabilityBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.8"
@@ -176,7 +176,7 @@
         app:layout_constraintStart_toEndOf="@+id/mechReliability"
         app:layout_constraintTop_toBottomOf="@+id/subTitle2" />
     <RatingBar
-        android:id="@+id/ratingBar2"
+        android:id="@+id/defenseAbilityBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.8"
@@ -186,10 +186,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
-        app:layout_constraintTop_toTopOf="@+id/ratingBar1"
+        app:layout_constraintTop_toTopOf="@+id/mechanicalReliabilityBar"
         app:layout_constraintVertical_bias="0.11" />
     <RatingBar
-        android:id="@+id/ratingBar3"
+        android:id="@+id/driverQualityBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.8"
@@ -199,10 +199,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
-        app:layout_constraintTop_toTopOf="@+id/ratingBar1"
+        app:layout_constraintTop_toTopOf="@+id/mechanicalReliabilityBar"
         app:layout_constraintVertical_bias="0.22" />
     <RatingBar
-        android:id="@+id/ratingBar4"
+        android:id="@+id/algaeDescorabilityBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleX="0.8"
@@ -212,7 +212,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
-        app:layout_constraintTop_toTopOf="@+id/ratingBar1"
+        app:layout_constraintTop_toTopOf="@+id/mechanicalReliabilityBar"
         app:layout_constraintVertical_bias="0.33" />
     <Button
         android:id="@+id/back_to_teleop"
