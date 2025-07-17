@@ -61,20 +61,19 @@ public class Pregame extends AppCompatActivity {
             match.setMatchNum(matchNumber);
             scouterNameInput.setText("");
             setupListeners();
+
+            SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
+            String savedName = sharedPref.getString("scouterName", "");
+            int savedMatch = sharedPref.getInt("matchNumber", 1);
+            String savedPosition = sharedPref.getString("position", "");
+
+            scouterNameInput.setText(savedName);
+            matchNumberInput.setText(String.valueOf(savedMatch));
+            match.setScouterName(savedName);
+            match.setMatchNum(savedMatch);
+            match.setPosition(savedPosition);
+            updatePositionColors();
         }
-
-        SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
-        int matchCount = sharedPref.getInt("matchCount", 0);
-        String savedName = sharedPref.getString("scouterName", "");
-        int savedMatch = sharedPref.getInt("matchNumber", 1);
-        String savedPosition = sharedPref.getString("position", "");
-
-        scouterNameInput.setText(savedName);
-        matchNumberInput.setText(String.valueOf(savedMatch));
-        match.setScouterName(savedName);
-        match.setMatchNum(savedMatch);
-        match.setPosition(savedPosition);
-        updatePositionColors();
     }
 
     private void initViews() {
@@ -152,7 +151,6 @@ public class Pregame extends AppCompatActivity {
                 editor.putString("scouterName", scouterNameInput.getText().toString());
                 editor.putInt("matchNumber", match.getMatchNum() + 1);
                 editor.putString("position", match.getPosition());
-                editor.putInt("matchCount", matchCount + 1);
                 editor.apply();
 
                 Intent i = new Intent(this, match.isNoShow() ? Summary.class : Autonomous.class);
