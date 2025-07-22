@@ -83,7 +83,6 @@ public class Match {
     }
     public void setPosition(String position) {
         this.position = position;
-        //updateTeamNumber();
     }
     public String getScouterName() {
         return scouterName;

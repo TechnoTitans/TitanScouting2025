@@ -33,7 +33,7 @@ public class Pregame extends AppCompatActivity {
 
     private boolean isFromAuto;
 
-    private Autofill finder = new Autofill();
+    private final Autofill finder = new Autofill();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,15 +63,15 @@ public class Pregame extends AppCompatActivity {
             setupListeners();
 
             SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
-            String savedName = sharedPref.getString("scouterName", "");
             int savedMatch = sharedPref.getInt("matchNumber", 1);
             String savedPosition = sharedPref.getString("position", "");
 
-            scouterNameInput.setText(savedName);
+            if(Objects.equals(finder.getScouterName(savedMatch, savedPosition), finder.getScouterName(savedMatch - 1, savedPosition))) {
+                match.setPosition(savedPosition);
+            }
+
             matchNumberInput.setText(String.valueOf(savedMatch));
-            match.setScouterName(savedName);
             match.setMatchNum(savedMatch);
-            match.setPosition(savedPosition);
             updatePositionColors();
         }
     }
@@ -113,7 +113,7 @@ public class Pregame extends AppCompatActivity {
         matchNumberInput.addTextChangedListener(createTextWatcher(() -> {
             if (!matchNumberInput.getText().toString().isEmpty()) {
                 match.setMatchNum(Integer.parseInt(matchNumberInput.getText().toString().trim()));
-                updateTeamNumber();
+                useAutofill();
             }
         }));
 
@@ -148,7 +148,6 @@ public class Pregame extends AppCompatActivity {
 
                 SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putString("scouterName", scouterNameInput.getText().toString());
                 editor.putInt("matchNumber", match.getMatchNum() + 1);
                 editor.putString("position", match.getPosition());
                 editor.apply();
@@ -170,13 +169,15 @@ public class Pregame extends AppCompatActivity {
         };
     }
 
-    private void updateTeamNumber() {
+    private void useAutofill() {
         if (isFinishing()) {
             return;
         }
         if (match.getPosition() != null && match.getMatchNum() != 0) {
             match.setTeamNumber(finder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition()));
             teamNumberInput.setText(String.valueOf(match.getTeamNumber()));
+            match.setScouterName(finder.getScouterName(match.getMatchNum(), match.getPosition()));
+            scouterNameInput.setText(match.getScouterName());
         }
     }
 
@@ -184,7 +185,7 @@ public class Pregame extends AppCompatActivity {
         button.setOnClickListener(v -> {
             match.setPosition(position);
             updatePositionColors();
-            updateTeamNumber();
+            useAutofill();
         });
     }
 
