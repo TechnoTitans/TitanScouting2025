@@ -29,7 +29,7 @@ public class Logs extends AppCompatActivity {
 
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        final MatchListAdapter adapter = new MatchListAdapter(new MatchListAdapter.MatchDiff());
+        final MatchListAdapter adapter = new MatchListAdapter(new MatchListAdapter.MatchDiff(), this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         matchViewModel = new ViewModelProvider(this).get(MatchViewModel.class);

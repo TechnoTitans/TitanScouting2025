@@ -3,6 +3,7 @@ package com.scoutingapp.titanscouting.views.logs;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -17,10 +18,14 @@ import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.views.Summary;
 import com.scoutingapp.titanscouting.views.logs.MatchViewHolder;
 
+import android.os.Handler;
 
 public class MatchListAdapter extends ListAdapter<Match, MatchViewHolder> {
-    public MatchListAdapter(@NonNull DiffUtil.ItemCallback<Match> diffCallback) {
+    private final Activity parentActivity;
+
+    public MatchListAdapter(@NonNull DiffUtil.ItemCallback<Match> diffCallback, Activity parentActivity) {
         super(diffCallback);
+        this.parentActivity = parentActivity;
     }
 
     @Override
@@ -33,13 +38,11 @@ public class MatchListAdapter extends ListAdapter<Match, MatchViewHolder> {
         Match current = getItem(position);
         holder.bind(current.getMatchNum());
 
-        holder.getButton().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), Summary.class);
-                i.putExtra("matchNumber", Integer.parseInt(((Button) (holder.getButton())).getText().toString().split(": ")[1]));
-                v.getContext().startActivity(i);
-            }
+        holder.getButton().setOnClickListener(v -> {
+            Intent i = new Intent(v.getContext(), Summary.class);
+            i.putExtra("matchNumber", Integer.parseInt(((Button) (holder.getButton())).getText().toString().split(": ")[1]));
+            v.getContext().startActivity(i);
+            parentActivity.finish();
         });
 
     }

@@ -12,6 +12,7 @@ import com.scoutingapp.titanscouting.R;
 
 public class MatchViewHolder extends RecyclerView.ViewHolder{
     private final Button matchNumView;
+
     private MatchViewHolder(View itemView) {
         super(itemView);
         matchNumView = itemView.findViewById(R.id.match_button);

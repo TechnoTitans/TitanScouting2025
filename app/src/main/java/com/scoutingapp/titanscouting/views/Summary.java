@@ -125,6 +125,7 @@ public class Summary extends AppCompatActivity {
                                 Intent intent = new Intent(Summary.this, Logs.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                 startActivity(intent);
+                                new Handler(Looper.getMainLooper()).postDelayed(() -> finish(), 300);
 
                                 dialog.dismiss();
                             } else {
