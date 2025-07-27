@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:layout_margin="5dp"
-    tools:context=".views.logs.recyclerview_item">
+    android:layout_margin="5dp">
 
     <Button
         android:id="@+id/match_button"

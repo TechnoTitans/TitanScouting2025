@@ -71,7 +71,6 @@ public class Pregame extends AppCompatActivity {
             }
 
             matchNumberInput.setText(String.valueOf(savedMatch));
-            match.setMatchNum(savedMatch);
             updatePositionColors();
         }
     }

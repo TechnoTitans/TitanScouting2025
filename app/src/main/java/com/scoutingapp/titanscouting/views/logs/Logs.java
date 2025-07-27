@@ -1,6 +1,8 @@
 package com.scoutingapp.titanscouting.views.logs;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -54,6 +56,11 @@ public class Logs extends AppCompatActivity {
 
                         if (enteredPassword.equals(correctPassword)) {
                             matchViewModel.deleteAllMatches();
+                            SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPref.edit();
+                            editor.putInt("matchNumber", 1);
+                            editor.putString("position", "");
+                            editor.apply();
                             Toast.makeText(Logs.this, "All logs deleted!", Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                         } else {
