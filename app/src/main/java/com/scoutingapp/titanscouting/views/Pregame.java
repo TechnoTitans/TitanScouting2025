@@ -33,6 +33,8 @@ public class Pregame extends AppCompatActivity {
 
     private Autofill finder = new Autofill();
 
+    // ✅ Tracks if this match has already been submitted
+    private boolean matchSubmitted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,11 +128,21 @@ public class Pregame extends AppCompatActivity {
         setAllianceButton(blue2, "B2", R.color.techno_titans, R.color.darkblue);
         setAllianceButton(blue3, "B3", R.color.techno_titans, R.color.darkblue);
 
+        // ✅ Submit / Next button behavior
         toAuto.setOnClickListener(v -> {
             if (!matchNumberInput.getText().toString().isEmpty()
                     && !scouterNameInput.getText().toString().isEmpty()
                     && match.getPosition() != null) {
+
                 matchViewModel.addMatchInformation(match);
+
+                // ✅ Only increment match number the first time this match is submitted
+                if (!matchSubmitted) {
+                    match.setMatchNum(match.getMatchNum() + 1);
+                    matchNumberInput.setText(String.valueOf(match.getMatchNum()));
+                    matchSubmitted = true;
+                }
+
                 Intent i = new Intent(this, match.isNoShow() ? Summary.class : Autonomous.class);
                 i.putExtra("matchNumber", match.getMatchNum());
                 i.putExtra("color", match.getPosition().substring(0, 1));
@@ -180,5 +192,3 @@ public class Pregame extends AppCompatActivity {
         view.setBackgroundTintList(ContextCompat.getColorStateList(this, color));
     }
 }
-
-
