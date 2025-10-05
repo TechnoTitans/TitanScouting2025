@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -97,134 +98,45 @@ public class Endgame2 extends AppCompatActivity {
                 match.setGroundAlgae(!match.isGroundAlgae());
             });
 
-
-
-            final float[] previousMechanicalRating = {0};
             final float[] previousDefenseRating = {0};
-            final float[] previousDriverRating = {0};
-            final float[] previousAlgaeRating = {0};
 
-// Mechanical Reliability Bar
-            ((RatingBar) (findViewById(R.id.mechanicalReliabilityBar))).setRating(match.getMechanicalReliability());
-
-            findViewById(R.id.mechanicalReliabilityBar).setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    RatingBar ratingBar = (RatingBar) v;
-                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                        previousMechanicalRating[0] = ratingBar.getRating();
-                    }
-                    if (event.getAction() == MotionEvent.ACTION_UP) {
-                        if (previousMechanicalRating[0] == ratingBar.getRating() && ratingBar.getRating() > 0) {
-                            ratingBar.setRating(0);
-                            match.setMechanicalReliability(0);
-                            return true;
-                        }
-                    }
-                    return false;
-                }
-            });
-
-            ((RatingBar) (findViewById(R.id.mechanicalReliabilityBar))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-                @Override
-                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                    if (fromUser) {
-                        match.setMechanicalReliability((int) rating);
-                    }
-                }
-            });
-
-// Defense Ability Bar
             ((RatingBar) (findViewById(R.id.defenseAbilityBar))).setRating(match.getDefenseAbility());
 
             findViewById(R.id.defenseAbilityBar).setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
+                    if(isFinishing()) return false;
                     RatingBar ratingBar = (RatingBar) v;
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         previousDefenseRating[0] = ratingBar.getRating();
+                        System.out.println(previousDefenseRating[0]);
                     }
                     if (event.getAction() == MotionEvent.ACTION_UP) {
-                        if (previousDefenseRating[0] == ratingBar.getRating() && ratingBar.getRating() > 0) {
+                        if (previousDefenseRating[0] == ratingBar.getRating()) {
                             ratingBar.setRating(0);
                             match.setDefenseAbility(0);
+                            System.out.println("Set to 0");
                             return true;
                         }
+                        match.setDefenseAbility((int)ratingBar.getRating());
                     }
                     return false;
                 }
             });
 
-            ((RatingBar) (findViewById(R.id.defenseAbilityBar))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-                @Override
-                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                    if (fromUser) {
-                        match.setDefenseAbility((int) rating);
-                    }
+// Mechanical Reliability Bar
+            CheckBox mechReliability = findViewById(R.id.mechanicalReliabilityBar);
+            mechReliability.setChecked(match.getMechanicalReliability());
+
+            mechReliability.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                if (isChecked) {
+                    // CheckBox is checked
+                    match.setMechanicalReliability(true);
+                } else {
+                    // CheckBox is unchecked
+                    match.setMechanicalReliability(false);
                 }
             });
-
-// Driver Quality Bar
-            ((RatingBar) (findViewById(R.id.driverQualityBar))).setRating(match.getDriverQuality());
-
-            findViewById(R.id.driverQualityBar).setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    RatingBar ratingBar = (RatingBar) v;
-                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                        previousDriverRating[0] = ratingBar.getRating();
-                    }
-                    if (event.getAction() == MotionEvent.ACTION_UP) {
-                        if (previousDriverRating[0] == ratingBar.getRating() && ratingBar.getRating() > 0) {
-                            ratingBar.setRating(0);
-                            match.setDriverQuality(0);
-                            return true;
-                        }
-                    }
-                    return false;
-                }
-            });
-
-            ((RatingBar) (findViewById(R.id.driverQualityBar))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-                @Override
-                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                    if (fromUser) {
-                        match.setDriverQuality((int) rating);
-                    }
-                }
-            });
-
-// Algae Descorability Bar
-            ((RatingBar) (findViewById(R.id.algaeDescorabilityBar))).setRating(match.getAlgaeDescoredRating());
-
-            findViewById(R.id.algaeDescorabilityBar).setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    RatingBar ratingBar = (RatingBar) v;
-                    if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                        previousAlgaeRating[0] = ratingBar.getRating();
-                    }
-                    if (event.getAction() == MotionEvent.ACTION_UP) {
-                        if (previousAlgaeRating[0] == ratingBar.getRating() && ratingBar.getRating() > 0) {
-                            ratingBar.setRating(0);
-                            match.setAlgaeDescoredRating(0);
-                            return true;
-                        }
-                    }
-                    return false;
-                }
-            });
-
-            ((RatingBar) (findViewById(R.id.algaeDescorabilityBar))).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-                @Override
-                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                    if (fromUser) {
-                        match.setAlgaeDescoredRating((int) rating);
-                    }
-                }
-            });
-
-
 
             e.setText(match.getNotes());
             ((EditText) (findViewById(R.id.comments))).addTextChangedListener(new TextWatcher() {

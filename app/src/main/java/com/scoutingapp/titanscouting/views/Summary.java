@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -21,6 +23,7 @@ import com.scoutingapp.titanscouting.R;
 import com.scoutingapp.titanscouting.database.Match;
 import com.scoutingapp.titanscouting.database.MatchViewModel;
 import com.scoutingapp.titanscouting.views.logs.Logs;
+import com.scoutingapp.titanscouting.Autofill;
 
 public class Summary extends AppCompatActivity {
 
@@ -83,20 +86,22 @@ public class Summary extends AppCompatActivity {
 
             ((TextView) (findViewById(R.id.endgamePosSummary))).setText(match.getEndgamePos());
 
-            ((TextView) (findViewById(R.id.driverQualitySummary))).setText(String.valueOf(match.getDriverQuality()));
-
-            ((TextView) (findViewById(R.id.defenseAbilitySummary))).setText(String.valueOf(match.getDefenseAbility()));
-
             ((TextView) (findViewById(R.id.mechanicalReliabilitySummary))).setText(String.valueOf(match.getMechanicalReliability()));
 
-            //((TextView) (findViewById(R.id.efficiencySummary))).setText(String.valueOf(match.getEfficiency()));
-          
-            ((TextView) (findViewById(R.id.efficiencySummary))).setText(String.valueOf(match.getAlgaeDescoredRating()));
 
             ((TextView) (findViewById(R.id.notesSummary))).setText(match.getNotes());
 
             // Sets click listener for submit button to navigate to QR
             submit.setOnClickListener(v -> {
+                if(!Autofill.matchSubmitted[match.getMatchNum()]) {
+                    SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putInt("matchNumber", match.getMatchNum() + 1);
+                    editor.putString("position", match.getPosition());
+                    System.out.println(match.getPosition());
+                    editor.apply();
+                }
+
                 Intent i = new Intent(Summary.this, QRScreen.class);
                 i.putExtra("matchNumber", match.getMatchNum());
                 startActivity(i);

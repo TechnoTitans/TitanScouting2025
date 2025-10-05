@@ -32,18 +32,6 @@
         app:layout_constraintTop_toBottomOf="@+id/mainTitle"
         app:layout_constraintVertical_bias="0.039" />
     <TextView
-        android:id="@+id/subTitle2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RATINGS:"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.775"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mainTitle"
-        app:layout_constraintVertical_bias="0.04" />
-    <TextView
         android:id="@+id/subTitle3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -123,58 +111,41 @@
         android:id="@+id/mechReliability"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
-        android:text="Mechanical Reliability:"
+        android:text="Broke Down?"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
-        app:layout_constraintTop_toBottomOf="@+id/subTitle2"
-        app:layout_constraintVertical_bias="0.035" />
-    <TextView
-        android:id="@+id/defense"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="Defense:"
-        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/parkPosition"
-        app:layout_constraintStart_toStartOf="@+id/mechReliability"
-        app:layout_constraintTop_toBottomOf="@+id/mechReliability"
-        app:layout_constraintVertical_bias="0" />
-    <TextView
-        android:id="@+id/driverAbility"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="Driver Ability:"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/parkPosition"
-        app:layout_constraintStart_toStartOf="@+id/defense"
-        app:layout_constraintTop_toBottomOf="@+id/defense"
-        app:layout_constraintVertical_bias="0" />
-    <TextView
-        android:id="@+id/algaeDescore"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:text="Algae Descorability:"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/parkPosition"
-        app:layout_constraintStart_toStartOf="@+id/driverAbility"
-        app:layout_constraintTop_toBottomOf="@+id/driverAbility"
-        app:layout_constraintVertical_bias="0" />
-    <RatingBar
+        app:layout_constraintVertical_bias="0.3" />
+
+    <CheckBox
         android:id="@+id/mechanicalReliabilityBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleX="0.8"
-        android:scaleY="0.8"
-        android:stepSize="1"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/mechReliability"
-        app:layout_constraintTop_toBottomOf="@+id/subTitle2" />
+        app:layout_constraintTop_toTopOf="@+id/mechReliability"
+        app:layout_constraintBottom_toBottomOf="@id/mechReliability"/>
+
+    <TextView
+        android:id="@+id/defenseAbility"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginBottom="4dp"
+        android:text="Defense Ability"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toEndOf="@+id/parkPosition"
+        app:layout_constraintTop_toBottomOf="@id/mechReliability"
+        app:layout_constraintVertical_bias="0.1" />
+
     <RatingBar
         android:id="@+id/defenseAbilityBar"
         android:layout_width="wrap_content"
@@ -182,38 +153,12 @@
         android:scaleX="0.8"
         android:scaleY="0.8"
         android:stepSize="1"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/defenseAbility"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toEndOf="@+id/parkPosition"
-        app:layout_constraintTop_toTopOf="@+id/mechanicalReliabilityBar"
-        app:layout_constraintVertical_bias="0.11" />
-    <RatingBar
-        android:id="@+id/driverQualityBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleX="0.8"
-        android:scaleY="0.8"
-        android:stepSize="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/parkPosition"
-        app:layout_constraintTop_toTopOf="@+id/mechanicalReliabilityBar"
-        app:layout_constraintVertical_bias="0.22" />
-    <RatingBar
-        android:id="@+id/algaeDescorabilityBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleX="0.8"
-        android:scaleY="0.8"
-        android:stepSize="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/parkPosition"
-        app:layout_constraintTop_toTopOf="@+id/mechanicalReliabilityBar"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintTop_toTopOf="@+id/defenseAbility" />
+
     <Button
         android:id="@+id/back_to_teleop"
         android:layout_width="100dp"
