@@ -51,14 +51,10 @@ public class Match {
     private boolean groundCoral;
     @ColumnInfo(name = "groundAlgae", defaultValue = "0")
     private boolean groundAlgae;
-    @ColumnInfo(name = "driverQuality", defaultValue = "1")
-    private int driverQuality;
+    @ColumnInfo(name = "mechanicalReliability", defaultValue = "1")
+    private boolean mechanicalReliability;
     @ColumnInfo(name = "defenseAbility", defaultValue = "0")
     private int defenseAbility;
-    @ColumnInfo(name = "mechanicalReliability", defaultValue = "1")
-    private int mechanicalReliability;
-    @ColumnInfo(name = "algaeDescoredRating", defaultValue = "0")
-    private int algaeDescoredRating;
     @ColumnInfo(name = "notes", defaultValue = "0")
     private String notes;
     public int getMatchNum() {
@@ -188,29 +184,17 @@ public class Match {
     public void setGroundAlgae(boolean groundAlgae) {
         this.groundAlgae = groundAlgae;
     }
-    public int getDriverQuality() {
-        return driverQuality;
+    public boolean getMechanicalReliability() {
+        return mechanicalReliability;
     }
-    public void setDriverQuality(int driverQuality) {
-        this.driverQuality = driverQuality;
+    public void setMechanicalReliability(boolean mechanicalReliability) {
+        this.mechanicalReliability = mechanicalReliability;
     }
     public int getDefenseAbility() {
         return defenseAbility;
     }
     public void setDefenseAbility(int defenseAbility) {
         this.defenseAbility = defenseAbility;
-    }
-    public int getMechanicalReliability() {
-        return mechanicalReliability;
-    }
-    public void setMechanicalReliability(int mechanicalReliability) {
-        this.mechanicalReliability = mechanicalReliability;
-    }
-    public int getAlgaeDescoredRating() {
-        return algaeDescoredRating;
-    }
-    public void setAlgaeDescoredRating(int algaeDescoredRating) {
-        this.algaeDescoredRating = algaeDescoredRating;
     }
     public String getNotes() {
         return notes;

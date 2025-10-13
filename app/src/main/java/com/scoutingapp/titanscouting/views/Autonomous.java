@@ -69,7 +69,7 @@ public class Autonomous extends AppCompatActivity {
 
             autoText.setText(match.getAutoPath());
 
-            if (match.getAutoPath() != null && match.getAutoPath().startsWith("LEAVE ")) {
+            if (match.getAutoPath() != null && match.getAutoPath().startsWith("LEAVE")) {
                 leave.setChecked(true);
             } else {
                 leave.setChecked(false);

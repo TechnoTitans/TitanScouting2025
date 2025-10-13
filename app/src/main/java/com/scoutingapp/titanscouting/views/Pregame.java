@@ -69,7 +69,6 @@ public class Pregame extends AppCompatActivity {
             if(Objects.equals(finder.getScouterName(savedMatch, savedPosition), finder.getScouterName(savedMatch - 1, savedPosition))) {
                 match.setPosition(savedPosition);
             }
-
             matchNumberInput.setText(String.valueOf(savedMatch));
             updatePositionColors();
         }
@@ -145,12 +144,6 @@ public class Pregame extends AppCompatActivity {
 
                 matchViewModel.addMatchInformation(match);
 
-                SharedPreferences sharedPref = getSharedPreferences("ScoutingPrefs", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt("matchNumber", match.getMatchNum() + 1);
-                editor.putString("position", match.getPosition());
-                editor.apply();
-
                 Intent i = new Intent(this, match.isNoShow() ? Summary.class : Autonomous.class);
                 i.putExtra("matchNumber", match.getMatchNum());
                 i.putExtra("color", match.getPosition().substring(0, 1));
@@ -170,11 +163,14 @@ public class Pregame extends AppCompatActivity {
 
     private void useAutofill() {
         if (isFinishing()) {
+            System.out.println(":(");
             return;
         }
         if (match.getPosition() != null && match.getMatchNum() != 0) {
             match.setTeamNumber(finder.getTeamNumberFromTable(match.getMatchNum(), match.getPosition()));
             teamNumberInput.setText(String.valueOf(match.getTeamNumber()));
+            System.out.println("heloo");
+            System.out.println(match.getMatchNum() + " + " + match.getPosition());
             match.setScouterName(finder.getScouterName(match.getMatchNum(), match.getPosition()));
             scouterNameInput.setText(match.getScouterName());
         }
@@ -185,6 +181,7 @@ public class Pregame extends AppCompatActivity {
             match.setPosition(position);
             updatePositionColors();
             useAutofill();
+            System.out.println("autofill run");
         });
     }
 

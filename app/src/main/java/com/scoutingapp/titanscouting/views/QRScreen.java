@@ -65,10 +65,8 @@ public class QRScreen extends AppCompatActivity {
                     match.getEndgamePos(),
                     String.valueOf(match.isGroundCoral()),
                     String.valueOf(match.isGroundAlgae()),
-                    String.valueOf(match.getDriverQuality()),
-                    String.valueOf(match.getDefenseAbility()),
                     String.valueOf(match.getMechanicalReliability()),
-                    String.valueOf(match.getAlgaeDescoredRating()),
+                    String.valueOf(match.getDefenseAbility()),
                     match.getNotes()
             );
             Log.d("match_num", String.valueOf(match.getMatchNum()));
