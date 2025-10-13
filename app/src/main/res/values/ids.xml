@@ -63,4 +63,5 @@
     <item name="dec_l2_missed" type="id" />
     <item name="inc_l2_missed" type="id" />
     <item name="l2_missed_score" type="id" />
+    <item name="schedule_btn" type="id" />
 </resources>

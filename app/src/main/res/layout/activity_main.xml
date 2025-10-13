@@ -27,20 +27,36 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="361dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/vanfonting"
         android:gravity="center"
         android:text="@string/start"
         android:textSize="150sp"
-        android:fontFamily="@font/vanfonting"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/logs_btn"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/schedule_btn"
+        android:layout_width="367dp"
+        android:layout_height="131dp"
+        android:layout_marginBottom="624dp"
+        android:fontFamily="@font/vanfonting"
+        android:gravity="center"
+        android:text="SCHEDULE"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/logs_btn"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/i2"
         android:layout_width="264dp"
         android:layout_height="183dp"
         android:layout_marginTop="4dp"

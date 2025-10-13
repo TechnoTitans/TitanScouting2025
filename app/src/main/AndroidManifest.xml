@@ -11,49 +11,62 @@
         android:roundIcon="@drawable/techologo"
         android:supportsRtl="true"
         android:theme="@style/Theme.TitanScouting">
+
         <activity
             android:name=".views.Teleop"
             android:exported="false" />
+
         <activity
             android:name=".views.Autonomous"
             android:exported="false"
             android:label="@string/title_activity_autonomous"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.TitanScouting">
-
+            android:theme="@style/Theme.TitanScouting" >
         </activity>
+
         <activity
             android:name=".views.Summary"
             android:exported="false"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".views.Endgame2"
             android:exported="false"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".views.QRScreen"
             android:exported="false"
             android:screenOrientation="landscape" />
+
         <activity
             android:name=".Homepage"
             android:exported="true"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".views.Pregame"
             android:exported="false"
             android:label="@string/pre_game"
             android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".views.Schedule"
+            android:exported="false"
+            android:label="Schedule"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".views.logs.Logs"
             android:exported="false"
             android:label="@string/logs"
             android:screenOrientation="landscape" />
+
     </application>
 
 </manifest>
