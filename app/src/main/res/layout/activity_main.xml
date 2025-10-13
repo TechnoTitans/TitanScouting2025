@@ -67,18 +67,18 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="260dp"
-        android:layout_height="119dp"
+        android:layout_width="163dp"
+        android:layout_height="61dp"
         android:fontFamily="@font/vanfonting"
         android:onClick="showSchedule"
         android:text="Schedule"
-        android:textSize="60sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        app:layout_constraintVertical_bias="0.088" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
