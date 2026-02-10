@@ -12,26 +12,8 @@
         android:layout_height="match_parent"
         android:background="@drawable/auton_red"
         tools:context=".views.Autonomous"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="74dp">
-
-        <Button
-            android:id="@+id/yes_collected_fuel"
-            android:layout_width="51dp"
-            android:layout_height="44dp"
-            android:text="Button"
-            android:visibility="invisible"
-            tools:layout_editor_absoluteX="356dp"
-            tools:layout_editor_absoluteY="629dp" />
-
-        <Button
-            android:id="@+id/no_collected_fuel"
-            android:layout_width="51dp"
-            android:layout_height="44dp"
-            android:text="Button"
-            android:visibility="invisible"
-            tools:layout_editor_absoluteX="407dp"
-            tools:layout_editor_absoluteY="629dp" />
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <Button
             android:id="@+id/no_scored"
@@ -39,8 +21,8 @@
             android:layout_height="44dp"
             android:text="Button"
             android:visibility="invisible"
-            tools:layout_editor_absoluteX="648dp"
-            tools:layout_editor_absoluteY="415dp" />
+            tools:layout_editor_absoluteX="714dp"
+            tools:layout_editor_absoluteY="459dp" />
 
         <Button
             android:id="@+id/yes_went_to_neutral"
@@ -48,8 +30,8 @@
             android:layout_height="44dp"
             android:text="Button"
             android:visibility="invisible"
-            tools:layout_editor_absoluteX="838dp"
-            tools:layout_editor_absoluteY="424dp" />
+            tools:layout_editor_absoluteX="929dp"
+            tools:layout_editor_absoluteY="468dp" />
 
         <Button
             android:id="@+id/no_went_to_neutral"
@@ -57,8 +39,62 @@
             android:layout_height="44dp"
             android:text="Button"
             android:visibility="invisible"
-            tools:layout_editor_absoluteX="889dp"
-            tools:layout_editor_absoluteY="424dp" />
+            tools:layout_editor_absoluteX="980dp"
+            tools:layout_editor_absoluteY="468dp" />
+
+        <Button
+            android:id="@+id/yes_depot"
+            android:layout_width="51dp"
+            android:layout_height="44dp"
+            android:text="Button"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="442dp"
+            tools:layout_editor_absoluteY="300dp" />
+
+        <Button
+            android:id="@+id/no_depot"
+            android:layout_width="51dp"
+            android:layout_height="44dp"
+            android:text="Button"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="493dp"
+            tools:layout_editor_absoluteY="300dp" />
+
+        <Button
+            android:id="@+id/yes_climb"
+            android:layout_width="51dp"
+            android:layout_height="44dp"
+            android:text="Button"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="477dp"
+            tools:layout_editor_absoluteY="468dp" />
+
+        <Button
+            android:id="@+id/no_climb"
+            android:layout_width="51dp"
+            android:layout_height="44dp"
+            android:text="Button"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="528dp"
+            tools:layout_editor_absoluteY="468dp" />
+
+        <Button
+            android:id="@+id/yes_scored"
+            android:layout_width="51dp"
+            android:layout_height="44dp"
+            android:text="Button"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="663dp"
+            tools:layout_editor_absoluteY="459dp" />
+
+        <Button
+            android:id="@+id/yes_collected_fuel"
+            android:layout_width="51dp"
+            android:layout_height="44dp"
+            android:text="Button"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="391dp"
+            tools:layout_editor_absoluteY="697dp" />
 
         <Button
             android:id="@+id/leaveCheckbox"
@@ -75,53 +111,18 @@
             android:layout_height="180dp"
             android:text="Button"
             android:visibility="invisible"
-            tools:layout_editor_absoluteX="795dp"
+            tools:layout_editor_absoluteX="889dp"
             tools:layout_editor_absoluteY="-16dp" />
+
+        <Button
+            android:id="@+id/no_collected_fuel"
+            android:layout_width="51dp"
+            android:layout_height="44dp"
+            android:text="Button"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="442dp"
+            tools:layout_editor_absoluteY="697dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/no_climb"
-        android:layout_width="51dp"
-        android:layout_height="44dp"
-        android:text="Button"
-        android:visibility="invisible"
-        tools:layout_editor_absoluteX="477dp"
-        tools:layout_editor_absoluteY="424dp" />
-
-    <Button
-        android:id="@+id/yes_climb"
-        android:layout_width="51dp"
-        android:layout_height="44dp"
-        android:text="Button"
-        android:visibility="invisible"
-        tools:layout_editor_absoluteX="426dp"
-        tools:layout_editor_absoluteY="424dp" />
-
-    <Button
-        android:id="@+id/yes_depot"
-        android:layout_width="51dp"
-        android:layout_height="44dp"
-        android:text="Button"
-        android:visibility="invisible"
-        tools:layout_editor_absoluteX="400dp"
-        tools:layout_editor_absoluteY="271dp" />
-
-    <Button
-        android:id="@+id/no_depot"
-        android:layout_width="51dp"
-        android:layout_height="44dp"
-        android:text="Button"
-        android:visibility="invisible"
-        tools:layout_editor_absoluteX="451dp"
-        tools:layout_editor_absoluteY="271dp" />
-
-    <Button
-        android:id="@+id/yes_scored"
-        android:layout_width="51dp"
-        android:layout_height="44dp"
-        android:text="Button"
-        android:visibility="invisible"
-        tools:layout_editor_absoluteX="597dp"
-        tools:layout_editor_absoluteY="415dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
